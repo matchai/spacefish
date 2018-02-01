@@ -1,7 +1,4 @@
-set -g prompt_color blue --bold
-
 function fish_prompt
-	set -l last_status $status
 	set -l cyan (set_color cyan)
 	set -l yellow (set_color yellow)
 	set -l red (set_color red)
@@ -9,13 +6,18 @@ function fish_prompt
 	set -l green (set_color green)
 	set -l normal (set_color normal)
 
-	if test $last_status = 0
-		set arrow "$green➜ "
+	set -l last_status $status
+	set -l current_dir (string replace $HOME '~' $PWD)
+
+	if test $last_status -eq 0
+		set arrow_color $green
 	else
-		set arrow "$red➜ "
+		set arrow_color $red
 	end
 
 	echo -e ''
-	echo -e -s (set_color $prompt_color) (string replace $HOME '~' $PWD)
-	echo -e -s $arrow $normal
+	set_color -o blue
+	echo -e -s $current_dir
+	echo -e -n -s $arrow_color "➜ "
+	set_color normal
 end
