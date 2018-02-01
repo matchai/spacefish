@@ -9,7 +9,13 @@ function fish_prompt
 	set -l green (set_color green)
 	set -l normal (set_color normal)
 
+	if test $last_status = 0
+		set arrow "$green➜ "
+	else
+		set arrow "$red➜ "
+	end
+
 	echo -e ''
 	echo -e -s (set_color $prompt_color) (string replace $HOME '~' $PWD)
-	echo -e -s $green '➜ ' $normal
+	echo -e -s $arrow $normal
 end
