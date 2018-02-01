@@ -1,7 +1,15 @@
+set -g prompt_color blue --bold
+
 function fish_prompt
-	echo
-	set_color --bold blue
-	string replace $HOME '~' $PWD
-	set_color green
-	echo -e "➜ "(set_color normal)
+	set -l last_status $status
+	set -l cyan (set_color cyan)
+	set -l yellow (set_color yellow)
+	set -l red (set_color red)
+	set -l blue (set_color blue)
+	set -l green (set_color green)
+	set -l normal (set_color normal)
+
+	echo -e ''
+	echo -e -s (set_color $prompt_color) (string replace $HOME '~' $PWD)
+	echo -e -s $green '➜ ' $normal
 end
