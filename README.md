@@ -1,3 +1,7 @@
+<a href="https://github.com/matchai/spacefish">
+  <img alt="spacefish fish shell theme" src="./banner.svg" width="100%">
+</a>
+
 # 🚀🐟 Spacefish
 
 > A [Fish Shell][fish] prompt for Astronauts.
