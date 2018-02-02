@@ -7,7 +7,7 @@ function __sf_section_dir -a dir_color -a separator_color -a branch_color -a sta
 		echo -s -n (set_color -o $separator_color) " on "
 		echo -s -n (set_color -o $branch_color) " " (__sf_util_git_branch) (__sf_section_git $status_color)
 	else
-		set -g fish_prompt_pwd_dir_length 0
+		__sf_util_set_default fish_prompt_pwd_dir_length 0
 		echo -s -n (set_color -o $dir_color) (prompt_pwd)
 	end
 end
