@@ -1,4 +1,4 @@
-function __sf_section_git_status -a status_color
+function __sf_section_git -a status_color
 	set -l status_untracked "?"
 	set -l status_added "+"
 	set -l status_modified "!"
