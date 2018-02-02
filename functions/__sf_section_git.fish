@@ -81,7 +81,7 @@ function __sf_section_git -a status_color
 	end
 
 	# Check if git status
-	if [ ! -z "$git_status" ]
-		echo -s (set_color $status_color) " " [ $git_status ]
+	if test -n "$git_status"
+		echo -s -n (set_color $status_color) " " [ $git_status ]
 	end
 end

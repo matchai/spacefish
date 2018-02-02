@@ -27,6 +27,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
   * `⇡` — ahead of remote branch;
   * `⇣` — behind of remote branch;
   * `⇕` — diverged chages.
+  * Execution time of the last command if it exceeds 5 seconds.
 
 ### Upcoming features
 * Displaying hostname/username
@@ -42,7 +43,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
   * `•` - fully charged.
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
-* Execution time of the last command if it exceeds the set threshold.
 
 
 Want more features? Please, [open an issue](https://github.com/matchai/spacefish/issues/new) or send pull request.
