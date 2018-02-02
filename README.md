@@ -16,6 +16,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 
 ## Features
 * Prompt character turns red if the last command exits with non-zero code.
+* Execution time of the last command if it exceeds 5 seconds.
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
   * `+` — uncommitted changes in the index;
@@ -27,7 +28,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
   * `⇡` — ahead of remote branch;
   * `⇣` — behind of remote branch;
   * `⇕` — diverged chages.
-  * Execution time of the last command if it exceeds 5 seconds.
 
 ### Upcoming features
 * Displaying hostname/username
