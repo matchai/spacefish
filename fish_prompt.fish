@@ -1,7 +1,7 @@
 # Set defaults
-set -q SPACESHIP_CHAR_PREFIX ""
-set -q SPACESHIP_CHAR_SYMBOL ➜
-set -q SPACESHIP_CHAR_SUFFIX " "
+set -q SPACEFISH_CHAR_PREFIX ""
+set -q SPACEFISH_CHAR_SYMBOL ➜
+set -q SPACEFISH_CHAR_SUFFIX " "
 
 function fish_prompt
 	set -l brwhite ffffff
@@ -17,6 +17,6 @@ function fish_prompt
 	__sf_section_dir cyan $brwhite magenta red
 	__sf_section_exec_time $brwhite yellow
 	echo
-	echo -e -n -s (set_color $arrow_color) "$SPACESHIP_CHAR_PREFIX$SPACESHIP_CHAR_SYMBOL$SPACESHIP_CHAR_SUFFIX"
+	echo -e -n -s (set_color $arrow_color) "$SPACEFISH_CHAR_PREFIX$SPACEFISH_CHAR_SYMBOL$SPACEFISH_CHAR_SUFFIX"
 	set_color normal
 end
