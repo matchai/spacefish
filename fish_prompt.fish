@@ -1,3 +1,8 @@
+# Set defaults
+set -q SPACESHIP_CHAR_SUFFIX " "
+set -q SPACESHIP_CHAR_PREFIX ""
+set -q SPACESHIP_CHAR_SYMBOL ➜
+
 function fish_prompt
 	set -l brwhite ffffff
 	set -l exit_code $status
@@ -12,6 +17,6 @@ function fish_prompt
 	__sf_section_dir cyan $brwhite magenta red
 	__sf_section_exec_time $brwhite yellow
 	echo
-	echo -e -n -s (set_color $arrow_color) "➜ "
+	echo -e -n -s (set_color $arrow_color) "$SPACESHIP_CHAR_PREFIX$SPACESHIP_CHAR_SYMBOL$SPACESHIP_CHAR_SUFFIX"
 	set_color normal
 end
