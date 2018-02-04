@@ -3,6 +3,7 @@ function fish_prompt
 
 	echo -e ''
 	__sf_section_dir cyan $brwhite magenta red
+	__sf_section_node
 	__sf_section_exec_time $brwhite yellow
 	echo
 	__sf_section_char
