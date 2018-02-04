@@ -1,8 +1,8 @@
 ## Options
 
-You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `.zshrc` file **after** the theme.
+You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `.config.fish`.
 
-Colors for sections can be [basic colors](https://wiki.archlinux.org/index.php/zsh#Colors) or [color codes](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
+Colors for sections can be [basic colors](https://fishshell.com/docs/current/commands.html#set_color) or [color codes](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
 
 **Note:** the symbol `·` in this document represents a regular space character ` `, it is used to clearly indicate when an option default value starts or ends with a space.
 
