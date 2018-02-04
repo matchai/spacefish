@@ -1,6 +1,6 @@
 ## Options
 
-You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `.config.fish`.
+You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
 
 Colors for sections can be [basic colors](https://fishshell.com/docs/current/commands.html#set_color) or [color codes](https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg).
 
