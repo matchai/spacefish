@@ -16,14 +16,14 @@ function __sf_section_node
   set -l node_version ""
 
   if test nvm
-    set node_version (nvm current 2>/dev/null)
+    set node_version (nvm current)
 
     if test $node_version = "system" -a $node_version = "node"
-      set node_version (command node -v)
+      set node_version (node -v)
     end
   else if test $node_version = (nodenv version-name)
     if test $node_version = "system" -a $node_version = "node"
-      set node_version (command node -v)
+      set node_version (node -v)
     end
   end
 
