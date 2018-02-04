@@ -18,7 +18,11 @@ function __sf_section_node
   if test nvm
     set node_version (nvm current 2>/dev/null)
 
-    if test $node_version = "system" -a $node_version = "current"
+    if test $node_version = "system" -a $node_version = "node"
+      set node_version (command node -v)
+    end
+  else if test $node_version = (nodenv version-name)
+    if test $node_version = "system" -a $node_version = "node"
       set node_version (command node -v)
     end
   end
