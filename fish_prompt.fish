@@ -6,6 +6,6 @@ function fish_prompt
 	__sf_section_dir cyan $brwhite magenta red
 	__sf_section_exec_time $brwhite yellow
 	echo
-	__sf_section_char $brwhite yellow
+	__sf_section_char
 	set_color normal
 end
