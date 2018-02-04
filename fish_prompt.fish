@@ -1,7 +1,7 @@
 # Set defaults
-set -q SPACESHIP_CHAR_SUFFIX " "
 set -q SPACESHIP_CHAR_PREFIX ""
 set -q SPACESHIP_CHAR_SYMBOL ➜
+set -q SPACESHIP_CHAR_SUFFIX " "
 
 function fish_prompt
 	set -l brwhite ffffff
