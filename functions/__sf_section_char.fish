@@ -1,5 +1,7 @@
 function __sf_section_char
 	set -l arrow_color
+	set -l exit_code $status
+
 	if test $exit_code -eq 0
 		set arrow_color green
 	else
