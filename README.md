@@ -60,6 +60,13 @@ To get spacefish working correctly you will need:
 $ fisher matchai/spacefish
 ```
 
+## Customization
+Spacefish works well out of the box, but you can customize almost everything if you want.
+
+* [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
+
+You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
+
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
 [fish]: https://fishshell.com/
 [zsh]: http://zsh.org/
