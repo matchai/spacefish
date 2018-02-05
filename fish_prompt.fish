@@ -7,10 +7,9 @@ function fish_prompt
 	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_PREFIX "via "
 	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
 
-	set -l brwhite ffffff
-
 	echo -e ''
-	__sf_section_dir $brwhite magenta red
+	__sf_section_dir
+	__sf_section_git
 	__sf_section_exec_time $brwhite yellow
 	echo
 	__sf_section_char

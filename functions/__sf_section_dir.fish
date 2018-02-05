@@ -1,4 +1,4 @@
-function __sf_section_dir -a separator_color branch_color status_color
+function __sf_section_dir
 	#
 	# Working directory
 	#
@@ -29,8 +29,6 @@ function __sf_section_dir -a separator_color branch_color status_color
 		set -l git_root (git rev-parse --show-toplevel)
 		# Treat repo root as top level directory
 		set dir (string replace $git_root (basename $git_root) $PWD)
-		echo -s -n (set_color -o $separator_color) " on "
-        echo -s -n (set_color -o $branch_color) " " (__sf_util_git_branch) (__sf_section_git $status_color)
 	else
 	set -l realhome ~
 		set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)

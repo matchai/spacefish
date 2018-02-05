@@ -8,7 +8,7 @@ function __sf_section_git_status
 	# ------------------------------------------------------------------------------
 
 	__sf_util_set_default SPACEFISH_GIT_STATUS_SHOW true
-	__sf_util_set_default SPACEFISH_GIT_STATUS_PREFIX [
+	__sf_util_set_default SPACEFISH_GIT_STATUS_PREFIX " ["
 	__sf_util_set_default SPACEFISH_GIT_STATUS_SUFFIX ]
 	__sf_util_set_default SPACEFISH_GIT_STATUS_COLOR (set_color red)
 	__sf_util_set_default SPACEFISH_GIT_STATUS_UNTRACKED \?
