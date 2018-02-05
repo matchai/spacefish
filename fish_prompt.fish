@@ -21,4 +21,5 @@ function fish_prompt
             eval __sf_section_$i
         end
     end
+    set_color normal
 end
