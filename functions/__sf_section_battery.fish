@@ -19,7 +19,7 @@
 function __sf_section_battery
     __sf_util_set_default SPACEFISH_BATTERY_SHOW true
     __sf_util_set_default SPACEFISH_BATTERY_PREFIX
-    __sf_util_set_default SPACEFISH_BATTERY_SUFFIX
+    __sf_util_set_default SPACEFISH_BATTERY_SUFFIX " "
     __sf_util_set_default SPACEFISH_BATTERY_SYMBOL_CHARGING ⇡
     __sf_util_set_default SPACEFISH_BATTERY_SYMBOL_DISCHARGING ⇣
     __sf_util_set_default SPACEFISH_BATTERY_SYMBOL_FULL •
