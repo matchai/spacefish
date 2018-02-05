@@ -13,7 +13,7 @@ function __sf_section_dir
 	__sf_util_set_default SPACEFISH_DIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	# __sf_util_set_default SPACEFISH_DIR_TRUNC 3
 	__sf_util_set_default SPACEFISH_DIR_TRUNC_REPO true
-	__sf_util_set_default SPACEFISH_DIR_COLOR (set_color -o cyan)
+	__sf_util_set_default SPACEFISH_DIR_COLOR (set_color --bold cyan)
 
 	# ------------------------------------------------------------------------------
 	# Section
