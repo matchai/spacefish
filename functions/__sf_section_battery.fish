@@ -48,15 +48,15 @@ function __sf_section_battery
             return
         end
 
-        set battery_percent (echo $battery_data | grep -oE '[0-9]{1,3}%')
+        set battery_percent (echo $battery_data | grep -oE "[0-9]{1,3}%")
         # spaceship has echo $battery_data | awk -F '; *' 'NR==2 { print $2 }', but NR==2 did not return anything.
-        set battery_status (echo $battery_data | awk -F '; *' '{ print $2 }')
+        set battery_status (echo $battery_data | awk -F "; *" "{ print $2 }")
     else
         return
     end
 
      # Remove trailing % and symbols for comparison
-    set battery_percent (echo $battery_percent | tr -d '%[,;]')
+    set battery_percent (echo $battery_percent | tr -d "%[,;]")
     
     if test $battery_percent -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
         set battery_color green
@@ -67,7 +67,7 @@ function __sf_section_battery
     end
 
     # Battery indicator based on current status of battery
-    if test $battery_status = "charging"
+    if test $battery_status = charging
         set battery_symbol $SPACEFISH_BATTERY_SYMBOL_CHARGING
     else if test -n (echo (string match -r "^[dD]ischarg.*" $battery_status))
         set battery_symbol $SPACEFISH_BATTERY_SYMBOL_DISCHARGING
@@ -76,6 +76,11 @@ function __sf_section_battery
     end
 
     if test $SPACEFISH_BATTERY_SHOW = always -o $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD -o $SPACEFISH_BATTERY_SHOW = charged -a -n (echo (string match -r "(charged|full)" $battery_status))
-        echo -s -n (set_color $battery_color) "$SPACEFISH_BATTERY_PREFIX$battery_symbol$battery_percent%$SPACEFISH_BATTERY_SUFFIX"
+        echo -s -n \
+        (set_color $battery_color) \
+        $SPACEFISH_BATTERY_PREFIX \
+        $battery_symbol \
+        $battery_percent \% \
+        $SPACEFISH_BATTERY_SUFFIX
     end
 end
