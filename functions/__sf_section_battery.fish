@@ -12,10 +12,12 @@
 # | charged                | shown           | hidden          | shown         |
 # ------------------------------------------------------------------------------
 
-# Show section only if either of follow is true
-# - Always show is true
-# - battery percentage is below the given limit (default: 10%)
-# - Battery is fully charged
+# Show section only if either of the following is true
+# - SPACEFISH_BATTERY_SHOW = "always"
+# - SPACEFISH_BATTERY_SHOW = "true" and
+#   - battery percentage is below the given limit (default: 10%)
+# - SPACEFISH_BATTERY_SHOW = "charged" and
+#   - Battery is fully charged
 function __sf_section_battery
     __sf_util_set_default SPACEFISH_BATTERY_SHOW true
     __sf_util_set_default SPACEFISH_BATTERY_PREFIX
