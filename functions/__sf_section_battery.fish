@@ -38,6 +38,7 @@ function __sf_section_battery
     set -l battery_color
     set -l battery_symbol
 
+    # TODO: Add upower and acpi. Not yet added because unable to test at the moment of integration
     # Darwin and macOS machines
     if test (type pmset | echo $status) -eq 0
         set battery_data (pmset -g batt)
@@ -57,7 +58,6 @@ function __sf_section_battery
      # Remove trailing % and symbols for comparison
     set battery_percent (echo $battery_percent | tr -d '%[,;]')
     
-    # TODO: Add upower and acpi. Not yet added because unable to test at the moment of integration
     if test $battery_percent -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
         set battery_color green
     else if test $battery_percent -eq $SPACEFISH_BATTERY_THRESHOLD
