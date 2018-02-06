@@ -67,3 +67,26 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
 | `SPACEFISH_CHAR_SUFFIX` | `.` | Suffix after prompt character |
 | `SPACEFISH_CHAR_SYMBOL` | `➜ ` | Prompt character to be shown before any command |
+
+### Battery (`battery`)
+
+By default, Battery section is shown only if battery level is below `SPACESHIP_BATTERY_THRESHOLD` (default: 10%).
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_BATTERY_SHOW` | `true` | Show battery section or not (`true`, `false`, `always` or `charged`) |
+| `SPACESHIP_BATTERY_PREFIX` | ` ` | Prefix before battery section |
+| `SPACESHIP_BATTERY_SUFFIX` | `SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
+| `SPACESHIP_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
+| `SPACESHIP_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
+| `SPACESHIP_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
+| `SPACESHIP_BATTERY_THRESHOLD` | 10 | Battery level below which battery section will be shown |
+
+`SPACESHIP_BATTERY_SHOW` defines when to show battery section. Here are possible values:
+
+| `SPACESHIP_BATTERY_SHOW` | Below threshold | Above threshold | Fully charged |
+| :----------------------: | :-------------- | :-------------- | :------------ |
+| `false`                  | Hidden          | Hidden          | Hidden        |
+| `always`                 | Shown           | Shown           | Shown         |
+| `true`                   | Shown           | Hidden          | Hidden        |
+| `charged`                | Shown           | Hidden          | Shown         |
