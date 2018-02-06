@@ -11,7 +11,7 @@ function __sf_section_dir
 	__sf_util_set_default SPACEFISH_DIR_SHOW true
 	# __sf_util_set_default SPACEFISH_DIR_PREFIX "in "
 	__sf_util_set_default SPACEFISH_DIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	# __sf_util_set_default SPACEFISH_DIR_TRUNC 3
+	__sf_util_set_default SPACEFISH_DIR_TRUNC 3
 	__sf_util_set_default SPACEFISH_DIR_TRUNC_REPO true
 	__sf_util_set_default SPACEFISH_DIR_COLOR (set_color --bold cyan)
 
@@ -32,8 +32,7 @@ function __sf_section_dir
 	else
 	set -l realhome ~
 		set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
-		# TODO: Use $SPACEFISH_DIR_TRUNC to change truncation length
-		set dir (string replace -r '^.+/(.+/.+/.+)' '$1' $tmp)
+		set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 	end
 
 	echo -e -n -s \
