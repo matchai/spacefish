@@ -17,8 +17,8 @@ function __sf_section_git -d "Display the git branch and status"
 	# ------------------------------------------------------------------------------
 
 	# Show both git branch and git status:
-	#   spaceship_git_branch
-	#   spaceship_git_status
+	#   spacefish_git_branch
+	#   spacefish_git_status
 
 	if test $SPACEFISH_GIT_SHOW = false -o -z (__sf_util_git_branch)
 		return

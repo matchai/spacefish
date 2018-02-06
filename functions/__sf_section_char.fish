@@ -11,7 +11,7 @@ function __sf_section_char -d "Display the prompt character"
 	__sf_util_set_default SPACEFISH_CHAR_SUFFIX " "
 	__sf_util_set_default SPACEFISH_CHAR_SYMBOL ➜
 	__sf_util_set_default SPACEFISH_CHAR_COLOR_SUCCESS (set_color green)
-	__sf_util_set_default SPACESHIP_CHAR_COLOR_FAILURE (set_color red)
+	__sf_util_set_default SPACEFISH_CHAR_COLOR_FAILURE (set_color red)
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -24,7 +24,7 @@ function __sf_section_char -d "Display the prompt character"
 	if test $status -eq 0
 		set color $SPACEFISH_CHAR_COLOR_SUCCESS
 	else
-		set color $SPACESHIP_CHAR_COLOR_FAILURE
+		set color $SPACEFISH_CHAR_COLOR_FAILURE
 	end
 
 	echo -e -n -s \
