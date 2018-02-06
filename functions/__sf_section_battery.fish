@@ -6,7 +6,7 @@
 # Section
 # ------------------------------------------------------------------------------
 
-# Show section only if either of the following is true
+# Show section only if any of the following is true
 # - SPACEFISH_BATTERY_SHOW = "always"
 # - SPACEFISH_BATTERY_SHOW = "true" and
 #   - battery percentage is below the given limit (default: 10%)
