@@ -40,7 +40,7 @@ function __sf_section_battery
 
     # TODO: Add upower and acpi. Not yet added because unable to test at the moment of integration
     # Darwin and macOS machines
-    if test (type pmset | echo $status) -eq 0
+    if type -q pmset
         set battery_data (pmset -g batt)
 
         # Return if no internal battery
