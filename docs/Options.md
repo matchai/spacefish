@@ -13,11 +13,11 @@ Directory is always shown and truncated to the value of `SPACESHIP_DIR_TRUNC`. W
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
 | `SPACESHIP_DIR_SHOW` | `true` | Show directory section |
-<!-- | `SPACESHIP_DIR_PREFIX` | `in·` | Prefix before current directory | -->
 | `SPACESHIP_DIR_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
 | `SPACESHIP_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
 | `SPACESHIP_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
 | `SPACESHIP_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
+<!-- | `SPACESHIP_DIR_PREFIX` | `in·` | Prefix before current directory | -->
 
 ### Git (`git`)
 
