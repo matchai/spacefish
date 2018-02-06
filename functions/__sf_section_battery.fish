@@ -3,19 +3,6 @@
 #
 
 # ------------------------------------------------------------------------------
-# Configuration
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
-# | SPACEFISH_BATTERY_SHOW | below threshold | above threshold | fully charged |
-# |------------------------+-----------------+-----------------+---------------|
-# | false                  | hidden          | hidden          | hidden        |
-# | always                 | shown           | shown           | shown         |
-# | true                   | shown           | hidden          | hidden        |
-# | charged                | shown           | hidden          | shown         |
-# ------------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------------
 # Section
 # ------------------------------------------------------------------------------
 
@@ -26,6 +13,19 @@
 # - SPACEFISH_BATTERY_SHOW = "charged" and
 #   - Battery is fully charged
 function __sf_section_battery
+    # ------------------------------------------------------------------------------
+    # Configuration
+    # ------------------------------------------------------------------------------
+
+    # ------------------------------------------------------------------------------
+    # | SPACEFISH_BATTERY_SHOW | below threshold | above threshold | fully charged |
+    # |------------------------+-----------------+-----------------+---------------|
+    # | false                  | hidden          | hidden          | hidden        |
+    # | always                 | shown           | shown           | shown         |
+    # | true                   | shown           | hidden          | hidden        |
+    # | charged                | shown           | hidden          | shown         |
+    # ------------------------------------------------------------------------------
+
     __sf_util_set_default SPACEFISH_BATTERY_SHOW true
     __sf_util_set_default SPACEFISH_BATTERY_PREFIX
     __sf_util_set_default SPACEFISH_BATTERY_SUFFIX " "
