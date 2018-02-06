@@ -57,7 +57,7 @@ function __sf_section_battery
 
         set battery_percent (echo $battery_data | grep -oE "[0-9]{1,3}%")
         # spaceship has echo $battery_data | awk -F '; *' 'NR==2 { print $2 }', but NR==2 did not return anything.
-        set battery_status (echo $battery_data | awk -F "; *" "{ print $2 }")
+        set battery_status (echo $battery_data | awk -F '; *' '{ print $2 }')
     else
         return
     end
@@ -67,7 +67,7 @@ function __sf_section_battery
     
     if test $battery_percent -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
         set battery_color green
-    else if test $battery_percent -eq $SPACEFISH_BATTERY_THRESHOLD
+    else if test $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD
         set battery_color red
     else
         set battery_color yellow
