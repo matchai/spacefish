@@ -28,6 +28,10 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
   * `⇡` — ahead of remote branch;
   * `⇣` — behind of remote branch;
   * `⇕` — diverged chages.
+* Current battery level and status:
+  * `⇡` - charging;
+  * `⇣` - discharging;
+  * `•` - fully charged.
 
 ### Upcoming features
 * Displaying hostname/username
@@ -37,10 +41,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Current Ruby version, through rvm/rbenv/chruby (`💎`).
 * Current Python pyenv (`🐍`).
 * Package version, if there's is a package in current directory (`📦`).
-* Current battery level and status:
-  * `⇡` - charging;
-  * `⇣` - discharging;
-  * `•` - fully charged.
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
