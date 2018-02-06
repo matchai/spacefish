@@ -60,6 +60,21 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_percent (echo $battery_data | grep -oE "[0-9]{1,3}%")
 		# spaceship has echo $battery_data | awk -F '; *' 'NR==2 { print $2 }', but NR==2 did not return anything.
 		set battery_status (echo $battery_data | awk -F '; *' '{ print $2 }')
+	else if type -q upower
+		set -l battery (upower -e | grep battery | head -1)
+
+		# Return if no battery
+		if test -z $battery
+			return
+		end
+
+		# set battery_data (upower -i $battery)
+
+		# Using $battery_data instead of upower -i $battery directly
+		# causes it to error out.
+		set battery_percent (upower -i $battery | grep percentage | awk '{print $2}')
+
+		set battery_status (upower -i $battery | grep state | awk '{print $2}')
 	else
 		return
 	end
