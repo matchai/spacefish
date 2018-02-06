@@ -8,16 +8,16 @@ Colors for sections can be [basic colors](https://fishshell.com/docs/current/com
 
 ### Directory (`dir`)
 
-Directory is always shown and truncated to the value of `SPACESHIP_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it.
+Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACESHIP_DIR_SHOW` | `true` | Show directory section |
-| `SPACESHIP_DIR_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
-| `SPACESHIP_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
-| `SPACESHIP_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
-| `SPACESHIP_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
-<!-- | `SPACESHIP_DIR_PREFIX` | `in·` | Prefix before current directory | -->
+| `SPACEFISH_DIR_SHOW` | `true` | Show directory section |
+| `SPACEFISH_DIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
+| `SPACEFISH_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
+| `SPACEFISH_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
+| `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
+<!-- | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory | -->
 
 ### Git (`git`)
 
@@ -67,3 +67,26 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
 | `SPACEFISH_CHAR_SUFFIX` | `.` | Suffix after prompt character |
 | `SPACEFISH_CHAR_SYMBOL` | `➜ ` | Prompt character to be shown before any command |
+
+### Battery (`battery`)
+
+By default, Battery section is shown only if battery level is below `SPACEFISH_BATTERY_THRESHOLD` (default: 10%).
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section or not (`true`, `false`, `always` or `charged`) |
+| `SPACEFISH_BATTERY_PREFIX` | ` ` | Prefix before battery section |
+| `SPACEFISH_BATTERY_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
+| `SPACEFISH_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
+| `SPACEFISH_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
+| `SPACEFISH_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
+| `SPACEFISH_BATTERY_THRESHOLD` | 10 | Battery level below which battery section will be shown |
+
+`SPACEFISH_BATTERY_SHOW` defines when to show battery section. Here are possible values:
+
+| `SPACEFISH_BATTERY_SHOW` | Below threshold | Above threshold | Fully charged |
+| :----------------------: | :-------------- | :-------------- | :------------ |
+| `false`                  | Hidden          | Hidden          | Hidden        |
+| `always`                 | Shown           | Shown           | Shown         |
+| `true`                   | Shown           | Hidden          | Hidden        |
+| `charged`                | Shown           | Hidden          | Shown         |
