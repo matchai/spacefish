@@ -1,8 +1,8 @@
-function __sf_section_git
-	#
-	# Git
-	#
+#
+# Git
+#
 
+function __sf_section_git -d "Display the git branch and status"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------

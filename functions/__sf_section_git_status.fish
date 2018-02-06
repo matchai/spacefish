@@ -1,8 +1,8 @@
-function __sf_section_git_status
-	#
-	# Git status
-	#
+#
+# Git status
+#
 
+function __sf_section_git_status -d "Display the current git status"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------

@@ -1,3 +1,7 @@
+#
+# Human time
+#
+
 function __sf_util_human_time -d "Humanize a time interval for display"
     command awk '
         function hmTime(time,   stamp) {

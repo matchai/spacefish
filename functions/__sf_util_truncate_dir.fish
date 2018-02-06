@@ -1,4 +1,8 @@
-function __sf_util_truncate_dir -d "Truncate a directory path" -a path truncate_to
+#
+# Truncate directory
+#  
+
+function __sf_util_truncate_dir -a path truncate_to -d "Truncate a directory path"
     if test $truncate_to -eq 0
         echo $path
     else

@@ -1,9 +1,8 @@
-function __sf_section_dir
-	#
-	# Working directory
-	#
-	# Current directory. Return only three last items of path
+#
+# Working directory
+#
 
+function __sf_section_dir -d "Display the current truncated directory"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------

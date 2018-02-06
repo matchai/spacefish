@@ -1,8 +1,8 @@
-function __sf_section_char
-	#
-	# Prompt character
-	#
+#
+# Prompt character
+#
 
+function __sf_section_char -d "Display the prompt character"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------

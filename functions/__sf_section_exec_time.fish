@@ -1,9 +1,8 @@
-function __sf_section_exec_time
-	#
-	# Execution time
-	#
-	# Execution time of the last command.
+#
+# Execution time
+#
 
+function __sf_section_exec_time -d "Display the execution time of the last command"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------

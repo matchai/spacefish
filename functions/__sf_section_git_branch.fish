@@ -1,9 +1,8 @@
-function __sf_section_git_branch
-	#
-	# Git branch
-	#
-	# Show current git branch
+#
+# Git branch
+#
 
+function __sf_section_git_branch -d "Format the displayed branch name"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------
