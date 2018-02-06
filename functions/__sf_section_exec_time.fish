@@ -28,6 +28,6 @@ function __sf_section_exec_time -d "Display the execution time of the last comma
 		$SPACEFISH_EXEC_TIME_PREFIX \
 		$SPACEFISH_EXEC_TIME_COLOR \
 		$command_duration \
-		$SPACESHIP_EXEC_TIME_SUFFIX
+		$SPACEFISH_EXEC_TIME_SUFFIX
 	end
 end
