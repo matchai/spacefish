@@ -1,5 +1,5 @@
 <a href="https://github.com/matchai/spacefish">
-	<img alt="spacefish fish shell theme" src="./banner.svg" width="100%">
+  <img alt="spacefish fish shell theme" src="./banner.svg" width="100%">
 </a>
 
 # 🚀🐟 Spacefish
@@ -11,27 +11,27 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 ## Preview
 
 <p align="center">
-	<img alt="Spaceship with Hyper and One Dark" src="./preview.gif" width="980px">
+  <img alt="Spaceship with Hyper and One Dark" src="./preview.gif" width="980px">
 </p>
 
 ## Features
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Git branch and rich repo status:
-	* `?` — untracked changes;
-	* `+` — uncommitted changes in the index;
-	* `!` — unstaged changes;
-	* `»` — renamed files;
-	* `✘` — deleted files;
-	* `$` — stashed changes;
-	* `=` — unmerged changes;
-	* `⇡` — ahead of remote branch;
-	* `⇣` — behind of remote branch;
-	* `⇕` — diverged chages.
+  * `?` — untracked changes;
+  * `+` — uncommitted changes in the index;
+  * `!` — unstaged changes;
+  * `»` — renamed files;
+  * `✘` — deleted files;
+  * `$` — stashed changes;
+  * `=` — unmerged changes;
+  * `⇡` — ahead of remote branch;
+  * `⇣` — behind of remote branch;
+  * `⇕` — diverged chages.
 * Current battery level and status:
-	* `⇡` - charging;
-	* `⇣` - discharging;
-	* `•` - fully charged.
+  * `⇡` - charging;
+  * `⇣` - discharging;
+  * `•` - fully charged.
 
 ### Upcoming features
 * Displaying hostname/username
