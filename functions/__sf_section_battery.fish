@@ -2,16 +2,6 @@
 # Battery
 #
 
-# ------------------------------------------------------------------------------
-# Section
-# ------------------------------------------------------------------------------
-
-# Show section only if any of the following is true
-# - SPACEFISH_BATTERY_SHOW = "always"
-# - SPACEFISH_BATTERY_SHOW = "true" and
-#   - battery percentage is below the given limit (default: 10%)
-# - SPACEFISH_BATTERY_SHOW = "charged" and
-#   - Battery is fully charged
 function __sf_section_battery
     # ------------------------------------------------------------------------------
     # Configuration
@@ -34,6 +24,18 @@ function __sf_section_battery
     __sf_util_set_default SPACEFISH_BATTERY_SYMBOL_FULL •
     __sf_util_set_default SPACEFISH_BATTERY_THRESHOLD 10
 
+
+    # ------------------------------------------------------------------------------
+    # Section
+    # ------------------------------------------------------------------------------
+    
+    # Show section only if any of the following is true
+    # - SPACEFISH_BATTERY_SHOW = "always"
+    # - SPACEFISH_BATTERY_SHOW = "true" and
+    #   - battery percentage is below the given limit (default: 10%)
+    # - SPACEFISH_BATTERY_SHOW = "charged" and
+    #   - Battery is fully charged
+    
     # Check that user wants to show battery levels
     if test $SPACEFISH_BATTERY_SHOW = false
         return
