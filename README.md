@@ -57,7 +57,7 @@ To get spacefish working correctly you will need:
 ### [Fisherman](https://fisherman.github.io)
 
 ```fish
-$ fisher matchai/spacefish
+$ fisher spacefish
 ```
 
 ## Customization
