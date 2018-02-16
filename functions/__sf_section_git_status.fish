@@ -30,68 +30,42 @@ function __sf_section_git_status -d "Display the current git status"
 	set -l is_ahead
 	set -l is_behind
 
-	set -l IFS # Clear IFS to allow for multi-line variables
-	set -l index (command git status --porcelain -b ^/dev/null)
+	set -l index (command git status --porcelain ^/dev/null -b)
+	set -l trimmed_index (string split \n $index|cut -c 1-2|sort -u)
 
-	if test $SPACEFISH_GIT_STATUS_SHOW = false
-		return
+	for i in $trimmed_index
+		switch $i
+			case '\?\?'
+				set git_status $SPACEFISH_GIT_STATUS_UNTRACKED $git_status
+			case 'A '
+				set git_status $SPACEFISH_GIT_STATUS_ADDED $git_status 
+			case 'M ' ' M'
+				set git_status $SPACEFISH_GIT_STATUS_MODIFIED $git_status
+			case 'R '
+				set git_status $SPACEFISH_GIT_STATUS_RENAMED $git_status
+			case 'D ' ' D'
+				set git_status $SPACEFISH_GIT_STATUS_DELETED $git_status
+			case 'U*' '*U' 'DD' 'AA'
+				set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
+		end
 	end
 
-	# Check for untracked files
-	if [ (echo $index | command grep -E '^\?\? ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_UNTRACKED $git_status
-	end
-
-	# Check for staged files
-	if [ (echo $index | command grep '^A[ MDAU] ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_ADDED $git_status
-	else if [ (echo $index | command grep '^UA' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_ADDED $git_status
-	end
-
-	# Check for modified files
-	if [ (echo $index | command grep '^M[ MD] ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_MODIFIED $git_status
-	else if [ (echo $index | command grep '^[ MARC]M ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_MODIFIED $git_status
-	end
-
-	# Check for renamed files
-	if [ (echo $index | command grep '^R[ MD] ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_RENAMED $git_status
-	end
-
-	# Check for deleted files
-	if [ (echo $index | command grep '^[MARCDU ]D ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_DELETED $git_status
-	else if [ (echo $index | command grep '^D[ UM] ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_DELETED $git_status
-	end
-
-	# Check for stashed files
-	if [ (command git rev-parse --verify refs/stash ^/dev/null) ]
+	# Check for stashes
+	if test (command git rev-parse --verify refs/stash ^/dev/null)
 		set git_status $SPACEFISH_GIT_STATUS_STASHED $git_status
 	end
 
-	# Check for unmerged files
-	if [ (echo $index | command grep '^U[UDA] ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
-	else if [ (echo $index | command grep '^AA ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
-	else if [ (echo $index | command grep '^DD ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
-	else if [ (echo $index | command grep '^[DA]U ' ^/dev/null) ]
-		set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
-	end
-
+	# Check whether the branch is ahead
 	if [ (echo $index | command grep '^## [^ ]\+ .*ahead' ^/dev/null) ]
 		set is_ahead true
 	end
 
+	# Check whether the branch is behind
 	if [ (echo $index | command grep '^## [^ ]\+ .*behind' ^/dev/null) ]
 		set is_behind true
 	end
 
+	# Check whether the branch has diverged
 	if [ "$is_ahead" = true -a "$is_behind" = true ]
 		set git_status $SPACEFISH_GIT_STATUS_DIVERGED $git_status
 	else if [ "$is_ahead" = true ]
