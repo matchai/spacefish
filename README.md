@@ -60,6 +60,12 @@ To get spacefish working correctly you will need:
 $ fisher spacefish
 ```
 
+### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
+
+```fish
+$ omf install spacefish
+```
+
 ## Customization
 Spacefish works well out of the box, but you can customize almost everything if you want.
 
