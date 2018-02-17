@@ -21,6 +21,7 @@ function __sf_section_git_status -d "Display the current git status"
 	__sf_util_set_default SPACEFISH_GIT_STATUS_AHEAD ⇡
 	__sf_util_set_default SPACEFISH_GIT_STATUS_BEHIND ⇣
 	__sf_util_set_default SPACEFISH_GIT_STATUS_DIVERGED ⇕
+	__sf_util_set_default SPACEFISH_GIT_PROMPT_ORDER untracked added modified renamed deleted unmerged diverged ahead behind
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -36,23 +37,23 @@ function __sf_section_git_status -d "Display the current git status"
 	for i in $trimmed_index
 		switch $i
 			case '\?\?'
-				set git_status $SPACEFISH_GIT_STATUS_UNTRACKED $git_status
+				set git_status untracked $git_status
 			case 'A '
-				set git_status $SPACEFISH_GIT_STATUS_ADDED $git_status 
-			case 'M ' ' M'
-				set git_status $SPACEFISH_GIT_STATUS_MODIFIED $git_status
+				set git_status added $git_status 
+			case 'M ' ' M' 'MM'
+				set git_status modified $git_status
 			case 'R '
-				set git_status $SPACEFISH_GIT_STATUS_RENAMED $git_status
+				set git_status renamed $git_status
 			case 'D ' ' D'
-				set git_status $SPACEFISH_GIT_STATUS_DELETED $git_status
+				set git_status deleted $git_status
 			case 'U*' '*U' 'DD' 'AA'
-				set git_status $SPACEFISH_GIT_STATUS_UNMERGED $git_status
+				set git_status unmerged $git_status
 		end
 	end
 
 	# Check for stashes
 	if test (command git rev-parse --verify refs/stash ^/dev/null)
-		set git_status $SPACEFISH_GIT_STATUS_STASHED $git_status
+		set git_status stashed $git_status
 	end
 
 	# Check whether the branch is ahead
@@ -67,19 +68,30 @@ function __sf_section_git_status -d "Display the current git status"
 
 	# Check whether the branch has diverged
 	if [ "$is_ahead" = true -a "$is_behind" = true ]
-		set git_status $SPACEFISH_GIT_STATUS_DIVERGED $git_status
+		set git_status diverged $git_status
 	else if [ "$is_ahead" = true ]
-		set git_status $SPACEFISH_GIT_STATUS_AHEAD $git_status
+		set git_status ahead $git_status
 	else if [ "$is_behind" = true ]
-		set git_status $SPACEFISH_GIT_STATUS_BEHIND $git_status
+		set git_status behind $git_status
 	end
 
+	set -l full_git_status
+	for i in $SPACEFISH_GIT_PROMPT_ORDER
+		set i (string upper $i)
+		set git_status (string upper $git_status)
+		if contains $i in $git_status
+			set -l status_symbol SPACEFISH_GIT_STATUS_$i
+			set full_git_status $$status_symbol $full_git_status
+		end
+	end
+
+
 	# Check if git status
-	if test -n "$git_status"
+	if test -n "$full_git_status"
 		echo -e -n -s \
 		$SPACEFISH_GIT_STATUS_COLOR \
 		$SPACEFISH_GIT_STATUS_PREFIX \
-		$git_status \
+		$full_git_status \
 		$SPACEFISH_GIT_STATUS_SUFFIX
 	end
 end
