@@ -74,7 +74,7 @@ Spacefish works well out of the box, but you can customize almost everything if 
 
 * [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
 
-You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
+You have the ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
 
 ## License
 
