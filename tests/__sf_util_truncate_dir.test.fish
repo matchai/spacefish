@@ -1,5 +1,5 @@
 source $DIRNAME/../functions/__sf_util_truncate_dir.fish
-set path $DIRNAME/$TESTNAME
+set path /var/tmp/$DIRNAME/$TESTNAME
 
 function setup
 	mkdir -p $path/temp1/temp2/temp3
