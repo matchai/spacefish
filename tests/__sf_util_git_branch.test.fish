@@ -10,6 +10,12 @@ function teardown
 	rm -rf $path
 end
 
+function git_init
+	command git init
+	command git config --local user.email "test@example.com"
+	command git config --local user.name "Test User"
+end
+
 test "identify HEAD before initial commit"
 	'HEAD' = (
 		command git init
@@ -19,9 +25,7 @@ end
 
 test "identify master branch"
 	'master' = (
-		command git init
-		git config --local user.email "test@example.com"
-		git config --local user.name "Test User"
+		git_init
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
 	)
@@ -29,9 +33,7 @@ end
 
 test "indentify an alternate branch name"
 	'testBranch' = (
-		command git init
-		git config --local user.email "test@example.com"
-		git config --local user.name "Test User"
+		git_init
 		command git checkout -b "testBranch"
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
