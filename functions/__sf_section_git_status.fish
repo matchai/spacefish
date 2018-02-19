@@ -61,21 +61,21 @@ function __sf_section_git_status -d "Display the current git status"
 	end
 
 	# Check whether the branch is ahead
-	if [ (echo $index | command grep '^## [^ ]\+ .*ahead' ^/dev/null) ]
+	if test (string match '*ahead*' $index)
 		set is_ahead true
 	end
 
 	# Check whether the branch is behind
-	if [ (echo $index | command grep '^## [^ ]\+ .*behind' ^/dev/null) ]
+	if test (string match '*behind*' $index)
 		set is_behind true
 	end
 
 	# Check whether the branch has diverged
-	if [ "$is_ahead" = true -a "$is_behind" = true ]
+	if test "$is_ahead" = true -a "$is_behind" = true
 		set git_status diverged $git_status
-	else if [ "$is_ahead" = true ]
+	else if test "$is_ahead" = true
 		set git_status ahead $git_status
-	else if [ "$is_behind" = true ]
+	else if test "$is_behind" = true
 		set git_status behind $git_status
 	end
 
