@@ -11,12 +11,6 @@
 
 Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalistic, powerful and extremely customizable [Zsh][zsh] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
 
-## Preview
-
-<p align="center">
-  <img alt="Spaceship with Hyper and One Dark" src="./preview.gif" width="980px">
-</p>
-
 ## Features
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
@@ -49,6 +43,12 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 
 
 Want more features? Please, [open an issue](https://github.com/matchai/spacefish/issues/new) or send pull request.
+
+## Preview
+
+<p align="center">
+  <img alt="Spaceship with Hyper and One Dark" src="./preview.gif" width="980px">
+</p>
 
 ## Requirements
 To get spacefish working correctly you will need:
