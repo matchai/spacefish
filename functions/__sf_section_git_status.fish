@@ -35,19 +35,23 @@ function __sf_section_git_status -d "Display the current git status"
 	set -l trimmed_index (string split \n $index|cut -c 1-2|sort -u)
 
 	for i in $trimmed_index
-		switch $i
-			case '\?\?'
-				set git_status untracked $git_status
-			case 'A '
-				set git_status added $git_status 
-			case 'M ' ' M' 'MM'
-				set git_status modified $git_status
-			case 'R '
-				set git_status renamed $git_status
-			case 'D ' ' D'
-				set git_status deleted $git_status
-			case 'U*' '*U' 'DD' 'AA'
-				set git_status unmerged $git_status
+		if test (string match '\?\?' $i)
+			set git_status untracked $git_status
+		end
+		if test (string match '*A*' $i)
+			set git_status added $git_status
+		end
+		if test (string match '*M*' $i)
+			set git_status modified $git_status
+		end
+		if test (string match '*R*' $i)
+			set git_status renamed $git_status
+		end
+		if test (string match '*D*' $i)
+			set git_status deleted $git_status
+		end
+		if test (string match '*U*' $i)
+			set git_status deleted $git_status
 		end
 	end
 
@@ -84,7 +88,6 @@ function __sf_section_git_status -d "Display the current git status"
 			set full_git_status $$status_symbol $full_git_status
 		end
 	end
-
 
 	# Check if git status
 	if test -n "$full_git_status"
