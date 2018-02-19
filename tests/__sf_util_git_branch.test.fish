@@ -20,6 +20,8 @@ end
 test "identify master branch"
 	'master' = (
 		command git init
+		git config --local user.email "test@example.com"
+		git config --local user.name "Test User"
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
 	)
@@ -28,6 +30,8 @@ end
 test "indentify an alternate branch name"
 	'testBranch' = (
 		command git init
+		git config --local user.email "test@example.com"
+		git config --local user.name "Test User"
 		command git checkout -b "testBranch"
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
