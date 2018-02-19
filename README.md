@@ -4,6 +4,9 @@
 
 # 🚀🐟 Spacefish
 
+[![TravisCI][travis-badge]][travis-url]
+[![Fish Shell][fish-badge]][fish-url]
+
 > A [Fish Shell][fish] prompt for Astronauts.
 
 Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalistic, powerful and extremely customizable [Zsh][zsh] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
@@ -73,11 +76,20 @@ Spacefish works well out of the box, but you can customize almost everything if 
 
 You have ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
 
-[spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[fish]: https://fishshell.com/
-[zsh]: http://zsh.org/
-
-
 ## License
 
 MIT © [Matan Kushner](http://matchai.me)
+
+<!-- Badges -->
+
+[travis-url]: https://travis-ci.org/matchai/spacefish
+[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg
+
+[fish-url]: https://fishshell.com/
+[fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
+
+<!-- Links -->
+
+[spaceship]: https://github.com/denysdovhan/spaceship-prompt
+[fish]: https://fishshell.com/
+[zsh]: http://zsh.org/
