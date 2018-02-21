@@ -21,7 +21,7 @@ function __sf_section_git_status -d "Display the current git status"
 	__sf_util_set_default SPACEFISH_GIT_STATUS_AHEAD ⇡
 	__sf_util_set_default SPACEFISH_GIT_STATUS_BEHIND ⇣
 	__sf_util_set_default SPACEFISH_GIT_STATUS_DIVERGED ⇕
-	__sf_util_set_default SPACEFISH_GIT_PROMPT_ORDER untracked added modified renamed deleted unmerged diverged ahead behind
+	__sf_util_set_default SPACEFISH_GIT_PROMPT_ORDER untracked added modified renamed deleted stashed unmerged diverged ahead behind
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -56,7 +56,7 @@ function __sf_section_git_status -d "Display the current git status"
 	end
 
 	# Check for stashes
-	if test (command git rev-parse --verify refs/stash ^/dev/null)
+	if test -n (echo (command git rev-parse --verify refs/stash ^/dev/null))
 		set git_status stashed $git_status
 	end
 
