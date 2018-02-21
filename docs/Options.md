@@ -6,6 +6,37 @@ Colors for sections can be [basic colors](https://fishshell.com/docs/current/com
 
 **Note:** the symbol `·` in this document represents a regular space character ` `, it is used to clearly indicate when an option default value starts or ends with a space.
 
+### Order
+
+You can specify the order of prompt section using `SPACEFISH_PROMPT_ORDER` option. Use Zsh array syntax to define your own prompt order.
+
+The order also defines which sections that Spaceship loads. If you're struggling with slow prompt, you can just omit the sections that you don't use, and they won't be loaded.
+
+The default order is:
+
+```fish
+	set SPACEFISH_PROMPT_ORDER dir git exec_time line_sep battery char
+```
+
+### Prompt
+
+This group of options defines a behavior of prompt and standard parameters for sections displaying.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_PROMPT_ADD_NEWLINE` | `true` | Adds a newline character before each prompt line |
+| `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
+
+### Char
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
+| `SPACEFISH_CHAR_SUFFIX` | ` ` | Suffix after prompt character |
+| `SPACEFISH_CHAR_SYMBOL` | `➜ ` | Prompt character to be shown before any command |
+| `SPACEFISH_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
+| `SPACEFISH_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |
+
 ### Directory (`dir`)
 
 Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it.
@@ -59,14 +90,6 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_GIT_STATUS_AHEAD` | `⇡` | Indicator for unpushed changes (ahead of remote branch) |
 | `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes (behind of remote branch) |
 | `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages (diverged with remote branch) |
-
-### Char
-
-| Variable | Default | Meaning |
-| :------- | :-----: | ------- |
-| `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
-| `SPACEFISH_CHAR_SUFFIX` | `.` | Suffix after prompt character |
-| `SPACEFISH_CHAR_SYMBOL` | `➜ ` | Prompt character to be shown before any command |
 
 ### Battery (`battery`)
 
