@@ -4,6 +4,5 @@ root = true
 [*]
 end_of_line = lf
 insert_final_newline = true
-
-[*.fish]
+trim_trailing_whitespace = true
 indent_style = tab

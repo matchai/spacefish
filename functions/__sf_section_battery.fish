@@ -28,14 +28,14 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	# ------------------------------------------------------------------------------
 	# Section
 	# ------------------------------------------------------------------------------
-	
+
 	# Show section only if any of the following is true
 	# - SPACEFISH_BATTERY_SHOW = "always"
 	# - SPACEFISH_BATTERY_SHOW = "true" and
 	#	- battery percentage is below the given limit (default: 10%)
 	# - SPACEFISH_BATTERY_SHOW = "charged" and
 	#	- Battery is fully charged
-	
+
 	# Check that user wants to show battery levels
 	if test $SPACEFISH_BATTERY_SHOW = false
 		return
@@ -66,7 +66,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 
 	 # Remove trailing % and symbols for comparison
 	set battery_percent (echo $battery_percent | tr -d "%[,;]")
-	
+
 	if test $battery_percent -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
 		set battery_color green
 	else if test $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD
