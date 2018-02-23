@@ -23,11 +23,7 @@ function fish_prompt
 	end
 
 	for i in $SPACEFISH_PROMPT_ORDER
-		if test $i = echo
-			echo
-		else
-			eval __sf_section_$i
-		end
+		eval __sf_section_$i
 	end
 	set_color normal
 end
