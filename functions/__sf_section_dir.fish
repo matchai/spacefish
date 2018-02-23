@@ -8,11 +8,11 @@ function __sf_section_dir -d "Display the current truncated directory"
 	# ------------------------------------------------------------------------------
 
 	__sf_util_set_default SPACEFISH_DIR_SHOW true
-	# __sf_util_set_default SPACEFISH_DIR_PREFIX "in "
+	__sf_util_set_default SPACEFISH_DIR_PREFIX "in "
 	__sf_util_set_default SPACEFISH_DIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	__sf_util_set_default SPACEFISH_DIR_TRUNC 3
 	__sf_util_set_default SPACEFISH_DIR_TRUNC_REPO true
-	__sf_util_set_default SPACEFISH_DIR_COLOR (set_color --bold cyan)
+	__sf_util_set_default SPACEFISH_DIR_COLOR cyan
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -34,10 +34,9 @@ function __sf_section_dir -d "Display the current truncated directory"
 		set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 	end
 
-	echo -e -n -s \
+	__sf_lib_section \
 	$SPACEFISH_DIR_COLOR \
-	# TODO: Use $SPACEFISH_DIR_PREFIX if there's a section before dir
-	# $SPACEFISH_DIR_PREFIX \
+	$SPACEFISH_DIR_PREFIX \
 	$dir \
 	$SPACEFISH_DIR_SUFFIX
 end

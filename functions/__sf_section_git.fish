@@ -24,10 +24,9 @@ function __sf_section_git -d "Display the git branch and status"
 		return
 	end
 
-	echo -e -n -s \
-	(set_color ffffff) \
+	__sf_lib_section \
+	fff \
 	$SPACEFISH_GIT_PREFIX \
-	(__sf_section_git_branch) \
-	(__sf_section_git_status) \
+	(__sf_section_git_branch)(__sf_section_git_status) \
 	$SPACEFISH_GIT_SUFFIX
 end
