@@ -1,6 +1,6 @@
 function fish_prompt
 	# Store the exit code of the last command
-	set -g __sf_exit_code $status
+	set -g sf_exit_code $status
 
 	# ------------------------------------------------------------------------------
 	# Configuration
