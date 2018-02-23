@@ -10,7 +10,7 @@ function __sf_section_git_status -d "Display the current git status"
 	__sf_util_set_default SPACEFISH_GIT_STATUS_SHOW true
 	__sf_util_set_default SPACEFISH_GIT_STATUS_PREFIX " ["
 	__sf_util_set_default SPACEFISH_GIT_STATUS_SUFFIX ]
-	__sf_util_set_default SPACEFISH_GIT_STATUS_COLOR (set_color red)
+	__sf_util_set_default SPACEFISH_GIT_STATUS_COLOR red
 	__sf_util_set_default SPACEFISH_GIT_STATUS_UNTRACKED \?
 	__sf_util_set_default SPACEFISH_GIT_STATUS_ADDED +
 	__sf_util_set_default SPACEFISH_GIT_STATUS_MODIFIED !
@@ -85,16 +85,14 @@ function __sf_section_git_status -d "Display the current git status"
 		set git_status (string upper $git_status)
 		if contains $i in $git_status
 			set -l status_symbol SPACEFISH_GIT_STATUS_$i
-			set full_git_status $$status_symbol $full_git_status
+			set full_git_status "$$status_symbol$full_git_status"
 		end
 	end
 
 	# Check if git status
 	if test -n "$full_git_status"
-		echo -e -n -s \
+		__sf_lib_section \
 		$SPACEFISH_GIT_STATUS_COLOR \
-		$SPACEFISH_GIT_STATUS_PREFIX \
-		$full_git_status \
-		$SPACEFISH_GIT_STATUS_SUFFIX
+		$SPACEFISH_GIT_STATUS_PREFIX$full_git_status$SPACEFISH_GIT_STATUS_SUFFIX
 	end
 end
