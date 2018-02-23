@@ -10,7 +10,7 @@ Colors for sections can be [basic colors](https://fishshell.com/docs/current/com
 
 You can specify the order of prompt section using `SPACEFISH_PROMPT_ORDER` option. Use Zsh array syntax to define your own prompt order.
 
-The order also defines which sections that Spaceship loads. If you're struggling with slow prompt, you can just omit the sections that you don't use, and they won't be loaded.
+The order also defines which sections that Spacefish loads. If you're struggling with slow prompt, you can just omit the sections that you don't use, and they won't be loaded.
 
 The default order is:
 
