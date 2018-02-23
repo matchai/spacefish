@@ -5,6 +5,7 @@ function __sf_lib_section -a color prefix content suffix
 		set prefix
 	end
 
+	# (sf_prompt_opened or SPACEFISH_PROMPT_FIRST_PREFIX_SHOW) and SPACEFISH_PROMPT_PREFIXES_SHOW
 	if test $sf_prompt_opened = true -a $SPACEFISH_PROMPT_PREFIXES_SHOW = true
 		# Echo prefixes in bold white
 		set_color --bold fff
