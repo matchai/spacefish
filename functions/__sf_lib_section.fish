@@ -5,15 +5,14 @@ function __sf_lib_section -a color prefix content suffix
 		set prefix
 	end
 
-	# Keep track of whether the prompt has already been opened
-	set -g sf_prompt_opened $SPACEFISH_PROMPT_FIRST_PREFIX_SHOW
-
 	if test $sf_prompt_opened = true -a $SPACEFISH_PROMPT_PREFIXES_SHOW = true
 		# Echo prefixes in bold white
 		set_color --bold fff
 		echo -e -n -s $prefix
 		set_color normal
 	end
+
+	# Set the prompt as having been opened
 	set -g sf_prompt_opened true
 
 	set_color --bold $color
