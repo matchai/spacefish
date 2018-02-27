@@ -11,7 +11,7 @@ function __sf_section_exec_time -d "Display the execution time of the last comma
 	__sf_util_set_default SPACEFISH_EXEC_TIME_PREFIX "took "
 	__sf_util_set_default SPACEFISH_EXEC_TIME_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	__sf_util_set_default SPACEFISH_EXEC_TIME_COLOR yellow
-	__sf_util_set_default SPACEFISH_EXEC_TIME_ELAPSED 2
+	__sf_util_set_default SPACEFISH_EXEC_TIME_ELAPSED 5
 
 	# ------------------------------------------------------------------------------
 	# Section
