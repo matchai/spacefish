@@ -1,3 +1,7 @@
+language: node_js
+node_js:
+   - "node"
+
 sudo: required
 before_install:
    - sudo apt-add-repository -y ppa:fish-shell/release-2
@@ -7,3 +11,23 @@ script:
    - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
    - fish -c "fisher fishtape"
    - fish -c "fishtape tests/*.test.fish"
+
+jobs:
+  include:
+    - stage: test
+      install: skip
+      script:
+       - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
+       - fish -c "fisher fishtape"
+       - fish -c "fishtape tests/*.test.fish"
+
+    - stage: deploy gitbook
+      if: branch = master AND type = push
+      node_js: "node"
+      script: npm run docs:build
+      deploy:
+       provider: pages
+       skip-cleanup: true
+       github-token: $GITHUB_TOKEN
+       keep-history: true
+       local-dir: _book
