@@ -1,5 +1,1 @@
-# Summary
-
-* [Home](README.md)
-* [Options](docs/Options.md)
-
+./docs/README.md

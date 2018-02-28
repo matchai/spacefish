@@ -1,5 +1,5 @@
 <a href="https://github.com/matchai/spacefish">
-  <img alt="spacefish fish shell theme" src="./banner.svg" width="100%">
+  <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
 </a>
 
 # 🚀🐟 Spacefish
@@ -47,7 +47,7 @@ Want more features? Please, [open an issue](https://github.com/matchai/spacefish
 ## Preview
 
 <p align="center">
-  <img alt="Spaceship with Hyper and One Dark" src="./preview.gif" width="980px">
+  <img alt="Spaceship with Hyper and One Dark" src="./images/preview.gif" width="980px">
 </p>
 
 ## Requirements

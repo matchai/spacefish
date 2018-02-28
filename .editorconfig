@@ -1,8 +1,12 @@
 root = true
 
-# Unix-style newlines with a newline ending every file
 [*]
+indent_style = tab
 end_of_line = lf
+charset = utf-8
 insert_final_newline = true
 trim_trailing_whitespace = true
-indent_style = tab
+
+[*.{json,yml}]
+indent_style = space
+indent_size = 2
