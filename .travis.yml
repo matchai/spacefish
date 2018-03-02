@@ -2,12 +2,11 @@ language: node_js
 node_js:
    - "node"
 
-sudo: required
-
 jobs:
   include:
     - stage: test
       install: skip
+      sudo: required
       before_install:
        - sudo apt-add-repository -y ppa:fish-shell/release-2
        - sudo apt-get update
