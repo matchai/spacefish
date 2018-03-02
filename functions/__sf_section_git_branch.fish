@@ -16,9 +16,7 @@ function __sf_section_git_branch -d "Format the displayed branch name"
 	# Section
 	# ------------------------------------------------------------------------------
 
-	if test $SPACEFISH_GIT_BRANCH_SHOW = false
-		return
-	end
+	[ $SPACEFISH_GIT_BRANCH_SHOW = false ]; and return
 
 	__sf_lib_section \
 	$SPACEFISH_GIT_BRANCH_COLOR \

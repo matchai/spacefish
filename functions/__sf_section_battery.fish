@@ -37,9 +37,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	#	- Battery is fully charged
 
 	# Check that user wants to show battery levels
-	if test $SPACEFISH_BATTERY_SHOW = false
-		return
-	end
+	[ $SPACEFISH_BATTERY_SHOW = false ]; and return
 
 	set -l battery_data
 	set -l battery_percent

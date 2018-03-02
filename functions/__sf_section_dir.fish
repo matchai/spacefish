@@ -18,13 +18,11 @@ function __sf_section_dir -d "Display the current truncated directory"
 	# Section
 	# ------------------------------------------------------------------------------
 
-	if test $SPACEFISH_DIR_SHOW = false
-		return
-	end
+	[ $SPACEFISH_DIR_SHOW = false ]; and return
 
 	set -l dir
 
-	if test (__sf_util_git_branch)
+	if test $SPACEFISH_DIR_TRUNC_REPO = true -a (__sf_util_git_branch)
 		set -l git_root (git rev-parse --show-toplevel)
 		# Treat repo root as top level directory
 		set dir (string replace $git_root (basename $git_root) $PWD)

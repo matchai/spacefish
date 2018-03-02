@@ -13,7 +13,7 @@ function __sf_section_line_sep -d "Separate the prompt into two lines"
 	# Section
 	# ------------------------------------------------------------------------------
 
-	if test $SPACEFISH_PROMPT_SEPARATE_LINE != false
-		echo -e -n -s \n
+	if test $SPACEFISH_PROMPT_SEPARATE_LINE = true
+		echo -e -n \n
 	end
 end
