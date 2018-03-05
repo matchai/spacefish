@@ -23,8 +23,8 @@
 ## Environment
 <!--- Include as many relevant details about the environment you experienced the bug in -->
 - **Fish shell version** (use `fish --version`): 
-- **fish Plugin Manager** (none/oh-my-fish/fisherman/etc):
-- **terminal software** (iTerm/Hyper/Cygwin/etc):
+- **Fish plugin manager** (none/oh-my-fish/fisherman/etc):
+- **Terminal software** (iTerm/Hyper/Cygwin/etc):
 - **Operating System** (macOS/Windows/Linux):
 
 ## Relevant `config.fish`
