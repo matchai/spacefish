@@ -13,7 +13,9 @@
 ## Current Behaviour
 
 ## Environment
-- **spacefish Version**:
+- **fish Version**:
+- **fish Plugin Manager (oh-my-fish/fisherman)**:
+- **terminal software**:
 - **Device OS**:
 - **Device Type**:
 - ...
