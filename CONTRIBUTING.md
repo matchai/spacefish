@@ -6,7 +6,7 @@ First of all, thank you for contributing. Any contribution is highly appreciated
 
 There's a simple philosophy behind Spacefish:
 
-* **Absolute pairity with spaceship-prompt.** The prompt should be identical to spaceship-prompt when it comes to visuals, functionality, and configuration.
+* **Absolute parity with spaceship-prompt.** The prompt should be identical to spaceship-prompt when it comes to visuals, functionality, and configuration.
 
 
 ## Setup
