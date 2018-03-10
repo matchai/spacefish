@@ -20,7 +20,6 @@ Closes #
 <!--- Please describe in detail how you tested your changes. -->
 <!--- Include details of your testing environment, tests ran to see how -->
 <!--- your change affects other areas of the code, etc. -->
-- [ ] I have tested using **Windows**
 - [ ] I have tested using **MacOS**
 - [ ] I have tested using **Linux**
 
