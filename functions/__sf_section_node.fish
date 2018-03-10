@@ -26,31 +26,29 @@ function __sf_section_node -d "Display the local node version"
 		return
 	end
 
-	set -l node_version
-
 	if type -q nvm
-		set node_version (nvm current ^/dev/null)
-		if test $node_version = "system" -o $node_version = "node"
-			return
+		# Only recheck the node version if the nvm bin has changed
+		if test "$NVM_BIN" != "$sf_last_nvm_bin" -o -z "$sf_node_version"
+			set -g sf_node_version (nvm current ^/dev/null)
+			set -g sf_last_nvm_bin $NVM_BIN
 		end
 	else if type -q nodenv
-		set node_version (nodenv version-name ^/dev/null)
-		if test $node_version = "system" -o $node_version = "node"
-			return
-		end
+		set -g sf_node_version (nodenv version-name ^/dev/null)
 	else if type -q node
 		set node_version (node -v ^/dev/null)
 	else
 		return
 	end
 
-	if test $node_version = $SPACEFISH_NODE_DEFAULT_VERSION
-		return
-	end
+	# Don't echo section if the system verison of node is being used
+	[ "$sf_node_version" = "system" -o "$sf_node_version" = "node" ]; and return
+
+	# Don't echo section if the node version matches the default version
+	[ "$sf_node_version" = "$SPACEFISH_NODE_DEFAULT_VERSION" ]; and return
 
 	__sf_lib_section \
 	$SPACEFISH_NODE_COLOR \
 	$SPACEFISH_NODE_PREFIX \
-	"$SPACEFISH_NODE_SYMBOL$node_version" \
+	"$SPACEFISH_NODE_SYMBOL$sf_node_version" \
 	$SPACEFISH_NODE_SUFFIX
 end
