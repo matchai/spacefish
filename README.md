@@ -14,6 +14,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 ## Features
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
+* Current Node.js version, through nvm/nodenv/node (`⬢`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
   * `+` — uncommitted changes in the index;
@@ -34,7 +35,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Displaying hostname/username
 * Indicator if user is root
 * Indicator for jobs in the background (`✦`).
-* Current Node.js version, through nvm/nodenv/n (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby (`💎`).
 * Current Python pyenv (`🐍`).
 * Package version, if there's is a package in current directory (`📦`).
