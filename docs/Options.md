@@ -96,6 +96,21 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
 | `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
 
+### Node.js (`node`)
+
+Node.js section is shown only in directories that contain `package.json` file, or `node_modules` folder, or any other file with `.js` extension.
+
+If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and your current version is the same as `SPACEFISH_NODE_DEFAULT_VERSION`, then Node.js section will be hidden.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_NODE_SHOW` | `true` | Current Node.js section |
+| `SPACEFISH_NODE_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Node.js section |
+| `SPACEFISH_NODE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Node.js section |
+| `SPACEFISH_NODE_SYMBOL` | `⬢·` | Character to be shown before Node.js version |
+| `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
+| `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
+
 ### Battery \(`battery`\)
 
 By default, Battery section is shown only if battery level is below `SPACEFISH_BATTERY_THRESHOLD` \(default: 10%\).

@@ -9,5 +9,6 @@
   * [Git (git)](./docs/Options.md#git-git)
     * [Git branch (git_branch)](./docs/Options.md#git-branch-gitbranch)
     * [Git status (git_status)](./docs/Options.md#git-status-gitstatus)
+  * [Node (node)](./docs/Options.md#node-node)
   * [Execution time (exec_time)](./docs/Options.md#execution-time-exec_time)
   * [Battery (battery)](./docs/Options.md#battery-battery)
