@@ -12,6 +12,7 @@
 Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalistic, powerful and extremely customizable [Zsh][zsh] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
 
 ## Features
+* Indicator if user is root
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Node.js version, through nvm/nodenv/node (`⬢`).
@@ -33,7 +34,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 
 ### Upcoming features
 * Displaying hostname/username
-* Indicator if user is root
 * Indicator for jobs in the background (`✦`).
 * Current Ruby version, through rvm/rbenv/chruby (`💎`).
 * Current Python pyenv (`🐍`).
