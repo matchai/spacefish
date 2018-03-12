@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER dir git exec_time line_sep battery char
+    set SPACEFISH_PROMPT_ORDER user dir git node exec_time line_sep battery char
 ```
 
 ### Prompt
@@ -41,6 +41,27 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `SPACEFISH_CHAR_SYMBOL` | `➜` | Prompt character to be shown before any command |
 | `SPACEFISH_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
 | `SPACEFISH_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |
+
+### Username (`user`)
+
+By default, a username is shown only when it's not the same as `$LOGNAME`, when you're connected via SSH or when you're root. Root user is highlighted in `SPACEFISH_USER_COLOR_ROOT` color (red as default).
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_USER_SHOW` | `true` | Show user section (`true`, `false`, `always` or `needed`) |
+| `SPACEFISH_USER_PREFIX` | `with·` | Prefix before user section |
+| `SPACEFISH_USER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after user section |
+| `SPACEFISH_USER_COLOR` | `yellow` | Color of user section |
+| `SPACEFISH_USER_COLOR_ROOT` | `red` | Color of user section when it's root |
+
+`SPACEFISH_USER_SHOW` defines when to show username section. Here are possible values:
+
+| `SPACEFISH_USER_SHOW` | Show on local  | Show on remote  |
+| :-------------------: | :------------- | :-------------- |
+| `false`               | Never          | Never           |
+| `always`              | Always         | Always          |
+| `true`                | If needed      | Always          |
+| `needed`              | If needed      | If needed       |
 
 ### Directory \(`dir`\)
 
