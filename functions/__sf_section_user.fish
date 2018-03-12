@@ -26,12 +26,12 @@ function __sf_section_user -d "Display the username"
 	# Section
 	# ------------------------------------------------------------------------------
 
-	if test $SPACEFISH_USER_SHOW = false
-		return
-	end
+	[ $SPACEFISH_USER_SHOW = false ]; and return
 
-	if test $SPACEFISH_USER_SHOW = always \
-	-o $LOGNAME != $USER
+	if test "$SPACEFISH_USER_SHOW" = "always" \
+	-o "$LOGNAME" != "$USER" \
+	-o "$UID" = "0" \
+	-o \( "$SPACEFISH_USER_SHOW" = "true" -a -n "$SSH_CONNECTION" \)
 
 		set -l user_color
 		if test $USER = root
