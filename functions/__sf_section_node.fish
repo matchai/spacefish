@@ -35,7 +35,7 @@ function __sf_section_node -d "Display the local node version"
 	else if type -q nodenv
 		set -g sf_node_version (nodenv version-name ^/dev/null)
 	else if type -q node
-		set node_version (node -v ^/dev/null)
+		set -g sf_node_version (node -v ^/dev/null)
 	else
 		return
 	end

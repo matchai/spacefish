@@ -22,6 +22,9 @@ jobs:
       script: npm run docs:build
       deploy:
        provider: pages
+       # Temporary fix for https://github.com/travis-ci/travis-ci/issues/9312
+       edge:
+         branch: v1.8.47
        skip-cleanup: true
        github-token: $GITHUB_TOKEN
        keep-history: true
