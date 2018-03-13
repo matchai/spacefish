@@ -22,7 +22,7 @@ function __sf_section_dir -d "Display the current truncated directory"
 
 	set -l dir
 
-	if test $SPACEFISH_DIR_TRUNC_REPO = true -a (__sf_util_git_branch)
+	if test "$SPACEFISH_DIR_TRUNC_REPO" = "true" -a (__sf_util_git_branch)
 		# Derive repo root from its git directory
 		set -l git_root (string replace '/.git' '' (git rev-parse --absolute-git-dir))
 		# Treat repo root as top level directory

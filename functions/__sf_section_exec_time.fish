@@ -19,7 +19,7 @@ function __sf_section_exec_time -d "Display the execution time of the last comma
 
 	[ $SPACEFISH_EXEC_TIME_SHOW = false ]; and return
 
-	if test -n $CMD_DURATION -a $CMD_DURATION -gt (math "$SPACEFISH_EXEC_TIME_ELAPSED * 1000")
+	if test -n "$CMD_DURATION" -a "$CMD_DURATION" -gt (math "$SPACEFISH_EXEC_TIME_ELAPSED * 1000")
 		set -l command_duration (echo $CMD_DURATION | __sf_util_human_time)
 		__sf_lib_section \
 		$SPACEFISH_EXEC_TIME_COLOR \

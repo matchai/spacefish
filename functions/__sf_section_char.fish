@@ -21,7 +21,7 @@ function __sf_section_char -d "Display the prompt character"
 	# color it in green if the command succeeded.
 	set -l color
 
-	if test $sf_exit_code -eq 0
+	if test "$sf_exit_code" -eq 0
 		set color $SPACEFISH_CHAR_COLOR_SUCCESS
 	else
 		set color $SPACEFISH_CHAR_COLOR_FAILURE
