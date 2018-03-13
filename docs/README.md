@@ -5,6 +5,7 @@
   * [Order](./docs/Options.md#order)
   * [Prompt](./docs/Options.md#prompt)
   * [Char (char)](./docs/Options.md#char)
+	* [Username (user)](./docs/Options.md#username-user)
   * [Directory (dir)](./docs/Options.md#directory-dir)
   * [Git (git)](./docs/Options.md#git-git)
     * [Git branch (git_branch)](./docs/Options.md#git-branch-gitbranch)
