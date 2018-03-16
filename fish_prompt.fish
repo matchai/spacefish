@@ -21,7 +21,7 @@ function fish_prompt
 	# Keep track of whether the prompt has already been opened
 	set -g sf_prompt_opened $SPACEFISH_PROMPT_FIRST_PREFIX_SHOW
 
-	if test $SPACEFISH_PROMPT_ADD_NEWLINE
+	if test "$SPACEFISH_PROMPT_ADD_NEWLINE" = "true"
 		echo
 	end
 

@@ -65,16 +65,16 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	 # Remove trailing % and symbols for comparison
 	set battery_percent (echo $battery_percent | tr -d "%[,;]")
 
-	if test $battery_percent -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
+	if test "$battery_percent" -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
 		set battery_color green
-	else if test $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD
+	else if test "$battery_percent" -lt "$SPACEFISH_BATTERY_THRESHOLD"
 		set battery_color red
 	else
 		set battery_color yellow
 	end
 
 	# Battery indicator based on current status of battery
-	if test $battery_status = charging
+	if test "$battery_status" = "charging"
 		set battery_symbol $SPACEFISH_BATTERY_SYMBOL_CHARGING
 	else if test -n (echo (string match -r "^[dD]ischarg.*" $battery_status))
 		set battery_symbol $SPACEFISH_BATTERY_SYMBOL_DISCHARGING
@@ -82,7 +82,10 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_symbol $SPACEFISH_BATTERY_SYMBOL_FULL
 	end
 
-	if test $SPACEFISH_BATTERY_SHOW = always -o $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD -o $SPACEFISH_BATTERY_SHOW = charged -a -n (echo (string match -r "(charged|full)" $battery_status))
+	if test "$SPACEFISH_BATTERY_SHOW" = "always" \
+	-o "$battery_percent" -lt "$SPACEFISH_BATTERY_THRESHOLD" \
+	-o "$SPACEFISH_BATTERY_SHOW" = "charged" \
+	-a -n (echo (string match -r "(charged|full)" $battery_status))
 		__sf_lib_section \
 		$battery_color \
 		$SPACEFISH_BATTERY_PREFIX \
