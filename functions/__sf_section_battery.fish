@@ -69,11 +69,9 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set -l IFS # Clear IFS to allow for multi-line variables
 		set battery_data (upower -i $battery)
 
-		# Using $battery_data instead of upower -i $battery directly
-		# causes it to error out.
 		set battery_percent (echo $battery_data | grep percentage | awk '{print $2}')
 
-		set battery_status (upower -i $battery | grep state | awk '{print $2}')
+		set battery_status (echo $battery_data | grep state | awk '{print $2}')
 	else
 		return
 	end
