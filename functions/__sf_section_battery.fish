@@ -67,7 +67,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 
 	if test "$battery_percent" -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
 		set battery_color green
-	else if test $battery_percent -lt $SPACEFISH_BATTERY_THRESHOLD
+	else if test "$battery_percent" -lt "$SPACEFISH_BATTERY_THRESHOLD"
 		set battery_color red
 	else
 		set battery_color yellow
