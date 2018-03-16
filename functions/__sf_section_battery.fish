@@ -24,7 +24,6 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	__sf_util_set_default SPACEFISH_BATTERY_SYMBOL_FULL •
 	__sf_util_set_default SPACEFISH_BATTERY_THRESHOLD 10
 
-
 	# ------------------------------------------------------------------------------
 	# Section
 	# ------------------------------------------------------------------------------
@@ -45,7 +44,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	set -l battery_color
 	set -l battery_symbol
 
-	# TODO: Add upower and acpi. Not yet added because unable to test at the moment of integration
+	# TODO: Add acpi for Windows
 	# Darwin and macOS machines
 	if type -q pmset
 		set battery_data (pmset -g batt)
@@ -58,6 +57,17 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_percent (echo $battery_data | grep -oE "[0-9]{1,3}%")
 		# spaceship has echo $battery_data | awk -F '; *' 'NR==2 { print $2 }', but NR==2 did not return anything.
 		set battery_status (echo $battery_data | awk -F '; *' '{ print $2 }')
+
+	# Linux machines
+	else if type -q upower
+		set -l battery (upower -e | grep battery | head -1)
+
+		[ -z $battery ]; and return
+
+		set -l IFS # Clear IFS to allow for multi-line variables
+		set battery_data (upower -i $battery)
+		set battery_percent (echo $battery_data | grep percentage | awk '{print $2}')
+		set battery_status (echo $battery_data | grep state | awk '{print $2}')
 	else
 		return
 	end
