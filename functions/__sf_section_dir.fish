@@ -8,24 +8,23 @@ function __sf_section_dir -d "Display the current truncated directory"
 	# ------------------------------------------------------------------------------
 
 	__sf_util_set_default SPACEFISH_DIR_SHOW true
-	# __sf_util_set_default SPACEFISH_DIR_PREFIX "in "
+	__sf_util_set_default SPACEFISH_DIR_PREFIX "in "
 	__sf_util_set_default SPACEFISH_DIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	__sf_util_set_default SPACEFISH_DIR_TRUNC 3
 	__sf_util_set_default SPACEFISH_DIR_TRUNC_REPO true
-	__sf_util_set_default SPACEFISH_DIR_COLOR (set_color --bold cyan)
+	__sf_util_set_default SPACEFISH_DIR_COLOR cyan
 
 	# ------------------------------------------------------------------------------
 	# Section
 	# ------------------------------------------------------------------------------
 
-	if test $SPACEFISH_DIR_SHOW = false
-		return
-	end
+	[ $SPACEFISH_DIR_SHOW = false ]; and return
 
 	set -l dir
 
-	if test (__sf_util_git_branch)
-		set -l git_root (git rev-parse --show-toplevel)
+	if test "$SPACEFISH_DIR_TRUNC_REPO" = "true" -a (__sf_util_git_branch)
+		# Derive repo root from its git directory
+		set -l git_root (string replace '/.git' '' (git rev-parse --absolute-git-dir))
 		# Treat repo root as top level directory
 		set dir (string replace $git_root (basename $git_root) $PWD)
 	else
@@ -34,10 +33,9 @@ function __sf_section_dir -d "Display the current truncated directory"
 		set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 	end
 
-	echo -e -n -s \
+	__sf_lib_section \
 	$SPACEFISH_DIR_COLOR \
-	# TODO: Use $SPACEFISH_DIR_PREFIX if there's a section before dir
-	# $SPACEFISH_DIR_PREFIX \
+	$SPACEFISH_DIR_PREFIX \
 	$dir \
 	$SPACEFISH_DIR_SUFFIX
 end

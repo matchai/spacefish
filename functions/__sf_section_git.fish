@@ -20,14 +20,16 @@ function __sf_section_git -d "Display the git branch and status"
 	#   spacefish_git_branch
 	#   spacefish_git_status
 
-	if test $SPACEFISH_GIT_SHOW = false -o -z (__sf_util_git_branch)
-		return
-	end
+	[ $SPACEFISH_GIT_SHOW = false ]; and return
 
-	echo -e -n -s \
-	(set_color ffffff) \
+	set -l git_branch (__sf_section_git_branch)
+	set -l git_status (__sf_section_git_status)
+
+	[ -z $git_branch ]; and return
+
+	__sf_lib_section \
+	fff \
 	$SPACEFISH_GIT_PREFIX \
-	(__sf_section_git_branch) \
-	(__sf_section_git_status) \
+	"$git_branch$git_status" \
 	$SPACEFISH_GIT_SUFFIX
 end
