@@ -8,6 +8,7 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------
+
 	__sf_util_set_default SPACEFISH_RUBY_SHOW true
 	__sf_util_set_default SPACEFISH_RUBY_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_RUBY_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
@@ -42,7 +43,6 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	if test -n (echo (string match -r "^[0-9].+\$" "$ruby_version"))
 		set ruby_version "v$ruby_version"
 	end
-	# [ -n (echo (string match -r "^[0-9].+\$" $ruby_version)) ]; and set ruby_version "v$ruby_version"
 
 	__sf_lib_section \
 	$SPACEFISH_RUBY_COLOR \
