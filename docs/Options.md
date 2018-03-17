@@ -117,6 +117,22 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
 | `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
 
+### Package version (`package`)
+
+> Works only for [npm](https://www.npmjs.com/) at the moment. Please, help spaceship improve this section!
+
+Package version is shown when repository is a package (e.g. contains a `package.json` file).
+
+> **Note:** This is the version of the package you are working on, not the version of package manager itself.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_PACKAGE_SHOW` | `true` | Show package version |
+| `SPACEFISH_PACKAGE_PREFIX` | `is·` | Prefix before package version section |
+| `SPACEFISH_PACKAGE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after package version section |
+| `SPACEFISH_PACKAGE_SYMBOL` | `📦·` | Character to be shown before package version |
+| `SPACEFISH_PACKAGE_COLOR` | `red` | Color of package version section |
+
 ### Node.js (`node`)
 
 Node.js section is shown only in directories that contain `package.json` file, or `node_modules` folder, or any other file with `.js` extension.
