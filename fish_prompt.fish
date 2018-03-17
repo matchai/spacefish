@@ -12,7 +12,7 @@ function fish_prompt
 	__sf_util_set_default SPACEFISH_PROMPT_SUFFIXES_SHOW true
 	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_PREFIX "via "
 	__sf_util_set_default SPACEFISH_PROMPT_DEFAULT_SUFFIX " "
-	__sf_util_set_default SPACEFISH_PROMPT_ORDER user dir git node exec_time line_sep battery char
+	__sf_util_set_default SPACEFISH_PROMPT_ORDER user dir git package node exec_time line_sep battery char
 
 	# ------------------------------------------------------------------------------
 	# Sections
