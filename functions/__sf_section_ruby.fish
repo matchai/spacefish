@@ -37,7 +37,7 @@ function __sf_section_ruby -d "Show current version of Ruby"
 		return
 	end
 
-	[ -z $ruby_version -o "$ruby_version" = "system" ]; and return
+	[ -z "$ruby_version" -o "$ruby_version" = "system" ]; and return
 
 	# Add 'v' before ruby version that starts with a number
 	if test -n (echo (string match -r "^[0-9].+\$" "$ruby_version"))
