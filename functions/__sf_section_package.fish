@@ -30,7 +30,7 @@ function __sf_section_package -d "Display the local package version"
 	set -l version_line (grep -E '"version": "v?([0-9]+\.){1,}' package.json)
 	set -l package_version (string split \" $version_line)[4]
 
-	if test -z $package_version
+	if test -z "$package_version"
 		set package_version ⚠
 	else
 		set package_version "v$package_version"
