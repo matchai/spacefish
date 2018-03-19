@@ -1,3 +1,4 @@
+source $DIRNAME/../functions/__sf_util_set_default.fish
 source $DIRNAME/../functions/__sf_section_char.fish
 
 test "Display default char with status code 0"
