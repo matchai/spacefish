@@ -10,4 +10,4 @@ end
 # Install fishtape and local spacefish into temp env
 env HOME=$testDir fish -c "fisher fishtape $gitRoot"
 env HOME=$testDir fish -c "fisher update $gitRoot"
-env HOME=$testDir fish -c "fishtape $testDir/*.test.fish"
+env HOME=$testDir fish -c "fishtape $testDir/*.test.fish ^/dev/null"

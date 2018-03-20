@@ -34,7 +34,7 @@ end
 test "indentify an alternate branch name"
 	'testBranch' = (
 		git_init
-		command git checkout -b "testBranch"
+		command git checkout -b "testBranch" ^/dev/null
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
 	)
