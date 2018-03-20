@@ -1,5 +1,5 @@
 source $DIRNAME/../functions/__sf_util_git_branch.fish
-set path /var/tmp/$DIRNAME/$TESTNAME
+set path /tmp/$DIRNAME/$TESTNAME
 
 function setup
 	mkdir -p $path/tempGit
