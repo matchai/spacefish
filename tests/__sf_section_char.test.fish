@@ -1,7 +1,3 @@
-source $DIRNAME/../functions/__sf_section_char.fish
-
-# Default functionality
-
 function setup
 	fish_prompt>/dev/null
 end
