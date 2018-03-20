@@ -1,7 +1,3 @@
 node_modules/
 _book/
-
-# Unit test temp files
-.config/
-.cache/
-.local/
+tmp/
