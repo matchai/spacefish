@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 set -l gitRoot (git rev-parse --show-toplevel)
 set -l testDir (dirname (status --current-filename))
-set -l tmpDir $gitRoot/tmp/spacefish
+set -l tmpDir /tmp/spacefish
 
 # Install fisher if not installed in temporary fish env
 if test ! -f $tmpDir/.config/fish/functions/fisher.fish
