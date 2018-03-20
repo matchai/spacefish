@@ -1,13 +1,17 @@
 function setup
-	fish_prompt>/dev/null
+	fish_prompt >/dev/null
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
-	mkdir -p /tmp/tmp-spacefish/dir1/dir2
+	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
 end
 
 function teardown
 	rm -rf ~/.tmp-spacefish
 	rm -rf /tmp/tmp-spacefish
 end
+
+#
+# Home directory
+#
 
 test "Correctly truncates home directory"
 	(
@@ -25,7 +29,7 @@ test "Correctly truncates home directory"
 	) = (__sf_section_dir)
 end
 
-test "Correctly truncates home subdirectory"
+test "Correctly truncates a home subdirectory"
 	(
 		cd ~/.tmp-spacefish/dir1/
 
@@ -41,7 +45,7 @@ test "Correctly truncates home subdirectory"
 	) = (__sf_section_dir)
 end
 
-test "Correctly truncates deeply nested home subdirectory"
+test "Correctly truncates a deeply nested home subdirectory"
 	(
 		cd ~/.tmp-spacefish/dir1/dir2
 
@@ -56,6 +60,10 @@ test "Correctly truncates deeply nested home subdirectory"
 		set_color normal
 	) = (__sf_section_dir)
 end
+
+#
+# Root directory
+#
 
 test "Correctly truncates root directory"
 	(
@@ -73,7 +81,7 @@ test "Correctly truncates root directory"
 	) = (__sf_section_dir)
 end
 
-test "Correctly truncates root subdirectory"
+test "Correctly truncates a root subdirectory"
 	(
 		cd /usr
 
@@ -89,7 +97,7 @@ test "Correctly truncates root subdirectory"
 	) = (__sf_section_dir)
 end
 
-test "Correctly truncates deeply nested root subdirectory"
+test "Correctly truncates a deeply nested root subdirectory"
 	(
 		cd /tmp/tmp-spacefish/dir1/dir2
 
@@ -105,3 +113,79 @@ test "Correctly truncates deeply nested root subdirectory"
 	) = (__sf_section_dir)
 end
 
+#
+# Git directory
+#
+
+test "Correctly truncates the root of a git directory"
+	(
+		cd /tmp/tmp-spacefish
+		command git init >/dev/null
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp-spacefish"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Correctly truncates a git subdirectory"
+	(
+		cd /tmp/tmp-spacefish
+		command git init >/dev/null
+		cd /tmp/tmp-spacefish/dir1
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp-spacefish/dir1"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Correctly truncates a deeply nested git subdirectory"
+	(
+		cd /tmp/tmp-spacefish
+		command git init >/dev/null
+		cd /tmp/tmp-spacefish/dir1/dir2/dir3
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "dir1/dir2/dir3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Correctly truncates the root of a git directory within another"
+	(
+		cd /tmp/tmp-spacefish
+		command git init >/dev/null
+
+		cd /tmp/tmp-spacefish/dir1
+		command git init >/dev/null
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "dir1"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
