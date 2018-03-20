@@ -1,12 +1,12 @@
 function setup
 	fish_prompt>/dev/null
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
-	mkdir -p /tmp/tmp-spacefish/dir1/dir2
+	mkdir -p /private/tmp/tmp-spacefish/dir1/dir2
 end
 
 function teardown
 	rm -rf ~/.tmp-spacefish
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /private/tmp/tmp-spacefish
 end
 
 test "Correctly truncates home directory"
