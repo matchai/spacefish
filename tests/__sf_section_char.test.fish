@@ -2,7 +2,7 @@ function setup
 	fish_prompt>/dev/null
 end
 
-test "Display default char with status code 0"
+test "Displays default char with status code 0"
 	(
 		set sf_exit_code 0
 
@@ -18,7 +18,7 @@ test "Display default char with status code 0"
 	) = (__sf_section_char)
 end
 
-test "Display default char with status code 1"
+test "Displays default char with status code 1"
 	(
 		set sf_exit_code 1
 
