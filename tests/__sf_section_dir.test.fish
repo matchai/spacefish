@@ -1,12 +1,12 @@
 function setup
 	fish_prompt>/dev/null
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
-	mkdir -p /private/tmp/tmp-spacefish/dir1/dir2
+	mkdir -p /usr/tmp-spacefish/dir1/dir2
 end
 
 function teardown
 	rm -rf ~/.tmp-spacefish
-	rm -rf /private/tmp/tmp-spacefish
+	rm -rf /usr/tmp-spacefish
 end
 
 test "Correctly truncates home directory"
@@ -75,13 +75,13 @@ end
 
 test "Correctly truncates root subdirectory"
 	(
-		cd /private/tmp
+		cd /usr
 
 		set_color --bold fff
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
-		echo -n "/private/tmp"
+		echo -n "/usr"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -91,7 +91,7 @@ end
 
 test "Correctly truncates deeply nested root subdirectory"
 	(
-		cd /tmp/tmp-spacefish/dir1/dir2
+		cd /usr/tmp-spacefish/dir1/dir2
 
 		set_color --bold fff
 		echo -n "in "
