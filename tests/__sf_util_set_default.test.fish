@@ -1,5 +1,3 @@
-source $DIRNAME/../functions/__sf_util_set_default.fish
-
 test "Sets a variable"
 	'default_value' = (
 		__sf_util_set_default my_var 'default_value'

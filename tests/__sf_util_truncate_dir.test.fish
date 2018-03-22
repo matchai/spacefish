@@ -1,4 +1,3 @@
-source $DIRNAME/../functions/__sf_util_truncate_dir.fish
 set path /tmp/$DIRNAME/$TESTNAME
 
 function setup

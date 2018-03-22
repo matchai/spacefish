@@ -1,5 +1,3 @@
-source $DIRNAME/../functions/__sf_util_human_time.fish
-
 test "Shows milliseconds"
 	'1ms' = (
 		echo 1 | __sf_util_human_time my_var

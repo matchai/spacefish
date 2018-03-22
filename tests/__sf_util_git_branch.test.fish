@@ -1,4 +1,3 @@
-source $DIRNAME/../functions/__sf_util_git_branch.fish
 set path /tmp/$DIRNAME/$TESTNAME
 
 function setup
