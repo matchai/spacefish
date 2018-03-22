@@ -35,3 +35,54 @@ test "Displays default char with status code 1"
 		set_color normal
 	) = (__sf_section_char)
 end
+
+test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
+	(
+		set sf_exit_code 0
+		set -gx SPACEFISH_CHAR_SYMBOL ·
+
+		set_color --bold fff
+		echo -n ""
+		set_color normal
+		set_color --bold green
+		echo -n "·"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_char)
+end
+
+test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
+	(
+		set sf_exit_code 0
+		set -gx SPACEFISH_CHAR_PREFIX ·
+
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+		set_color --bold green
+		echo -n "➜"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_char)
+end
+
+test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
+	(
+		set sf_exit_code 0
+		set -gx SPACEFISH_CHAR_SUFFIX ·
+
+		set_color --bold fff
+		echo -n ""
+		set_color normal
+		set_color --bold green
+		echo -n "➜"
+		set_color normal
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+	) = (__sf_section_char)
+end
