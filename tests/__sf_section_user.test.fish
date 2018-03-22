@@ -1,5 +1,7 @@
+source $DIRNAME/spacefish_setup.fish
+
 function setup
-	fish_prompt>/dev/null
+	spacefish_setup
 end
 
 test "Display user when different from logname"

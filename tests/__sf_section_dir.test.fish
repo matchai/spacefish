@@ -1,5 +1,7 @@
+source $DIRNAME/spacefish_setup.fish
+
 function setup
-	fish_prompt >/dev/null
+	spacefish_setup
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
 end

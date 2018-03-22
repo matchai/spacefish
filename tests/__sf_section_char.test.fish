@@ -1,5 +1,7 @@
+source $DIRNAME/spacefish_setup.fish
+
 function setup
-	fish_prompt>/dev/null
+	spacefish_setup
 end
 
 test "Displays default char with status code 0"
