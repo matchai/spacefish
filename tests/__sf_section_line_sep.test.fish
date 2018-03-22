@@ -1,7 +1,7 @@
-source $DIRNAME/spacefish_setup.fish
+source $DIRNAME/spacefish_test_setup.fish
 
 function setup
-	spacefish_setup
+	spacefish_test_setup
 end
 
 test "Echoes a line break"
