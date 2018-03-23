@@ -191,3 +191,101 @@ test "Correctly truncates the root of a git directory within another"
 		set_color normal
 	) = (__sf_section_dir)
 end
+
+#
+# Configuration
+#
+
+test "Doesn't show if SPACEFISH_DIR_SHOW is false"
+	(
+		set SPACEFISH_DIR_SHOW false
+	) = (__sf_section_dir)
+end
+
+test "Changing SPACEFISH_DIR_PREFIX changes the dir prefix"
+	(
+		set SPACEFISH_DIR_PREFIX ·
+		cd ~
+
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+		set_color --bold cyan
+		echo -n "~"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Changing SPACEFISH_DIR_SUFFIX changes the dir prefix"
+	(
+		set SPACEFISH_DIR_SUFFIX ·
+		cd ~
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "~"
+		set_color normal
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+# SPACEFISH_DIR_TRUNC functionality is further tested in:
+# __sf_util_truncate_dir.test.fish
+test "Changing SPACEFISH_DIR_TRUNC changes the dir length"
+	(
+		set SPACEFISH_DIR_TRUNC 1
+		cd /tmp/tmp-spacefish/dir1/dir2/dir3
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "dir3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Disabling SPACEFISH_DIR_TRUNC_REPO stops repo dir truncation"
+	(
+		set SPACEFISH_DIR_TRUNC_REPO false
+		cd ~/.tmp-spacefish
+		command git init >/dev/null
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "~/.tmp-spacefish"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Changing SPACEFISH_DIR_COLOR changes the dir color"
+	(
+		set SPACEFISH_DIR_COLOR red
+		cd ~
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold red
+		echo -n "~"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end

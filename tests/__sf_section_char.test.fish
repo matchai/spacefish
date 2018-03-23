@@ -39,7 +39,7 @@ end
 test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
 	(
 		set sf_exit_code 0
-		set -gx SPACEFISH_CHAR_SYMBOL ·
+		set SPACEFISH_CHAR_SYMBOL ·
 
 		set_color --bold fff
 		echo -n ""
@@ -56,7 +56,7 @@ end
 test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
 	(
 		set sf_exit_code 0
-		set -gx SPACEFISH_CHAR_PREFIX ·
+		set SPACEFISH_CHAR_PREFIX ·
 
 		set_color --bold fff
 		echo -n "·"
@@ -73,7 +73,7 @@ end
 test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
 	(
 		set sf_exit_code 0
-		set -gx SPACEFISH_CHAR_SUFFIX ·
+		set SPACEFISH_CHAR_SUFFIX ·
 
 		set_color --bold fff
 		echo -n ""

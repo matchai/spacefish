@@ -22,7 +22,7 @@ test "Truncate path to 3 directories"
 end
 
 test "Don't truncate path"
-    (pwd) = (
+	(pwd) = (
 		__sf_util_truncate_dir (pwd) 0
 	)
 end
