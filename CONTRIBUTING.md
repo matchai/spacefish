@@ -17,6 +17,16 @@ There's a simple philosophy behind Spacefish:
 4. **Push** your changes to your remote fork
 5. **Open a pull-request** on the spacefish repo
 
+## Testing
+
+Unit tests are stored in the `./tests` directory, with the `(filename).test.fish` naming scheme.
+To run the unit tests, simply run:
+```
+./tests/run.fish
+```
+
+The unit tests will create their own temporary fish environment, so your local fish and spacefish configuration will not affect the unit test run.
+
 ## Sections
 
 Spacefish supports most of the popular programming languages, runtimes, version managers, etc. If it doesn't support something that you need, feel free to open a pull request over at Spaceship, and it will be a candidate to be added to Spacefish.

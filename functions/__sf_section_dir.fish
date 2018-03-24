@@ -21,17 +21,20 @@ function __sf_section_dir -d "Display the current truncated directory"
 	[ $SPACEFISH_DIR_SHOW = false ]; and return
 
 	set -l dir
+	set -l tmp
 
 	if test "$SPACEFISH_DIR_TRUNC_REPO" = "true" -a (__sf_util_git_branch)
 		# Derive repo root from its git directory
 		set -l git_root (string replace '/.git' '' (git rev-parse --absolute-git-dir))
 		# Treat repo root as top level directory
-		set dir (string replace $git_root (basename $git_root) $PWD)
+		set tmp (string replace $git_root (basename $git_root) $PWD)
 	else
 	set -l realhome ~
-		set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
-		set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
+		set tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
 	end
+
+	# Truncate the path to have a limited number of dirs
+	set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 
 	__sf_lib_section \
 	$SPACEFISH_DIR_COLOR \

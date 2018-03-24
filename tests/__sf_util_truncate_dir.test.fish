@@ -1,5 +1,4 @@
-source $DIRNAME/../functions/__sf_util_truncate_dir.fish
-set path /var/tmp/$DIRNAME/$TESTNAME
+set path /tmp/$DIRNAME/$TESTNAME
 
 function setup
 	mkdir -p $path/temp1/temp2/temp3
@@ -10,20 +9,20 @@ function teardown
 	rm -rf $path
 end
 
-test "truncate path to 1 folder"
+test "Truncate path to 1 directory"
 	'temp3' = (
 		__sf_util_truncate_dir (pwd) 1
 	)
 end
 
-test "truncate path to 3 folders"
+test "Truncate path to 3 directories"
 	'temp1/temp2/temp3' = (
 		__sf_util_truncate_dir (pwd) 3
 	)
 end
 
-test "don't truncate path"
-    (pwd) = (
+test "Don't truncate path"
+	(pwd) = (
 		__sf_util_truncate_dir (pwd) 0
 	)
 end

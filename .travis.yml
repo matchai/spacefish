@@ -5,20 +5,18 @@ node_js:
 jobs:
   include:
     - stage: test
-      install: skip
       sudo: required
-      before_install:
+      install:
        - sudo apt-add-repository -y ppa:fish-shell/release-2
        - sudo apt-get update
        - sudo apt-get -y install fish
       script:
        - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
-       - fish -c "fisher fishtape"
+       - fish -c "fisher fishtape ."
        - fish -c "fishtape tests/*.test.fish"
 
-    - stage: deploy gitbook
+    - stage: deploy
       if: branch = master AND type = push
-      node_js: "node"
       script: npm run docs:build
       deploy:
        provider: pages
