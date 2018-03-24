@@ -46,12 +46,6 @@ test "Shows hours"
 	)
 end
 
-test "Shows hours"
-	'1h' = (
-		echo 3600000 | __sf_util_human_time my_var
-	)
-end
-
 test "Shows hours and milliseconds"
 	'1h 1ms' = (
 		echo 3600001 | __sf_util_human_time my_var
