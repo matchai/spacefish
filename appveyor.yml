@@ -13,4 +13,4 @@ install:
   - "%CYGSH% 'fish -c \'cd spacefish; and fisher fishtape .\''"
 
 test_script:
- - "%CYGSH% 'fish -c \'cd spacefish; and fishtape tests/*.test.fish\''"
+ - cmd: %CYGSH% "fish -c 'cd spacefish; and fishtape tests/*.test.fish'"
