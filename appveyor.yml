@@ -8,9 +8,11 @@ environment:
       CYGSH: C:\Cygwin64\bin\bash -lc
 
 install:
+  - cd c:\projects\spacefish
   - "%CYGWIN%\\setup-%ARCH%.exe -q -P fish"
   - "%CYGSH% 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman'"
-  - "%CYGSH% 'fish -c \"cd c:/projects/spacefish; and fisher fishtape .\"'"
+  - "%CYGSH% 'fish -c \"fisher fishtape .\"'"
 
 test_script:
- - "%CYGSH% 'fish -c \"cd c:/projects/spacefish; and fishtape tests/*.test.fish\"'"
+ - cd c:\projects\spacefish
+ - "%CYGSH% 'fish -c \"fishtape tests/*.test.fish\"'"
