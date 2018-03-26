@@ -7,14 +7,15 @@ environment:
       CYGWIN: C:\Cygwin64
       CYGSH: C:\Cygwin64\bin\bash -lc
 
+clone_folder: c:\home\appveyor\spacefish
+
 install:
-  - cd c:\projects\spacefish
   - "%CYGWIN%\\setup-%ARCH%.exe -q -P fish"
   - "%CYGSH% 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman'"
-  - "%CYGSH% 'fish -c \"fisher fishtape .\"'"
+  - "%CYGSH% 'fish -c \"cd ~/spacefish; and fisher fishtape .\"'"
 
 build: off
 
 test_script:
  - cd c:\projects\spacefish
- - "%CYGSH% 'fish -c \"fishtape tests/*.test.fish\"'"
+ - "%CYGSH% 'fish -c \"cd ~/spacefish; and fishtape tests/*.test.fish\"'"
