@@ -13,6 +13,8 @@ install:
   - "%CYGSH% 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman'"
   - "%CYGSH% 'fish -c \"fisher fishtape .\"'"
 
+build: off
+
 test_script:
  - cd c:\projects\spacefish
  - "%CYGSH% 'fish -c \"fishtape tests/*.test.fish\"'"
