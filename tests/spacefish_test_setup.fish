@@ -4,6 +4,11 @@ function spacefish_test_setup
 		set -e $var
 	end
 
+	# Delete lingering mocked functions
+	for mock in $mocked
+		functions -e $mock
+	end
+
 	# Initialize spacefish theme
 	fish_prompt>/dev/null
 end
