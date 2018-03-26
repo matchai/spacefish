@@ -7,7 +7,7 @@ environment:
       CYGWIN: C:\Cygwin64
       CYGSH: C:\Cygwin64\bin\bash -lc
 
-build_script:
+install:
   - "%CYGWIN%\\setup-%ARCH%.exe -q -P fish"
   - "%CYGSH% 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman'"
-  - "%CYGSH% 'cd /cygdrive/c/projects/spacefish ; fish -c \'fisher fishtape .\' ; fish-c \'fishtape tests/*.test.fish\''"
+  - "%CYGSH% 'fish -c 'cd spacefish; and fisher fishtape .'"
