@@ -11,7 +11,7 @@ test "Display user when different from logname"
 		set_color --bold fff
 		echo -n "with "
 		set_color normal
-		set_color --bold red
+		set_color --bold yellow
 		echo -n "spacefishUser"
 		set_color normal
 		set_color --bold fff
