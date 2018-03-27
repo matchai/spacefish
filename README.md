@@ -84,10 +84,10 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Badges -->
 
 [travis-url]: https://travis-ci.org/matchai/spacefish
-[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg
+[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg?logo=travis
 
 [appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
-[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish.svg
+[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish.svg?logo=appveyor
 
 [fish-url]: https://fishshell.com/
 [fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
