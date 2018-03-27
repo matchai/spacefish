@@ -5,6 +5,7 @@
 # 🚀🐟 Spacefish
 
 [![TravisCI][travis-badge]][travis-url]
+[![AppVeyor][appveyor-badge]][appveyor-url]
 [![Fish Shell][fish-badge]][fish-url]
 
 > A [Fish Shell][fish] prompt for Astronauts.
@@ -84,6 +85,9 @@ MIT © [Matan Kushner](http://matchai.me)
 
 [travis-url]: https://travis-ci.org/matchai/spacefish
 [travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg
+
+[appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
+[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish.svg
 
 [fish-url]: https://fishshell.com/
 [fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
