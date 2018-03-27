@@ -119,7 +119,7 @@ Git status indicators is shown only when you have dirty repository.
 
 ### Package version (`package`)
 
-> Works only for [npm](https://www.npmjs.com/) at the moment. Please, help spaceship improve this section!
+> Works only for [npm](https://www.npmjs.com/) at the moment. Please, help [spaceship](https://github.com/denysdovhan/spaceship-prompt) improve this section!
 
 Package version is shown when repository is a package (e.g. contains a `package.json` file).
 
