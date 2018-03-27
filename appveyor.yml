@@ -1,0 +1,16 @@
+environment:
+  matrix:
+    - ARCH: x86
+      CYGWIN: C:\Cygwin
+      CYGSH: C:\Cygwin\bin\bash -lc
+
+install:
+  - "%CYGWIN%\\setup-%ARCH%.exe -q -P fish"
+  - "%CYGSH% 'curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman'"
+  - "%CYGSH% 'fish -c \"cd /cygdrive/c/projects/spacefish; and fisher fishtape .\"'"
+
+build: off
+
+test_script:
+ - cd c:\projects\spacefish
+ - "%CYGSH% 'fish -c \"cd /cygdrive/c/projects/spacefish; and fishtape tests/*.test.fish\"'"
