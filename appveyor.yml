@@ -3,9 +3,6 @@ environment:
     - ARCH: x86
       CYGWIN: C:\Cygwin
       CYGSH: C:\Cygwin\bin\bash -lc
-    - ARCH: x86_64
-      CYGWIN: C:\Cygwin64
-      CYGSH: C:\Cygwin64\bin\bash -lc
 
 install:
   - "%CYGWIN%\\setup-%ARCH%.exe -q -P fish"
