@@ -77,6 +77,12 @@ Spacefish works well out of the box, but you can customize almost everything if 
 
 You have the ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
 
+## Troubleshooting
+
+Having issues? Take a look at our [Troubleshooting](./docs/Troubleshooting.md) page.
+
+Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new), describe your problem, and we will gladly help you.
+
 ## License
 
 MIT © [Matan Kushner](http://matchai.me)
