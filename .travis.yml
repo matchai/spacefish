@@ -8,7 +8,7 @@ script:
 
 jobs:
   include:
-    - stage: test linux
+    - stage: test
       os: linux
       sudo: required
       install:
@@ -17,7 +17,7 @@ jobs:
        - sudo apt-get install -y fish
        - sudo apt-get install --only-upgrade -y git
 
-    - stage: test macos
+    - stage: test
       os: osx
       install:
        - brew update
