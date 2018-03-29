@@ -15,12 +15,11 @@ jobs:
        - sudo apt-add-repository -y ppa:fish-shell/release-2
        - sudo apt-get update
        - sudo apt-get install -y fish
-       - sudo apt-get install --only-upgrade -y git
     - stage: test
       os: osx
       install:
        - brew update
-       - brew install fish git
+       - brew install fish
 
     - stage: deploy
       if: branch = master AND type = push
