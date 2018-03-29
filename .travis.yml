@@ -1,19 +1,25 @@
 language: node_js
 node_js:
    - "stable"
+script:
+  - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
+  - fish -c "fisher fishtape ."
+  - fish -c "fishtape tests/*.test.fish"
 
 jobs:
   include:
     - stage: test
+      os: linux
       sudo: required
       install:
        - sudo apt-add-repository -y ppa:fish-shell/release-2
        - sudo apt-get update
-       - sudo apt-get -y install fish
-      script:
-       - curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
-       - fish -c "fisher fishtape ."
-       - fish -c "fishtape tests/*.test.fish"
+       - sudo apt-get install -y fish
+    - stage: test
+      os: osx
+      install:
+       - brew update
+       - brew install fish
 
     - stage: deploy
       if: branch = master AND type = push
