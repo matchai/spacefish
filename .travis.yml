@@ -17,10 +17,6 @@ jobs:
        - sudo apt-get install -y fish
     - stage: test
       os: osx
-      # Cache brew directory
-      cache:
-        directories:
-          - $HOME/Library/Caches/Homebrew
       install:
        - brew update
        - brew install fish
