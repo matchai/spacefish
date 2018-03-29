@@ -20,7 +20,7 @@ jobs:
       os: osx
       install:
        - brew update
-       - brew install fish
+       - brew install fish git
 
     - stage: deploy
       if: branch = master AND type = push
