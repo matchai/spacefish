@@ -1,8 +1,11 @@
 {
 	"gitbook": "3.x.x",
 	"title": "Spacefish",
-	"plugins": ["edit-link", "github", "github-buttons", "anchorjs"],
+	"plugins": ["edit-link", "github", "github-buttons", "anchorjs", "ga"],
 	"pluginsConfig": {
+    "ga": {
+      "token": "UA-71160903-2"
+    },
 		"edit-link": {
 			"base": "https://github.com/matchai/spacefish/tree/master",
 			"label": "Edit This Page"
