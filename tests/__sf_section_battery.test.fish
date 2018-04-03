@@ -32,7 +32,7 @@ end
 
 test "Battery is less than 10% (charging)"
 	(
-		mock pmset 0 "echo -e \"Now drawing from 'Battery Power'\n -InternalBattery-0 (id=4194403)\t5%; discharging; 0:30 remaining present: true\""
+		mock pmset 0 "echo -e \"Now drawing from 'AC Power'\n -InternalBattery-0 (id=4063331)\t5%; AC attached; not charging present: true\""
 
 		set_color --bold fff
 		echo -n ""
