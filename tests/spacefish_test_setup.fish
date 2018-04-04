@@ -1,6 +1,6 @@
 function spacefish_test_setup
 	# Delete all lingering spacefish variables
-	set --name | grep SPACEFISH_ | while read -l var
+	set --name | grep -E 'SPACEFISH_|sf_' | while read -l var
 		set -e $var
 	end
 
