@@ -1,5 +1,4 @@
-source $DIRNAME/../functions/__sf_util_git_branch.fish
-set path /var/tmp/$DIRNAME/$TESTNAME
+set path /tmp/$DIRNAME/$TESTNAME
 
 function setup
 	mkdir -p $path/tempGit
@@ -16,14 +15,14 @@ function git_init
 	command git config --local user.name "Test User"
 end
 
-test "identify HEAD before initial commit"
+test "Identifies HEAD before initial commit"
 	'HEAD' = (
 		command git init
 		__sf_util_git_branch
 	)
 end
 
-test "identify master branch"
+test "Identifies master branch"
 	'master' = (
 		git_init
 		command git commit --allow-empty -m "initial commit"
@@ -31,16 +30,16 @@ test "identify master branch"
 	)
 end
 
-test "indentify an alternate branch name"
+test "Identifies an alternate branch name"
 	'testBranch' = (
 		git_init
-		command git checkout -b "testBranch"
+		command git checkout -b "testBranch" ^/dev/null
 		command git commit --allow-empty -m "initial commit"
 		__sf_util_git_branch
 	)
 end
 
-test "no result for non-git directory"
+test "No result provided for non-git directory"
     '' = (
 		__sf_util_git_branch
 	)

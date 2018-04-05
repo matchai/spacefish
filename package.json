@@ -15,6 +15,7 @@
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-anchorjs": "^2.0.0",
     "gitbook-plugin-edit-link": "^2.0.2",
+    "gitbook-plugin-ga": "^2.0.0",
     "gitbook-plugin-github": "^3.0.0",
     "gitbook-plugin-github-buttons": "^3.0.0"
   }

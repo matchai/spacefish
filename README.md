@@ -5,6 +5,7 @@
 # 🚀🐟 Spacefish
 
 [![TravisCI][travis-badge]][travis-url]
+[![AppVeyor][appveyor-badge]][appveyor-url]
 [![Fish Shell][fish-badge]][fish-url]
 
 > A [Fish Shell][fish] prompt for Astronauts.
@@ -17,6 +18,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Node.js version, through nvm/nodenv/node (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby (`💎`).
+* Package version, if there's is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
   * `+` — uncommitted changes in the index;
@@ -37,7 +39,6 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Displaying hostname/username
 * Indicator for jobs in the background (`✦`).
 * Current Python pyenv (`🐍`).
-* Package version, if there's is a package in current directory (`📦`).
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
@@ -60,7 +61,7 @@ To get spacefish working correctly you will need:
 ### [Fisherman](https://fisherman.github.io)
 
 ```fish
-$ fisher spacefish
+$ fisher matchai/spacefish
 ```
 
 ### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
@@ -76,6 +77,12 @@ Spacefish works well out of the box, but you can customize almost everything if 
 
 You have the ability to customize or disable specific elements of Spacefish. All options must be overridden in your `config.fish`.
 
+## Troubleshooting
+
+Having issues? Take a look at our [Troubleshooting](./docs/Troubleshooting.md) page.
+
+Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new), describe your problem, and we will gladly help you.
+
 ## License
 
 MIT © [Matan Kushner](http://matchai.me)
@@ -83,7 +90,10 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Badges -->
 
 [travis-url]: https://travis-ci.org/matchai/spacefish
-[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg
+[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg?logo=travis
+
+[appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
+[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish/master.svg?logo=appveyor
 
 [fish-url]: https://fishshell.com/
 [fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
