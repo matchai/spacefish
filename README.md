@@ -39,7 +39,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Displaying hostname/username
 * Indicator for jobs in the background (`✦`).
 * Current Python pyenv (`🐍`).
-* * Current Ruby version, through chruby/asdf (`💎`).
+* Current Ruby version, through chruby/asdf (`💎`).
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
