@@ -171,5 +171,14 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
+### Ruby (`ruby`)
 
+Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
 
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_RUBY_SHOW` | `true` | Show Ruby section |
+| `SPACEFISH_RUBY_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Ruby section |
+| `SPACEFISH_RUBY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
+| `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
+| `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
