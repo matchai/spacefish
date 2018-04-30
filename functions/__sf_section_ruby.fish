@@ -27,12 +27,8 @@ function __sf_section_ruby -d "Show current version of Ruby"
 
 	if type -q rvm-prompt
 		set ruby_version (rvm-prompt i v g)
-	else if type -q chruby
-		set ruby_version (chruby | sed -n -e 's/ \* //p')
 	else if type -q rbenv
 		set ruby_version (rbenv version-name)
-	else if type -q asdf
-		set ruby_version (asdf current ruby | awk '{print $1}')
 	else
 		return
 	end
