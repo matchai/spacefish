@@ -44,7 +44,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Optional time stamps 12/24hr in format.
 
 
-Want more features? Please, [open an issue](https://github.com/matchai/spacefish/issues/new) or send pull request.
+Want more features? Please, [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request.
 
 ## Preview
 
@@ -82,7 +82,7 @@ You have the ability to customize or disable specific elements of Spacefish. All
 
 Having issues? Take a look at our [Troubleshooting](./docs/Troubleshooting.md) page.
 
-Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new), describe your problem, and we will gladly help you.
+Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new?template=Support_question.md), describe your problem, and we will gladly help you.
 
 ## License
 
