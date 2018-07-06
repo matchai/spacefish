@@ -17,7 +17,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Node.js version, through nvm/nodenv/node (`⬢`).
-* Current Ruby version, through rvm/rbenv (`💎`).
+* Current Ruby version, through rvm/rbenv/chruby (`💎`).
 * Package version, if there's is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
@@ -39,7 +39,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Displaying hostname/username
 * Indicator for jobs in the background (`✦`).
 * Current Python pyenv (`🐍`).
-* Current Ruby version, through chruby/asdf (`💎`).
+* Current Ruby version, through asdf (`💎`).
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
