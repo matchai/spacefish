@@ -31,6 +31,8 @@ function __sf_section_ruby -d "Show current version of Ruby"
 		set ruby_version (rbenv version-name)
 	else if type -q chruby
 		set ruby_version $RUBY_AUTO_VERSION
+	else if type -q asdf
+		set ruby_version (asdf current ruby | awk '{print $1}')
 	else
 		return
 	end
