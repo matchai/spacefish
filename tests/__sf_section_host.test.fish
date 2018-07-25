@@ -89,3 +89,41 @@ test "Don't display hostname by default, without SSH"
 		set --erase SSH_CONNECTION
 	) = (__sf_section_host)
 end
+
+test "Test color, no SSH."
+	(
+		set SPACEFISH_HOST_COLOR  "magenta" # If magenta, pass.
+		set SPACEFISH_HOST_COLOR_SSH  "red" # If red, failure.
+		set SPACEFISH_HOST_SHOW always
+
+		set_color --bold fff
+		echo -n "at "
+		set_color normal
+		set_color --bold "magenta"
+		echo -n (hostname)
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+		
+	) = (__sf_section_host)
+end
+
+test "Test color, with SSH."
+	(
+		set SPACEFISH_HOST_COLOR  "red" # If red, failure.
+		set SPACEFISH_HOST_COLOR_SSH  "magenta" # If magenta, pass.
+		set SSH_CONNECTION "192.168.0.100 12345 192.168.0.101 22"
+
+		set_color --bold fff
+		echo -n "at "
+		set_color normal
+		set_color --bold "magenta"
+		echo -n (hostname)
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+		
+	) = (__sf_section_host)
+end
