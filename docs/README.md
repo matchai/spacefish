@@ -7,6 +7,7 @@
   * [Char (char)](./docs/Options.md#char)
 	* [Username (user)](./docs/Options.md#username-user)
   * [Directory (dir)](./docs/Options.md#directory-dir)
+  * [Hostname (host)](./docs/Options.md#host-host)
   * [Git (git)](./docs/Options.md#git-git)
     * [Git branch (git_branch)](./docs/Options.md#git-branch-gitbranch)
     * [Git status (git_status)](./docs/Options.md#git-status-gitstatus)
