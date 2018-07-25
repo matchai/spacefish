@@ -10,6 +10,15 @@ function __sf_section_host -d "Display the current hostname if connected over SS
   # Configuration
   # ------------------------------------------------------------------------------
 
+  # --------------------------------------------------------------------------
+  # | SPACEFISH_HOST_SHOW | show hostname on local | show hostname on remote |
+  # |---------------------+------------------------+-------------------------|
+  # | false               | test_me                | test_me                 |
+  # | always              | test_me                | test_me                 |
+  # | true                | test_me                | test_me                 |
+  # | needed              | test_me                | test_me                 |
+  # --------------------------------------------------------------------------
+
   __sf_util_set_default SPACEFISH_HOST_SHOW true
   __sf_util_set_default SPACEFISH_HOST_SHOW_FULL false
   __sf_util_set_default SPACEFISH_HOST_PREFIX "at "
