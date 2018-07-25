@@ -96,7 +96,7 @@ MIT © [Matan Kushner](http://matchai.me)
 [appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish/master.svg?logo=appveyor
 
 [fish-url]: https://fishshell.com/
-[fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
+[fish-badge]: https://img.shields.io/badge/fish-2.7.1-blue.svg
 
 <!-- Links -->
 
