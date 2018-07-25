@@ -68,6 +68,15 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_data (upower -i $battery)
 		set battery_percent (echo $battery_data | grep percentage | awk '{print $2}')
 		set battery_status (echo $battery_data | grep state | awk '{print $2}')
+	# Windows machines. Fixes issue #37.
+	else if type -q apci
+		battery_data=(acpi -b)
+
+		# Return if no battery
+		[ -z $battery_data ]; and return
+
+		set battery_percent ( echo $battery_data | awk '{print $4}' )
+		set battery_status ( echo $battery_data | awk '{print tolower($3)}' )
 	else
 		return
 	end

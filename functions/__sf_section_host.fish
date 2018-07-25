@@ -1,9 +1,7 @@
-#
+# TODO: Test me
 # Hostname
 #
 
-
-# If there is an ssh connections, current machine name.
 function __sf_section_host -d "Display the current hostname if connected over SSH"
 
   # ------------------------------------------------------------------------------
