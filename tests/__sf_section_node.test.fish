@@ -109,3 +109,67 @@ test "Prints nodenv version when nodenv is installed"
 		mock nodenv 0 "echo \"node\""
 	) = (__sf_section_node)
 end
+
+test "Changing SPACEFISH_NODE_SYMBOL changes the displayed character"
+	(
+		mock nvm 0 "echo \"v9.8.0\""
+		set SPACEFISH_NODE_SYMBOL "· "
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold green
+		echo -n "· v9.8.0"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_node)
+end
+
+test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
+	(
+		set sf_exit_code 0
+		set SPACEFISH_NODE_PREFIX ·
+
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+		set_color --bold green
+		echo -n "⬢ v9.8.0"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_node)
+end
+
+test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
+	(
+		set sf_exit_code 0
+		set SPACEFISH_NODE_SUFFIX ·
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold green
+		echo -n "⬢ v9.8.0"
+		set_color normal
+		set_color --bold fff
+		echo -n "·"
+		set_color normal
+	) = (__sf_section_node)
+end
+
+test "Setting SPACEFISH_NODE_DEFAULT_VERSION to the current version disables the section"
+	(
+		set sf_exit_code 0
+		set SPACEFISH_NODE_DEFAULT_VERSION v9.8.0
+	) = (__sf_section_node)
+end
+
+test "Don't display node when SPACEFISH_NODE_SHOW is set to 'false'"
+	(
+		set SPACEFISH_NODE_SHOW false
+	) = (__sf_section_node)
+end
