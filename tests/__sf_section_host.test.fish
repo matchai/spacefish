@@ -7,8 +7,12 @@ end
 
 test "Correctly shows hostname upon SSH connection"
 	(
-		ssh localhost
+		echo "yes" | ssh localhost
 		# How to add a check here?
-		
+
+		# Check hostname is correct
+
+		exit
+		# Check hostname doesn't work outside of terminal, test variables
 	) = (__sf_section_host)
 end
