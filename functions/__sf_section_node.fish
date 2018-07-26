@@ -13,7 +13,7 @@ function __sf_section_node -d "Display the local node version"
 	__sf_util_set_default SPACEFISH_NODE_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_NODE_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	__sf_util_set_default SPACEFISH_NODE_SYMBOL "⬢ "
-	__sf_util_set_default SPACEFISH_NODE_DEFAULT_VERSION $SPACEFISH_NODE_DEFAULT_VERSION
+	__sf_util_set_default SPACEFISH_NODE_DEFAULT_VERSION ""
 	__sf_util_set_default SPACEFISH_NODE_COLOR green
 
 	# ------------------------------------------------------------------------------
