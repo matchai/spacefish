@@ -73,7 +73,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	end
 
 	 # Remove trailing % and symbols for comparison
-	set battery_percent (echo $battery_percent | tr -d "%[,;]")
+	set battery_percent (echo $battery_percent | string trim --chars=%[,;])
 
 	if test "$battery_percent" -eq 100 -o -n (echo (string match -r "(charged|full)" $battery_status))
 		set battery_color green
