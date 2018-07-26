@@ -1,4 +1,5 @@
 source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
