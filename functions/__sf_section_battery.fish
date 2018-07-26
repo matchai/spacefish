@@ -70,7 +70,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_status (echo $battery_data | grep state | awk '{print $2}')
 	# Windows machines. Fixes issue #37.
 	else if type -q apci
-		battery_data=(acpi -b)
+		set -l battery_data (acpi -b)
 
 		# Return if no battery
 		[ -z $battery_data ]; and return

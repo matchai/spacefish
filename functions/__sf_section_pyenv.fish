@@ -7,15 +7,6 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     # Configuration
     # ------------------------------------------------------------------------------
 
-    # --------------------------------------------------------------------------
-    # | SPACEFISH_HOST_SHOW | show hostname on local | show hostname on remote |
-    # |---------------------+------------------------+-------------------------|
-    # | false               | test_me                | test_me                 |
-    # | always              | test_me                | test_me                 |
-    # | true                | test_me                | test_me                 |
-    # | needed              | test_me                | test_me                 |
-    # --------------------------------------------------------------------------
-
     __sf_util_set_default SPACESHIP_PYENV_SHOW true
     __sf_util_set_default SPACESHIP_PYENV_PREFIX $SPACESHIP_PROMPT_DEFAULT_PREFIX
     __sf_util_set_default SPACESHIP_PYENV_SUFFIX $SPACESHIP_PROMPT_DEFAULT_SUFFIX
@@ -36,7 +27,7 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
         return
     end
 
-    set pyenv_status $(pyenv version-name 2>/dev/null)//:/ # This line needs explicit testing in an enviroment that has pyenv. I don't know what the trailing //:/ does in spaceship.
+    set pyenv_status (pyenv version-name 2>/dev/null) # This line needs explicit testing in an enviroment that has pyenv.
 
     __sf_lib_section \
         $SPACEFISH_PYENV_COLOR \

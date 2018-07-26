@@ -7,15 +7,6 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
     # Configuration
     # ------------------------------------------------------------------------------
 
-    # --------------------------------------------------------------------------
-    # | SPACEFISH_HOST_SHOW | show hostname on local | show hostname on remote |
-    # |---------------------+------------------------+-------------------------|
-    # | false               | test_me                | test_me                 |
-    # | always              | test_me                | test_me                 |
-    # | true                | test_me                | test_me                 |
-    # | needed              | test_me                | test_me                 |
-    # --------------------------------------------------------------------------
-
     __sf_util_set_default SPACEFISH_JOBS_SHOW SPACEFISH_JOBS_SHOW true
     __sf_util_set_default SPACEFISH_JOBS_PREFIX SPACEFISH_JOBS_PREFIX ""
     __sf_util_set_default SPACEFISH_JOBS_SUFFIX SPACEFISH_JOBS_SUFFIX " "
