@@ -92,6 +92,7 @@ end
 
 test "Test color, no SSH."
 	(
+		set --erase SSH_CONNECTION
 		set SPACEFISH_HOST_COLOR  "magenta" # If magenta, pass.
 		set SPACEFISH_HOST_COLOR_SSH  "red" # If red, failure.
 		set SPACEFISH_HOST_SHOW always
