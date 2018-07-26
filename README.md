@@ -13,12 +13,13 @@
 Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalistic, powerful and extremely customizable [Zsh][zsh] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
 
 ## Features
-* Indicator if user is root
+* Clever hostname and username displaying.
+* Indicator if user is root.
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Node.js version, through nvm/nodenv/node (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
-* Package version, if there's is a package in current directory (`📦`).
+* Package version, if there is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
   * `+` — uncommitted changes in the index;
@@ -36,14 +37,13 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
   * `•` - fully charged.
 
 ### Upcoming features
-* Displaying hostname/username
 * Indicator for jobs in the background (`✦`).
 * Current Python pyenv (`🐍`).
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
 
-Want more features? Please, [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request.
+Want more features? Please [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request!
 
 ## Preview
 
@@ -52,7 +52,7 @@ Want more features? Please, [open an issue](https://github.com/matchai/spacefish
 </p>
 
 ## Requirements
-To get spacefish working correctly you will need:
+To get spacefish working correctly, you will need:
 
 * [`fish`][fish] (v2.7.0 or newer)
 * [Powerline Font](https://github.com/powerline/fonts) must be installed and enabled in your terminal.
@@ -71,7 +71,7 @@ $ omf install spacefish
 ```
 
 ## Customization
-Spacefish works well out of the box, but you can customize almost everything if you want.
+Spacefish works really well out of the box, but you can customize your fish to your heart's content!
 
 * [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
 
@@ -96,7 +96,7 @@ MIT © [Matan Kushner](http://matchai.me)
 [appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish/master.svg?logo=appveyor
 
 [fish-url]: https://fishshell.com/
-[fish-badge]: https://img.shields.io/badge/fish-2.7.0-blue.svg
+[fish-badge]: https://img.shields.io/badge/fish-2.7.1-blue.svg
 
 <!-- Links -->
 

@@ -76,6 +76,19 @@ Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. W
 | `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
 | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
 
+### Hostname \(`host`\)
+
+Hostname should only be shown while you are connected to another machine using SSH, unless you change it using SPACEFISH_HOST_SHOW.
+
+| Variable | Default | Meaning |
+| :--- | :---: | --- |
+| `SPACEFISH_HOST_SHOW` | `true` | Show host section (true/false) |
+| `SPACEFISH_HOST_SHOW_FULL` | `false` | Show full hostname section (true/false) |
+| `SPACEFISH_HOST_PREFIX` | `at·` | Prefix before the hostname |
+| `SPACEFISH_HOST_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
+| `SPACEFISH_HOST_COLOR` | `blue` | Color of the hostname |
+| `SPACEFISH_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
+
 ### Git \(`git`\)
 
 Git section is consists with `git_branch` and `git_status` subsections. It is shown only in Git repositories.
