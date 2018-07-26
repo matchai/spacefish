@@ -67,9 +67,7 @@ end
 
 test "Display hostname when set different from machine name, over SSH"
 	(
-		function hostname;
-			echo "spacefish"
-		end
+		mock hostname 0 "echo \"spacefish\""
 		set SSH_CONNECTION "192.168.0.100 12345 192.168.0.101 22"
 
 		set_color --bold fff
@@ -82,8 +80,6 @@ test "Display hostname when set different from machine name, over SSH"
 		echo -n " "
 		set_color normal
 	) = (__sf_section_host)
-
-	functions --erase hostname # Clean up temp. function, just in case.
 end
 
 test "Don't display hostname by default, without SSH"
@@ -91,7 +87,6 @@ test "Don't display hostname by default, without SSH"
 end
 
 # Color testing; magenta = pass, red = failure.
-
 test "Test color, no SSH."
 	(
 		set SPACEFISH_HOST_COLOR  "magenta" # No SSH connection. This should display.
