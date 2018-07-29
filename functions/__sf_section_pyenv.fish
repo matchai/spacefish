@@ -7,11 +7,11 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     # Configuration
     # ------------------------------------------------------------------------------
 
-    __sf_util_set_default SPACESHIP_PYENV_SHOW true
-    __sf_util_set_default SPACESHIP_PYENV_PREFIX $SPACESHIP_PROMPT_DEFAULT_PREFIX
-    __sf_util_set_default SPACESHIP_PYENV_SUFFIX $SPACESHIP_PROMPT_DEFAULT_SUFFIX
-    __sf_util_set_default SPACESHIP_PYENV_SYMBOL "🐍 "
-    __sf_util_set_default SPACESHIP_PYENV_COLOR "yellow"
+    __sf_util_set_default SPACEFISH_PYENV_SHOW true
+    __sf_util_set_default SPACEFISH_PYENV_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
+    __sf_util_set_default SPACEFISH_PYENV_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
+    __sf_util_set_default SPACEFISH_PYENV_SYMBOL "🐍 "
+    __sf_util_set_default SPACEFISH_PYENV_COLOR "yellow"
 
     # ------------------------------------------------------------------------------
     # Section
@@ -21,9 +21,12 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     [ $SPACEFISH_PYENV_SHOW = false ]; and return
 
     # Show pyenv python version only for Python-specific folders
-    [ -f requirements.txt ]; or [ -n *.py(#qN^/) ]; or return # This glitches out my fish syntax highlighting because of the hashtag.
+    test ! -e requirements.txt; and return
+    if not count *.py >/dev/null
+        return
+    end
 
-    if not type -q pyenv;
+    if not type -q pyenv; # Do nothing if pyenv is not installed
         return
     end
 

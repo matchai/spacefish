@@ -17,7 +17,7 @@ function __sf_section_exit_code -d "Shows the exit code from the previous comman
     # Section
     # ------------------------------------------------------------------------------
 
-    [ $SPACEFISH_EXIT_CODE_SHOW = false; or test $sf_exit_code -eq 0 ]; and return # I hope this works. Todo: Please test this funky line. Fish uses $status instead of $RETVAL.
+    [ $SPACEFISH_EXIT_CODE_SHOW = false ]; or [ test $sf_exit_code -eq 0 ]; and return # I hope this works. Todo: Please test this funky line. Fish uses $status instead of $RETVAL.
 
     __sf_lib_section \
       $SPACEFISH_EXIT_CODE_COLOR \
