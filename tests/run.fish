@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
+
 set -l gitRoot (git rev-parse --show-toplevel)
 set -l testDir (dirname (status --current-filename))
 set -l tmpDir /tmp/spacefish
