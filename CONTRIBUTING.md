@@ -12,9 +12,11 @@ There's a simple philosophy behind Spacefish:
 
 1. **Fork** this repo (click the _fork_ button)
 2. **Clone** your fork to your computer (via `git clone`)
-3. **Add and commit** your contributions
-4. **Push** your changes to your remote fork
-5. **Open a pull-request** on the spacefish repo
+3. **Make your changes**. Check our [API](./docs/API.md) for more information (we suggest you to check out a new branch for changes).
+4. **Test** your code (via `npm test`)
+5. **Add and commit** your contributions
+6. **Push** your changes to your remote fork
+7. **Open a pull-request** on the spacefish repo
 
 ## Testing
 
