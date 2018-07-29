@@ -8,6 +8,7 @@ function __sf_section_time -d "Display the current time!"
     # ------------------------------------------------------------------------------
 
     __sf_util_set_default SPACEFISH_TIME_SHOW false
+    __sf_util_set_default SPACEFISH_DATE_SHOW false
     __sf_util_set_default SPACEFISH_TIME_PREFIX "at "
     __sf_util_set_default SPACEFISH_TIME_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
     __sf_util_set_default SPACEFISH_TIME_FORMAT false
@@ -18,14 +19,18 @@ function __sf_section_time -d "Display the current time!"
     # Section
     # ------------------------------------------------------------------------------
 
-    [ $SPACEFISH_TIME_SHOW = true ]; and return
+    [ $SPACEFISH_TIME_SHOW = false ]; and return
+
+    if test $SPACEFISH_DATE_SHOW = true;
+      set time_str (date '+%Y-%m-%d')" "
+    end
 
     if test not $SPACEFISH_TIME_FORMAT = false;
       time_str $SPACEFISH_TIME_FORMAT
-    elif $SPACEFISH_TIME_12HR = true;
-      set time_str "%D{%r}"
+    else if test $SPACEFISH_TIME_12HR = true;
+      set time_str "$time_str"(date '+%I:%M:%S') # Fish doesn't seem to have date/time formatting.
     else
-      set time_str "%D{%T}"
+      set time_str "$time_str"(date '+%H:%M:%S')
     end
 
     __sf_lib_section \
