@@ -8,7 +8,6 @@ There's a simple philosophy behind Spacefish:
 
 * **Absolute parity with spaceship-prompt.** The prompt should be identical to spaceship-prompt when it comes to visuals, functionality, and configuration.
 
-
 ## Setup
 
 1. **Fork** this repo (click the _fork_ button)
@@ -21,7 +20,8 @@ There's a simple philosophy behind Spacefish:
 
 Unit tests are stored in the `./tests` directory, with the `(filename).test.fish` naming scheme.
 To run the unit tests, simply run:
-```
+
+```sh
 ./tests/run.fish
 ```
 
