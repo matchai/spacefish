@@ -20,7 +20,7 @@ function __sf_section_time -d "Display the current time!"
 
     [ $SPACEFISH_TIME_SHOW = true ]; and return
 
-    if test $SPACEFISH_TIME_FORMAT not = false;
+    if test not $SPACEFISH_TIME_FORMAT = false;
       time_str $SPACEFISH_TIME_FORMAT
     elif $SPACEFISH_TIME_12HR = true;
       set time_str "%D{%r}"

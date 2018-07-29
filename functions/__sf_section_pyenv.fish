@@ -23,7 +23,7 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     # Show pyenv python version only for Python-specific folders
     [ -f requirements.txt ]; or [ -n *.py(#qN^/) ]; or return # This glitches out my fish syntax highlighting because of the hashtag.
 
-    if not type -sq pyenv;
+    if not type -q pyenv;
         return
     end
 
