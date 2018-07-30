@@ -44,6 +44,15 @@ function __sf_section_foobar -d "Show foobar status"
   # If the foobar command doesn't exist, don't show the foobar section
   type -q foobar; or return
 
+  # Here some of the various expressions that can be tested
+  # The full list can be found here:
+  # https://fishshell.com/docs/current/commands.html#test
+  type -q command          # test that a command exists
+  test -e /path/to/file    # test that a file exists
+  test -d /path/to/dir     # test that a directory exists
+  test operand1 = operand2 # that for two equal strings
+  test -n "$variable"      # test that a variable exists
+
   # Use `set -l` to define local variables to avoid populating
   # the global namespace
   set -l foobar_status
@@ -103,7 +112,7 @@ Both `prefix` and `suffix` are optional. They are equal to empty strings by defa
 __sf_lib_section \
 $SPACEFISH_SECTION_COLOR \
 $SPACEFISH_SECTION_PREFIX \
-"$SPACEFISH_SECTION_SYMBOL$section_content" \
+$SPACEFISH_SECTION_SYMBOL$section_content \
 $SPACEFISH_SECTION_SUFFIX
 
 # Display prompt section without prefix and suffix
