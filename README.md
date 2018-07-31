@@ -90,13 +90,13 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Badges -->
 
 [travis-url]: https://travis-ci.org/matchai/spacefish
-[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg?logo=travis
+[travis-badge]: https://badgen.net/travis/matchai/spacefish?icon=travis
 
 [appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
-[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish/master.svg?logo=appveyor
+[appveyor-badge]: https://badgen.net/appveyor/ci/matchai/spacefish?icon=appveyor
 
 [fish-url]: https://fishshell.com/
-[fish-badge]: https://img.shields.io/badge/fish-2.7.1-blue.svg
+[fish-badge]: https://badgen.net/badge/fish/v2.7.1
 
 <!-- Links -->
 
