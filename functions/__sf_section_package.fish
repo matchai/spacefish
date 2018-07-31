@@ -39,7 +39,7 @@ function __sf_section_package -d "Display the local package version"
 	__sf_lib_section \
 	$SPACEFISH_PACKAGE_COLOR \
 	$SPACEFISH_PACKAGE_PREFIX \
-	"$SPACEFISH_PACKAGE_SYMBOL$package_version" \
+	$SPACEFISH_PACKAGE_SYMBOL$package_version \
 	$SPACEFISH_PACKAGE_SUFFIX
 end
 

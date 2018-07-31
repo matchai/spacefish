@@ -7,15 +7,19 @@ This page aimed to help you fix common problems encountered while using spacefis
 Try all of the following troubleshooting steps:
 
 * Verify that your fish installation is at the [latest version](https://github.com/fish-shell/fish-shell/releases)
-  ```bash
+
+  ```sh
   fish --version
   ```
+
 * Update spacefish with `fisher` or `omf`
-  ```bash
+
+  ```sh
   fisher update spacefish
   # or
   omf update spacefish
   ```
+
 * If errors persist, please [open an issue](https://github.com/matchai/spacefish/issues/new)
 
 ## What's the weird symbol beside the `git` branch?
@@ -30,12 +34,14 @@ You need to have a powerline patched font in order to properly display `git` bra
 This is not an issue with spacefish. Spacefish uses Unicode symbols to represent `SPACESFISH_*_SYMBOL` in sections. To solve this problem:
 
 * Verify your terminal emulator supports Unicode characters with this command:
-  ```bash
+
+  ```sh
   curl http://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
   # or
   wget -O - http://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
   ```
 * Configure your terminal emulator to use UTF-8 character encoding.
+
 
 In the event that Unicode characters aren't supported, you can replace them with characters that are compatible with your terminal with `SPACEFISH_*_SYMBOL` options. Check out the [Options](./docs/Options.md) page for more information.
 
