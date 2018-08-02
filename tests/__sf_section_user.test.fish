@@ -4,7 +4,7 @@ function setup
 	spacefish_test_setup
 end
 
-test "Display user when different from logname"
+test "Displays user when different from logname"
 	(
 		set USER spacefishUser
 
@@ -20,7 +20,7 @@ test "Display user when different from logname"
 	) = (__sf_section_user)
 end
 
-test "Display user when UID = 0"
+test "Displays user when UID = 0"
 	(
 		set UID 0
 
@@ -36,7 +36,7 @@ test "Display user when UID = 0"
 	) = (__sf_section_user)
 end
 
-test "Display user when there's an SSH connection"
+test "Displays user when there's an SSH connection"
 	(
 		set SSH_CONNECTION "192.168.0.100 12345 192.168.0.101 22"
 
@@ -52,7 +52,7 @@ test "Display user when there's an SSH connection"
 	) = (__sf_section_user)
 end
 
-test "Change user color when logged in as root"
+test "Changes user color when logged in as root"
 	(
 		set USER root
 
@@ -68,7 +68,7 @@ test "Change user color when logged in as root"
 	) = (__sf_section_user)
 end
 
-test "Display user when SPACEFISH_USER_SHOW is set to 'always'"
+test "Displays user when SPACEFISH_USER_SHOW is set to 'always'"
 	(
 		set SPACEFISH_USER_SHOW always
 
@@ -84,7 +84,7 @@ test "Display user when SPACEFISH_USER_SHOW is set to 'always'"
 	) = (__sf_section_user)
 end
 
-test "Don't display user when SPACEFISH_USER_SHOW is set to 'false'"
+test "Doesn't display user when SPACEFISH_USER_SHOW is set to 'false'"
 	(
 		set SPACEFISH_USER_SHOW false
 	) = (__sf_section_user)
