@@ -26,9 +26,9 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
     #[ test $jobs_amount -gt 0 ]; or return
 
     if test $jobs_amount -eq 1
-        jobs_amount=''
-        SPACEFISH_JOBS_AMOUNT_PREFIX=''
-        SPACEFISH_JOBS_AMOUNT_SUFFIX=''
+        set -l jobs_amount ''
+        set -l SPACEFISH_JOBS_AMOUNT_PREFIX ''
+        set -l SPACEFISH_JOBS_AMOUNT_SUFFIX ''
     end
 
     set SPACEFISH_JOBS_SECTION $SPACEFISH_JOBS_SYMBOL$SPACEFISH_JOBS_AMOUNT_PREFIX$jobs_amount$SPACEFISH_JOBS_AMOUNT_SUFFIX
