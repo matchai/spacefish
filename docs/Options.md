@@ -205,6 +205,6 @@ Ruby section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SHOW` | `true` | Show Haskell section |
 | `SPACEFISH_HASKELL_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
 | `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
-| `SPACEFISH_HASKELL_SYMBOL` | `"λ "` | Character to be shown before Haskell version |
-| `SPACEFISH_HASKELL_COLOR` | `"red"` | Color of Haskell section |
+| `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
+| `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
 
