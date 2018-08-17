@@ -85,7 +85,7 @@ Hostname should only be shown while you are connected to another machine using S
 | `SPACEFISH_HOST_SHOW` | `true` | Show host section (true/false) |
 | `SPACEFISH_HOST_SHOW_FULL` | `false` | Show full hostname section (true/false) |
 | `SPACEFISH_HOST_PREFIX` | `at·` | Prefix before the hostname |
-| `SPACEFISH_HOST_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
+| `SPACEFISH_HOST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
 | `SPACEFISH_HOST_COLOR` | `blue` | Color of the hostname |
 | `SPACEFISH_HOST_COLOR_SSH` | `green` | Color of the hostname during SSH |
 
@@ -195,3 +195,16 @@ Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`,
 | `SPACEFISH_RUBY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
 | `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
 | `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
+
+### Haskell (`haskell`)
+
+Ruby section is shown only in directories that contain `stack.yaml`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_HASKELL_SHOW` | `true` | Show Haskell section |
+| `SPACEFISH_HASKELL_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
+| `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
+| `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
+| `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
+
