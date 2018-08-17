@@ -19,6 +19,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Execution time of the last command if it exceeds 5 seconds.
 * Current Node.js version, through nvm/nodenv/node (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
+* Current Haskell version, through stack (`λ`).
 * Package version, if there is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
