@@ -21,7 +21,7 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
 
     [ $SPACEFISH_JOBS_SHOW = false ]; and return
 
-    set jobs_amount (jobs | awk '!/pwd/' | wc -l) # Zsh had jobs -d, but -d was apparently an invalid flag. Zsh only?
+    set jobs_amount (jobs | wc -l) # Zsh had a much more complicated command.
 
     if test $jobs_amount -eq 0
       return
