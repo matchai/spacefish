@@ -4,9 +4,20 @@ function setup
 	spacefish_test_setup
 end
 
+# AppVeyor doesn't have the `killall` command, so instead of explicitly killing
+# background processes it's necessary to wait 5 seconds to terminate naturally.
+if set -q __fishtape_APPVEYOR
+  echo "~ AppVeyor detected, creating dummy killall function ~"
+  function killall
+    sleep 5
+  end
+else
+  set
+end
+
 test "Test a single background job"
  	(
-     sleep 10 & # Background process
+     sleep 5 & # Background process
 
      set_color --bold fff
      set_color normal
@@ -23,8 +34,8 @@ test "Test with two background jobs"
  	(
      killall sleep # Kill any previous background jobs
 
-     sleep 10 & # Background process #1
-     sleep 10 & # Background process #2
+     sleep 5 & # Background process #1
+     sleep 5 & # Background process #2
 
      set_color --bold fff
      set_color normal
@@ -41,11 +52,11 @@ test "Test with five background jobs"
  	(
      killall sleep # Kill any previous background jobs
 
-     sleep 10 & # Background process #1
-     sleep 10 & # Background process #2
-     sleep 10 & # Background process #3
-     sleep 10 & # Background process #4
-     sleep 10 & # Background process #5
+     sleep 5 & # Background process #1
+     sleep 5 & # Background process #2
+     sleep 5 & # Background process #3
+     sleep 5 & # Background process #4
+     sleep 5 & # Background process #5
 
      set_color --bold fff
      set_color normal
@@ -64,9 +75,9 @@ test "Test with less than threshold of background jobs"
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
-     sleep 10 & # Background process #1
-     sleep 10 & # Background process #2
-     sleep 10 & # Background process #3
+     sleep 5 & # Background process #1
+     sleep 5 & # Background process #2
+     sleep 5 & # Background process #3
 
      set_color --bold fff
      set_color normal
@@ -85,10 +96,10 @@ test "Test with equal threshold of background jobs"
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
-     sleep 10 & # Background process #1
-     sleep 10 & # Background process #2
-     sleep 10 & # Background process #3
-     sleep 10 & # Background process #4
+     sleep 5 & # Background process #1
+     sleep 5 & # Background process #2
+     sleep 5 & # Background process #3
+     sleep 5 & # Background process #4
 
      set_color --bold fff
      set_color normal
@@ -107,12 +118,12 @@ test "Test with more than threshold of background jobs"
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
-     sleep 10 & # Background process #1
-     sleep 10 & # Background process #2
-     sleep 10 & # Background process #3
-     sleep 10 & # Background process #4
-     sleep 10 & # Background process #5
-     sleep 10 & # Background process #6
+     sleep 5 & # Background process #1
+     sleep 5 & # Background process #2
+     sleep 5 & # Background process #3
+     sleep 5 & # Background process #4
+     sleep 5 & # Background process #5
+     sleep 5 & # Background process #6
 
      set_color --bold fff
      set_color normal
