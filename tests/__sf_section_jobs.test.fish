@@ -21,7 +21,7 @@ end
 
 test "Test with two background jobs"
  	(
-     kill sleep # Kill any previous background jobs
+     killall sleep # Kill any previous background jobs
 
      sleep 10 & # Background process #1
      sleep 10 & # Background process #2
@@ -39,7 +39,7 @@ end
 
 test "Test with five background jobs"
  	(
-     kill sleep # Kill any previous background jobs
+     killall sleep # Kill any previous background jobs
 
      sleep 10 & # Background process #1
      sleep 10 & # Background process #2
@@ -60,7 +60,7 @@ end
 
 test "Test with less than threshold of background jobs"
  	(
-     kill sleep # Kill any previous background jobs
+     killall sleep # Kill any previous background jobs
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
@@ -81,7 +81,7 @@ end
 
 test "Test with equal threshold of background jobs"
  	(
-     kill sleep # Kill any previous background jobs
+     killall sleep # Kill any previous background jobs
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
@@ -103,7 +103,7 @@ end
 
 test "Test with more than threshold of background jobs"
  	(
-     kill sleep # Kill any previous background jobs
+     killall sleep # Kill any previous background jobs
 
      set SPACEFISH_JOBS_AMOUNT_THRESHOLD 4
 
