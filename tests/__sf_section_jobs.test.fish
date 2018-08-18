@@ -11,8 +11,6 @@ if set -q __fishtape_APPVEYOR
   function killall
     sleep 5
   end
-else
-  set
 end
 
 test "Test a single background job"
