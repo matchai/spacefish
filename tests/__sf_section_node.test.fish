@@ -92,13 +92,13 @@ test "Prints nodenv version when nodenv is installed"
 		set_color normal
 	) = (__sf_section_node)
 
-test "Print nothing when using the \"system\" version of node with nvm"
+test "Prints nothing when using the \"system\" version of node with nvm"
 	(
 		mock nvm 0 "echo \"system\""
 	) = (__sf_section_node)
 end
 
-test "Print nothing when using the \"system\" version of node with nodenv"
+test "Prints nothing when using the \"system\" version of node with nodenv"
 	(
 		mock nodenv 0 "echo \"system\""
 	) = (__sf_section_node)
@@ -168,7 +168,7 @@ test "Setting SPACEFISH_NODE_DEFAULT_VERSION to the current version disables the
 	) = (__sf_section_node)
 end
 
-test "Don't display node when SPACEFISH_NODE_SHOW is set to 'false'"
+test "Doesn't display node when SPACEFISH_NODE_SHOW is set to 'false'"
 	(
 		set SPACEFISH_NODE_SHOW false
 	) = (__sf_section_node)

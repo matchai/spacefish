@@ -17,8 +17,9 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Indicator if user is root.
 * Prompt character turns red if the last command exits with non-zero code.
 * Execution time of the last command if it exceeds 5 seconds.
-* Current Node.js version, through nvm/nodenv/node (`⬢`).
+* Current Node.js version, through nvm/nodenv/n (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
+* Current Haskell version, through stack (`λ`).
 * Package version, if there is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
@@ -90,13 +91,13 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Badges -->
 
 [travis-url]: https://travis-ci.org/matchai/spacefish
-[travis-badge]: https://img.shields.io/travis/matchai/spacefish.svg?logo=travis
+[travis-badge]: https://badgen.net/travis/matchai/spacefish?icon=travis
 
 [appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
-[appveyor-badge]: https://img.shields.io/appveyor/ci/matchai/spacefish/master.svg?logo=appveyor
+[appveyor-badge]: https://badgen.net/appveyor/ci/matchai/spacefish?icon=appveyor
 
 [fish-url]: https://fishshell.com/
-[fish-badge]: https://img.shields.io/badge/fish-2.7.1-blue.svg
+[fish-badge]: https://badgen.net/badge/fish/v2.7.1
 
 <!-- Links -->
 
