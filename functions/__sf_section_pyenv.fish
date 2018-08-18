@@ -1,4 +1,3 @@
-# TODO: Test me (Help needed)
 # pyenv
 #
 
@@ -38,4 +37,3 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
         $SPACEFISH_PYENV_SYMBOL$pyenv_status \
         $SPACEFISH_PYENV_SUFFIX
 end
-

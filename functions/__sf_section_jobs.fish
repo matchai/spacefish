@@ -1,4 +1,3 @@
-# TODO: Test me
 # Jobs
 #
 
@@ -14,6 +13,7 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
     __sf_util_set_default SPACEFISH_JOBS_COLOR "blue"
     __sf_util_set_default SPACEFISH_JOBS_AMOUNT_PREFIX ""
     __sf_util_set_default SPACEFISH_JOBS_AMOUNT_SUFFIX ""
+    __sf_util_set_default SPACEFISH_JOBS_AMOUNT_THRESHOLD 1
 
     # ------------------------------------------------------------------------------
     # Section
@@ -23,12 +23,14 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
 
     set jobs_amount (jobs | awk '!/pwd/' | wc -l) # Zsh had jobs -d, but -d was apparently an invalid flag. Zsh only?
 
-    #[ test $jobs_amount -gt 0 ]; or return
+    if test $jobs_amount -eq 0
+      return
+    end
 
-    if test $jobs_amount -eq 1
-        set -l jobs_amount ''
-        set -l SPACEFISH_JOBS_AMOUNT_PREFIX ''
-        set -l SPACEFISH_JOBS_AMOUNT_SUFFIX ''
+    if test $jobs_amount -le $SPACEFISH_JOBS_AMOUNT_THRESHOLD
+        set jobs_amount ''
+        set SPACEFISH_JOBS_AMOUNT_PREFIX ''
+        set SPACEFISH_JOBS_AMOUNT_SUFFIX ''
     end
 
     set SPACEFISH_JOBS_SECTION $SPACEFISH_JOBS_SYMBOL$SPACEFISH_JOBS_AMOUNT_PREFIX$jobs_amount$SPACEFISH_JOBS_AMOUNT_SUFFIX
@@ -36,7 +38,7 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
     __sf_lib_section \
         $SPACEFISH_JOBS_COLOR \
         $SPACEFISH_JOBS_PREFIX \
-        $SPACESHIP_JOBS_SECTION \
+        $SPACEFISH_JOBS_SECTION \
         $SPACEFISH_JOBS_SUFFIX
 
 end

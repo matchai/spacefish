@@ -1,4 +1,3 @@
-# TODO: Test me
 # Exit-code
 #
 
@@ -17,11 +16,11 @@ function __sf_section_exit_code -d "Shows the exit code from the previous comman
     # Section
     # ------------------------------------------------------------------------------
 
-    [ $SPACEFISH_EXIT_CODE_SHOW = false ]; or [ test $sf_exit_code -eq 0 ]; and return # I hope this works. Todo: Please test this funky line. Fish uses $status instead of $RETVAL.
+    [ $SPACEFISH_EXIT_CODE_SHOW = false ]; or test $sf_exit_code -eq 0; and return
 
     __sf_lib_section \
       $SPACEFISH_EXIT_CODE_COLOR \
       $SPACEFISH_EXIT_CODE_PREFIX \
-      $SPACEFISH_EXIT_CODE_SYMBOL$status \
+      $SPACEFISH_EXIT_CODE_SYMBOL$sf_exit_code \
       $SPACEFISH_EXIT_CODE_SUFFIX
 end

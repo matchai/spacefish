@@ -44,7 +44,6 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	set -l battery_color
 	set -l battery_symbol
 
-	# TODO: Add acpi for Windows
 	# Darwin and macOS machines
 	if type -q pmset
 		set battery_data (pmset -g batt)
