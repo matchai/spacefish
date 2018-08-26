@@ -32,7 +32,7 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `SPACEFISH_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
 | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
 
-### Time
+### Time \(`time`\)
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
@@ -44,7 +44,7 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `SPACEFISH_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
 | `SPACEFISH_TIME_COLOR` | `yellow` | Color of time section |
 
-### Username (`user`)
+### Username \(`user`\)
 
 By default, a username is shown only when it's not the same as `$LOGNAME`, when you're connected via SSH or when you're root. Root user is highlighted in `SPACEFISH_USER_COLOR_ROOT` color (red as default).
 
@@ -133,7 +133,7 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
 | `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
 
-### Package version (`package`)
+### Package version \(`package`\)
 
 > Works only for [npm](https://www.npmjs.com/) at the moment. Please, help [spaceship](https://github.com/denysdovhan/spaceship-prompt) improve this section!
 
@@ -149,7 +149,7 @@ Package version is shown when repository is a package (e.g. contains a `package.
 | `SPACEFISH_PACKAGE_SYMBOL` | `📦·` | Character to be shown before package version |
 | `SPACEFISH_PACKAGE_COLOR` | `red` | Color of package version section |
 
-### Node.js (`node`)
+### Node.js \(`node`\)
 
 Node.js section is shown only in directories that contain `package.json` file, or `node_modules` folder, or any other file with `.js` extension.
 
@@ -164,7 +164,7 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
 
-### Ruby (`ruby`)
+### Ruby \(`ruby`\)
 
 Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
 
@@ -176,7 +176,7 @@ Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`,
 | `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
 | `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
 
-### Haskell (`haskell`)
+### Haskell \(`haskell`\)
 
 Ruby section is shown only in directories that contain `stack.yaml`.
 
@@ -188,7 +188,7 @@ Ruby section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
 | `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
 
-### Pyenv (`pyenv`)
+### Pyenv \(`pyenv`\)
 
 pyenv section is shown only in directories that contain `requirements.txt` or any other file with `.py` extension.
 
@@ -200,7 +200,7 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 | `SPACEFISH_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
 | `SPACEFISH_PYENV_COLOR` | `yellow` | Color of Pyenv section |
 
-### Exec Time
+### Exec Time \(`exec_time`\)
 
 Execution time of the last command. Will be displayed if it exceeds the set threshold of time.
 
@@ -212,7 +212,7 @@ Execution time of the last command. Will be displayed if it exceeds the set thre
 | `SPACEFISH_EXEC_TIME_COLOR` | `yellow` | Color of exec time section |
 | `SPACEFISH_EXEC_TIME_ELAPSED` | `5` | The threshold in seconds for showing exec time section |
 
-### Line Separator
+### Line Separator \(`line_sep`\)
 
 This is where the prompt will split into two lines, if enabled.
 
@@ -239,7 +239,7 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
-### Jobs
+### Jobs \(`jobs`\)
 
 This section show only when there are backgrounded jobs.
 
@@ -254,7 +254,7 @@ This section show only when there are backgrounded jobs.
 | `SPACEFISH_JOBS_AMOUNT_SUFFIX` | ` ` | Suffix after the number of jobs |
 | `SPACEFISH_JOBS_AMOUNT_THRESHOLD` | `1` | Number of jobs after which job count will be shown |
 
-### Exit Code
+### Exit Code \(`exit_code`\)
 Disabled by default. Set `SPACEFISH_EXIT_CODE_SHOW` to `true` to enable.
 
 | Variable | Default | Meaning |
@@ -265,7 +265,7 @@ Disabled by default. Set `SPACEFISH_EXIT_CODE_SHOW` to `true` to enable.
 | `SPACEFISH_EXIT_CODE_SYMBOL` | `✘` | Symbol before the exit code, upon failure |
 | `SPACEFISH_EXIT_CODE_COLOR` | `red` | Color of exit code section |
 
-### Char
+### Char  \(`char`\)
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |

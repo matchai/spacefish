@@ -9,7 +9,7 @@ function __sf_section_exit_code -d "Shows the exit code from the previous comman
     __sf_util_set_default SPACEFISH_EXIT_CODE_SHOW false
     __sf_util_set_default SPACEFISH_EXIT_CODE_PREFIX ""
     __sf_util_set_default SPACEFISH_EXIT_CODE_SUFFIX " "
-    __sf_util_set_default SPACEFISH_EXIT_CODE_SYMBOL "✘"
+    __sf_util_set_default SPACEFISH_EXIT_CODE_SYMBOL ✘
     __sf_util_set_default SPACEFISH_EXIT_CODE_COLOR red
 
     # ------------------------------------------------------------------------------
