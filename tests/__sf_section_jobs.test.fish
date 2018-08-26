@@ -3,13 +3,12 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-end
 
-# AppVeyor doesn't have the `killall` command, so instead of explicitly killing
-# background processes it's necessary to wait 5 seconds to terminate naturally.
-if set -q __fishtape_APPVEYOR
-  echo "~ AppVeyor detected, creating dummy killall function ~"
-	mock killall 0 "sleep 5"
+	# AppVeyor doesn't have the `killall` command, so instead of explicitly killing
+	# background processes it's necessary to wait 5 seconds to terminate naturally.
+	if set -q __fishtape_APPVEYOR
+		mock killall 0 "sleep 5"
+	end
 end
 
 test "Test a single background job"
