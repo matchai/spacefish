@@ -7,7 +7,7 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
     # ------------------------------------------------------------------------------
 
     __sf_util_set_default SPACEFISH_JOBS_SHOW true
-    __sf_util_set_default SPACEFISH_JOBS_PREFIX " "
+    __sf_util_set_default SPACEFISH_JOBS_PREFIX ""
     __sf_util_set_default SPACEFISH_JOBS_SUFFIX " "
     __sf_util_set_default SPACEFISH_JOBS_SYMBOL ✦
     __sf_util_set_default SPACEFISH_JOBS_COLOR "blue"
@@ -33,12 +33,12 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
         set SPACEFISH_JOBS_AMOUNT_SUFFIX ''
     end
 
-    set SPACEFISH_JOBS_SECTION "$SPACEFISH_JOBS_SYMBOL$jobs_amount"
+    set SPACEFISH_JOBS_SECTION "$SPACEFISH_JOBS_SYMBOL$SPACEFISH_JOBS_AMOUNT_PREFIX$jobs_amount$SPACEFISH_JOBS_AMOUNT_SUFFIX"
 
     __sf_lib_section \
         $SPACEFISH_JOBS_COLOR \
         $SPACEFISH_JOBS_PREFIX \
-        "$SPACEFISH_JOBS_SECTION" \
+        $SPACEFISH_JOBS_SECTION \
         $SPACEFISH_JOBS_SUFFIX
 
 end
