@@ -12,12 +12,12 @@
 
 <p align="center">
     <a href="https://travis-ci.org/matchai/spacefish">
-    <img src="https://badgen.net/travis/matchai/spacefish?icon=travis"
-      alt="Travis CI Status" />
+    <img src="https://badgen.net/travis/matchai/spacefish/master?label=Mac%20OSX%20%26%20Linux"
+      alt="Mac OSX & Linux CI Status" />
   </a>
    <a href="https://ci.appveyor.com/project/matchai/spacefish">
-    <img src="https://badgen.net/appveyor/ci/matchai/spacefish/master?icon=appveyor"
-      alt="Appveyor CI Status" />
+    <img src="https://badgen.net/appveyor/ci/matchai/spacefish/master?label=Windows"
+      alt="Windows CI Status" />
   </a>
    <a href="https://fishshell.com/">
     <img src="https://badgen.net/badge/fish/v2.7.1"
