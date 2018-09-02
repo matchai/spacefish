@@ -3,7 +3,7 @@
     <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
   </a>
   <br>
-  <br> 🚀🐟 Spacefish <br>
+  <br> Spacefish 🚀🐟 <br>
 </h1>
 
 <h4 align="center">
