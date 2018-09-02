@@ -1,18 +1,60 @@
-<a href="https://github.com/matchai/spacefish">
-  <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
-</a>
+<h1 align="center">
+  <a href="https://github.com/matchai/spacefish">
+    <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
+  </a>
+  <br>
+  <br> Spacefish 🚀🐟 <br>
+</h1>
 
-# 🚀🐟 Spacefish
+<h4 align="center">
+  <a href="https://fishshell.com" target="_blank"><code>Fish Shell</code></a> prompt for Astronauts.
+</h4>
 
-[![TravisCI][travis-badge]][travis-url]
-[![AppVeyor][appveyor-badge]][appveyor-url]
-[![Fish Shell][fish-badge]][fish-url]
+<p align="center">
+    <a href="https://travis-ci.org/matchai/spacefish">
+    <img src="https://badgen.net/travis/matchai/spacefish/master?label=Mac%20OSX%20%26%20Linux"
+      alt="Mac OSX & Linux CI Status" />
+  </a>
+   <a href="https://ci.appveyor.com/project/matchai/spacefish">
+    <img src="https://badgen.net/appveyor/ci/matchai/spacefish/master?label=Windows"
+      alt="Windows CI Status" />
+  </a>
+   <a href="https://fishshell.com/">
+    <img src="https://badgen.net/badge/fish/v2.7.1"
+      alt="Fish Version" />
+  </a>
+</p>
 
-> A [Fish Shell][fish] prompt for Astronauts.
+<div align="center">
+  <h4>
+    <a href="https://spacefish.matchai.me/">Website</a> |
+    <a href="#installation">Install</a> |
+    <a href="#features">Features</a> |
+    <a href="./docs/Options.md">Options</a> |
+    <a href="./docs/API.md">API</a>
+  </h4>
+</div>
 
-Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalistic, powerful and extremely customizable [Zsh][zsh] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
+<div align="center">
+  <sub>Built with ❤︎ by
+  <a href="https://matchai.me">Matan Kushner</a> and
+  <a href="https://github.com/matchai/spacefish/graphs/contributors">contributors </a></sub>
+  <br>
+  <sub>A port of <a href="https://github.com/denysdovhan/spaceship-prompt">Spaceship ZSH</a> by
+  <a href="https://denysdovhan.com/">Denys Dovhan</a></sub>
+</div>
+
+<br>
+Spacefish is a minimalistic, powerful and extremely customizable <a href="https://fishshell.com">Fish Shell</a> prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
+
+<p align="center"></p>
+  <img alt="Spaceship with Hyper and One Dark" src="./images/preview.gif" width="980px">
+</p>
+
+<sub>Vist <a href="./docs/Troubleshooting.md#why-doesnt-my-prompt-look-like-the-preview">Troubleshooting</a> for instructions to recreate this terminal setup.</sub>
 
 ## Features
+
 * Clever hostname and username displaying.
 * Indicator if user is root.
 * Prompt character turns red if the last command exits with non-zero code.
@@ -43,14 +85,7 @@ Spacefish is a [Fish Shell][fish] port of [Spaceship][spaceship]; the minimalist
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 
-
 Want more features? Please [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request!
-
-## Preview
-
-<p align="center">
-  <img alt="Spaceship with Hyper and One Dark" src="./images/preview.gif" width="980px">
-</p>
 
 ## Requirements
 To get spacefish working correctly, you will need:
@@ -88,19 +123,8 @@ Still struggling? Please [file an issue](https://github.com/matchai/spacefish/is
 
 MIT © [Matan Kushner](http://matchai.me)
 
-<!-- Badges -->
-
-[travis-url]: https://travis-ci.org/matchai/spacefish
-[travis-badge]: https://badgen.net/travis/matchai/spacefish?icon=travis
-
-[appveyor-url]: https://ci.appveyor.com/project/matchai/spacefish
-[appveyor-badge]: https://badgen.net/appveyor/ci/matchai/spacefish?icon=appveyor
-
-[fish-url]: https://fishshell.com/
-[fish-badge]: https://badgen.net/badge/fish/v2.7.1
-
 <!-- Links -->
 
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[fish]: https://fishshell.com/
-[zsh]: http://zsh.org/
+[fish]: https://fishshell.com
+[zsh]: http://zsh.org
