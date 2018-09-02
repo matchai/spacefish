@@ -44,9 +44,8 @@
   <a href="https://denysdovhan.com/">Denys Dovhan</a></sub>
 </div>
 
-
-Spacefish is a minimalistic, powerful and extremely customizable [Fish Shell](https://fishshell.com/) prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
-
+<br>
+Spacefish is a minimalistic, powerful and extremely customizable <a href="https://fishshell.com">Fish Shell</a> prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
 
 <p align="center"></p>
   <img alt="Spaceship with Hyper and One Dark" src="./images/preview.gif" width="980px">
@@ -127,4 +126,5 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Links -->
 
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[zsh]: http://zsh.org/
+[fish]: https://fishshell.com
+[zsh]: http://zsh.org
