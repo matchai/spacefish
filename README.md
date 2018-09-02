@@ -38,16 +38,14 @@
 <div align="center">
   <sub>Built with ❤︎ by
   <a href="https://matchai.me">Matan Kushner</a> and
-  <a href="https://github.com/matchai/spacefish/graphs/contributors">contributors </a>
+  <a href="https://github.com/matchai/spacefish/graphs/contributors">contributors </a></sub>
+  <br>
+  <sub>A port of <a href="https://github.com/denysdovhan/spaceship-prompt">Spaceship ZSH</a> by
+  <a href="https://denysdovhan.com/">Denys Dovhan</a></sub>
 </div>
 
-<div align="center">
-  <sub>A port of <a href="https://github.com/denysdovhan/spaceship-prompt">Spaceship ZSH</a>
-   by
-  <a href="https://denysdovhan.com/">Denys Dovhan</a>
-</div>
 
-Spacefish is a minimalistic, powerful and extremely customizable [Fish Shell][fish] prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
+Spacefish is a minimalistic, powerful and extremely customizable [Fish Shell](https://fishshell.com/) prompt. It combines everything you may need for convenient work, without unnecessary complications, like a real spacefish.
 
 
 <p align="center"></p>
@@ -129,5 +127,4 @@ MIT © [Matan Kushner](http://matchai.me)
 <!-- Links -->
 
 [spaceship]: https://github.com/denysdovhan/spaceship-prompt
-[fish]: https://fishshell.com/
 [zsh]: http://zsh.org/
