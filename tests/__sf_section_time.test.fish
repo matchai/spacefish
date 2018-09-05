@@ -1,7 +1,9 @@
 source $DIRNAME/spacefish_test_setup.fish
+source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
+	set -g SPACEFISH_TIME_TESTING_FLAG true
 end
 
 test "Time is disabled by default?"
@@ -16,7 +18,7 @@ test "Enabling time! 24-hour by default"
 	  echo -n "at "
 	  set_color normal
 	  set_color --bold yellow
-	  echo -n (date '+%H:%M:%S')
+	  echo -n "04:00:21"
 	  set_color normal
 	  set_color --bold fff
 	  echo -n " "
@@ -33,7 +35,7 @@ test "Enabling time with 12-hour instead"
 	  echo -n "at "
 	  set_color normal
 	  set_color --bold yellow
-	  echo -n (date '+%I:%M:%S')
+	  echo -n "04:00:21"
 	  set_color normal
 	  set_color --bold fff
 	  echo -n " "
@@ -50,9 +52,9 @@ test "Show the date too"
 	  echo -n "at "
 	  set_color normal
 	  set_color --bold yellow
-	  echo -n (date '+%Y-%m-%d')
+	  echo -n "2018-09-05"
 	  echo -n " "
-	  echo -n (date '+%H:%M:%S')
+	  echo -n "04:00:21"
 	  set_color normal
 	  set_color --bold fff
 	  echo -n " "
@@ -69,7 +71,7 @@ test "Custom date/time format"
 		set_color --bold fff
 	  set_color normal
 	  set_color --bold yellow
-	  echo -n (date '+%H')
+	  echo -n "04"
 	  set_color normal
 	  set_color --bold fff
 	  echo -n " "
@@ -86,7 +88,7 @@ test "What is the time? Purple?!"
 	  echo -n "at "
 	  set_color normal
 	  set_color --bold purple
-	  echo -n (date '+%H:%M:%S')
+	  echo -n "04:00:21"
 	  set_color normal
 	  set_color --bold fff
 	  echo -n " "
