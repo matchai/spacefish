@@ -5,7 +5,7 @@
   * [Order](./docs/Options.md#order)
   * [Prompt](./docs/Options.md#prompt)
   * [Time](./docs/Options.md#time)
-	* [Username (user)](./docs/Options.md#username-user)
+  * [Username (user)](./docs/Options.md#username-user)
   * [Directory (dir)](./docs/Options.md#directory-dir)
   * [Hostname (host)](./docs/Options.md#host-host)
   * [Git (git)](./docs/Options.md#git-git)
