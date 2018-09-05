@@ -18,7 +18,7 @@ test "Enabling time! 24-hour by default"
 		echo -n "at "
 		set_color normal
 		set_color --bold yellow
-		echo -n "04:00:21"
+		echo -n "03:00:21"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -35,7 +35,7 @@ test "Enabling time with 12-hour instead"
 		echo -n "at "
 		set_color normal
 		set_color --bold yellow
-		echo -n "04:00:21"
+		echo -n "03:00:21"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -54,7 +54,7 @@ test "Show the date too"
 		set_color --bold yellow
 		echo -n "2018-09-05"
 		echo -n " "
-		echo -n "04:00:21"
+		echo -n "03:00:21"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -65,13 +65,13 @@ end
 test "Custom date/time format"
  	(
 		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_FORMAT (date '+%H') # Unix timestamp
+		set SPACEFISH_TIME_FORMAT (date -u '+%H') # Unix timestamp
 		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
 
 		set_color --bold fff
 		set_color normal
 		set_color --bold yellow
-		echo -n "04"
+		echo -n "03"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -88,7 +88,7 @@ test "What is the time? Purple?!"
 		echo -n "at "
 		set_color normal
 		set_color --bold purple
-		echo -n "04:00:21"
+		echo -n "03:00:21"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
