@@ -3,7 +3,16 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	set -g SPACEFISH_TIME_TESTING_FLAG true
+
+	function date -a time_format
+		command date --version >/dev/null
+		switch $status
+			case 0 # GNU Coreutil
+				command date "-u" "-d @1536116421" "$time_format"
+			case '*' # MacOS + BSD Compatibility (Lacks --version)
+				command date "-u" "-r 1536116421" "$time_format"
+		end
+	end
 end
 
 test "Time is disabled by default?"
@@ -65,7 +74,7 @@ end
 test "Custom date/time format"
 	(
 		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_FORMAT (time_date '+%H') # Unix timestamp
+		set SPACEFISH_TIME_FORMAT (date '+%H') # Unix timestamp
 		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
 
 		set_color --bold fff
