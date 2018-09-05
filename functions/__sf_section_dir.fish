@@ -36,8 +36,8 @@ function __sf_section_dir -d "Display the current truncated directory"
 	set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 
 	__sf_lib_section \
-	$SPACEFISH_DIR_COLOR \
-	$SPACEFISH_DIR_PREFIX \
-	$dir \
-	$SPACEFISH_DIR_SUFFIX
+		$SPACEFISH_DIR_COLOR \
+		$SPACEFISH_DIR_PREFIX \
+		$dir \
+		$SPACEFISH_DIR_SUFFIX
 end

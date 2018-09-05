@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER user dir git node exec_time line_sep battery char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby haskell pyenv exec_time line_sep battery exit_code char
 ```
 
 ### Prompt
@@ -32,17 +32,19 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `SPACEFISH_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
 | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
 
-### Char
+### Time \(`time`\)
 
 | Variable | Default | Meaning |
-| :--- | :---: | --- |
-| `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
-| `SPACEFISH_CHAR_SUFFIX` | ` ` | Suffix after prompt character |
-| `SPACEFISH_CHAR_SYMBOL` | `➜` | Prompt character to be shown before any command |
-| `SPACEFISH_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
-| `SPACEFISH_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |
+| :------- | :-----: | ------- |
+| `SPACEFISH_TIME_SHOW` | `false` | Show current time |
+| `SPACEFISH_DATE_SHOW` | `false·` | Show today's date |
+| `SPACEFISH_TIME_PREFIX` | `at·` | Prefix before time section |
+| `SPACEFISH_TIME_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after time section |
+| `SPACEFISH_TIME_FORMAT` | `false` | Custom time/date formatting, set as a string to enable (`man date` for help)  |
+| `SPACEFISH_TIME_12HR` | `false` | Use 12 hour clock AM/PM |
+| `SPACEFISH_TIME_COLOR` | `yellow` | Color of time section |
 
-### Username (`user`)
+### Username \(`user`\)
 
 By default, a username is shown only when it's not the same as `$LOGNAME`, when you're connected via SSH or when you're root. Root user is highlighted in `SPACEFISH_USER_COLOR_ROOT` color (red as default).
 
@@ -62,6 +64,7 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 | `always`              | Always         | Always          |
 | `true`                | If needed      | Always          |
 | `needed`              | If needed      | If needed       |
+
 
 ### Directory \(`dir`\)
 
@@ -130,7 +133,7 @@ Git status indicators is shown only when you have dirty repository.
 | `SPACEFISH_GIT_STATUS_BEHIND` | `⇣` | Indicator for unpulled changes \(behind of remote branch\) |
 | `SPACEFISH_GIT_STATUS_DIVERGED` | `⇕` | Indicator for diverged chages \(diverged with remote branch\) |
 
-### Package version (`package`)
+### Package version \(`package`\)
 
 > Works only for [npm](https://www.npmjs.com/) at the moment. Please, help [spaceship](https://github.com/denysdovhan/spaceship-prompt) improve this section!
 
@@ -146,7 +149,7 @@ Package version is shown when repository is a package (e.g. contains a `package.
 | `SPACEFISH_PACKAGE_SYMBOL` | `📦·` | Character to be shown before package version |
 | `SPACEFISH_PACKAGE_COLOR` | `red` | Color of package version section |
 
-### Node.js (`node`)
+### Node.js \(`node`\)
 
 Node.js section is shown only in directories that contain `package.json` file, or `node_modules` folder, or any other file with `.js` extension.
 
@@ -160,6 +163,58 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_SYMBOL` | `⬢·` | Character to be shown before Node.js version |
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
+
+### Ruby \(`ruby`\)
+
+Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_RUBY_SHOW` | `true` | Show Ruby section |
+| `SPACEFISH_RUBY_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Ruby section |
+| `SPACEFISH_RUBY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
+| `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
+| `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
+
+### Haskell \(`haskell`\)
+
+Ruby section is shown only in directories that contain `stack.yaml`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_HASKELL_SHOW` | `true` | Show Haskell section |
+| `SPACEFISH_HASKELL_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
+| `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
+| `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
+| `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
+
+### Pyenv \(`pyenv`\)
+
+pyenv section is shown only in directories that contain `requirements.txt` or any other file with `.py` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_PYENV_SHOW` | `true` | Show current Pyenv version or not |
+| `SPACEFISH_PYENV_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the pyenv section |
+| `SPACEFISH_PYENV_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the pyenv section |
+| `SPACEFISH_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
+| `SPACEFISH_PYENV_COLOR` | `yellow` | Color of Pyenv section |
+
+### Exec Time \(`exec_time`\)
+
+Execution time of the last command. Will be displayed if it exceeds the set threshold of time.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_EXEC_TIME_SHOW` | `true` | Show execution time |
+| `SPACEFISH_EXEC_TIME_PREFIX` | `took·` |  Prefix before exec time section |
+| `SPACEFISH_EXEC_TIME_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after exec time section |
+| `SPACEFISH_EXEC_TIME_COLOR` | `yellow` | Color of exec time section |
+| `SPACEFISH_EXEC_TIME_ELAPSED` | `5` | The threshold in seconds for showing exec time section |
+
+### Line Separator \(`line_sep`\)
+
+This is where the prompt will split into two lines, if enabled.
 
 ### Battery \(`battery`\)
 
@@ -184,27 +239,12 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
-### Ruby (`ruby`)
-
-Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
+### Char  \(`char`\)
 
 | Variable | Default | Meaning |
-| :------- | :-----: | ------- |
-| `SPACEFISH_RUBY_SHOW` | `true` | Show Ruby section |
-| `SPACEFISH_RUBY_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Ruby section |
-| `SPACEFISH_RUBY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Ruby section |
-| `SPACEFISH_RUBY_SYMBOL` | `💎·` | Character to be shown before Ruby version |
-| `SPACEFISH_RUBY_COLOR` | `red` | Color of Ruby section |
-
-### Haskell (`haskell`)
-
-Ruby section is shown only in directories that contain `stack.yaml`.
-
-| Variable | Default | Meaning |
-| :------- | :-----: | ------- |
-| `SPACEFISH_HASKELL_SHOW` | `true` | Show Haskell section |
-| `SPACEFISH_HASKELL_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Haskell section |
-| `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
-| `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
-| `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
-
+| :--- | :---: | --- |
+| `SPACEFISH_CHAR_PREFIX` | ` ` | Prefix before prompt character |
+| `SPACEFISH_CHAR_SUFFIX` | ` ` | Suffix after prompt character |
+| `SPACEFISH_CHAR_SYMBOL` | `➜` | Prompt character to be shown before any command |
+| `SPACEFISH_CHAR_COLOR_SUCCESS` | `green` | Color of prompt character if last command completes successfully |
+| `SPACEFISH_CHAR_COLOR_FAILURE` | `red` | Color of prompt character if last command returns non-zero exit-code |

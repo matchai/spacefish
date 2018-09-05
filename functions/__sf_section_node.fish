@@ -47,8 +47,8 @@ function __sf_section_node -d "Display the local node version"
 	[ "$sf_node_version" = "$SPACEFISH_NODE_DEFAULT_VERSION" ]; and return
 
 	__sf_lib_section \
-	$SPACEFISH_NODE_COLOR \
-	$SPACEFISH_NODE_PREFIX \
-	"$SPACEFISH_NODE_SYMBOL$sf_node_version" \
-	$SPACEFISH_NODE_SUFFIX
+		$SPACEFISH_NODE_COLOR \
+		$SPACEFISH_NODE_PREFIX \
+		"$SPACEFISH_NODE_SYMBOL$sf_node_version" \
+		$SPACEFISH_NODE_SUFFIX
 end

@@ -33,8 +33,8 @@ function __sf_section_haskell -d "Show current version of Haskell Tool Stack"
 	set -l haskell_version (stack ghc -- --numeric-version --no-install-ghc)
 
 	__sf_lib_section \
-	$SPACEFISH_HASKELL_COLOR \
-	$SPACEFISH_HASKELL_PREFIX \
-	"$SPACEFISH_HASKELL_SYMBOL$haskell_version" \
-	$SPACEFISH_HASKELL_SUFFIX
+		$SPACEFISH_HASKELL_COLOR \
+		$SPACEFISH_HASKELL_PREFIX \
+		"$SPACEFISH_HASKELL_SYMBOL$haskell_version" \
+		$SPACEFISH_HASKELL_SUFFIX
 end

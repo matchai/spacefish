@@ -92,7 +92,7 @@ function __sf_section_git_status -d "Display the current git status"
 	# Check if git status
 	if test -n "$full_git_status"
 		__sf_lib_section \
-		$SPACEFISH_GIT_STATUS_COLOR \
-		$SPACEFISH_GIT_STATUS_PREFIX$full_git_status$SPACEFISH_GIT_STATUS_SUFFIX
+			$SPACEFISH_GIT_STATUS_COLOR \
+			"$SPACEFISH_GIT_STATUS_PREFIX$full_git_status$SPACEFISH_GIT_STATUS_SUFFIX"
 	end
 end

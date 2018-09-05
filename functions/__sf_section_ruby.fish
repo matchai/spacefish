@@ -22,7 +22,7 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	# Check if that user wants to show ruby version
 	[ $SPACEFISH_RUBY_SHOW = false ]; and return
 	# Show versions only for Ruby-specific folders
-  [ -f ./Gemfile -o -f ./Rakefile -o (count *.rb) -gt 0 ]; or return
+	[ -f ./Gemfile -o -f ./Rakefile -o (count *.rb) -gt 0 ]; or return
 	set -l ruby_version
 
 	if type -q rvm-prompt
@@ -45,8 +45,8 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	end
 
 	__sf_lib_section \
-	$SPACEFISH_RUBY_COLOR \
-	$SPACEFISH_RUBY_PREFIX \
-	"$SPACEFISH_RUBY_SYMBOL$ruby_version" \
-	$SPACEFISH_RUBY_SUFFIX
+		$SPACEFISH_RUBY_COLOR \
+		$SPACEFISH_RUBY_PREFIX \
+		"$SPACEFISH_RUBY_SYMBOL$ruby_version" \
+		$SPACEFISH_RUBY_SUFFIX
 end
