@@ -23,9 +23,16 @@ function __sf_section_time -d "Display the current time!"
 
 	function time_date -a time_format
 		if test "$SPACEFISH_TIME_TESTING_FLAG" = true
-			set time_format "-d @1536116421" "$time_format"
+			switch (uname) # MacOS + BSD use their own "date" coreutil.
+				case 'Darwin'
+					set time_format "-u" "-r 1536116421" "$time_format"
+				case '*BSD'
+					set time_format "-u" "-r 1536116421" "$time_format"
+				case '*'
+					set time_format "-u" "-d @1536116421" "$time_format"
+			end
 		end
-		date -u $time_format
+		date $time_format
 	end
 
 	if test $SPACEFISH_DATE_SHOW = true

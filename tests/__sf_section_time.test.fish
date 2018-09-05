@@ -63,9 +63,9 @@ test "Show the date too"
 end
 
 test "Custom date/time format"
- 	(
+	(
 		set SPACEFISH_TIME_SHOW true
-		set SPACEFISH_TIME_FORMAT (date -u '+%H') # Unix timestamp
+		set SPACEFISH_TIME_FORMAT (time_date '+%H') # Unix timestamp
 		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
 
 		set_color --bold fff
@@ -80,9 +80,9 @@ test "Custom date/time format"
 end
 
 test "What is the time? Purple?!"
- 	(
-	  set SPACEFISH_TIME_SHOW true
-	  set SPACEFISH_TIME_COLOR purple
+	(
+		set SPACEFISH_TIME_SHOW true
+		set SPACEFISH_TIME_COLOR purple
 
 		set_color --bold fff
 		echo -n "at "
