@@ -192,6 +192,24 @@ test "Correctly truncates the root of a git directory within another"
 	) = (__sf_section_dir)
 end
 
+test "Doesn't throw an error when in a .git directory"
+	(
+		cd /tmp/tmp-spacefish
+		command git init >/dev/null
+
+		cd /tmp/tmp-spacefish/.git
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp/tmp-spacefish/.git"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+
 #
 # Configuration
 #
