@@ -36,7 +36,7 @@ function __sf_section_time -d "Display the current time!"
 	end
 
 	if test $SPACEFISH_DATE_SHOW = true
-		set time_str (date '+%Y-%m-%d')" "
+		set time_str (time_date '+%Y-%m-%d')" "
 	end
 
 	if not test $SPACEFISH_TIME_FORMAT = false
