@@ -23,7 +23,7 @@ function __sf_section_time -d "Display the current time!"
 
 	function time_date -a time_format
 		if test "$SPACEFISH_TIME_TESTING_FLAG" = true
-			set time_format "--date=@1536116421" "$time_format"
+			set time_format "-d @1536116421" "$time_format"
 		end
 		date -u $time_format
 	end
