@@ -28,8 +28,8 @@ function __sf_section_char -d "Display the prompt character"
 	end
 
 	__sf_lib_section \
-	$color \
-	$SPACEFISH_CHAR_PREFIX \
-	$SPACEFISH_CHAR_SYMBOL \
-	$SPACEFISH_CHAR_SUFFIX
+		$color \
+		$SPACEFISH_CHAR_PREFIX \
+		$SPACEFISH_CHAR_SYMBOL \
+		$SPACEFISH_CHAR_SUFFIX
 end

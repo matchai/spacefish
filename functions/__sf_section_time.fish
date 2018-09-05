@@ -38,5 +38,4 @@ function __sf_section_time -d "Display the current time!"
       $SPACEFISH_TIME_PREFIX \
       $time_str \
       $SPACEFISH_TIME_SUFFIX
-
 end

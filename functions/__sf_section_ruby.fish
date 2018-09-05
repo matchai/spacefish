@@ -45,8 +45,8 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	end
 
 	__sf_lib_section \
-	$SPACEFISH_RUBY_COLOR \
-	$SPACEFISH_RUBY_PREFIX \
-	"$SPACEFISH_RUBY_SYMBOL$ruby_version" \
-	$SPACEFISH_RUBY_SUFFIX
+		$SPACEFISH_RUBY_COLOR \
+		$SPACEFISH_RUBY_PREFIX \
+		"$SPACEFISH_RUBY_SYMBOL$ruby_version" \
+		$SPACEFISH_RUBY_SUFFIX
 end

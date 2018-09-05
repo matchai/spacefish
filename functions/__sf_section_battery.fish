@@ -67,7 +67,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_data (upower -i $battery)
 		set battery_percent (echo $battery_data | grep percentage | awk '{print $2}')
 		set battery_status (echo $battery_data | grep state | awk '{print $2}')
-	# Windows machines. Fixes issue #37.
+	# Windows machines.
 	else if type -q apci
 		set -l battery_data (acpi -b)
 
@@ -105,9 +105,9 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 	-o "$SPACEFISH_BATTERY_SHOW" = "charged" \
 	-a -n (echo (string match -r "(charged|full)" $battery_status))
 		__sf_lib_section \
-		$battery_color \
-		$SPACEFISH_BATTERY_PREFIX \
-		"$battery_symbol$battery_percent%" \
-		$SPACEFISH_BATTERY_SUFFIX
+			$battery_color \
+			$SPACEFISH_BATTERY_PREFIX \
+			"$battery_symbol$battery_percent%" \
+			$SPACEFISH_BATTERY_SUFFIX
 	end
 end

@@ -23,6 +23,6 @@ function __sf_section_git_branch -d "Format the displayed branch name"
 	[ -z $git_branch ]; and return
 
 	__sf_lib_section \
-	$SPACEFISH_GIT_BRANCH_COLOR \
-	$SPACEFISH_GIT_BRANCH_PREFIX$git_branch$SPACEFISH_GIT_BRANCH_SUFFIX
+		$SPACEFISH_GIT_BRANCH_COLOR \
+		$SPACEFISH_GIT_BRANCH_PREFIX$git_branch$SPACEFISH_GIT_BRANCH_SUFFIX
 end

@@ -21,6 +21,6 @@ function __sf_section_exit_code -d "Shows the exit code from the previous comman
     __sf_lib_section \
       $SPACEFISH_EXIT_CODE_COLOR \
       $SPACEFISH_EXIT_CODE_PREFIX \
-      $SPACEFISH_EXIT_CODE_SYMBOL$sf_exit_code \
+      "$SPACEFISH_EXIT_CODE_SYMBOL$sf_exit_code" \
       $SPACEFISH_EXIT_CODE_SUFFIX
 end

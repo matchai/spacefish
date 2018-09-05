@@ -241,7 +241,7 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 
 ### Jobs \(`jobs`\)
 
-This section show only when there are backgrounded jobs.
+This section only shows when there are backgrounded jobs.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |

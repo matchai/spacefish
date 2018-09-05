@@ -41,9 +41,9 @@ function __sf_section_user -d "Display the username"
 		end
 
 		__sf_lib_section \
-		$user_color \
-		$SPACEFISH_USER_PREFIX \
-		$USER \
-		$SPACEFISH_USER_SUFFIX
+			$user_color \
+			$SPACEFISH_USER_PREFIX \
+			$USER \
+			$SPACEFISH_USER_SUFFIX
 	end
 end

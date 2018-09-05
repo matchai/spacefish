@@ -10,7 +10,7 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     __sf_util_set_default SPACEFISH_PYENV_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
     __sf_util_set_default SPACEFISH_PYENV_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
     __sf_util_set_default SPACEFISH_PYENV_SYMBOL "🐍 "
-    __sf_util_set_default SPACEFISH_PYENV_COLOR "yellow"
+    __sf_util_set_default SPACEFISH_PYENV_COLOR yellow
 
     # ------------------------------------------------------------------------------
     # Section
@@ -34,6 +34,6 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
     __sf_lib_section \
         $SPACEFISH_PYENV_COLOR \
         $SPACEFISH_PYENV_PREFIX \
-        $SPACEFISH_PYENV_SYMBOL$pyenv_status \
+        "$SPACEFISH_PYENV_SYMBOL$pyenv_status" \
         $SPACEFISH_PYENV_SUFFIX
 end
