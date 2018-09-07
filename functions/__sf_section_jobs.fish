@@ -40,5 +40,4 @@ function __sf_section_jobs -d "Show icon, if there's a working jobs in the backg
 		$SPACEFISH_JOBS_PREFIX \
 		$SPACEFISH_JOBS_SECTION \
 		$SPACEFISH_JOBS_SUFFIX
-
 end
