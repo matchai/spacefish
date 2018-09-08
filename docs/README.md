@@ -19,6 +19,7 @@
   * [Execution time (exec_time)](./docs/Options.md#execution-time-exec_time)
   * [Line Separator (line_sep)](./docs/Options.md#line_sep-node)
   * [Battery (battery)](./docs/Options.md#battery-battery)
+  * [Jobs (jobs)](./docs/Options.md#jobs-jobs)
   * [Exit Code (exit_code)](./docs/Options.md#nodejs-node)
   * [Char (char)](./docs/Options.md#char)
 * [Contributing Guide](/CONTRIBUTING.md)

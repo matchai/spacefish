@@ -239,6 +239,33 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
+
+### Jobs \(`jobs`\)
+
+This section only shows when there are backgrounded jobs.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_JOBS_SHOW` | `true` | Show background jobs indicator  |
+| `SPACEFISH_JOBS_PREFIX` | ` ` | Prefix before the jobs indicator |
+| `SPACEFISH_JOBS_SUFFIX` | ` ` | Suffix after the jobs indicator |
+| `SPACEFISH_JOBS_SYMBOL` | `✦` | Character to be shown when jobs are hiding |
+| `SPACEFISH_JOBS_COLOR` | `blue` | Color of background jobs section |
+| `SPACEFISH_JOBS_AMOUNT_PREFIX` | ` ` | Prefix before the number of jobs |
+| `SPACEFISH_JOBS_AMOUNT_SUFFIX` | ` ` | Suffix after the number of jobs |
+| `SPACEFISH_JOBS_AMOUNT_THRESHOLD` | `1` | Number of jobs after which job count will be shown |
+
+### Exit Code \(`exit_code`\)
+Disabled by default. Set `SPACEFISH_EXIT_CODE_SHOW` to `true` to enable.
+
+| Variable | Default | Meaning |
+| :--- | :---: | --- |
+| `SPACEFISH_EXIT_CODE_SHOW` | `false` | Show the exit code of the previous command |
+| `SPACEFISH_EXIT_CODE_PREFIX` | ` ` | Prefix of exit code |
+| `SPACEFISH_EXIT_CODE_SUFFIX` | ` ` | Suffix of exit code |
+| `SPACEFISH_EXIT_CODE_SYMBOL` | `✘` | Symbol before the exit code, upon failure |
+| `SPACEFISH_EXIT_CODE_COLOR` | `red` | Color of exit code section |
+
 ### Char  \(`char`\)
 
 | Variable | Default | Meaning |
