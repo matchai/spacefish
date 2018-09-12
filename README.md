@@ -78,8 +78,6 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `⇡` - charging;
   * `⇣` - discharging;
   * `•` - fully charged.
-
-### Upcoming features
 * Indicator for jobs in the background (`✦`).
 * Current Python pyenv (`🐍`).
 * Optional exit-code of last command.
