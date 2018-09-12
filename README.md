@@ -58,11 +58,6 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Clever hostname and username displaying.
 * Indicator if user is root.
 * Prompt character turns red if the last command exits with non-zero code.
-* Execution time of the last command if it exceeds 5 seconds.
-* Current Node.js version, through nvm/nodenv/n (`⬢`).
-* Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
-* Current Haskell version, through stack (`λ`).
-* Package version, if there is a package in current directory (`📦`).
 * Current Git branch and rich repo status:
   * `?` — untracked changes;
   * `+` — uncommitted changes in the index;
@@ -74,14 +69,19 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `⇡` — ahead of remote branch;
   * `⇣` — behind of remote branch;
   * `⇕` — diverged chages.
+* Indicator for jobs in the background (`✦`).
+* Current Node.js version, through nvm/nodenv/n (`⬢`).
+* Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
+* Current Haskell version, through stack (`λ`).
+* Current Python pyenv (`🐍`).
+* Package version, if there is a package in current directory (`📦`).
 * Current battery level and status:
   * `⇡` - charging;
   * `⇣` - discharging;
   * `•` - fully charged.
-* Indicator for jobs in the background (`✦`).
-* Current Python pyenv (`🐍`).
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
+* Execution time of the last command if it exceeds 5 seconds.
 
 Want more features? Please [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request!
 
