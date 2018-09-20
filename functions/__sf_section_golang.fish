@@ -13,7 +13,7 @@ function __sf_section_golang -d "Display the current go version if you're inside
 	__sf_util_set_default SPACEFISH_GOLANG_SHOW true
 	__sf_util_set_default SPACEFISH_GOLANG_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_GOLANG_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_GOLANG_SYMBOL "🐹"
+	__sf_util_set_default SPACEFISH_GOLANG_SYMBOL "🐹 "
 	__sf_util_set_default SPACEFISH_GOLANG_COLOR cyan
 
 	# ------------------------------------------------------------------------------

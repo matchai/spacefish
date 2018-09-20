@@ -15,7 +15,7 @@ test "Prints section when Godeps is present"
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐹v1.10.3"
+		echo -n "🐹 v1.10.3"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -33,7 +33,7 @@ test "Prints section when glide.yaml is present"
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐹v1.10.3"
+		echo -n "🐹 v1.10.3"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -67,7 +67,7 @@ test "Changing SPACEFISH_GOLANG_PREFIX changes the character prefix"
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐹v1.10.3"
+		echo -n "🐹 v1.10.3"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -84,7 +84,7 @@ test "Changing SPACEFISH_GOLANG_SUFFIX changes the character prefix"
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐹v1.10.3"
+		echo -n "🐹 v1.10.3"
 		set_color normal
 		set_color --bold fff
 		echo -n "·"
