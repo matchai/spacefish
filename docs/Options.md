@@ -200,6 +200,18 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 | `SPACEFISH_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
 | `SPACEFISH_PYENV_COLOR` | `yellow` | Color of Pyenv section |
 
+### Go \(`golang`\)
+
+Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_GOLANG_SHOW` | `true` | Show current Go version or not |
+| `SPACEFISH_GOLANG_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Go section |
+| `SPACEFISH_GOLANG_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Go section |
+| `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
+| `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
+
 ### Exec Time \(`exec_time`\)
 
 Execution time of the last command. Will be displayed if it exceeds the set threshold of time.
