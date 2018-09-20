@@ -72,6 +72,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Indicator for jobs in the background (`✦`).
 * Current Node.js version, through nvm/nodenv/n (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
+* Current Go version (`🐹`).
 * Current Haskell version, through stack (`λ`).
 * Current Python pyenv (`🐍`).
 * Package version, if there is a package in current directory (`📦`).
