@@ -29,15 +29,15 @@ function __sf_section_golang -d "Display the current go version if you're inside
 		return
 	end
 
-	if type -q go
-		set -g sf_go_version (go version | awk '{ print substr($3, 3) }')
-	else
+	if not type -q go
 		return
 	end
+
+	set -l sf_go_version (go version | awk '{ print substr($3, 3) }')
 
 	__sf_lib_section \
 		$SPACEFISH_GOLANG_COLOR \
 		$SPACEFISH_GOLANG_PREFIX \
-		$SPACEFISH_GOLANG_SYMBOL"v"$sf_go_version \
+		"$SPACEFISH_GOLANG_SYMBOL"v"$sf_go_version" \
 		$SPACEFISH_GOLANG_SUFFIX
 end
