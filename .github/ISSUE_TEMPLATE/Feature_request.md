@@ -6,7 +6,7 @@ about: I have a suggestion (and may want to implement it 🙂)!
 
 ## Feature Request
 <!--
-Please keep in mind that we are working to achieve feature pairity with Spaceship.
+Please keep in mind that we are working to achieve feature parity with Spaceship.
 If this proposed feature doesn't already exist in Spaceship, please submit a PR there instead.
 -->
 
