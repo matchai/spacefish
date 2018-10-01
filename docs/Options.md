@@ -212,6 +212,19 @@ Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any
 | `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
 | `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
 
+
+### Kubectl context \(`kubecontext`\)
+
+Kubernetes context is shown everywhere if `kubectl` binary is found.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_KUBECONTEXT_SHOW` | `true` | Show current kubectl context |
+| `SPACEFISH_KUBECONTEXT_PREFIX` | `at ` | Prefix before the kubectl section |
+| `SPACEFISH_KUBECONTEXT_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the kubectl section |
+| `SPACEFISH_KUBECONTEXT_SYMBOL` | `☸️ ` | Character to be shown before kubectl context |
+| `SPACEFISH_KUBECONTEXT_COLOR` | `cyan` | Color of kubectl section |
+
 ### Exec Time \(`exec_time`\)
 
 Execution time of the last command. Will be displayed if it exceeds the set threshold of time.
