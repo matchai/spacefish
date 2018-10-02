@@ -17,6 +17,7 @@
   * [Haskell (haskell)](./docs/Options.md#haskell-haskell)
   * [Pyenv (pyenv)](./docs/Options.md#pyenv-pyenv)
   * [Go (golang)](./docs/Options.md#go-golang)
+  * [Kubectl context (kubecontext)](./docs/Options.md#kubectl-context-kubecontext)
   * [Execution time (exec_time)](./docs/Options.md#execution-time-exec_time)
   * [Line Separator (line_sep)](./docs/Options.md#line_sep-node)
   * [Battery (battery)](./docs/Options.md#battery-battery)
