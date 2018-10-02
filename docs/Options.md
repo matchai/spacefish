@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby haskell pyenv exec_time line_sep battery exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang rust haskell pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -27,8 +27,8 @@ This group of options defines a behavior of prompt and standard parameters for s
 | `SPACEFISH_PROMPT_ADD_NEWLINE` | `true` | Adds a newline character before each prompt line |
 | `SPACEFISH_PROMPT_SEPARATE_LINE` | `true` | Make the prompt span across two lines |
 | `SPACEFISH_PROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in prompt |
-| `SPACEFISH_PROMPT_PREFIXES_SHOW` | `true` | Show prefixes before prompt sections or not |
-| `SPACEFISH_PROMPT_SUFFIXES_SHOW` | `true` | Show suffixes before prompt sections or not |
+| `SPACEFISH_PROMPT_PREFIXES_SHOW` | `true` | Show prefixes before prompt sections |
+| `SPACEFISH_PROMPT_SUFFIXES_SHOW` | `true` | Show suffixes before prompt sections |
 | `SPACEFISH_PROMPT_DEFAULT_PREFIX` | `via` | Default prefix for prompt sections |
 | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | ` ` | Default suffix for prompt section |
 
@@ -194,7 +194,7 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_PYENV_SHOW` | `true` | Show current Pyenv version or not |
+| `SPACEFISH_PYENV_SHOW` | `true` | Show current Pyenv version |
 | `SPACEFISH_PYENV_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the pyenv section |
 | `SPACEFISH_PYENV_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the pyenv section |
 | `SPACEFISH_PYENV_SYMBOL` | `🐍·` | Character to be shown before Pyenv version |
@@ -206,12 +206,23 @@ Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACEFISH_GOLANG_SHOW` | `true` | Show current Go version or not |
+| `SPACEFISH_GOLANG_SHOW` | `true` | Show current Go version |
 | `SPACEFISH_GOLANG_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Go section |
 | `SPACEFISH_GOLANG_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Go section |
 | `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
 | `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
 
+### Rust (`rust`)
+
+Rust section is shown only in directories that contain `Cargo.toml` or any other file with `.rs` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_RUST_SHOW` | `true` | Show current Rust version |
+| `SPACEFISH_RUST_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Rust section |
+| `SPACEFISH_RUST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Rust section |
+| `SPACEFISH_RUST_SYMBOL` | `𝗥·` | Character to be shown before Rust version |
+| `SPACEFISH_RUST_COLOR` | `red` | Color of Rust section |
 
 ### Kubectl context \(`kubecontext`\)
 
@@ -247,7 +258,7 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section or not \(`true`, `false`, `always` or `charged`\) |
+| `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section \(`true`, `false`, `always` or `charged`\) |
 | `SPACEFISH_BATTERY_PREFIX` | ` ` | Prefix before battery section |
 | `SPACEFISH_BATTERY_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
 | `SPACEFISH_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
