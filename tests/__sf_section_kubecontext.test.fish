@@ -6,7 +6,7 @@ function setup
 	mock kubectl 0 "echo \"testkube\""
 end
 
-test "Prints section "
+test "Prints section"
 	(
 		set_color --bold fff
 		echo -n "at "

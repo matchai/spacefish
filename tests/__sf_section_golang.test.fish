@@ -6,6 +6,10 @@ function setup
 	mock go 0 "echo \"go version go1.10.3 darwin/amd64\""
 end
 
+function teardown
+	rm -rf /tmp/tmp-spacefish
+end
+
 test "Prints section when Godeps is present"
 	(
 		mkdir -p /tmp/tmp-spacefish/Godeps

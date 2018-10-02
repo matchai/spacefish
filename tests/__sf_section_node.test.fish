@@ -6,6 +6,10 @@ function setup
 	mock node 0 "echo \"v9.8.0\""
 end
 
+function teardown
+	rm -rf /tmp/tmp-spacefish
+end
+
 test "Prints section when node_modules is present"
 	(
 		mkdir -p /tmp/tmp-spacefish/node_modules
