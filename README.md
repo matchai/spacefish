@@ -75,7 +75,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Current Go version (`🐹`).
 * Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
 * Current Python pyenv (`🐍`).
-* Current Kubectl context (☸️).
+* Current Kubectl context (`☸️`).
 * Package version, if there is a package in current directory (`📦`).
 * Current battery level and status:
   * `⇡` - charging;
