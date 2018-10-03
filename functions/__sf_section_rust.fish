@@ -30,7 +30,7 @@ function __sf_section_rust -d "Display the current Rust version"
 		return
 	end
 
-	set -l rust_version (rustc --version | grep --color=never -oE '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]')
+	set -l rust_version (rustc --version | sed 's/^[a-z]*\\s//' | sed 's/\\s.*//')
 
 	__sf_lib_section \
 		$SPACEFISH_RUST_COLOR \
