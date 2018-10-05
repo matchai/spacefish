@@ -223,6 +223,7 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 | `SPACEFISH_RUST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Rust section |
 | `SPACEFISH_RUST_SYMBOL` | `𝗥·` | Character to be shown before Rust version |
 | `SPACEFISH_RUST_COLOR` | `red` | Color of Rust section |
+| `SPACEFISH_RUST_VERBOSE_VERSION` | `false` | Show what branch is being used, if any. (Beta, Nightly) |
 
 ### Kubectl context \(`kubecontext`\)
 

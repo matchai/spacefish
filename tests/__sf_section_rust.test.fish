@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock rustc 0 "echo \"rustc 1.28.0 (9634041f0 2018-07-30)\""
+	mock rustc 0 "echo \"rustc 1.28.0-nightly (9634041f0 2018-07-30)\""
 	mkdir -p /tmp/tmp-spacefish
 	touch /tmp/tmp-spacefish/Cargo.toml
 	cd /tmp/tmp-spacefish
@@ -96,6 +96,23 @@ test "Changing SPACEFISH_RUST_SUFFIX changes the character prefix"
 		set_color normal
 		set_color --bold fff
 		echo -n "·"
+		set_color normal
+	) = (__sf_section_rust)
+end
+
+test "Prints verbose version when configured to do so"
+	(
+		touch /tmp/tmp-spacefish/testfile.rs
+        set SPACEFISH_RUST_VERBOSE_VERSION true
+	
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold red
+		echo -n "𝗥 v1.28.0-nightly"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
 		set_color normal
 	) = (__sf_section_rust)
 end
