@@ -14,6 +14,7 @@ function __sf_section_rust -d "Display the current Rust version"
 	__sf_util_set_default SPACEFISH_RUST_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	__sf_util_set_default SPACEFISH_RUST_SYMBOL "𝗥 "
 	__sf_util_set_default SPACEFISH_RUST_COLOR red
+	__sf_util_set_default SPACEFISH_RUST_VERBOSE_VERSION false
 
 	# ------------------------------------------------------------------------------
 	# Section
@@ -30,7 +31,11 @@ function __sf_section_rust -d "Display the current Rust version"
 		return
 	end
 
-	set -l rust_version (rustc --version | cut -d' ' -f2)
+	set -l rust_version (rustc --version | string split ' ')[2]
+
+	if test $SPACEFISH_RUST_VERBOSE_VERSION = false
+        set rust_version (string split '-' $rust_version)[1] # Cut off -suffixes from version. "v1.30.0-beta" vs "v1.30.0"
+	end
 
 	__sf_lib_section \
 		$SPACEFISH_RUST_COLOR \
