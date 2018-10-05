@@ -31,10 +31,10 @@ function __sf_section_rust -d "Display the current Rust version"
 		return
 	end
 
-	set -l rust_version (rustc --version | cut -d' ' -f2)
+	set -l rust_version (rustc --version | string split ' ')[2]
 
 	if test $SPACEFISH_RUST_VERBOSE_VERSION = false
-        set rust_version (echo $rust_version | cut -d'-' -f1) # Cut off -suffixes from version. "v1.30.0-beta.11" or "v1.30.0-nightly"
+        set rust_version (string split '-' $rust_version)[1] # Cut off -suffixes from version. "v1.30.0-beta" vs "v1.30.0"
 	end
 
 	__sf_lib_section \
