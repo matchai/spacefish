@@ -47,7 +47,7 @@ end
 test "Doesn't print the section when Cargo.toml and *.rs aren't present"
 	(
 		rm -rf /tmp/tmp-spacefish/Cargo.toml
-	) = (__sf_section_golang)
+	) = (__sf_section_rust)
 end
 
 test "Changing SPACEFISH_RUST_SYMBOL changes the displayed character"
@@ -104,7 +104,7 @@ test "Prints verbose version when configured to do so"
 	(
 		touch /tmp/tmp-spacefish/testfile.rs
         set SPACEFISH_RUST_VERBOSE_VERSION true
-	
+
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
