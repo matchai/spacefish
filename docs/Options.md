@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang rust haskell pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -211,6 +211,18 @@ Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any
 | `SPACEFISH_GOLANG_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Go section |
 | `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
 | `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
+
+### PHP (`php`)
+
+PHP section is shown only in directories that contain `composer.json` file, or any other file with `.php` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_PHP_SHOW` | true | Show PHP section |
+| `SPACEFISH_PHP_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the PHP section |
+| `SPACEFISH_PHP_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the PHP section |
+| `SPACEFISH_PHP_SYMBOL` | `🐘·` | Character to be shown before PHP version |
+| `SPACEFISH_PHP_COLOR` | `blue` | Color of PHP section |
 
 ### Rust (`rust`)
 
