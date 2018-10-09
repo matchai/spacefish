@@ -31,6 +31,7 @@ end
 
 test "Prints section when a *.php file is present"
 	(
+		rm -rf /tmp/tmp-spacefish/composer.json
 		touch /tmp/tmp-spacefish/testfile.php
 
 		set_color --bold fff
