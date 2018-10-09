@@ -19,14 +19,14 @@ function __sf_section_php -d "Display the current php version"
 	# Section
 	# ------------------------------------------------------------------------------
 
+	# Show current version of PHP
 	[ $SPACEFISH_PHP_SHOW = false ]; and return
+
+	# Ensure the php command is available
+	type -q php; or return
 
 	if not test -f composer.json \
 		-o (count *.php) -gt 0
-		return
-	end
-
-	if not type -q php
 		return
 	end
 
