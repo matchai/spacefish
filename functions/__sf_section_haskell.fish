@@ -22,19 +22,17 @@ function __sf_section_haskell -d "Show current version of Haskell Tool Stack"
 	# Show current version of Haskell Tool Stack.
 	[ $SPACEFISH_HASKELL_SHOW = false ]; and return
 
-	# If there are stack files in current directory
-	if not test -f ./stack.yaml
-		return
-	end
-
-	# The command is stack, so do not change this to haskell.
+	# Ensure the stack command is available
 	type -q stack; or return
+
+	# If there are stack files in current directory
+	[ -f ./stack.yaml ]; or return
 
 	set -l haskell_version (stack ghc -- --numeric-version --no-install-ghc)
 
 	__sf_lib_section \
 		$SPACEFISH_HASKELL_COLOR \
 		$SPACEFISH_HASKELL_PREFIX \
-		"$SPACEFISH_HASKELL_SYMBOL$haskell_version" \
+		"$SPACEFISH_HASKELL_SYMBOL"v"$haskell_version" \
 		$SPACEFISH_HASKELL_SUFFIX
 end

@@ -20,9 +20,13 @@ function __sf_section_node -d "Display the local node version"
 	# Section
 	# ------------------------------------------------------------------------------
 
+	# Show the current version of Node
 	[ $SPACEFISH_NODE_SHOW = false ]; and return
 
-	if not test -f ./package.json -o -d ./node_modules
+	# Show versions only for Node-specific folders
+	if not test -f ./package.json \
+		-o -d ./node_modules \
+		-o (count *.js) -gt 0
 		return
 	end
 
