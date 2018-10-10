@@ -43,7 +43,41 @@ test "Prints section when glide.yaml is present"
 	) = (__sf_section_golang)
 end
 
-test "Doesn't print the section when Godeps and glide.yaml aren't present"
+test "Prints section when Gopkg.yml is present"
+	(
+		rm -rf /tmp/tmp-spacefish/Godeps
+		touch /tmp/tmp-spacefish/Gopkg.yml
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold cyan
+		echo -n "🐹 v1.10.3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_golang)
+end
+
+test "Prints section when Gopkg.lock is present"
+	(
+		rm -rf /tmp/tmp-spacefish/Godeps
+		touch /tmp/tmp-spacefish/Gopkg.lock
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold cyan
+		echo -n "🐹 v1.10.3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_golang)
+end
+
+test "Doesn't print the section when golang files aren't present"
 	(
 		rm -rf /tmp/tmp-spacefish/Godeps
 	) = (__sf_section_golang)

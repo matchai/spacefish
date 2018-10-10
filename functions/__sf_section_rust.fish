@@ -20,14 +20,14 @@ function __sf_section_rust -d "Display the current Rust version"
 	# Section
 	# ------------------------------------------------------------------------------
 
+	# Show current version of Rust
 	[ $SPACEFISH_RUST_SHOW = false ]; and return
+
+	# Ensure the rustc command is available
+	type -q rustc; or return
 
 	if not test -f Cargo.toml \
 		-o (count *.rs) -gt 0
-		return
-	end
-
-	if not type -q rustc
 		return
 	end
 

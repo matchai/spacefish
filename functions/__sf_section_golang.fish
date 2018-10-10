@@ -20,16 +20,18 @@ function __sf_section_golang -d "Display the current go version if you're inside
 	# Section
 	# ------------------------------------------------------------------------------
 
+	# Show the current version of Golang
 	[ $SPACEFISH_GOLANG_SHOW = false ]; and return
+
+	# Ensure the go command is available
+	type -q go; or return
 
 	if not test -d Godeps \
 		-o -f glide.yaml \
 		-o (count *.go) -gt 0 \
+		-o -f Gopkg.yml \
+		-o -f Gopkg.lock \
 		-o ([ -n $GOPATH ]; and string match $GOPATH $PWD)
-		return
-	end
-
-	if not type -q go
 		return
 	end
 

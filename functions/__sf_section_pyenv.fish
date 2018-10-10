@@ -16,24 +16,23 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
 	# Section
 	# ------------------------------------------------------------------------------
 
-
+	# Show pyenv python version
 	[ $SPACEFISH_PYENV_SHOW = false ]; and return
 
+	# Ensure the pyenv command is available
+	type -q pyenv; or return
+
 	# Show pyenv python version only for Python-specific folders
-	test ! -e requirements.txt; and return
-	if not count *.py >/dev/null
+	if not test -f requirements.txt \
+		-o (count *.py) -gt 0
 		return
 	end
 
-	if not type -q pyenv; # Do nothing if pyenv is not installed
-		return
-	end
-
-	set pyenv_status (pyenv version-name 2>/dev/null) # This line needs explicit testing in an enviroment that has pyenv.
+	set -l pyenv_status (pyenv version-name ^/dev/null) # This line needs explicit testing in an enviroment that has pyenv.
 
 	__sf_lib_section \
 		$SPACEFISH_PYENV_COLOR \
 		$SPACEFISH_PYENV_PREFIX \
-		"$SPACEFISH_PYENV_SYMBOL$pyenv_status" \
+		"$SPACEFISH_PYENV_SYMBOL""$pyenv_status" \
 		$SPACEFISH_PYENV_SUFFIX
 end
