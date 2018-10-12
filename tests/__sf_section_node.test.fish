@@ -4,13 +4,16 @@ source $DIRNAME/mock.fish
 function setup
 	spacefish_test_setup
 	mock node 0 "echo \"v9.8.0\""
+	mkdir -p /tmp/tmp-spacefish/node_modules
+	cd /tmp/tmp-spacefish
+end
+
+function teardown
+	rm -rf /tmp/tmp-spacefish
 end
 
 test "Prints section when node_modules is present"
 	(
-		mkdir -p /tmp/tmp-spacefish/node_modules
-		cd /tmp/tmp-spacefish
-
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -25,9 +28,8 @@ end
 
 test "Prints section when package.json is present"
 	(
-		mkdir -p /tmp/tmp-spacefish
+		rm -rf /tmp/tmp-spacefish/node_modules
 		touch /tmp/tmp-spacefish/package.json
-		cd /tmp/tmp-spacefish
 
 		set_color --bold fff
 		echo -n "via "
@@ -38,6 +40,12 @@ test "Prints section when package.json is present"
 		set_color --bold fff
 		echo -n " "
 		set_color normal
+	) = (__sf_section_node)
+end
+
+test "Doesn't print section when not in a directory with node_modules or package.json"
+	(
+		rm -rf /tmp/tmp-spacefish/node_modules
 	) = (__sf_section_node)
 end
 

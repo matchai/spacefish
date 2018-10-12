@@ -73,8 +73,11 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Current Node.js version, through nvm/nodenv/n (`⬢`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
 * Current Go version (`🐹`).
-* Current Haskell version, through stack (`λ`).
+* Current PHP version (`🐘`).
+* Current Rust version (`𝗥`).
+* Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
 * Current Python pyenv (`🐍`).
+* Current Kubectl context (`☸️`).
 * Package version, if there is a package in current directory (`📦`).
 * Current battery level and status:
   * `⇡` - charging;

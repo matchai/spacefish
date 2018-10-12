@@ -20,24 +20,26 @@ function __sf_section_golang -d "Display the current go version if you're inside
 	# Section
 	# ------------------------------------------------------------------------------
 
+	# Show the current version of Golang
 	[ $SPACEFISH_GOLANG_SHOW = false ]; and return
+
+	# Ensure the go command is available
+	type -q go; or return
 
 	if not test -d Godeps \
 		-o -f glide.yaml \
 		-o (count *.go) -gt 0 \
+		-o -f Gopkg.yml \
+		-o -f Gopkg.lock \
 		-o ([ -n $GOPATH ]; and string match $GOPATH $PWD)
 		return
 	end
 
-	if not type -q go
-		return
-	end
-
-	set -l sf_go_version (go version | awk '{ print substr($3, 3) }')
+	set -l go_version (go version | awk '{ print substr($3, 3) }')
 
 	__sf_lib_section \
 		$SPACEFISH_GOLANG_COLOR \
 		$SPACEFISH_GOLANG_PREFIX \
-		"$SPACEFISH_GOLANG_SYMBOL"v"$sf_go_version" \
+		"$SPACEFISH_GOLANG_SYMBOL"v"$go_version" \
 		$SPACEFISH_GOLANG_SUFFIX
 end

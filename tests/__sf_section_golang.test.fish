@@ -4,13 +4,16 @@ source $DIRNAME/mock.fish
 function setup
 	spacefish_test_setup
 	mock go 0 "echo \"go version go1.10.3 darwin/amd64\""
+	mkdir -p /tmp/tmp-spacefish/Godeps
+	cd /tmp/tmp-spacefish
+end
+
+function teardown
+	rm -rf /tmp/tmp-spacefish
 end
 
 test "Prints section when Godeps is present"
 	(
-		mkdir -p /tmp/tmp-spacefish/Godeps
-		cd /tmp/tmp-spacefish
-
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -25,9 +28,8 @@ end
 
 test "Prints section when glide.yaml is present"
 	(
-		mkdir -p /tmp/tmp-spacefish
+		rm -rf /tmp/tmp-spacefish/Godeps
 		touch /tmp/tmp-spacefish/glide.yaml
-		cd /tmp/tmp-spacefish
 
 		set_color --bold fff
 		echo -n "via "
@@ -41,6 +43,45 @@ test "Prints section when glide.yaml is present"
 	) = (__sf_section_golang)
 end
 
+test "Prints section when Gopkg.yml is present"
+	(
+		rm -rf /tmp/tmp-spacefish/Godeps
+		touch /tmp/tmp-spacefish/Gopkg.yml
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold cyan
+		echo -n "🐹 v1.10.3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_golang)
+end
+
+test "Prints section when Gopkg.lock is present"
+	(
+		rm -rf /tmp/tmp-spacefish/Godeps
+		touch /tmp/tmp-spacefish/Gopkg.lock
+
+		set_color --bold fff
+		echo -n "via "
+		set_color normal
+		set_color --bold cyan
+		echo -n "🐹 v1.10.3"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_golang)
+end
+
+test "Doesn't print the section when golang files aren't present"
+	(
+		rm -rf /tmp/tmp-spacefish/Godeps
+	) = (__sf_section_golang)
+end
 
 test "Changing SPACEFISH_GOLANG_SYMBOL changes the displayed character"
 	(

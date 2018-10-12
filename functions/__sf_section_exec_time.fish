@@ -19,12 +19,15 @@ function __sf_section_exec_time -d "Display the execution time of the last comma
 
 	[ $SPACEFISH_EXEC_TIME_SHOW = false ]; and return
 
-	if test -n "$CMD_DURATION" -a "$CMD_DURATION" -gt (math "$SPACEFISH_EXEC_TIME_ELAPSED * 1000")
-		set -l command_duration (echo $CMD_DURATION | __sf_util_human_time)
+	# Allow for compatibility between fish 2.7 and 3.0
+	set -l command_duration "$CMD_DURATION$cmd_duration"
+
+	if test -n "$command_duration" -a "$command_duration" -gt (math "$SPACEFISH_EXEC_TIME_ELAPSED * 1000")
+		set -l human_command_duration (echo $command_duration | __sf_util_human_time)
 		__sf_lib_section \
 			$SPACEFISH_EXEC_TIME_COLOR \
 			$SPACEFISH_EXEC_TIME_PREFIX \
-			$command_duration \
+			$human_command_duration \
 			$SPACEFISH_EXEC_TIME_SUFFIX
 	end
 end
