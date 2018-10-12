@@ -99,7 +99,7 @@ To get spacefish working correctly, you will need:
 ### [Fisherman](https://fisherman.github.io)
 
 ```fish
-$ fisher matchai/spacefish
+$ fisher add matchai/spacefish
 ```
 
 ### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
