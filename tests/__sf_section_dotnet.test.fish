@@ -19,7 +19,7 @@ test "Prints section"
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
-		set_color --bold 128
+		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
 		set_color --bold fff
@@ -35,7 +35,7 @@ test "Changing SPACEFISH_DOTNET_SYMBOL changes the displayed character"
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
-		set_color --bold 128
+		set_color --bold af00d7
 		echo -n "· 2.1.403"
 		set_color normal
 		set_color --bold fff
@@ -52,7 +52,7 @@ test "Changing SPACEFISH_DOTNET_PREFIX changes the character prefix"
 		set_color --bold fff
 		echo -n "·"
 		set_color normal
-		set_color --bold 128
+		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
 		set_color --bold fff
@@ -69,7 +69,7 @@ test "Changing SPACEFISH_DOTNET_SUFFIX changes the character prefix"
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
-		set_color --bold 128
+		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
 		set_color --bold fff
