@@ -1,6 +1,6 @@
 #
 # Tweaked from Markcial's excellent mock library:
-# https://github.com/fisherman/mock
+# https://github.com/Markcial/mock
 #
 
 function mock -a _mock -a exit_code -a code -d "Mock library for fish shell testing"

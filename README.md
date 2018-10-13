@@ -96,7 +96,7 @@ To get spacefish working correctly, you will need:
 * [Powerline Font](https://github.com/powerline/fonts) must be installed and enabled in your terminal.
 
 ## Installation
-### [Fisherman](https://fisherman.github.io)
+### [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
 $ fisher add matchai/spacefish
