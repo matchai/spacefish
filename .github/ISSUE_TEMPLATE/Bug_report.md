@@ -21,7 +21,7 @@ A clear and concise description of what you expected to happen.
 **Environment**
 - Spacefish version: [the output of `echo $SPACEFISH_VERSION`]
 - Fish version: [the output of `fish --version`]
-- Fish plugin manager: [e.g. oh-my-fish, fisherman, fin]
+- Fish plugin manager: [e.g. oh-my-fish, fisher, fin]
 - Terminal emulator: [e.g. iTerm, Hyper, Terminator]
 - Operating system: [e.g. OSX 10.13.4, Windows 10]
 
