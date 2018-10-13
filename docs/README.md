@@ -19,6 +19,7 @@
   * [Go (golang)](./docs/Options.md#go-golang)
   * [PHP (php)](./docs/Options.md#php-php)
   * [Rust (rust)](./docs/Options.md#rust-rust)
+  * [.NET (dotnet)](/docs/Options.md#net-dotnet)
   * [Kubectl context (kubecontext)](./docs/Options.md#kubectl-context-kubecontext)
   * [Execution time (exec_time)](./docs/Options.md#execution-time-exec_time)
   * [Line Separator (line_sep)](./docs/Options.md#line_sep-node)

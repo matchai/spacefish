@@ -237,6 +237,18 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 | `SPACEFISH_RUST_COLOR` | `red` | Color of Rust section |
 | `SPACEFISH_RUST_VERBOSE_VERSION` | `false` | Show what branch is being used, if any. (Beta, Nightly) |
 
+### .NET (`dotnet`)
+
+.NET section is shown only in directories that contains a `project.json` or `global.json` file, or a file with one of these extensions: `.csproj`, `.xproj` or `.sln`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_DOTNET_SHOW` | `true` | Current .NET section |
+| `SPACESHIP_DOTNET_PREFIX` | `$SPACESHIP_PROMPT_DEFAULT_PREFIX` | Prefix before .NET section |
+| `SPACESHIP_DOTNET_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after .NET section |
+| `SPACESHIP_DOTNET_SYMBOL` | `.NET·` | Character to be shown before .NET version |
+| `SPACESHIP_DOTNET_COLOR` | `128` | Color of .NET section |
+
 ### Kubectl context \(`kubecontext`\)
 
 Kubernetes context is shown everywhere if `kubectl` binary is found.
