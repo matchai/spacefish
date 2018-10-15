@@ -176,7 +176,7 @@ test "Setting SPACEFISH_NODE_DEFAULT_VERSION to the current version disables the
 	) = (__sf_section_node)
 end
 
-test "Doesn't display node when SPACEFISH_NODE_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_NODE_SHOW is set to \"false\""
 	(
 		set SPACEFISH_NODE_SHOW false
 	) = (__sf_section_node)

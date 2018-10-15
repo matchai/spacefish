@@ -116,7 +116,7 @@ test "Changing SPACEFISH_GOLANG_PREFIX changes the character prefix"
 	) = (__sf_section_golang)
 end
 
-test "Changing SPACEFISH_GOLANG_SUFFIX changes the character prefix"
+test "Changing SPACEFISH_GOLANG_SUFFIX changes the character suffix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_GOLANG_SUFFIX ·
@@ -133,7 +133,7 @@ test "Changing SPACEFISH_GOLANG_SUFFIX changes the character prefix"
 	) = (__sf_section_golang)
 end
 
-test "Doesn't display node when SPACEFISH_GOLANG_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_GOLANG_SHOW is set to \"false\""
 	(
 		set SPACEFISH_GOLANG_SHOW false
 	) = (__sf_section_golang)
