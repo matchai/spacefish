@@ -9,7 +9,7 @@ set -gx HOME $tmpDir
 if not test -d $tmpDir/.config/omf
 	mkdir -p $tmpDir
 	curl -L https://get.oh-my.fish > $tmpDir/install
-	chmod +777 $tmpDir/install
+	chmod 777 $tmpDir/install
 	fish -c "$tmpDir/install --noninteractive"
 end
 
