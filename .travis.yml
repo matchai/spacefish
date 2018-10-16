@@ -4,9 +4,11 @@ language: generic
 os:
   - linux
   - osx
-script:
- - fish tests/run-omf.fish
- - fish tests/run-fisher.fish
+env:
+ - TEST_COMMAND="fish tests/run-omf.fish"
+ - TEST_COMMAND="fish tests/run-fisher.fish"
+
+script: (eval "$TEST_COMMAND")
 
 install:
   # OSX
