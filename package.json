@@ -5,7 +5,9 @@
   "repository": "git@github.com:matchai/spacefish.git",
   "author": "Matan Kushner <matchai@me.com>",
   "scripts": {
-    "test": "fish tests/run.fish",
+    "test": "npm run test:fisher",
+    "test:omf": "fish tests/run-omf.fish",
+    "test:fisher": "fish tests/run-fisher.fish",
     "version": "scripts/version.fish",
     "docs:prepare": "gitbook install",
     "docs:serve": "npm run docs:prepare && gitbook serve .",
