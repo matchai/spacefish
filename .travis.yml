@@ -12,7 +12,7 @@ script: (eval "$TEST_COMMAND")
 
 install:
   # OSX
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install fish; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew install fish; fi
 
   # LINUX
   - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-add-repository -y ppa:fish-shell/release-2; fi
