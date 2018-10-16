@@ -1,28 +1,7 @@
-language: node_js
-node_js:
-   - "stable"
-
-jobs:
-  include:
-    - stage: test
-      os: linux
-      sudo: required
-      install:
-       - sudo apt-add-repository -y ppa:fish-shell/release-2
-       - sudo apt-get update
-       - sudo apt-get install -y fish
-    - stage: test
-      os: osx
-      install:
-       - brew update
-       - brew install fish
-
-    - stage: deploy
-      if: branch = master AND type = push
-      script: npm run docs:build
-      deploy:
-       provider: pages
-       skip-cleanup: true
-       github-token: $GITHUB_TOKEN
-       keep-history: true
-       local-dir: _book
+language: generic
+os: windows
+sudo: required
+install:
+  - sudo apt-add-repository -y ppa:fish-shell/release-2
+  - sudo apt-get update
+  - sudo apt-get install -y fish
