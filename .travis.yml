@@ -4,6 +4,9 @@ language: generic
 os:
   - linux
   - osx
+script:
+ - fish tests/run-omf.fish
+ - fish tests/run-fisher.fish
 
 install:
   # OSX
@@ -11,9 +14,9 @@ install:
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install fish; fi
 
   # LINUX
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-add-repository -y ppa:fish-shell/release-2; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-get update; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-get install -y fish; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-add-repository -y ppa:fish-shell/release-2; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get update; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -y fish; fi
 
 jobs:
   include:
