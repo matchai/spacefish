@@ -1,23 +1,25 @@
-language: node_js
-node_js:
-   - "stable"
+sudo: required
+language: generic
+
+os:
+  - linux
+  - osx
+
+install:
+  # OSX
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew update      ; fi
+  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then brew install fish; fi
+
+  # LINUX
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-add-repository -y ppa:fish-shell/release-2; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-get update; fi
+  - if [ "$TRAVIS_OS_NAME" == "linux" ]; sudo apt-get install -y fish; fi
 
 jobs:
   include:
-    - stage: test
-      os: linux
-      sudo: required
-      install:
-       - sudo apt-add-repository -y ppa:fish-shell/release-2
-       - sudo apt-get update
-       - sudo apt-get install -y fish
-    - stage: test
-      os: osx
-      install:
-       - brew update
-       - brew install fish
-
     - stage: deploy
+      language: node_js
+      node_js: stable
       if: branch = master AND type = push
       script: npm run docs:build
       deploy:
