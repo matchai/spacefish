@@ -1,9 +1,10 @@
 source $DIRNAME/spacefish_test_setup.fish
 source $DIRNAME/mock.fish
+set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup
     spacefish_test_setup
-    mock docker 0 "echo \"18.06.1\""
+	mock docker 0 "echo \"18.06.1\""
 end
 
 function teardown
@@ -29,7 +30,7 @@ test "Prints section when only Dockerfile is present"
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -45,7 +46,7 @@ test "Prints section when only docker-compose.yml is present"
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -62,7 +63,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present"
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -78,7 +79,7 @@ test "Prints Docker section when COMPOSE_FILE is set"
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -86,7 +87,7 @@ test "Prints Docker section when COMPOSE_FILE is set"
 	) = (__sf_section_docker)
 end
 
-test "Prints section when only Dockerfile is present with $DOCKER_MACHINE_NAME set"
+test "Prints section when only Dockerfile is present with DOCKER_MACHINE_NAME set"
 	(
 		touch Dockerfile
 		set -g DOCKER_MACHINE_NAME some-machine-name
@@ -95,7 +96,7 @@ test "Prints section when only Dockerfile is present with $DOCKER_MACHINE_NAME s
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1 via $DOCKER_MACHINE_NAME"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -103,7 +104,7 @@ test "Prints section when only Dockerfile is present with $DOCKER_MACHINE_NAME s
 	) = (__sf_section_docker)
 end
 
-test "Prints section when only docker-compose.yml is present with $DOCKER_MACHINE_NAME set"
+test "Prints section when only docker-compose.yml is present with DOCKER_MACHINE_NAME set"
 	(
 		touch docker-compose.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
@@ -112,7 +113,7 @@ test "Prints section when only docker-compose.yml is present with $DOCKER_MACHIN
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1 via $DOCKER_MACHINE_NAME"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -120,7 +121,7 @@ test "Prints section when only docker-compose.yml is present with $DOCKER_MACHIN
 	) = (__sf_section_docker)
 end
 
-test "Prints section when both Dockerfile and docker-compose.yml are present with $DOCKER_MACHINE_NAME set"
+test "Prints section when both Dockerfile and docker-compose.yml are present with DOCKER_MACHINE_NAME set"
 	(
 		touch Dockerfile
 		touch docker-compose.yml
@@ -130,7 +131,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present wit
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1 via $DOCKER_MACHINE_NAME"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -138,7 +139,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present wit
 	) = (__sf_section_docker)
 end
 
-test "Prints Docker section when COMPOSE_FILE is set with $DOCKER_MACHINE_NAME set"
+test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME set"
     (
 		set -g COMPOSE_FILE /path/to/some.file
 		set -g DOCKER_MACHINE_NAME some-machine-name
@@ -147,7 +148,7 @@ test "Prints Docker section when COMPOSE_FILE is set with $DOCKER_MACHINE_NAME s
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1 via $DOCKER_MACHINE_NAME"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -164,7 +165,7 @@ test "Changing SPACEFISH_DOCKER_SYMBOL changes the displayed character"
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
-		echo -n "· v18.06.1"
+		echo -n "· v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -182,7 +183,7 @@ test "Changing SPACEFISH_DOCKER_PREFIX changes the character prefix"
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
-		echo -n "🐳 v18.06.1"
+		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
