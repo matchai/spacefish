@@ -13,6 +13,7 @@
     * [Git status (git_status)](./docs/Options.md#git-status-gitstatus)
   * [Package version (package)](./docs/Options.md#package-version-package)
   * [Node (node)](./docs/Options.md#nodejs-node)
+  * [Docker (docker)](./docs/Options.md#docker-docker)
   * [Ruby (ruby)](./docs/Options.md#ruby-ruby)
   * [Haskell (haskell)](./docs/Options.md#haskell-haskell)
   * [Pyenv (pyenv)](./docs/Options.md#pyenv-pyenv)
