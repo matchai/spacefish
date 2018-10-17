@@ -3,6 +3,8 @@
 set -l gitRoot (git rev-parse --show-toplevel)
 set -l testDir (dirname (status --current-filename))
 set -l tmpDir /tmp/spacefish
+
+mkdir -p $tmpDir
 set -gx HOME $tmpDir
 
 # Install fisher if not installed in temporary fish env
