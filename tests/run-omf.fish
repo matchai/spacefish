@@ -2,16 +2,18 @@
 
 set -l gitRoot (git rev-parse --show-toplevel)
 set -l testDir (dirname (status --current-filename))
-set -l tmpDir /tmp/spacefish
 
-mkdir -p $tmpDir
-set -gx HOME $tmpDir
+if not test "$TRAVIS" = "true"
+	set -l tmpDir /tmp/spacefish
+	mkdir -p $tmpDir
+	set -gx HOME $tmpDir
+end
 
 # Install fisher if not installed in temporary fish env
-if not test -d $tmpDir/.config/omf
-	curl -L https://get.oh-my.fish > $tmpDir/install
-	chmod 777 $tmpDir/install
-	fish -c "$tmpDir/install --noninteractive"
+if not test -d ~/.config/omf
+	curl -L https://get.oh-my.fish > ~/install
+	chmod 777 ~/install
+	fish ~/install --noninteractive
 end
 
 # Install fishtape and local spacefish into temp env

@@ -5,19 +5,18 @@ os:
   - linux
   - osx
 env:
- - TEST_COMMAND="HOME=/tmp/spacefish fish tests/run-omf.fish"
- - TEST_COMMAND="HOME=/tmp/spacefish fish tests/run-fisher.fish"
+ - TEST_PATH="tests/run-omf.fish"
+ - TEST_PATH="tests/run-fisher.fish"
 
-script: (eval "$TEST_COMMAND")
+script: fish "$TEST_PATH"
 
 install:
-  mkdir -p /tmp/spacefish
   # OSX
-  - if [ "$TRAVIS_OS_NAME" == "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew install fish; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew install fish; fi
 
   # LINUX
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-add-repository -y ppa:fish-shell/release-2; fi
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then sudo apt-get install -y fish                       ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-add-repository -y ppa:fish-shell/release-2; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -y fish                       ; fi
 
 jobs:
   include:
