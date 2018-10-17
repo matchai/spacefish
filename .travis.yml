@@ -5,12 +5,13 @@ os:
   - linux
   - osx
 env:
- - TEST_COMMAND="fish tests/run-omf.fish"
- - TEST_COMMAND="fish tests/run-fisher.fish"
+ - TEST_COMMAND="HOME=/tmp/spacefish fish tests/run-omf.fish"
+ - TEST_COMMAND="HOME=/tmp/spacefish fish tests/run-fisher.fish"
 
 script: (eval "$TEST_COMMAND")
 
 install:
+  mkdir -p /tmp/spacefish
   # OSX
   - if [ "$TRAVIS_OS_NAME" == "osx" ]; then HOMEBREW_NO_AUTO_UPDATE=1 brew install fish; fi
 
