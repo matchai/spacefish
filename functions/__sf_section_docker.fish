@@ -46,6 +46,6 @@ function __sf_section_docker -d "Display docker version and machine name"
     __sf_lib_section \
 		$SPACEFISH_DOCKER_COLOR \
 		$SPACEFISH_DOCKER_PREFIX \
-		"$SPACEFISH_DOCKER_SYMBOL$docker_version" \
+		"$SPACEFISH_DOCKER_SYMBOL""$docker_version" \
 		$SPACEFISH_DOCKER_SUFFIX
 end
