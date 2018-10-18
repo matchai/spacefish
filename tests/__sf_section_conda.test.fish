@@ -29,7 +29,7 @@ test "Prints section when conda is installed and CONDA_DEFAULT_ENV is set"
 	set_color --bold fff
 	echo -n " "
 	set_color normal
-    ) = (__sf_section_conda)
+) = (__sf_section_conda)
 end
 
 test "Changing SPACEFISH_CONDA_SYMBOL changes the displayed character"
@@ -46,7 +46,7 @@ test "Changing SPACEFISH_CONDA_SYMBOL changes the displayed character"
 	set_color --bold fff
 	echo -n " "
 	set_color normal
-    ) = (__sf_section_conda)
+) = (__sf_section_conda)
 end
 
 test "Changing SPACEFISH_CONDA_PREFIX changes the character prefix"
@@ -63,7 +63,7 @@ test "Changing SPACEFISH_CONDA_PREFIX changes the character prefix"
 	set_color --bold fff
 	echo -n " "
 	set_color normal
-    ) = (__sf_section_conda)
+) = (__sf_section_conda)
 end
 
 
@@ -72,7 +72,7 @@ test "Doesn't display section when SPACEFISH_CONDA_SHOW is set to 'false'"
 (
 	set -g SPACEFISH_CONDA_SHOW false
 	set -g CONDA_DEFAULT_ENV some-env
-    ) = (__sf_section_conda)
+) = (__sf_section_conda)
 end
 
 test "Doesn't display section when CONDA_DEFAULT_ENV is not set"
