@@ -16,6 +16,7 @@
   * [Docker (docker)](./docs/Options.md#docker-docker)
   * [Ruby (ruby)](./docs/Options.md#ruby-ruby)
   * [Haskell (haskell)](./docs/Options.md#haskell-haskell)
+  * [Amazon Web Services (aws)](./docs/Options.md#amazon-web-services-aws-aws)
   * [Pyenv (pyenv)](./docs/Options.md#pyenv-pyenv)
   * [Go (golang)](./docs/Options.md#go-golang)
   * [PHP (php)](./docs/Options.md#php-php)

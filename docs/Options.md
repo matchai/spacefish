@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell aws pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -200,6 +200,18 @@ Ruby section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
 | `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
 | `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
+
+### Amazon Web Services (AWS) (`aws`)
+
+Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) variable.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
+| `SPACESHIP_AWS_PREFIX` | `using·` | Prefix before the AWS section |
+| `SPACESHIP_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
+| `SPACESHIP_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
+| `SPACESHIP_AWS_COLOR` | `ff8700` | Color of AWS section |
 
 ### Pyenv \(`pyenv`\)
 
