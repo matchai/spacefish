@@ -164,6 +164,19 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
 
+### Docker (`docker`)
+
+Docker section is shown only in directories that contain `Dockerfile` or `docker-compose.yml` and also if the `$COMPOSE_FILE` is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_DOCKER_SHOW` | `true` | Show current Docker version |
+| `SPACEFISH_DOCKER_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Docker section |
+| `SPACEFISH_DOCKER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Docker section |
+| `SPACEFISH_DOCKER_SYMBOL` | `🐳·` | Character to be shown before Docker version |
+| `SPACEFISH_DOCKER_COLOR` | `cyan` | Color of Docker section |
+| `SPACEFISH_DOCKER_VERBOSE_VERSION` | `false` | Show full version name. (Beta, Nightly) |
+
 ### Ruby \(`ruby`\)
 
 Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
