@@ -15,6 +15,7 @@
   * [Node (node)](./docs/Options.md#nodejs-node)
   * [Ruby (ruby)](./docs/Options.md#ruby-ruby)
   * [Haskell (haskell)](./docs/Options.md#haskell-haskell)
+  * [Conda (conda)](./Options.md#conda-conda)
   * [Pyenv (pyenv)](./docs/Options.md#pyenv-pyenv)
   * [Go (golang)](./docs/Options.md#go-golang)
   * [PHP (php)](./docs/Options.md#php-php)
