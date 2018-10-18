@@ -10,12 +10,7 @@ function setup
 end
 
 function teardown
-	if test -f Dockerfile
-		rm Dockerfile
-	end
-	if test -f docker-compose.yml
-		rm docker-compose.yml
-	end
+	rm -rf /tmp/tmp-spacefish
 	if test "$COMPOSE_FILE"
 		set -e COMPOSE_FILE
 	end
