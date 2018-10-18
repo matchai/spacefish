@@ -27,7 +27,7 @@ function __sf_section_docker -d "Display docker version and machine name"
     # Show docker version only when pwd has dockerfile or docker-compose.yml or COMPOSE_FILE
 	if not test -f Dockerfile \
 		-o -f docker-compose.yml \
-		-o -f $COMPOSE_FILE
+		-o -f "$COMPOSE_FILE"
 		return
 	end
 
