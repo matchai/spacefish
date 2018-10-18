@@ -83,7 +83,7 @@ test "Changing SPACEFISH_RUST_PREFIX changes the character prefix"
 	) = (__sf_section_rust)
 end
 
-test "Changing SPACEFISH_RUST_SUFFIX changes the character prefix"
+test "Changing SPACEFISH_RUST_SUFFIX changes the character suffix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_RUST_SUFFIX ·
@@ -117,7 +117,7 @@ test "Prints verbose version when configured to do so"
 	) = (__sf_section_rust)
 end
 
-test "Doesn't display node when SPACEFISH_RUST_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_RUST_SHOW is set to \"false\""
 	(
 		set SPACEFISH_RUST_SHOW false
 	) = (__sf_section_rust)

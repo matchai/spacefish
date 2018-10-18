@@ -53,7 +53,7 @@ test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix"
 	) = (__sf_section_kubecontext)
 end
 
-test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character prefix"
+test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_SUFFIX ·
@@ -70,7 +70,7 @@ test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character prefix"
 	) = (__sf_section_kubecontext)
 end
 
-test "Doesn't display node when SPACEFISH_KUBECONTEXT_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"false\""
 	(
 		set SPACEFISH_KUBECONTEXT_SHOW false
 	) = (__sf_section_kubecontext)
