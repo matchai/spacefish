@@ -26,9 +26,11 @@ function __sf_section_conda -d "Display current Conda version"
 	    return
     end
 
+    set -l conda_version (conda -V | cut -d' ' -f 2)
+
     __sf_lib_section \
 		$SPACEFISH_CONDA_COLOR \
 		$SPACEFISH_CONDA_PREFIX \
-		"$SPACEFISH_CONDA_SYMBOL""$CONDA_DEFAULT_ENV" \
+		"$SPACEFISH_CONDA_SYMBOL"v"$conda_version" \
 		$SPACEFISH_CONDA_SUFFIX
 end
