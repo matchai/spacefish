@@ -71,7 +71,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `⇕` — diverged chages.
 * Indicator for jobs in the background (`✦`).
 * Current Node.js version, through nvm/nodenv/n (`⬢`).
-* Current Docker version (`🐳`).
+* Current Docker version and connected machine (`🐳`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
 * Current Go version (`🐹`).
 * Current PHP version (`🐘`).
