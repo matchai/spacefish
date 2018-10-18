@@ -85,7 +85,7 @@ test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
 	) = (__sf_section_php)
 end
 
-test "Changing SPACEFISH_PHP_SUFFIX changes the character prefix"
+test "Changing SPACEFISH_PHP_SUFFIX changes the character suffix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_PHP_SUFFIX ·
@@ -102,7 +102,7 @@ test "Changing SPACEFISH_PHP_SUFFIX changes the character prefix"
 	) = (__sf_section_php)
 end
 
-test "Doesn't display node when SPACEFISH_PHP_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_PHP_SHOW is set to \"false\""
 	(
 		set SPACEFISH_PHP_SHOW false
 	) = (__sf_section_php)
