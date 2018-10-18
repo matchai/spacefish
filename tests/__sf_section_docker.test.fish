@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup
-    spacefish_test_setup
+	spacefish_test_setup
 	mock docker 0 "echo \"18.06.1\""
 end
 
