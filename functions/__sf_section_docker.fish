@@ -31,7 +31,7 @@ function __sf_section_docker -d "Display docker version and machine name"
     docker ps > /dev/null 2>&1
     [ $status -ne 0 ]; and return
 
-    set -l docker_version v(docker version -f "{{.Server.Version}}" 2>/dev/null)
+    set -l docker_version v(docker version -f "{{.Server.Version}}" ^/dev/null)
     # if docker daemon isn't running you'll get an error like 'Bad response from Docker engine'
     [ -z docker_version ]; and return
 
