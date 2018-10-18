@@ -152,7 +152,7 @@ test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
 	) = (__sf_section_node)
 end
 
-test "Changing SPACEFISH_NODE_SUFFIX changes the character suffix"
+test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_NODE_SUFFIX ·
