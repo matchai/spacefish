@@ -71,9 +71,10 @@ test "Prints section when both Dockerfile and docker-compose.yml are present"
 	) = (__sf_section_docker)
 end
 
-test "Prints Docker section when COMPOSE_FILE is set"
+test "Prints Docker section when COMPOSE_FILE is set and the $COMPOSE_FILE exists"
     (
-		set -g COMPOSE_FILE /path/to/some.file
+		set -g COMPOSE_FILE /tmp/some-compose-file.yml
+		touch /tmp/some-compose-file.yml
 
 		set_color --bold fff
 		echo -n "is "
@@ -89,6 +90,7 @@ end
 
 test "Prints section when only Dockerfile is present with DOCKER_MACHINE_NAME set"
 	(
+		rm /tmp/some-compose-file.yml
 		touch Dockerfile
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
@@ -141,7 +143,8 @@ end
 
 test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME set"
     (
-		set -g COMPOSE_FILE /path/to/some.file
+		set -g COMPOSE_FILE /tmp/some-compose-file.yml
+		touch /tmp/some-compose-file.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
 		set_color --bold fff
@@ -158,6 +161,7 @@ end
 
 test "Changing SPACEFISH_DOCKER_SYMBOL changes the displayed character"
 	(
+		rm /tmp/some-compose-file.yml
 		set SPACEFISH_DOCKER_SYMBOL "· "
 		touch Dockerfile
 
