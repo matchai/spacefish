@@ -27,7 +27,7 @@ test "Correctly shows hostname upon SSH connection"
 	) = (__sf_section_host)
 end
 
-test "Displays user when SPACEFISH_HOST_SHOW is set to 'always'"
+test "Displays user when SPACEFISH_HOST_SHOW is set to \"always\""
 	(
 		set SPACEFISH_HOST_SHOW always
 
@@ -43,7 +43,7 @@ test "Displays user when SPACEFISH_HOST_SHOW is set to 'always'"
 	) = (__sf_section_host)
 end
 
-test "Displays user when SPACEFISH_HOST_SHOW is set to 'always', over SSH"
+test "Displays user when SPACEFISH_HOST_SHOW is set to \"always\", over SSH"
 	(
 		set SPACEFISH_HOST_SHOW always
 		set SSH_CONNECTION "192.168.0.100 12345 192.168.0.101 22"
@@ -60,7 +60,7 @@ test "Displays user when SPACEFISH_HOST_SHOW is set to 'always', over SSH"
 	) = (__sf_section_host)
 end
 
-test "Doesn't display user when SPACEFISH_HOST_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_HOST_SHOW is set to \"false\""
 	(
 		set SPACEFISH_HOST_SHOW false
 	) = (__sf_section_host)
