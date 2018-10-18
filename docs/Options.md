@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -164,6 +164,19 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
 
+### Docker (`docker`)
+
+Docker section is shown only in directories that contain `Dockerfile` or `docker-compose.yml` and also if the `$COMPOSE_FILE` is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_DOCKER_SHOW` | `true` | Show current Docker version |
+| `SPACEFISH_DOCKER_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Docker section |
+| `SPACEFISH_DOCKER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Docker section |
+| `SPACEFISH_DOCKER_SYMBOL` | `🐳·` | Character to be shown before Docker version |
+| `SPACEFISH_DOCKER_COLOR` | `cyan` | Color of Docker section |
+| `SPACEFISH_DOCKER_VERBOSE_VERSION` | `false` | Show full version name. (Beta, Nightly) |
+
 ### Ruby \(`ruby`\)
 
 Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
@@ -199,6 +212,18 @@ Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is s
 | `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
 | `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
 | `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
+
+### Amazon Web Services (AWS) (`aws`)
+
+Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) variable.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
+| `SPACESHIP_AWS_PREFIX` | `using·` | Prefix before the AWS section |
+| `SPACESHIP_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
+| `SPACESHIP_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
+| `SPACESHIP_AWS_COLOR` | `ff8700` | Color of AWS section |
 
 ### Pyenv \(`pyenv`\)
 
