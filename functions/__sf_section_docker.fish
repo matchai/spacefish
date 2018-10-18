@@ -35,7 +35,7 @@ function __sf_section_docker -d "Display docker version and machine name"
     # if docker daemon isn't running you'll get an error like 'Bad response from Docker engine'
     [ -z docker_version ]; and return
 
-    if test $SPACEFISH_DOCKER_VERBOSE_VERSION = false
+    if test "$SPACEFISH_DOCKER_VERBOSE_VERSION" = "false"
         set docker_version (string split - $docker_version)[1]
     end
 
