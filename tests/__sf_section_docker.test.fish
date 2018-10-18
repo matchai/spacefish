@@ -203,7 +203,7 @@ test "Doesn't display section when SPACEFISH_DOCKER_SHOW is set to 'false'"
 end
 
 test "Doesn't print section if docker is not installed"
-    (
+	(
 		touch Dockerfile
 		mock docker 127
 	) = (__sf_section_docker)
