@@ -21,14 +21,14 @@ function __sf_section_docker -d "Display docker version and machine name"
 
     [ $SPACEFISH_DOCKER_SHOW = false ]; and return
 
-    # Show docker version only when pwd has dockerfile or docker-compose.yml or COMPOSE_FILE
-    [ -f ./Dockerfile -o -f ./docker-compose.yml ]; or test "$COMPOSE_FILE"; or return
-
     # Show Docker version only if docker is installed
     type -q docker; or return
 
+    # Show docker version only when pwd has dockerfile or docker-compose.yml or COMPOSE_FILE
+    [ -f ./Dockerfile -o -f ./docker-compose.yml ]; or test "$COMPOSE_FILE"; or return
+
     # Show Docker version only if docker deamon is up
-    docker ps > /dev/null 2>&1
+    docker version > /dev/null 2>&1
     [ $status -ne 0 ]; and return
 
     set -l docker_version v(docker version -f "{{.Server.Version}}" ^/dev/null)
