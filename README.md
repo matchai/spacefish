@@ -68,15 +68,17 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `=` — unmerged changes;
   * `⇡` — ahead of remote branch;
   * `⇣` — behind of remote branch;
-  * `⇕` — diverged chages.
+  * `⇕` — diverged changes.
 * Indicator for jobs in the background (`✦`).
 * Current Node.js version, through nvm/nodenv/n (`⬢`).
+* Current Docker version and connected machine (`🐳`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
 * Current Go version (`🐹`).
 * Current PHP version (`🐘`).
 * Current Rust version (`𝗥`).
 * Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
 * Current Conda version (`🅒`).
+* Current Amazon Web Services (AWS) profile (`☁️`) ([Using named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)).
 * Current Python pyenv (`🐍`).
 * Current Kubectl context (`☸️`).
 * Package version, if there is a package in current directory (`📦`).

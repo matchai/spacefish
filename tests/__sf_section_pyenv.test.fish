@@ -66,7 +66,7 @@ test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
 	) = (__sf_section_pyenv)
 end
 
-test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
+test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_PREFIX ·
@@ -83,7 +83,7 @@ test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
 	) = (__sf_section_pyenv)
 end
 
-test "Changing SPACEFISH_PYENV_SUFFIX changes the character prefix"
+test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
 	(
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_SUFFIX ·
@@ -100,7 +100,7 @@ test "Changing SPACEFISH_PYENV_SUFFIX changes the character prefix"
 	) = (__sf_section_pyenv)
 end
 
-test "Doesn't display node when SPACEFISH_PYENV_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\""
 	(
 		set SPACEFISH_PYENV_SHOW false
 	) = (__sf_section_pyenv)
