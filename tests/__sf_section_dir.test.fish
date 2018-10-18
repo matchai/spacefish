@@ -237,7 +237,7 @@ test "Changing SPACEFISH_DIR_PREFIX changes the dir prefix"
 	) = (__sf_section_dir)
 end
 
-test "Changing SPACEFISH_DIR_SUFFIX changes the dir suffix"
+test "Changing SPACEFISH_DIR_SUFFIX changes the dir prefix"
 	(
 		set SPACEFISH_DIR_SUFFIX ·
 		cd ~
