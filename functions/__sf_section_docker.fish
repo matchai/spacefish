@@ -25,7 +25,11 @@ function __sf_section_docker -d "Display docker version and machine name"
     type -q docker; or return
 
     # Show docker version only when pwd has dockerfile or docker-compose.yml or COMPOSE_FILE
-    [ -f ./Dockerfile -o -f ./docker-compose.yml ]; or test "$COMPOSE_FILE"; or return
+	if not test -f Dockerfile \
+		-o -f docker-compose.yml \
+		-o -f $COMPOSE_FILE
+		return
+	end
 
     # Show Docker version only if docker deamon is up
     docker version > /dev/null 2>&1
