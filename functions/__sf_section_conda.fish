@@ -26,7 +26,7 @@ function __sf_section_conda -d "Display current Conda version"
 	    return
     end
 
-    set -l conda_version (conda -V | cut -d' ' -f 2)
+    set -l conda_version (string split ' ' (conda -V))[2]
 
     __sf_lib_section \
 		$SPACEFISH_CONDA_COLOR \

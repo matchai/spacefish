@@ -4,7 +4,7 @@ set -l LOCAL_CONDA_VERSION 4.5.11
 
 function setup
     spacefish_test_setup
-    mock conda 0 "echo \"4.5.11\""
+    mock conda 0 "echo \"conda 4.5.11\""
     mkdir -p /tmp/tmp-spacefish
     cd /tmp/tmp-spacefish
 end
