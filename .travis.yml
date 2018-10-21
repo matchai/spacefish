@@ -16,13 +16,3 @@ jobs:
       install:
        - brew update
        - brew install fish
-
-    - stage: deploy
-      if: branch = master AND type = push
-      script: npm run docs:build
-      deploy:
-       provider: pages
-       skip-cleanup: true
-       github-token: $GITHUB_TOKEN
-       keep-history: true
-       local-dir: _book
