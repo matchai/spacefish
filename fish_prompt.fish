@@ -1,7 +1,7 @@
 function fish_prompt
 	# Store the exit code of the last command
 	set -g sf_exit_code $status
-	set -g SPACEFISH_VERSION 1.5.0
+	set -g SPACEFISH_VERSION 1.6.0
 
 	# ------------------------------------------------------------------------------
 	# Configuration
