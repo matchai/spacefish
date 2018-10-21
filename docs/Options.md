@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell aws pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -200,6 +200,18 @@ Ruby section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Haskell section |
 | `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
 | `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
+
+### Conda \(`conda`\)
+
+Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_CONDA_SHOW` | `true` | Show current Conda version |
+| `SPACEFISH_CONDA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
+| `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
+| `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
+| `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
 
 ### Amazon Web Services (AWS) (`aws`)
 
