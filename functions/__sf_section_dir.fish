@@ -13,6 +13,9 @@ function __sf_section_dir -d "Display the current truncated directory"
 	__sf_util_set_default SPACEFISH_DIR_TRUNC 3
 	__sf_util_set_default SPACEFISH_DIR_TRUNC_REPO true
 	__sf_util_set_default SPACEFISH_DIR_COLOR cyan
+
+	# Write Permissions lock symbol
+	__sf_util_set_default SPACEFISH_DIR_LOCK_SYMBOL_SHOW true
 	__sf_util_set_default SPACEFISH_DIR_LOCK_SYMBOL "🔒"
 	__sf_util_set_default SPACEFISH_DIR_LOCK_COLOR red
 
@@ -37,11 +40,9 @@ function __sf_section_dir -d "Display the current truncated directory"
 	# Truncate the path to have a limited number of dirs
 	set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 
-    if [ ! -w . ];
-      set DIR_LOCK_SYMBOL " $SPACEFISH_DIR_LOCK_SYMBOL"
-	else
-	  set -e DIR_LOCK_SYMBOL
-    end
+    if [ $SPACEFISH_DIR_LOCK_SYMBOL_SHOW = true ];
+        [ ! -w . ]; and set DIR_LOCK_SYMBOL " $SPACEFISH_DIR_LOCK_SYMBOL"
+	end
 
 	__sf_lib_section \
 		$SPACEFISH_DIR_COLOR \
