@@ -5,7 +5,7 @@ function setup
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
 	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
-	set SPACEFISH_DIR_LOCK_SYMBOL_SHOW false
+	set SPACEFISH_DIR_LOCK_SHOW false
 end
 
 function teardown
@@ -315,13 +315,13 @@ end
 # SPACEFISH_DIR_LOCK_SYMBOL
 #
 
-test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SYMBOL_SHOW is true"
+test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SHOW is true"
 	(
 		cd /tmp/tmp-spacefish
 		mkdir testDir
 		chmod 500 testDir/
 		cd testDir/
-		set SPACEFISH_DIR_LOCK_SYMBOL_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW true
 
 		set_color --bold fff
 		echo -n "in "
@@ -335,7 +335,7 @@ test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_
 	) = (__sf_section_dir)
 end
 
-test "Doesn't show DIR_LOCK_SYMBOL if SPACEFISH_DIR_LOCK_SYMBOL_SHOW is false"
+test "Doesn't show DIR_LOCK_SYMBOL if SPACEFISH_DIR_LOCK_SHOW is false"
 	(
 		cd ~
 		
@@ -356,7 +356,7 @@ test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected f
 		cd /tmp/tmp-spacefish
 		mkdir testDir
 		cd testDir/
-		set SPACEFISH_DIR_LOCK_SYMBOL_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW true
 		
 		set_color --bold fff
 		echo -n "in "
@@ -376,7 +376,7 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		mkdir testDir
 		chmod 500 testDir/
 		cd testDir/
-		set SPACEFISH_DIR_LOCK_SYMBOL_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW true
 		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
 
 		set_color --bold fff
