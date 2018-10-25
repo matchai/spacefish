@@ -68,7 +68,7 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 
 ### Directory \(`dir`\)
 
-Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it.
+Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it. If current directory is write-protected or if current user has not enough rights to write in it, a padlock (by default) is displayed as a suffix.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
@@ -78,6 +78,9 @@ Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. W
 | `SPACEFISH_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
 | `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
 | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
+| `SPACEFISH_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
+| `SPACESHIP_DIR_LOCK_SYMBOL` | ![·🔒](https://raw.githubusercontent.com/matchai/spacefish/master/images/padlock-icon.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
+| `SPACESHIP_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
 
 ### Hostname \(`host`\)
 
