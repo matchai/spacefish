@@ -357,7 +357,7 @@ test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected f
 	(
 		cd /tmp/tmp-spacefish
 		mkdir testDir
-		chown :Users testDir  # Because cygwin won\'t chmod out of Users group
+		setfacl -s user::r-x,group::r-x,other::r-x testDir  # Because cygwin won\'t chmod out of Users group
 		cd testDir/
 		set SPACEFISH_DIR_LOCK_SHOW true
 		
@@ -377,7 +377,7 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 	(
 		cd /tmp/tmp-spacefish
 		mkdir testDir
-		chown :Users testDir  # Because cygwin won\'t chmod out of Users group
+		setfacl -s user::r-x,group::---,other::--- testDir  # Because cygwin won\'t chmod out of Users group
 		chmod 500 testDir/
 		cd testDir/
 		set SPACEFISH_DIR_LOCK_SHOW true
