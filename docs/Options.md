@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
