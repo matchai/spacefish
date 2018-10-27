@@ -12,7 +12,7 @@ function __sf_section_julia -d "Display julia version"
     __sf_util_set_default SPACEFISH_JULIA_PREFIX "is "
     __sf_util_set_default SPACEFISH_JULIA_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
     __sf_util_set_default SPACEFISH_JULIA_SYMBOL "ஃ "
-    __sf_util_set_default SPACEFISH_JULIA_COLOR cyan
+    __sf_util_set_default SPACEFISH_JULIA_COLOR green
 
     # ------------------------------------------------------------------------------
     # Section
