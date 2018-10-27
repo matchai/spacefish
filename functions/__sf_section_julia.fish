@@ -24,8 +24,7 @@ function __sf_section_julia -d "Display julia version"
     type -q julia; or return
 
     # Show julia version only when pwd has *.jl file(s)
-	ls -l | grep -iq ".jl\$"
-    [ $status = 0 ]; or return
+    [ (count *.jl) -gt 0 ]; or return
 
     set -l julia_version (julia --version | grep --color=never -oE '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]')
 

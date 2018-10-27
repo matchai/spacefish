@@ -12,4 +12,4 @@ end
 # Install fishtape and local spacefish into temp env
 env HOME=$tmpDir fish -c "fisher add fisherman/fishtape $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
-env HOME=$tmpDir fish -c "fishtape $testDir/*.test.fish"
+env HOME=$tmpDir fish -c "fishtape $testDir/__sf_section_julia.test.fish"

@@ -1,6 +1,5 @@
 source $DIRNAME/spacefish_test_setup.fish
 source $DIRNAME/mock.fish
-set -l LOCAL_JULIA_VERSION 1.0.1
 
 function setup
     spacefish_test_setup
@@ -21,7 +20,7 @@ test "Prints section when julia is installed and pwd has *.jl file(s)"
 		echo -n "is "
 		set_color normal
 		set_color --bold green
-		echo -n "ஃ v$LOCAL_JULIA_VERSION"
+		echo -n "ஃ v1.0.1"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -38,7 +37,7 @@ test "Changing SPACEFISH_JULIA_SYMBOL changes the displayed character"
 		echo -n "is "
 		set_color normal
 		set_color --bold green
-		echo -n "· v$LOCAL_JULIA_VERSION"
+		echo -n "· v1.0.1"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
@@ -55,10 +54,27 @@ test "Changing SPACEFISH_JULIA_PREFIX changes the character prefix"
 		echo -n "·"
 		set_color normal
 		set_color --bold green
-		echo -n "ஃ v$LOCAL_JULIA_VERSION"
+		echo -n "ஃ v1.0.1"
 		set_color normal
 		set_color --bold fff
 		echo -n " "
+		set_color normal
+	) = (__sf_section_julia)
+end
+
+test "Changing SPACEFISH_JULIA_SUFFIX changes the character suffix"
+	(
+		set SPACEFISH_JULIA_SUFFIX ·
+		touch some-julia-file.jl
+
+		set_color --bold fff
+		echo -n "is "
+		set_color normal
+		set_color --bold green
+		echo -n "ஃ v1.0.1"
+		set_color normal
+		set_color --bold fff
+		echo -n "·"
 		set_color normal
 	) = (__sf_section_julia)
 end
