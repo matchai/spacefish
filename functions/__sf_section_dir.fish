@@ -16,7 +16,7 @@ function __sf_section_dir -d "Display the current truncated directory"
 
 	# Write Permissions lock symbol
 	__sf_util_set_default SPACEFISH_DIR_LOCK_SHOW true
-	__sf_util_set_default SPACEFISH_DIR_LOCK_SYMBOL "🔒"
+	__sf_util_set_default SPACEFISH_DIR_LOCK_SYMBOL ""
 	__sf_util_set_default SPACEFISH_DIR_LOCK_COLOR red
 
 	# ------------------------------------------------------------------------------
