@@ -15,7 +15,7 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
 
 ### Prompt
@@ -163,6 +163,18 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_SYMBOL` | `⬢·` | Character to be shown before Node.js version |
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
+
+### Julia \(`julia`\)
+
+Julia section is shown only in directories that contain any file with `.jl` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_JULIA_SHOW` | `true` | Show Julia section |
+| `SPACEFISH_JULIA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Julia section |
+| `SPACEFISH_JULIA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Julia section |
+| `SPACEFISH_JULIA_SYMBOL` | `ஃ·` | Character to be shown before Julia version |
+| `SPACEFISH_JULIA_COLOR` | `green` | Color of Julia section |
 
 ### Docker (`docker`)
 
