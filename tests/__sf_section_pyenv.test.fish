@@ -5,7 +5,6 @@ function setup
 	spacefish_test_setup
 	mock pyenv 0 "echo \"3.7.0\""
 	mkdir -p /tmp/tmp-spacefish
-	touch /tmp/tmp-spacefish/requirements.txt
 	cd /tmp/tmp-spacefish
 end
 
@@ -15,6 +14,8 @@ end
 
 test "Prints section when requirements.txt is present"
 	(
+		touch /tmp/tmp-spacefish/requirements.txt
+
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -29,7 +30,6 @@ end
 
 test "Prints section when a *.py file is present"
 	(
-		rm -rf /tmp/tmp-spacefish/requirements.txt
 		touch /tmp/tmp-spacefish/testfile.py
 
 		set_color --bold fff
@@ -45,13 +45,12 @@ test "Prints section when a *.py file is present"
 end
 
 test "Doesn't print the section when requirements.txt and *.py aren't present"
-	(
-		rm -rf /tmp/tmp-spacefish/requirements.txt
-	) = (__sf_section_pyenv)
+	() = (__sf_section_pyenv)
 end
 
 test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
 	(
+		touch /tmp/tmp-spacefish/requirements.txt
 		set SPACEFISH_PYENV_SYMBOL "· "
 
 		set_color --bold fff
@@ -68,6 +67,7 @@ end
 
 test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
 	(
+		touch /tmp/tmp-spacefish/requirements.txt
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_PREFIX ·
 
@@ -85,6 +85,7 @@ end
 
 test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
 	(
+		touch /tmp/tmp-spacefish/requirements.txt
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_SUFFIX ·
 
@@ -102,6 +103,7 @@ end
 
 test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\""
 	(
+		touch /tmp/tmp-spacefish/requirements.txt
 		set SPACEFISH_PYENV_SHOW false
 	) = (__sf_section_pyenv)
 end

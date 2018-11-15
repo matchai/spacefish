@@ -26,7 +26,8 @@ function __sf_section_golang -d "Display the current go version if you're inside
 	# Ensure the go command is available
 	type -q go; or return
 
-	if not test -d Godeps \
+	if not test -f go.mod \
+		-o -d Godeps \
 		-o -f glide.yaml \
 		-o (count *.go) -gt 0 \
 		-o -f Gopkg.yml \
