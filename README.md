@@ -87,6 +87,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `⇡` - charging;
   * `⇣` - discharging;
   * `•` - fully charged.
+* Current Vi-mode mode.
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 * Execution time of the last command if it exceeds 5 seconds.
