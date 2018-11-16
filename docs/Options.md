@@ -17,6 +17,7 @@ The default order is:
 ```fish
     set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
+You can also add items to the right prompt by specifying them in the `SPACEFISH_RPROMPT_ORDER` option. By default `SPACEFISH_RPROMPT_ORDER` is empty.
 
 ### Prompt
 
