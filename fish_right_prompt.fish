@@ -10,6 +10,8 @@ function fish_right_prompt
 	# Sections
 	# ------------------------------------------------------------------------------
 
+	[ -n "$SPACEFISH_RPROMPT_ORDER" ]; or return
+
 	for i in $SPACEFISH_RPROMPT_ORDER
 		eval __sf_section_$i
 	end
