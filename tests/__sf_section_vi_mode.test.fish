@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	fish_vi_key_bindings
+	fish_vi_key_bindings; or true
 end
 
 test "Prints section when fish_vi_key_bindigs is set"
