@@ -4,6 +4,8 @@ source $DIRNAME/mock.fish
 function setup
 	spacefish_test_setup
 	fish_vi_key_bindings; or true
+	# Unfortunately right after enabling vi-keys it's in 'normal' state on CI and in 'insert' locally
+	set fish_bind_mode insert
 end
 
 test "Prints section when fish_vi_key_bindigs is set"
