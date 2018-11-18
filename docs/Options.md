@@ -338,6 +338,20 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
+### Vi-mode \( vi_mode \)
+
+This section shows mode indicator only when Vi-mode is enabled.
+
+| Variable | Default | Meaning |
+| :--- | :---: | --- |
+| `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
+| `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
+| `SPACEFISH_VI_MODE_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
+| `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
+| `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
+| `SPACEFISH_VI_MODE_REPLACE_ONE` | `[R]` | Text to be shown when in replace_one mode |
+| `SPACEFISH_VI_MODE_COLOR` | `white` | Color of Vi-mode section |
 
 ### Jobs \(`jobs`\)
 
