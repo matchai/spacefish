@@ -252,7 +252,7 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 
 ### Go \(`golang`\)
 
-Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
+Go section is shown only in directories that contain `Godeps`, `glide.yaml`, `go.mod`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
