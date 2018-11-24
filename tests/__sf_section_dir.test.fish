@@ -401,5 +401,6 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		end
 		echo -n " "
 		set_color normal
+		echo (uname)
 	) = (__sf_section_dir)
 end
