@@ -6,11 +6,18 @@ function setup
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
 	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
 	set SPACEFISH_DIR_LOCK_SHOW false
+	set -g IS_NOT_CYGWIN true
+
+	set -l isCygwin (uname -s | grep -io CYGWIN)
+	if test -n "$isCygwin"
+	    set IS_NOT_CYGWIN false
+	end
 end
 
 function teardown
 	rm -rf ~/.tmp-spacefish
 	rm -rf /tmp/tmp-spacefish
+	set -e IS_NOT_CYGWIN
 end
 
 #
@@ -317,7 +324,7 @@ end
 
 test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SHOW is true"
 	(
-		set SPACEFISH_DIR_LOCK_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
 		cd /tmp/tmp-spacefish
 		mkdir testDir
 		chmod 500 testDir
@@ -330,7 +337,9 @@ test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_
 		echo -n "tmp/tmp-spacefish/testDir"
 		set_color normal
 		set_color --bold fff
-		echo -n (set_color red)" "(set_color --bold fff)
+		if test -n "$SPACEFISH_DIR_LOCK_SHOW"
+			echo -n (set_color red)" "(set_color --bold fff)
+		end
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -357,7 +366,7 @@ test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected f
 		cd /tmp/tmp-spacefish
 		mkdir -p testDir
 		cd testDir/
-		set SPACEFISH_DIR_LOCK_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
 		
 		set_color --bold fff
 		echo -n "in "
@@ -373,7 +382,7 @@ end
 
 test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 	(
-		set SPACEFISH_DIR_LOCK_SHOW true
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
 		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
 		cd /tmp/tmp-spacefish
 		mkdir -p testDir
@@ -387,7 +396,9 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		echo -n "tmp/tmp-spacefish/testDir"
 		set_color normal
 		set_color --bold fff
-		echo -n (set_color red)" 😀"(set_color --bold fff)
+		if test -n "$SPACEFISH_DIR_LOCK_SHOW"
+			echo -n (set_color red)" 😀"(set_color --bold fff)
+		end
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
