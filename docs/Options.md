@@ -79,7 +79,7 @@ Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. W
 | `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
 | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
 | `SPACEFISH_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
-| `SPACESHIP_DIR_LOCK_SYMBOL` | ![·🔒](https://raw.githubusercontent.com/matchai/spacefish/master/images/padlock-icon.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
+| `SPACESHIP_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
 | `SPACESHIP_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
 
 ### Hostname \(`host`\)

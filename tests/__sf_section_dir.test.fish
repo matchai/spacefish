@@ -6,7 +6,6 @@ function setup
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
 	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
 	set SPACEFISH_DIR_LOCK_SHOW false
-
 end
 
 function teardown
@@ -318,11 +317,11 @@ end
 
 test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SHOW is true"
 	(
+		set SPACEFISH_DIR_LOCK_SHOW true
 		cd /tmp/tmp-spacefish
 		mkdir testDir
-		chmod 500 testDir/
+		chmod 500 testDir
 		cd testDir/
-		set SPACEFISH_DIR_LOCK_SHOW true
 
 		set_color --bold fff
 		echo -n "in "
@@ -356,8 +355,7 @@ end
 test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected for this user"
 	(
 		cd /tmp/tmp-spacefish
-		mkdir testDir
-		setfacl -s user::r-x,group::r-x,other::r-x testDir  # Because cygwin won\'t chmod out of Users group
+		mkdir -p testDir
 		cd testDir/
 		set SPACEFISH_DIR_LOCK_SHOW true
 		
@@ -375,14 +373,13 @@ end
 
 test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 	(
-		cd /tmp/tmp-spacefish
-		mkdir testDir
-		setfacl -s user::r-x,group::---,other::--- testDir  # Because cygwin won\'t chmod out of Users group
-		chmod 500 testDir/
-		cd testDir/
 		set SPACEFISH_DIR_LOCK_SHOW true
 		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
-
+		cd /tmp/tmp-spacefish
+		mkdir -p testDir
+		chmod 500 testDir/
+		cd testDir/
+		
 		set_color --bold fff
 		echo -n "in "
 		set_color normal
@@ -393,11 +390,5 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		echo -n (set_color red)" 😀"(set_color --bold fff)
 		echo -n " "
 		set_color normal
-	) = (__sf_section_dir)
-end
-
-test "Checking AppVeyor's Groups"
-    (
-		echo (id)
 	) = (__sf_section_dir)
 end
