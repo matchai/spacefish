@@ -337,7 +337,7 @@ test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_
 		echo -n "tmp/tmp-spacefish/testDir"
 		set_color normal
 		set_color --bold fff
-		if test -n "$SPACEFISH_DIR_LOCK_SHOW"
+		if [ $SPACEFISH_DIR_LOCK_SHOW = "true" ]
 			echo -n (set_color red)" "(set_color --bold fff)
 		end
 		echo -n " "
@@ -396,11 +396,10 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		echo -n "tmp/tmp-spacefish/testDir"
 		set_color normal
 		set_color --bold fff
-		if test -n "$SPACEFISH_DIR_LOCK_SHOW"
+		if [ $SPACEFISH_DIR_LOCK_SHOW = "true" ]
 			echo -n (set_color red)" 😀"(set_color --bold fff)
 		end
 		echo -n " "
 		set_color normal
-		echo (uname)
 	) = (__sf_section_dir)
 end
