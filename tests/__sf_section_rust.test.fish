@@ -5,7 +5,6 @@ function setup
 	spacefish_test_setup
 	mock rustc 0 "echo \"rustc 1.28.0-nightly (9634041f0 2018-07-30)\""
 	mkdir -p /tmp/tmp-spacefish
-	touch /tmp/tmp-spacefish/Cargo.toml
 	cd /tmp/tmp-spacefish
 end
 
@@ -15,6 +14,8 @@ end
 
 test "Prints section when Cargo.toml is present"
 	(
+		touch /tmp/tmp-spacefish/Cargo.toml
+
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -29,7 +30,6 @@ end
 
 test "Prints section when a *.rs file is present"
 	(
-		rm -rf /tmp/tmp-spacefish/Cargo.toml
 		touch /tmp/tmp-spacefish/testfile.rs
 
 		set_color --bold fff
@@ -45,13 +45,12 @@ test "Prints section when a *.rs file is present"
 end
 
 test "Doesn't print the section when Cargo.toml and *.rs aren't present"
-	(
-		rm -rf /tmp/tmp-spacefish/Cargo.toml
-	) = (__sf_section_rust)
+	() = (__sf_section_rust)
 end
 
 test "Changing SPACEFISH_RUST_SYMBOL changes the displayed character"
 	(
+		touch /tmp/tmp-spacefish/Cargo.toml
 		set SPACEFISH_RUST_SYMBOL "· "
 
 		set_color --bold fff
@@ -68,6 +67,7 @@ end
 
 test "Changing SPACEFISH_RUST_PREFIX changes the character prefix"
 	(
+		touch /tmp/tmp-spacefish/Cargo.toml
 		set sf_exit_code 0
 		set SPACEFISH_RUST_PREFIX ·
 
@@ -85,6 +85,7 @@ end
 
 test "Changing SPACEFISH_RUST_SUFFIX changes the character suffix"
 	(
+		touch /tmp/tmp-spacefish/Cargo.toml
 		set sf_exit_code 0
 		set SPACEFISH_RUST_SUFFIX ·
 
@@ -102,8 +103,8 @@ end
 
 test "Prints verbose version when configured to do so"
 	(
-		touch /tmp/tmp-spacefish/testfile.rs
-        set SPACEFISH_RUST_VERBOSE_VERSION true
+		touch /tmp/tmp-spacefish/Cargo.toml
+		set SPACEFISH_RUST_VERBOSE_VERSION true
 
 		set_color --bold fff
 		echo -n "via "
@@ -119,6 +120,7 @@ end
 
 test "doesn't display the section when SPACEFISH_RUST_SHOW is set to \"false\""
 	(
+		touch /tmp/tmp-spacefish/Cargo.toml
 		set SPACEFISH_RUST_SHOW false
 	) = (__sf_section_rust)
 end
