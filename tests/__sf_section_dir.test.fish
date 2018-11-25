@@ -4,6 +4,8 @@ function setup
 	spacefish_test_setup
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
+	mkdir -p /tmp/tmp-spacefish/writeProtected
+	chmod 500 /tmp/tmp-spacefish/writeProtected
 	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
 	set SPACEFISH_DIR_LOCK_SHOW false
 	set -g IS_NOT_CYGWIN true
