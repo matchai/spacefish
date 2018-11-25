@@ -40,8 +40,8 @@ function __sf_section_dir -d "Display the current truncated directory"
 	# Truncate the path to have a limited number of dirs
 	set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 
-    if [ $SPACEFISH_DIR_LOCK_SHOW = true ];
-        [ ! -w . ]; and set DIR_LOCK_SYMBOL (set_color $SPACEFISH_DIR_LOCK_COLOR)" $SPACEFISH_DIR_LOCK_SYMBOL"(set_color --bold fff)
+    if [ $SPACEFISH_DIR_LOCK_SHOW = true -a ! -w . ];
+        set DIR_LOCK_SYMBOL (set_color $SPACEFISH_DIR_LOCK_COLOR)" $SPACEFISH_DIR_LOCK_SYMBOL"(set_color --bold fff)
 	end
 
 	__sf_lib_section \
