@@ -15,8 +15,9 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
+You can also add items to the right prompt by specifying them in the `SPACEFISH_RPROMPT_ORDER` option. By default `SPACEFISH_RPROMPT_ORDER` is empty.
 
 ### Prompt
 
@@ -167,6 +168,18 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
 
+### Julia \(`julia`\)
+
+Julia section is shown only in directories that contain any file with `.jl` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_JULIA_SHOW` | `true` | Show Julia section |
+| `SPACEFISH_JULIA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Julia section |
+| `SPACEFISH_JULIA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Julia section |
+| `SPACEFISH_JULIA_SYMBOL` | `ஃ·` | Character to be shown before Julia version |
+| `SPACEFISH_JULIA_COLOR` | `green` | Color of Julia section |
+
 ### Docker (`docker`)
 
 Docker section is shown only in directories that contain `Dockerfile` or `docker-compose.yml` and also if the `$COMPOSE_FILE` is set.
@@ -242,7 +255,7 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 
 ### Go \(`golang`\)
 
-Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
+Go section is shown only in directories that contain `Godeps`, `glide.yaml`, `go.mod`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
@@ -328,6 +341,20 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
+### Vi-mode \( vi_mode \)
+
+This section shows mode indicator only when Vi-mode is enabled.
+
+| Variable | Default | Meaning |
+| :--- | :---: | --- |
+| `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
+| `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
+| `SPACEFISH_VI_MODE_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
+| `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
+| `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
+| `SPACEFISH_VI_MODE_REPLACE_ONE` | `[R]` | Text to be shown when in replace_one mode |
+| `SPACEFISH_VI_MODE_COLOR` | `white` | Color of Vi-mode section |
 
 ### Jobs \(`jobs`\)
 

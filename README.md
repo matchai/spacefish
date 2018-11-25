@@ -77,6 +77,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Current PHP version (`🐘`).
 * Current Rust version (`𝗥`).
 * Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
+* Current Julia version (`ஃ`).
 * Current Conda version (`🅒`).
 * Current Amazon Web Services (AWS) profile (`☁️`) ([Using named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)).
 * Current Python pyenv (`🐍`).
@@ -86,6 +87,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
   * `⇡` - charging;
   * `⇣` - discharging;
   * `•` - fully charged.
+* Current Vi-mode mode.
 * Optional exit-code of last command.
 * Optional time stamps 12/24hr in format.
 * Execution time of the last command if it exceeds 5 seconds.
