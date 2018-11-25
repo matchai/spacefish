@@ -69,7 +69,7 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 
 ### Directory \(`dir`\)
 
-Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it. If current directory is write-protected or if current user has not enough rights to write in it, a padlock (by default) is displayed as a suffix.
+Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in a Git repository, this section shows only the project title and relevant status icons. If current directory is write-protected or if current user doesn't have write permissions, a padlock (by default) will be displayed as a suffix.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
