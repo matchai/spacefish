@@ -77,7 +77,7 @@ Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. W
 | `SPACEFISH_DIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
 | `SPACEFISH_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
 | `SPACEFISH_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
-| `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
+| `SPACEFISH_DIR_COLOR` | `cyan` | Color of directory section |
 | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
 | `SPACEFISH_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
 | `SPACESHIP_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
