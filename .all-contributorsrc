@@ -18,7 +18,8 @@
         "code",
         "doc",
         "test",
-        "tool"
+        "tool",
+        "review"
       ]
     }
   ]
