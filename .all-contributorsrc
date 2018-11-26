@@ -61,6 +61,17 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "kulabun",
+      "name": "Konstantin Labun",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/6306918?v=4",
+      "profile": "https://labun.me",
+      "contributions": [
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }
