@@ -95,12 +95,14 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 Want more features? Please [open an issue](https://github.com/matchai/spacefish/issues/new?template=Feature_request.md) or send pull request!
 
 ## Requirements
+
 To get spacefish working correctly, you will need:
 
 * [`fish`][fish] (v2.7.0 or newer)
 * [Powerline Font](https://github.com/powerline/fonts) must be installed and enabled in your terminal.
 
 ## Installation
+
 ### [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
@@ -114,6 +116,7 @@ $ omf install spacefish
 ```
 
 ## Customization
+
 Spacefish works really well out of the box, but you can customize your fish to your heart's content!
 
 * [**Options**](./docs/Options.md) — Tweak section's behavior with tons of options.
@@ -125,6 +128,18 @@ You have the ability to customize or disable specific elements of Spacefish. All
 Having issues? Take a look at our [Troubleshooting](./docs/Troubleshooting.md) page.
 
 Still struggling? Please [file an issue](https://github.com/matchai/spacefish/issues/new?template=Support_question.md), describe your problem, and we will gladly help you.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;"/><br /><sub><b>Matan Kushner</b></sub>](https://twitter.com/matchai)<br />[💻](https://github.com/matchai/spacefish/commits?author=matchai "Code") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## License
 
