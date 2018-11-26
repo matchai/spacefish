@@ -15,12 +15,12 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/4658208?v=4",
       "profile": "https://twitter.com/matchai",
       "contributions": [
+        "bug",
         "code",
         "doc",
-        "test",
-        "tool",
         "review",
-        "bug"
+        "test",
+        "tool"
       ]
     },
     {
@@ -32,8 +32,7 @@
         "bug",
         "code",
         "doc",
-        "review",
-        "tool"
+        "review"
       ]
     },
     {
@@ -46,8 +45,7 @@
         "code",
         "doc",
         "review",
-        "test",
-        "tool"
+        "test"
       ]
     },
     {
@@ -56,7 +54,6 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/11844760?v=4",
       "profile": "https://github.com/jskrnbindra",
       "contributions": [
-        "bug",
         "code",
         "doc",
         "test"
@@ -111,8 +108,8 @@
       "profile": "https://github.com/ladysamantha",
       "contributions": [
         "code",
-        "test",
-        "doc"
+        "doc",
+        "test"
       ]
     },
     {

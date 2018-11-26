@@ -40,11 +40,24 @@ Every additional section will slow down the prompt a little bit. If your section
 * **Good:** check if a command exists, check the value of an environment variable
 * **Bad:** network requests, reading large files, etc
 
-### Documentation
+## Documentation
 
 When updating documentation for your section, make sure the markdown document is being properly rendered by Github. Specifically, the following common pitfalls have already been discovered:
 
 * Empty inline code blocks ` ` will only be rendered if you put at least one non-breaking whitespace "&nbsp;" inside, like so: `` ` ` `` → ` `
 * Leading and trailing whitespaces in inline code blocks will be stripped, to indicate that a whitespace is present, use the middot symbol `·`, like so: `` `🐟·` `` → `🐟·`
+
+## Add yourself as a contributor
+
+This project follows the [all contributors](https://github.com/kentcdodds/all-contributors) specification. To add yourself to the table of
+contributors on the README.md, please use the automated script as part of your PR:
+
+```console
+npm install
+npm run contributors:add -- <YOUR_GITHUB_USERNAME>
+```
+
+Follow the prompt. If you've already added yourself to the list and are making a new type of contribution, you can run
+it again and select the added contribution type.
 
 **Thank you for reading the contribution guide! Happy hacking!**
