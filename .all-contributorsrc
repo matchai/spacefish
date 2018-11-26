@@ -35,6 +35,20 @@
         "review",
         "tool"
       ]
+    },
+    {
+      "login": "Snuggle",
+      "name": "Snuggle",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/26250962?v=4",
+      "profile": "https://github.com/Snuggle",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "test",
+        "tool"
+      ]
     }
   ]
 }
