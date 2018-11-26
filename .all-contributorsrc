@@ -114,6 +114,16 @@
         "test",
         "doc"
       ]
+    },
+    {
+      "login": "evanrelf",
+      "name": "Evan Relf",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/887196?v=4",
+      "profile": "https://evanrelf.com",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ]
 }
