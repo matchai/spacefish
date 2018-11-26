@@ -135,7 +135,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;"/><br /><sub><b>Matan Kushner</b></sub>](https://twitter.com/matchai)<br />[💻](https://github.com/matchai/spacefish/commits?author=matchai "Code") [📖](https://github.com/matchai/spacefish/commits?author=matchai "Documentation") [⚠️](https://github.com/matchai/spacefish/commits?author=matchai "Tests") [🔧](#tool-matchai "Tools") [👀](#review-matchai "Reviewed Pull Requests") |
+| [<img src="https://avatars0.githubusercontent.com/u/4658208?v=4" width="100px;"/><br /><sub><b>Matan Kushner</b></sub>](https://twitter.com/matchai)<br />[💻](https://github.com/matchai/spacefish/commits?author=matchai "Code") [📖](https://github.com/matchai/spacefish/commits?author=matchai "Documentation") [⚠️](https://github.com/matchai/spacefish/commits?author=matchai "Tests") [🔧](#tool-matchai "Tools") [👀](#review-matchai "Reviewed Pull Requests") [🐛](https://github.com/matchai/spacefish/issues?q=author%3Amatchai "Bug reports") |
 | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 

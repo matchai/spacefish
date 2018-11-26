@@ -19,7 +19,8 @@
         "doc",
         "test",
         "tool",
-        "review"
+        "review",
+        "bug"
       ]
     }
   ]
