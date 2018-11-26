@@ -103,6 +103,17 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "ladysamantha",
+      "name": "Samantha Enders",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/35412203?v=4",
+      "profile": "https://github.com/ladysamantha",
+      "contributions": [
+        "code",
+        "test",
+        "doc"
+      ]
     }
   ]
 }
