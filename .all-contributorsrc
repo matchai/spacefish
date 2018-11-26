@@ -49,6 +49,18 @@
         "test",
         "tool"
       ]
+    },
+    {
+      "login": "jskrnbindra",
+      "name": "Jaskaran Bindra",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/11844760?v=4",
+      "profile": "https://github.com/jskrnbindra",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "test"
+      ]
     }
   ]
 }
