@@ -22,6 +22,19 @@
         "review",
         "bug"
       ]
+    },
+    {
+      "login": "sirMerr",
+      "name": "Tiffany Le-Nguyen",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/11183523?v=4",
+      "profile": "https://github.com/sirMerr",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "review",
+        "tool"
+      ]
     }
   ]
 }
