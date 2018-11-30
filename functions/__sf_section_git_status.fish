@@ -32,7 +32,7 @@ function __sf_section_git_status -d "Display the current git status"
 	set -l is_behind
 
 	set -l index (command git status --porcelain ^/dev/null -b)
-	set -l trimmed_index (string split \n $index|cut -c 1-2|sort -u)
+	set -g trimmed_index (string split \n $index | string sub --start 1 --length 2)
 
 	for i in $trimmed_index
 		if test (string match '\?\?' $i)
