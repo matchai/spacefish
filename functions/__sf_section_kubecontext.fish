@@ -29,6 +29,7 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 	type -q kubectl; or return
 
 	set -l kube_context (kubectl config current-context ^/dev/null)
+	[ -z $kube_context ]; and return
 
 	__sf_lib_section \
 		$SPACEFISH_KUBECONTEXT_COLOR \
