@@ -1,6 +1,6 @@
 {
   "name": "spacefish",
-  "version": "1.10.3",
+  "version": "1.10.4",
   "description": "A Fish Shell prompt for Astronauts",
   "repository": "git@github.com:matchai/spacefish.git",
   "author": "Matan Kushner <matchai@me.com>",
