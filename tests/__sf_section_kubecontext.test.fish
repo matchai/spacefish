@@ -20,6 +20,12 @@ test "Prints section"
 	) = (__sf_section_kubecontext)
 end
 
+test "Kubecontext symbol does not appear outside of a Kubernetes project"
+	(
+		mock kubectl 1
+	) = (__sf_section_kubecontext)
+end
+
 test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character"
 	(
 		set SPACEFISH_KUBECONTEXT_SYMBOL "· "
