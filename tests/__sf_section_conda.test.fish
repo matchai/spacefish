@@ -3,17 +3,17 @@ source $DIRNAME/mock.fish
 set -l LOCAL_CONDA_VERSION 4.5.11
 
 function setup
-    spacefish_test_setup
-    mock conda 0 "echo \"conda 4.5.11\""
-    mkdir -p /tmp/tmp-spacefish
-    cd /tmp/tmp-spacefish
+	spacefish_test_setup
+	mock conda 0 "echo \"conda 4.5.11\""
+	mkdir -p /tmp/tmp-spacefish
+	cd /tmp/tmp-spacefish
 end
 
 function teardown
-    rm -rf /tmp/tmp-spacefish
-    if test "$CONDA_DEFAULT_ENV"
-        set -e CONDA_DEFAULT_ENV
-    end
+	rm -rf /tmp/tmp-spacefish
+	if test "$CONDA_DEFAULT_ENV"
+		set -e CONDA_DEFAULT_ENV
+	end
 end
 
 test "Prints section when conda is installed and CONDA_DEFAULT_ENV is set"

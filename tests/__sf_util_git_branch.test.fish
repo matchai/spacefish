@@ -40,7 +40,7 @@ test "Identifies an alternate branch name"
 end
 
 test "No result provided for non-git directory"
-    '' = (
+	'' = (
 		__sf_util_git_branch
 	)
 end
