@@ -69,7 +69,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present"
 end
 
 test "Prints Docker section when COMPOSE_FILE is set and the $COMPOSE_FILE exists"
-    (
+	(
 		set -g COMPOSE_FILE /tmp/some-compose-file.yml
 		touch /tmp/some-compose-file.yml
 
@@ -139,7 +139,7 @@ test "Prints section when both Dockerfile and docker-compose.yml are present wit
 end
 
 test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME set"
-    (
+		(
 		set -g COMPOSE_FILE /tmp/some-compose-file.yml
 		touch /tmp/some-compose-file.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
@@ -211,7 +211,7 @@ end
 
 # This case can be checked only by bringing down the docker deamon
 test "Doesn't print section if docker deamon is not running"
-    () = (__sf_section_docker)
+		() = (__sf_section_docker)
 end
 
 test "Doesn't print section when not in a directory with Dockerfile or docker-compose.yml"
