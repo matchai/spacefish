@@ -1,4 +1,4 @@
-function better-mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
+function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
 	set -l cmd_blacklist "builtin" "functions" "eval" "command"
 
 	if contains $cmd $cmd_blacklist
@@ -18,7 +18,13 @@ function better-mock -a cmd -a argument -a exit_code -a executed_code -d "Mock l
 	end
 
 	# Create a function for that command and argument combination
-	set -l mocked_fn "mocked_"$cmd"_fn_"$argument
+	set -l mocked_fn
+	if test $argument = '*'
+		set mocked_fn "mocked_"$cmd"_fn"
+	else
+		set mocked_fn "mocked_"$cmd"_fn_"$argument
+	end
+	echo $mocked_fn
 	function $mocked_fn -V exit_code -V executed_code
 		eval $executed_code
 		return $exit_code
@@ -29,8 +35,14 @@ function better-mock -a cmd -a argument -a exit_code -a executed_code -d "Mock l
 		if contains $argv[1] $$mocked_args
 			set -l fn_name "mocked_"$cmd"_fn_"$argv[1]
 			eval $fn_name
+			return $status
+		end
+
+		# Fallback on runnning the original command
+		set -l mocked_fn "mocked_"$cmd"_fn"
+		if type -q $mocked_fn
+			eval $mocked_fn
 		else
-			# Fallback on runnning the original command
 			eval command $cmd $argv
 		end
 	end
