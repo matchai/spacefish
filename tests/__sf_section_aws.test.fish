@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock aws 0
+	mock aws \* 0
 	set -g AWS_PROFILE user1
 end
 

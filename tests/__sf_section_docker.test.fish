@@ -4,7 +4,7 @@ set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup
 	spacefish_test_setup
-	mock docker 0 "echo \"18.06.1\""
+	mock docker version 0 "echo \"18.06.1\""
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end
@@ -205,7 +205,7 @@ end
 test "Doesn't print section if docker is not installed"
 	(
 		touch Dockerfile
-		mock docker 127
+		mock docker version 127
 	) = (__sf_section_docker)
 end
 

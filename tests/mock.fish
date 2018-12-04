@@ -23,7 +23,7 @@ function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library 
 	end
 
 	set -l mocked_args "_mocked_"$cmd"_args"
-	if not contains $argument $$mocked_args
+	if not contains -- $argument $$mocked_args
 		# Generate variable with all mocked arguments
 		set -g $mocked_args $argument $$mocked_args
 	end
@@ -42,7 +42,7 @@ function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library 
 
 	function $cmd -V cmd -V mocked_args
 		# Call the mocked function created above
-		if contains $argv[1] $$mocked_args
+		if contains -- $argv[1] $$mocked_args
 			set -l fn_name "mocked_"$cmd"_fn_"$argv[1]
 			eval $fn_name
 			return $status

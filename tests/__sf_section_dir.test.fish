@@ -12,7 +12,7 @@ function setup
 
 	set -l isCygwin (uname -s | grep -io CYGWIN)
 	if test -n "$isCygwin"
-			set IS_NOT_CYGWIN false
+		set IS_NOT_CYGWIN false
 	end
 end
 

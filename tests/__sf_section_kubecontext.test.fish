@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock kubectl 0 "echo \"testkube\""
+	mock kubectl config 0 "echo \"testkube\""
 end
 
 test "Prints section"
@@ -22,7 +22,7 @@ end
 
 test "Kubecontext symbol does not appear outside of a Kubernetes project"
 	(
-		mock kubectl 1
+		mock kubectl config 1
 	) = (__sf_section_kubecontext)
 end
 
@@ -76,7 +76,7 @@ test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
 	) = (__sf_section_kubecontext)
 end
 
-test "doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"false\""
+test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"false\""
 	(
 		set SPACEFISH_KUBECONTEXT_SHOW false
 	) = (__sf_section_kubecontext)
