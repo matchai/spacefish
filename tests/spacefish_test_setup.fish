@@ -7,7 +7,7 @@ function spacefish_test_setup
 	end
 
 	# Delete lingering mocked functions
-	for mock in $mocked
+	for mock in $_mocked
 		unmock $mock
 	end
 

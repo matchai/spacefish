@@ -105,7 +105,7 @@ test "Prints nodenv version when nodenv is installed"
 test "Prints nothing when using the \"system\" version of node with nvm"
 	(
 		mkdir /tmp/tmp-spacefish/node_modules
-		mock nvm version 0 "echo \"system\""
+		mock nvm current 0 "echo \"system\""
 	) = (__sf_section_node)
 end
 
@@ -126,7 +126,7 @@ end
 test "Changing SPACEFISH_NODE_SYMBOL changes the displayed character"
 	(
 		mkdir /tmp/tmp-spacefish/node_modules
-		mock nvm version 0 "echo \"v9.8.0\""
+		mock nvm current 0 "echo \"v9.8.0\""
 		set SPACEFISH_NODE_SYMBOL "· "
 
 		set_color --bold fff
