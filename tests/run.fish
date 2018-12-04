@@ -13,7 +13,7 @@ end
 env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
 
-if count $argv > 1
+if count $argv -gt 1
 	# Run an individual test file if it is provided as an argument
 	env HOME=$tmpDir fish -c "fishtape $argv[1]"
 else
