@@ -1,46 +1,36 @@
-function better-mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
-	set -l cmd_blacklist "builtin" "functions" "eval" "command"
+#
+# Tweaked from Markcial's excellent mock library:
+# https://github.com/Markcial/mock
+#
 
-	if contains $cmd $cmd_blacklist
-		echo The function '"'$cmd'"' is reserved and therefore cannot be mocked.
+function mock -a _mock -a exit_code -a code -d "Mock library for fish shell testing"
+	set -l blacklisted "builtin" "functions" "eval" "command"
+
+	if contains $_mock $blacklisted
+		echo The function '"'$_mock'"' is reserved and therefore cannot be mocked.
 		return 1
-	end
+	else if not contains $_mock $_mocks
+		function $_mock -V _mock -V exit_code -V code
+			set -l args $argv
 
-	if not contains $cmd $_mocked
-		# Generate variable with all mocked functions
-		set -g _mocked $cmd $_mocked
-	end
+			# add mocked function to list
+			set -g mocked $_mock $mocked
 
-	set -l mocked_args "_mocked_"$cmd"_args"
-	if not contains $argument $$mocked_args
-		# Generate variable with all mocked arguments
-		set -g $mocked_args $argument $$mocked_args
-	end
+			# add exit_code variable
+			if test -z "$exit_code"
+				set exit_code 0
+			end
 
-	# Create a function for that command and argument combination
-	set -l mocked_fn "mocked_"$cmd"_fn_"$argument
-	function $mocked_fn -V exit_code -V executed_code
-		eval $executed_code
-		return $exit_code
-	end
+			if test -z "$code"
+				set code ""
+			end
 
-	function $cmd -V cmd -V mocked_args
-		# Call the mocked function created above
-		if contains $argv[1] $$mocked_args
-			set -l fn_name "mocked_"$cmd"_fn_"$argv[1]
-			eval $fn_name
-		else
-			# Fallback on runnning the original command
-			eval command $cmd $argv
+			eval $code
+			return $exit_code
 		end
 	end
+end
 
-	function unmock -a cmd
-		functions -e $cmd
-		set -l mocked_args "_mocked_"$cmd"_args"
-		functions -e "mocked_"$cmd"_fn_"{$$mocked_args}
-		set -e $mocked_args
-		set _mocked (string match -v $cmd $_mocked)
-		return 0
-	end
+function unmock -a _mock
+	functions -e $_mock
 end
