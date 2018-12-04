@@ -1,3 +1,14 @@
+#
+# Usage: mock <command> <argument> <exit code> [executed code]
+#
+#   Options
+#     command				The command you would like to have mocked
+#     argument			The argument the mock should apply to ('*' defines a fallback for all arguments)
+#     exit code			The exit code returned when the command executes
+#     executed code	Code to be executed when the command is called with the given argument
+#
+#   The many mocks can apply to the same command at the same time.
+#
 function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
 	set -l cmd_blacklist "builtin" "functions" "eval" "command"
 
@@ -24,7 +35,6 @@ function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library 
 	else
 		set mocked_fn "mocked_"$cmd"_fn_"$argument
 	end
-	echo $mocked_fn
 	function $mocked_fn -V exit_code -V executed_code
 		eval $executed_code
 		return $exit_code
