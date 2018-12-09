@@ -1,13 +1,19 @@
 #
-# Usage: mock <command> <argument> <exit code> [executed code]
+#   Usage
+#     $ mock <command> <argument> <exit code> [executed code]
 #
-#   Options
-#     command				The command you would like to have mocked
-#     argument			The argument the mock should apply to ('*' defines a fallback for all arguments)
-#     exit code			The exit code returned when the command executes
-#     executed code	Code to be executed when the command is called with the given argument
+#   Arguments
+#     command        The command you would like to have mocked
+#     argument       The argument the mock should apply to ('*' defines a fallback for all arguments)
+#     exit code      The exit code returned when the command executes
+#     executed code  Code to be executed when the command is called with the given argument
 #
-#   The many mocks can apply to the same command at the same time.
+#   Examples
+#     $ mock git pull 0 "echo This command successfully echoes"
+#     $ mock git push 1 "echo This command fails with status 1"
+#     $ mock git \* 0 "echo This command acts as a fallback to all git commands"
+#
+#   Many mocks can be applied to the same command at the same time, with different arguments.
 #
 function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
 	set -l cmd_blacklist "builtin" "functions" "eval" "command"
