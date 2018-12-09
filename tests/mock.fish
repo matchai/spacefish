@@ -14,6 +14,7 @@
 #     $ mock git \* 0 "echo This command acts as a fallback to all git commands"
 #
 #   Many mocks can be applied to the same command at the same time, with different arguments.
+#   Be sure to escape the asterisk symbol when using it as a fallback (\*)
 #
 function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
 	set -l cmd_blacklist "builtin" "functions" "eval" "command"
