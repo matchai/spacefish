@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock go 0 "echo \"go version go1.10.3 darwin/amd64\""
+	mock go version 0 "echo \"go version go1.10.3 darwin/amd64\""
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end

@@ -12,4 +12,11 @@ end
 # Install fishtape and local spacefish into temp env
 env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
-env HOME=$tmpDir fish -c "fishtape $testDir/*.test.fish"
+
+if test (count $argv) -gt 0
+	# Run an individual test file if it is provided as an argument
+	env HOME=$tmpDir fish -c "fishtape $argv[1]"
+else
+	# Otherwise run all test files
+	env HOME=$tmpDir fish -c "fishtape $testDir/*.test.fish"
+end

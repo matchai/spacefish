@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock rustc 0 "echo \"rustc 1.28.0-nightly (9634041f0 2018-07-30)\""
+	mock rustc --version 0 "echo \"rustc 1.28.0-nightly (9634041f0 2018-07-30)\""
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end

@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock pyenv 0 "echo \"3.7.0\""
+	mock pyenv version-name 0 "echo \"3.7.0\""
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end

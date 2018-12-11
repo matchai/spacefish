@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
     spacefish_test_setup
-    mock julia 0 "echo \"julia version 1.0.1\""
+    mock julia --version 0 "echo \"julia version 1.0.1\""
     mkdir -p /tmp/tmp-spacefish
     cd /tmp/tmp-spacefish
 end

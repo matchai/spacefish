@@ -3,7 +3,7 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock php 0 "echo \"PHP 7.1.16 (cli) (built: Mar 31 2018 02:59:59) ( NTS )
+	mock php -v 0 "echo \"PHP 7.1.16 (cli) (built: Mar 31 2018 02:59:59) ( NTS )
 	Copyright (c) 1997-2018 The PHP Group
 	Zend Engine v3.1.0, Copyright (c) 1998-2018 Zend Technologies\""
 	mkdir -p /tmp/tmp-spacefish
