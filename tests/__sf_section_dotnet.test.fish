@@ -25,8 +25,8 @@ end
 test "Prints section if project.json is present"
 	(
 		touch /tmp/tmp-spacefish/project.json
-		set_color --bold fff
 
+		set_color --bold fff
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -57,8 +57,8 @@ end
 test "Prints section if a .csproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.csproj
-		set_color --bold fff
 
+		set_color --bold fff
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -89,8 +89,8 @@ end
 test "Prints section if a .sln file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.sln
-		set_color --bold fff
 
+		set_color --bold fff
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -105,8 +105,8 @@ end
 test "Changing SPACEFISH_DOTNET_SYMBOL changes the displayed character"
 	(
 		touch /tmp/tmp-spacefish/tmp.sln
-		set SPACEFISH_DOTNET_SYMBOL "· "
 
+		set SPACEFISH_DOTNET_SYMBOL "· "
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -160,4 +160,3 @@ test "Doesn't display .NET when SPACEFISH_DOTNET_SHOW is set to 'false'"
 		set SPACEFISH_DOTNET_SHOW false
 	) = (__sf_section_dotnet)
 end
-
