@@ -15,8 +15,9 @@ The order also defines which sections that Spacefish loads. If you're struggling
 The default order is:
 
 ```fish
-    set SPACEFISH_PROMPT_ORDER time user dir host git package node ruby golang php rust haskell pyenv kubecontext exec_time line_sep battery jobs exit_code char
+    set SPACEFISH_PROMPT_ORDER time user dir host git package node docker ruby golang php rust haskell julia aws conda pyenv kubecontext exec_time line_sep battery jobs exit_code char
 ```
+You can also add items to the right prompt by specifying them in the `SPACEFISH_RPROMPT_ORDER` option. By default `SPACEFISH_RPROMPT_ORDER` is empty.
 
 ### Prompt
 
@@ -68,7 +69,7 @@ By default, a username is shown only when it's not the same as `$LOGNAME`, when 
 
 ### Directory \(`dir`\)
 
-Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in repository, it shows only root directory and folders inside it.
+Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. While you are in a Git repository, this section shows only the project title and relevant status icons. If current directory is write-protected or if current user doesn't have write permissions, a padlock (by default) will be displayed as a suffix.
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
@@ -76,8 +77,11 @@ Directory is always shown and truncated to the value of `SPACEFISH_DIR_TRUNC`. W
 | `SPACEFISH_DIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after current directory |
 | `SPACEFISH_DIR_TRUNC` | `3` | Number of folders of cwd to show in prompt, 0 to show all |
 | `SPACEFISH_DIR_TRUNC_REPO` | `true` | While in `git` repo, show only root directory and folders inside it |
-| `SPACEFISH_DIR_COLOR` | `(set_color --bold cyan)` | Color of directory section |
+| `SPACEFISH_DIR_COLOR` | `cyan` | Color of directory section |
 | `SPACEFISH_DIR_PREFIX` | `in·` | Prefix before current directory |
+| `SPACEFISH_DIR_LOCK_SHOW` | `true` | Show directory write-protected symbol |
+| `SPACESHIP_DIR_LOCK_SYMBOL` | ![·🔒](https://user-images.githubusercontent.com/11844760/47611530-7bf99c00-da8d-11e8-95da-f4ec1f23203a.png) | The symbol displayed if directory is write-protected (requires powerline patched font) |
+| `SPACESHIP_DIR_LOCK_COLOR` | `red` | Color for the lock symbol |
 
 ### Hostname \(`host`\)
 
@@ -164,6 +168,31 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 | `SPACEFISH_NODE_DEFAULT_VERSION` | ` ` | Node.js version to be treated as default |
 | `SPACEFISH_NODE_COLOR` | `green` | Color of Node.js section |
 
+### Julia \(`julia`\)
+
+Julia section is shown only in directories that contain any file with `.jl` extension.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_JULIA_SHOW` | `true` | Show Julia section |
+| `SPACEFISH_JULIA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before Julia section |
+| `SPACEFISH_JULIA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Julia section |
+| `SPACEFISH_JULIA_SYMBOL` | `ஃ·` | Character to be shown before Julia version |
+| `SPACEFISH_JULIA_COLOR` | `green` | Color of Julia section |
+
+### Docker (`docker`)
+
+Docker section is shown only in directories that contain `Dockerfile` or `docker-compose.yml` and also if the `$COMPOSE_FILE` is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_DOCKER_SHOW` | `true` | Show current Docker version |
+| `SPACEFISH_DOCKER_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Docker section |
+| `SPACEFISH_DOCKER_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Docker section |
+| `SPACEFISH_DOCKER_SYMBOL` | `🐳·` | Character to be shown before Docker version |
+| `SPACEFISH_DOCKER_COLOR` | `cyan` | Color of Docker section |
+| `SPACEFISH_DOCKER_VERBOSE_VERSION` | `false` | Show full version name. (Beta, Nightly) |
+
 ### Ruby \(`ruby`\)
 
 Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`, or any other file with `.rb` extension.
@@ -188,6 +217,30 @@ Ruby section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
 | `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
 
+### Conda \(`conda`\)
+
+Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_CONDA_SHOW` | `true` | Show current Conda version |
+| `SPACEFISH_CONDA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
+| `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
+| `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
+| `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
+
+### Amazon Web Services (AWS) (`aws`)
+
+Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) variable.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
+| `SPACESHIP_AWS_PREFIX` | `using·` | Prefix before the AWS section |
+| `SPACESHIP_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
+| `SPACESHIP_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
+| `SPACESHIP_AWS_COLOR` | `ff8700` | Color of AWS section |
+
 ### Pyenv \(`pyenv`\)
 
 pyenv section is shown only in directories that contain `requirements.txt` or any other file with `.py` extension.
@@ -202,7 +255,7 @@ pyenv section is shown only in directories that contain `requirements.txt` or an
 
 ### Go \(`golang`\)
 
-Go section is shown only in directories that contain `Godeps`, `glide.yaml`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
+Go section is shown only in directories that contain `Godeps`, `glide.yaml`, `go.mod`, any other file with `.go` extension, or when current directory is in the Go workspace defined in `$GOPATH`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
@@ -300,6 +353,20 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | `true` | Shown | Hidden | Hidden |
 | `charged` | Shown | Hidden | Shown |
 
+### Vi-mode \( vi_mode \)
+
+This section shows mode indicator only when Vi-mode is enabled.
+
+| Variable | Default | Meaning |
+| :--- | :---: | --- |
+| `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
+| `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
+| `SPACEFISH_VI_MODE_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
+| `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
+| `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
+| `SPACEFISH_VI_MODE_REPLACE_ONE` | `[R]` | Text to be shown when in replace_one mode |
+| `SPACEFISH_VI_MODE_COLOR` | `white` | Color of Vi-mode section |
 
 ### Jobs \(`jobs`\)
 

@@ -3,8 +3,8 @@ source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
-	mock node 0 "echo \"v9.8.0\""
-	mkdir -p /tmp/tmp-spacefish/node_modules
+	mock node -v 0 "echo \"v9.8.0\""
+	mkdir -p /tmp/tmp-spacefish/
 	cd /tmp/tmp-spacefish
 end
 
@@ -14,6 +14,8 @@ end
 
 test "Prints section when node_modules is present"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
+
 		set_color --bold fff
 		echo -n "via "
 		set_color normal
@@ -28,7 +30,6 @@ end
 
 test "Prints section when package.json is present"
 	(
-		rm -rf /tmp/tmp-spacefish/node_modules
 		touch /tmp/tmp-spacefish/package.json
 
 		set_color --bold fff
@@ -44,15 +45,14 @@ test "Prints section when package.json is present"
 end
 
 test "Doesn't print section when not in a directory with node_modules or package.json"
-	(
-		rm -rf /tmp/tmp-spacefish/node_modules
-	) = (__sf_section_node)
+	() = (__sf_section_node)
 end
 
 test "Prints nvm version when nvm is installed"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set -e sf_node_version
-		mock nvm 0 "echo \"v9.8.0\""
+		mock nvm current 0 "echo \"v9.8.0\""
 
 		set_color --bold fff
 		echo -n "via "
@@ -68,10 +68,11 @@ end
 
 test "Prints cached nvm version if previously used"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set sf_node_version "v1.2.3"
 		set sf_last_nvm_bin "path_to_bin"
 		set NVM_BIN "path_to_bin"
-		mock nvm 0
+		mock nvm current 0
 
 		set_color --bold fff
 		echo -n "via "
@@ -87,7 +88,8 @@ end
 
 test "Prints nodenv version when nodenv is installed"
 	(
-		mock nodenv 0 "echo \"v9.8.0\""
+		mkdir /tmp/tmp-spacefish/node_modules
+		mock nodenv version-name 0 "echo \"v9.8.0\""
 
 		set_color --bold fff
 		echo -n "via "
@@ -102,25 +104,29 @@ test "Prints nodenv version when nodenv is installed"
 
 test "Prints nothing when using the \"system\" version of node with nvm"
 	(
-		mock nvm 0 "echo \"system\""
+		mkdir /tmp/tmp-spacefish/node_modules
+		mock nvm current 0 "echo \"system\""
 	) = (__sf_section_node)
 end
 
 test "Prints nothing when using the \"system\" version of node with nodenv"
 	(
-		mock nodenv 0 "echo \"system\""
+		mkdir /tmp/tmp-spacefish/node_modules
+		mock nodenv version-name 0 "echo \"system\""
 	) = (__sf_section_node)
 end
 
 test "Prints nodenv version when nodenv is installed"
 	(
-		mock nodenv 0 "echo \"node\""
+		mkdir /tmp/tmp-spacefish/node_modules
+		mock nodenv version-name 0 "echo \"node\""
 	) = (__sf_section_node)
 end
 
 test "Changing SPACEFISH_NODE_SYMBOL changes the displayed character"
 	(
-		mock nvm 0 "echo \"v9.8.0\""
+		mkdir /tmp/tmp-spacefish/node_modules
+		mock nvm current 0 "echo \"v9.8.0\""
 		set SPACEFISH_NODE_SYMBOL "· "
 
 		set_color --bold fff
@@ -137,6 +143,7 @@ end
 
 test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set sf_exit_code 0
 		set SPACEFISH_NODE_PREFIX ·
 
@@ -154,6 +161,7 @@ end
 
 test "Changing SPACEFISH_NODE_PREFIX changes the character prefix"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set sf_exit_code 0
 		set SPACEFISH_NODE_SUFFIX ·
 
@@ -171,13 +179,15 @@ end
 
 test "Setting SPACEFISH_NODE_DEFAULT_VERSION to the current version disables the section"
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set sf_exit_code 0
 		set SPACEFISH_NODE_DEFAULT_VERSION v9.8.0
 	) = (__sf_section_node)
 end
 
-test "Doesn't display node when SPACEFISH_NODE_SHOW is set to 'false'"
+test "doesn't display the section when SPACEFISH_NODE_SHOW is set to \"false\""
 	(
+		mkdir /tmp/tmp-spacefish/node_modules
 		set SPACEFISH_NODE_SHOW false
 	) = (__sf_section_node)
 end

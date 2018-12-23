@@ -4,11 +4,22 @@ function setup
 	spacefish_test_setup
 	mkdir -p ~/.tmp-spacefish/dir1/dir2
 	mkdir -p /tmp/tmp-spacefish/dir1/dir2/dir3
+	mkdir -p /tmp/tmp-spacefish/writeProtected
+	chmod 500 /tmp/tmp-spacefish/writeProtected
+	# disabling SPACEFISH_DIR_LOCK_SYMBOL to avoid breaking old tests
+	set SPACEFISH_DIR_LOCK_SHOW false
+	set -g IS_NOT_CYGWIN true
+
+	set -l isCygwin (uname -s | grep -io CYGWIN)
+	if test -n "$isCygwin"
+		set IS_NOT_CYGWIN false
+	end
 end
 
 function teardown
 	rm -rf ~/.tmp-spacefish
 	rm -rf /tmp/tmp-spacefish
+	set -e IS_NOT_CYGWIN
 end
 
 #
@@ -303,6 +314,85 @@ test "Changing SPACEFISH_DIR_COLOR changes the dir color"
 		echo -n "~"
 		set_color normal
 		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+
+#
+# SPACEFISH_DIR_LOCK_SYMBOL
+#
+
+test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_DIR_LOCK_SHOW is true"
+	(
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
+		cd /tmp/tmp-spacefish/writeProtected
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp/tmp-spacefish/writeProtected"
+		set_color normal
+		set_color --bold fff
+		if [ $SPACEFISH_DIR_LOCK_SHOW = "true" ]
+			echo -n (set_color red)" "(set_color --bold fff)
+		end
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Doesn't show DIR_LOCK_SYMBOL if SPACEFISH_DIR_LOCK_SHOW is false"
+	(
+		cd /tmp/tmp-spacefish/writeProtected
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp/tmp-spacefish/writeProtected"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected for this user"
+	(
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
+		cd ~
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "~"
+		set_color normal
+		set_color --bold fff
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dir)
+end
+
+test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
+	(
+		set SPACEFISH_DIR_LOCK_SHOW $IS_NOT_CYGWIN
+		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
+		cd /tmp/tmp-spacefish/writeProtected
+
+		set_color --bold fff
+		echo -n "in "
+		set_color normal
+		set_color --bold cyan
+		echo -n "tmp/tmp-spacefish/writeProtected"
+		set_color normal
+		set_color --bold fff
+		if [ $SPACEFISH_DIR_LOCK_SHOW = "true" ]
+			echo -n (set_color red)" 😀"(set_color --bold fff)
+		end
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)

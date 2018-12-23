@@ -15,7 +15,7 @@ Try all of the following troubleshooting steps:
 * Update spacefish with `fisher` or `omf`
 
   ```sh
-  fisher update spacefish
+  fisher add matchai/spacefish
   # or
   omf update spacefish
   ```

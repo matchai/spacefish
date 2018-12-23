@@ -1,6 +1,6 @@
 {
   "name": "spacefish",
-  "version": "1.4.0",
+  "version": "1.10.4",
   "description": "A Fish Shell prompt for Astronauts",
   "repository": "git@github.com:matchai/spacefish.git",
   "author": "Matan Kushner <matchai@me.com>",
@@ -9,10 +9,13 @@
     "version": "scripts/version.fish",
     "docs:prepare": "gitbook install",
     "docs:serve": "npm run docs:prepare && gitbook serve .",
-    "docs:build": "npm run docs:prepare && gitbook build"
+    "docs:build": "npm run docs:prepare && gitbook build",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "license": "MIT",
   "devDependencies": {
+    "all-contributors-cli": "^5.4.1",
     "gitbook-cli": "^2.3.2",
     "gitbook-plugin-anchorjs": "^2.0.0",
     "gitbook-plugin-edit-link": "^2.0.2",

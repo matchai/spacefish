@@ -46,10 +46,10 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 
 	# Darwin and macOS machines
 	if type -q pmset
-		set battery_data (pmset -g batt)
+		set battery_data (pmset -g batt | grep "InternalBattery")
 
 		# Return if no internal battery
-		if test -z (echo $battery_data | grep "InternalBattery")
+		if test -z (echo $battery_data)
 			return
 		end
 
@@ -68,8 +68,8 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_percent (echo $battery_data | grep percentage | awk '{print $2}')
 		set battery_status (echo $battery_data | grep state | awk '{print $2}')
 	# Windows machines.
-	else if type -q apci
-		set -l battery_data (acpi -b)
+	else if type -q acpi
+		set -l battery_data (acpi -b ^ /dev/null) # Redirect stderr to /dev/null fixes issue #110.
 
 		# Return if no battery
 		[ -z $battery_data ]; and return

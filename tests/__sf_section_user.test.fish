@@ -68,7 +68,7 @@ test "Changes user color when logged in as root"
 	) = (__sf_section_user)
 end
 
-test "Displays user when SPACEFISH_USER_SHOW is set to 'always'"
+test "Displays user when SPACEFISH_USER_SHOW is set to \"always\""
 	(
 		set SPACEFISH_USER_SHOW always
 
@@ -84,7 +84,7 @@ test "Displays user when SPACEFISH_USER_SHOW is set to 'always'"
 	) = (__sf_section_user)
 end
 
-test "Doesn't display user when SPACEFISH_USER_SHOW is set to 'false'"
+test "Doesn't display user when SPACEFISH_USER_SHOW is set to \"false\""
 	(
 		set SPACEFISH_USER_SHOW false
 	) = (__sf_section_user)
