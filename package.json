@@ -17,23 +17,17 @@
     "all-contributors-cli": "^5.4.1",
     "gitbook-cli": "^2.3.2"
   },
-  "plugins": [
-    [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": [
-          "fish_prompt.fish"
-        ]
-      }
-    ],
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
-    "@semantic-release/github"
-  ]
+  "release": {
+    "plugins": [
+      ["@semantic-release/exec", {
+          "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
+      }],
+      ["@semantic-release/git", {
+          "assets": ["fish_prompt.fish"]
+      }],
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
+  }
 }
