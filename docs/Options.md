@@ -296,11 +296,11 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACESHIP_DOTNET_SHOW` | `true` | Current .NET section |
-| `SPACESHIP_DOTNET_PREFIX` | `$SPACESHIP_PROMPT_DEFAULT_PREFIX` | Prefix before .NET section |
-| `SPACESHIP_DOTNET_SUFFIX` | `$SPACESHIP_PROMPT_DEFAULT_SUFFIX` | Suffix after .NET section |
-| `SPACESHIP_DOTNET_SYMBOL` | `.NET·` | Character to be shown before .NET version |
-| `SPACESHIP_DOTNET_COLOR` | `128` | Color of .NET section |
+| `SPACEFISH_DOTNET_SHOW` | `true` | Current .NET section |
+| `SPACEFISH_DOTNET_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before .NET section |
+| `SPACEFISH_DOTNET_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after .NET section |
+| `SPACEFISH_DOTNET_SYMBOL` | `.NET·` | Character to be shown before .NET version |
+| `SPACEFISH_DOTNET_COLOR` | `128` | Color of .NET section |
 
 ### Kubectl context \(`kubecontext`\)
 

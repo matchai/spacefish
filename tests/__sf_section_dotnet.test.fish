@@ -26,6 +26,7 @@ test "Prints section if project.json is present"
 	(
 		touch /tmp/tmp-spacefish/project.json
 		set_color --bold fff
+
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -41,6 +42,7 @@ test "Prints section if global.json is present"
 	(
 		touch /tmp/tmp-spacefish/global.json
 		set_color --bold fff
+
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -56,6 +58,7 @@ test "Prints section if a .csproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.csproj
 		set_color --bold fff
+
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -71,6 +74,7 @@ test "Prints section if a .xproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.xproj
 		set_color --bold fff
+
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
@@ -86,6 +90,7 @@ test "Prints section if a .sln file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.sln
 		set_color --bold fff
+
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
