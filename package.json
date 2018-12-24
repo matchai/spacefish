@@ -14,17 +14,27 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@semantic-release/exec": "^3.3.1",
+    "@semantic-release/git": "^7.0.6",
     "all-contributors-cli": "^5.4.1",
     "gitbook-cli": "^2.3.2"
   },
   "release": {
     "plugins": [
-      ["@semantic-release/exec", {
+      [
+        "@semantic-release/exec",
+        {
           "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
-      }],
-      ["@semantic-release/git", {
-          "assets": ["fish_prompt.fish"]
-      }],
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "fish_prompt.fish"
+          ]
+        }
+      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
