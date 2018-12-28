@@ -1,6 +1,6 @@
 {
   "name": "spacefish",
-  "version": "1.11.0",
+  "version": "0.0.0-semantic-release",
   "description": "A Fish Shell prompt for Astronauts",
   "repository": "git@github.com:matchai/spacefish.git",
   "author": "Matan Kushner <matchai@me.com>",
@@ -21,22 +21,14 @@
   },
   "release": {
     "plugins": [
-      [
-        "@semantic-release/exec",
-        {
-          "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
-        }
-      ],
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "fish_prompt.fish"
-          ]
-        }
-      ],
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
+      ["@semantic-release/exec", {
+        "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
+      }],
+      [ "@semantic-release/git", {
+        "assets": ["fish_prompt.fish"]
+      }],
       "@semantic-release/github"
     ]
   }
