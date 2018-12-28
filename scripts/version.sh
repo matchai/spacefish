@@ -1,7 +1,7 @@
-#!/usr/bin/env fish
+#!/bin/sh
 
-set -l new_version $argv[1]
-set -l filename $PWD/fish_prompt.fish
+new_version=$1
+filename=$(pwd)/fish_prompt.fish
 
 sed -e "s/set -g SPACEFISH_VERSION .*/set -g SPACEFISH_VERSION $new_version/g" $filename > $filename.bak
 mv -- $filename.bak $filename
