@@ -1,4 +1,4 @@
-langauge: generic
+langauge: minimal
 env:
   global:
      - BREW_FISH2="https://raw.githubusercontent.com/Homebrew/homebrew-core/2827b020c3366ea93566a344167ba62388c16c7d/Formula/fish.rb"
