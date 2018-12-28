@@ -29,7 +29,7 @@ end
 
 test "Identifies an alternate branch name"
 	(
-		command git checkout -b "testBranch" ^/dev/null
+		command git checkout -b "testBranch" 2>/dev/null
 		command git commit --allow-empty -m "initial commit" --quiet
 
 		echo "testBranch"

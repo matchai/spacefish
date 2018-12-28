@@ -31,7 +31,7 @@ function __sf_section_git_status -d "Display the current git status"
 	set -l is_ahead
 	set -l is_behind
 
-	set -l index (command git status --porcelain ^/dev/null -b)
+	set -l index (command git status --porcelain 2>/dev/null -b)
 	set -l trimmed_index (string split \n $index | string sub --start 1 --length 2)
 
 	for i in $trimmed_index
@@ -56,7 +56,7 @@ function __sf_section_git_status -d "Display the current git status"
 	end
 
 	# Check for stashes
-	if test -n (echo (command git rev-parse --verify refs/stash ^/dev/null))
+	if test -n (echo (command git rev-parse --verify refs/stash 2>/dev/null))
 		set git_status stashed $git_status
 	end
 

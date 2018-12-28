@@ -27,7 +27,7 @@ function __sf_section_dir -d "Display the current truncated directory"
 
 	set -l dir
 	set -l tmp
-	set -l git_root (command git rev-parse --show-toplevel ^/dev/null)
+	set -l git_root (command git rev-parse --show-toplevel 2>/dev/null)
 
 	if test "$SPACEFISH_DIR_TRUNC_REPO" = "true" -a "$git_root"
 		# Treat repo root as top level directory

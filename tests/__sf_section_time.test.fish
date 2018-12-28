@@ -4,7 +4,7 @@ function setup
 	spacefish_test_setup
 
 	function date -a time_format
-		command date --version >/dev/null ^/dev/null
+		command date --version >/dev/null 2>/dev/null
 		switch $status
 			case 0 # GNU Coreutil
 				command date "-u" "-d @1536116421" "$time_format"

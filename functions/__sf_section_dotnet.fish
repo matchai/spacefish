@@ -38,7 +38,7 @@ function __sf_section_dotnet -d "Display the .NET SDK version"
 	# From the
 	# dotnet-cli automatically handles SDK pinning (specified in a global.json file)
 	# therefore, this already returns the expected version for the current directory
-	set -l dotnet_version (dotnet --version ^/dev/null)
+	set -l dotnet_version (dotnet --version 2>/dev/null)
 
 	__sf_lib_section \
 		$SPACEFISH_DOTNET_COLOR \
