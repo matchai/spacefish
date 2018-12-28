@@ -11,9 +11,6 @@ function spacefish_test_setup
 		unmock $mock
 	end
 
-	set -gx fish_emoji_width 2
-	set -gx fish_ambiguous_width 2
-
 	# Initialize spacefish theme
 	fish_prompt>/dev/null
 end
