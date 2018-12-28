@@ -1,4 +1,4 @@
-language: minimal
+language: node_js
 env:
   global:
      - BREW_FISH2="https://raw.githubusercontent.com/Homebrew/homebrew-core/2827b020c3366ea93566a344167ba62388c16c7d/Formula/fish.rb"
@@ -37,7 +37,6 @@ jobs:
        - brew install $BREW_FISH3
 
     - stage: release
-      language: node_js
       provider: script
       skip_cleanup: true
       script: npx semantic-release
