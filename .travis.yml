@@ -19,4 +19,4 @@ jobs:
     - stage: release
       provider: script
       skip_cleanup: true
-      script: npx travis-deploy-once "npx semantic-release"
+      script: npx semantic-release
