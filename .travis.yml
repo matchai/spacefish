@@ -16,3 +16,7 @@ jobs:
       install:
        - brew update
        - brew install fish
+    - stage: release
+      provider: script
+      skip_cleanup: true
+      script: npx travis-deploy-once "npx semantic-release"
