@@ -2,20 +2,42 @@ language: node_js
 node_js:
    - "stable"
 
+env:
+   - BREW_FISH2="https://raw.githubusercontent.com/Homebrew/homebrew-core/2827b020c3366ea93566a344167ba62388c16c7d/Formula/fish.rb"
+   - BREW_FISH3="https://raw.githubusercontent.com/Homebrew/homebrew-core/99d05d888185c3bf99cff69c46dfda9a74e1e927/Formula/fish.rb"
+
 jobs:
   include:
     - stage: test
+      name: "Fish 2.X Linux"
       os: linux
       sudo: required
       install:
        - sudo apt-add-repository -y ppa:fish-shell/release-2
        - sudo apt-get update
        - sudo apt-get install -y fish
+
     - stage: test
+      name: "Fish 2.X macOS"
       os: osx
       install:
-       - brew update
-       - brew install fish
+       - brew install $BREW_FISH2
+
+    - stage: test
+      name: "Fish 3.X Linux"
+      os: linux
+      sudo: required
+      install:
+       - sudo apt-add-repository -y ppa:fish-shell/release-3
+       - sudo apt-get update
+       - sudo apt-get install -y fish
+
+    - stage: test
+      name: "Fish 3.X macOS"
+      os: osx
+      install:
+       - brew install $BREW_FISH3
+
     - stage: release
       provider: script
       skip_cleanup: true
