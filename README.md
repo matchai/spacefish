@@ -20,7 +20,7 @@
       alt="Windows CI Status" />
   </a>
    <a href="https://fishshell.com/">
-    <img src="https://badgen.net/badge/fish/v2.7.1"
+    <img src="https://badgen.net/badge/fish/v3.0.0"
       alt="Fish Version" />
   </a>
 </p>
