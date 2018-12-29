@@ -5,6 +5,8 @@ function setup
 end
 
 function teardown
+	set -e UID
+	set -e SSH_CONNECTION
 	set USER $LOGNAME
 end
 
