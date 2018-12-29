@@ -5,8 +5,8 @@ function setup
 end
 
 function teardown
-	set -e UID
-	set -e SSH_CONNECTION
+	not set -q SSH_CONNECTION; or set -e SSH_CONNECTION
+	not set -q UID; or set -e UID
 	set USER $LOGNAME
 end
 
