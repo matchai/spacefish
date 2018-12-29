@@ -31,7 +31,7 @@ function __sf_section_dir -d "Display the current truncated directory"
 
 	if test "$SPACEFISH_DIR_TRUNC_REPO" = "true" -a -n "$git_root"
 		# Resolve to physical PWD instead of logical
-		set -l currDir (readlink -f $PWD)
+		set -l currDir (command pwd -P)
 		# Treat repo root as top level directory
 		set tmp (string replace $git_root (basename $git_root) $currDir)
 	else
