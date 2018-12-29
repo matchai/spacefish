@@ -20,8 +20,7 @@ jobs:
     - stage: test
       name: "Fish 2.X macOS"
       os: osx
-      install:
-       - brew install $BREW_FISH2
+      install: brew install $BREW_FISH2
 
     - stage: test
       name: "Fish 3.X Linux"
@@ -35,8 +34,7 @@ jobs:
     - stage: test
       name: "Fish 3.X macOS"
       os: osx
-      install:
-       - brew install $BREW_FISH3
+      install: brew install $BREW_FISH3
 
     - stage: release
       provider: script
