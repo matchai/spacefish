@@ -6,7 +6,7 @@ function setup
 
 	# AppVeyor doesn't have the `killall` command, so instead of explicitly killing
 	# background processes it's necessary to wait 5 seconds to terminate naturally.
-	if set -q __fishtape_APPVEYOR
+	if set -q APPVEYOR
 		mock killall \* 0 "sleep 5"
 	end
 end
