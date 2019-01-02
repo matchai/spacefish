@@ -31,7 +31,7 @@ if not test -f Dockerfile \
 	return
 end
 
-	set -l docker_version (docker version -f "{{.Server.Version}}" ^/dev/null)
+	set -l docker_version (docker version -f "{{.Server.Version}}" 2>/dev/null)
 	# if docker daemon isn't running you'll get an error like 'Bad response from Docker engine'
 	[ -z $docker_version ]; and return
 

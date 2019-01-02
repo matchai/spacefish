@@ -4,6 +4,10 @@ function setup
 	spacefish_test_setup
 end
 
+function teardown
+	set USER $LOGNAME
+end
+
 test "Displays user when different from logname"
 	(
 		set USER spacefishUser
