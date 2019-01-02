@@ -33,13 +33,13 @@ function __sf_section_node -d "Display the local node version"
 	if type -q nvm
 		# Only recheck the node version if the nvm bin has changed
 		if test "$NVM_BIN" != "$sf_last_nvm_bin" -o -z "$sf_node_version"
-			set -g sf_node_version (nvm current ^/dev/null)
+			set -g sf_node_version (nvm current 2>/dev/null)
 			set -g sf_last_nvm_bin $NVM_BIN
 		end
 	else if type -q nodenv
-		set -g sf_node_version (nodenv version-name ^/dev/null)
+		set -g sf_node_version (nodenv version-name 2>/dev/null)
 	else if type -q node
-		set -g sf_node_version (node -v ^/dev/null)
+		set -g sf_node_version (node -v 2>/dev/null)
 	else
 		return
 	end

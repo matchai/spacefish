@@ -69,7 +69,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 		set battery_status (echo $battery_data | grep state | awk '{print $2}')
 	# Windows machines.
 	else if type -q acpi
-		set -l battery_data (acpi -b ^ /dev/null) # Redirect stderr to /dev/null fixes issue #110.
+		set -l battery_data (acpi -b 2>/dev/null) # Redirect stderr to /dev/null fixes issue #110.
 
 		# Return if no battery
 		[ -z $battery_data ]; and return

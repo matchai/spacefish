@@ -18,7 +18,7 @@
 #
 
 function mock -a cmd -a argument -a exit_code -a executed_code -d "Mock library for fish shell testing"
-	set -l cmd_blacklist "builtin" "functions" "eval" "command"
+	set -l cmd_blacklist "builtin" "functions" "eval" "command" "argparse" "read" "set" "status" "test"
 
 	if contains $cmd $cmd_blacklist
 		echo The function '"'$cmd'"' is reserved and therefore cannot be mocked.

@@ -11,17 +11,13 @@
 </h4>
 
 <p align="center">
-    <a href="https://travis-ci.org/matchai/spacefish">
-    <img src="https://badgen.net/travis/matchai/spacefish/master?label=Mac%20OSX%20%26%20Linux"
+  <a href="https://travis-ci.org/matchai/spacefish">
+    <img src="https://badgen.net/travis/matchai/spacefish/master"
       alt="Mac OSX & Linux CI Status" />
   </a>
-   <a href="https://ci.appveyor.com/project/matchai/spacefish">
-    <img src="https://badgen.net/appveyor/ci/matchai/spacefish/master?label=Windows"
-      alt="Windows CI Status" />
-  </a>
-   <a href="https://fishshell.com/">
-    <img src="https://badgen.net/badge/fish/v2.7.1"
-      alt="Fish Version" />
+  <a href="https://fishshell.com/">
+  <img src="https://badgen.net/badge/fish/v3.0.0"
+    alt="Fish Version" />
   </a>
 </p>
 

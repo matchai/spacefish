@@ -28,7 +28,7 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
 		return
 	end
 
-	set -l pyenv_status (pyenv version-name ^/dev/null) # This line needs explicit testing in an enviroment that has pyenv.
+	set -l pyenv_status (pyenv version-name 2>/dev/null) # This line needs explicit testing in an enviroment that has pyenv.
 
 	__sf_lib_section \
 		$SPACEFISH_PYENV_COLOR \
