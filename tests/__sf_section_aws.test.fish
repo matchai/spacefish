@@ -9,13 +9,13 @@ end
 
 test "Prints section when AWS_PROFILE is set"
 	(
-		set_color --bold fff
+		set_color --bold
 		echo -n "using "
 		set_color normal
 		set_color --bold ff8700
 		echo -n "☁️ user1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_aws)
@@ -37,13 +37,13 @@ test "Changing SPACEFISH_AWS_SYMBOL changes the displayed character"
 	(
 		set SPACEFISH_AWS_SYMBOL "· "
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "using "
 		set_color normal
 		set_color --bold ff8700
 		echo -n "· user1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_aws)
@@ -54,13 +54,13 @@ test "Changing SPACEFISH_AWS_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_AWS_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold ff8700
 		echo -n "☁️ user1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_aws)
@@ -71,13 +71,13 @@ test "Changing SPACEFISH_AWS_SUFFIX changes the character suffix"
 		set sf_exit_code 0
 		set SPACEFISH_AWS_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "using "
 		set_color normal
 		set_color --bold ff8700
 		echo -n "☁️ user1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_aws)

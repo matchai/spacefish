@@ -21,12 +21,12 @@ test "Displays the correct symbol for untracked file"
 	(
 		touch testfile
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [?]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end
@@ -36,12 +36,12 @@ test "Displays the correct symbol for added file"
 		touch testfile
 		command git add testfile
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [+]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end
@@ -53,12 +53,12 @@ test "Displays the correct symbol for modified file"
 		command git commit -m "Initial commit" --quiet
 		echo "modification" > testfile
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [!]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end
@@ -71,12 +71,12 @@ test "Displays the correct symbol for renamed file"
 		mv testfile newtestfile
 		command git add testfile newtestfile
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [»]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end
@@ -89,12 +89,12 @@ test "Displays the correct symbol for deleted file"
 		rm testfile
 		command git add testfile
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [✘]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end
@@ -107,12 +107,12 @@ test "Displays the correct symbol for stashed file"
 		echo "modification" > testfile
 		command git stash --quiet
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold red
 		echo -n " [\$]"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 	) = (__sf_section_git_status)
 end

@@ -26,13 +26,13 @@ test "Enabling time! 24-hour by default"
 	(
 		set SPACEFISH_TIME_SHOW true
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold yellow
 		echo -n "03:00:21"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_time)
@@ -43,13 +43,13 @@ test "Enabling time with 12-hour instead"
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_TIME_12HR true
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold yellow
 		echo -n "03:00:21"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_time)
@@ -60,7 +60,7 @@ test "Show the date too"
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_DATE_SHOW true
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold yellow
@@ -68,7 +68,7 @@ test "Show the date too"
 		echo -n " "
 		echo -n "03:00:21"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_time)
@@ -80,12 +80,12 @@ test "Custom date/time format"
 		set SPACEFISH_TIME_FORMAT (date '+%H') # Unix timestamp
 		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
 
-		set_color --bold fff
+		set_color --bold
 		set_color normal
 		set_color --bold yellow
 		echo -n "03"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_time)
@@ -96,13 +96,13 @@ test "What is the time? Purple?!"
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_TIME_COLOR purple
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold purple
 		echo -n "03:00:21"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_time)

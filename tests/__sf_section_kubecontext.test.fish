@@ -8,13 +8,13 @@ end
 
 test "Prints section"
 	(
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
 		echo -n "☸️  testkube"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_kubecontext)
@@ -30,13 +30,13 @@ test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character"
 	(
 		set SPACEFISH_KUBECONTEXT_SYMBOL "· "
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
 		echo -n "· testkube"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_kubecontext)
@@ -47,13 +47,13 @@ test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
 		echo -n "☸️  testkube"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_kubecontext)
@@ -64,13 +64,13 @@ test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
 		echo -n "☸️  testkube"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_kubecontext)

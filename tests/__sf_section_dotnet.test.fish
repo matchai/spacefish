@@ -26,13 +26,13 @@ test "Prints section if project.json is present"
 	(
 		touch /tmp/tmp-spacefish/project.json
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -41,14 +41,14 @@ end
 test "Prints section if global.json is present"
 	(
 		touch /tmp/tmp-spacefish/global.json
-		set_color --bold fff
+		set_color --bold
 
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -58,13 +58,13 @@ test "Prints section if a .csproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.csproj
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -73,14 +73,14 @@ end
 test "Prints section if a .xproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.xproj
-		set_color --bold fff
+		set_color --bold
 
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -90,13 +90,13 @@ test "Prints section if a .sln file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.sln
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -107,13 +107,13 @@ test "Changing SPACEFISH_DOTNET_SYMBOL changes the displayed character"
 		touch /tmp/tmp-spacefish/tmp.sln
 
 		set SPACEFISH_DOTNET_SYMBOL "· "
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n "· 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -125,13 +125,13 @@ test "Changing SPACEFISH_DOTNET_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_DOTNET_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dotnet)
@@ -143,13 +143,13 @@ test "Changing SPACEFISH_DOTNET_SUFFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_DOTNET_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold af00d7
 		echo -n ".NET 2.1.403"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_dotnet)
