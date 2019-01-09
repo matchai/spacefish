@@ -20,13 +20,13 @@ test "Prints section when conda is installed and CONDA_DEFAULT_ENV is set"
 	(
 		set -g CONDA_DEFAULT_ENV some-env
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "🅒 v$LOCAL_CONDA_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_conda)
@@ -37,13 +37,13 @@ test "Changing SPACEFISH_CONDA_SYMBOL changes the displayed character"
 		set SPACEFISH_CONDA_SYMBOL "· "
 		set -g CONDA_DEFAULT_ENV some-env
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "· v$LOCAL_CONDA_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_conda)
@@ -54,13 +54,13 @@ test "Changing SPACEFISH_CONDA_PREFIX changes the character prefix"
 		set SPACEFISH_CONDA_PREFIX ·
 		set -g CONDA_DEFAULT_ENV some-env
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold blue
 		echo -n "🅒 v$LOCAL_CONDA_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_conda)

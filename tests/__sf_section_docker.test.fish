@@ -23,13 +23,13 @@ test "Prints section when only Dockerfile is present"
 	(
 		touch Dockerfile
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -39,13 +39,13 @@ test "Prints section when only docker-compose.yml is present"
 	(
 		touch docker-compose.yml
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -56,13 +56,13 @@ test "Prints section when both Dockerfile and docker-compose.yml are present"
 		touch Dockerfile
 		touch docker-compose.yml
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -73,13 +73,13 @@ test "Prints Docker section when COMPOSE_FILE is set and the $COMPOSE_FILE exist
 		set -g COMPOSE_FILE /tmp/some-compose-file.yml
 		touch /tmp/some-compose-file.yml
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -91,13 +91,13 @@ test "Prints section when only Dockerfile is present with DOCKER_MACHINE_NAME se
 		touch Dockerfile
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -108,13 +108,13 @@ test "Prints section when only docker-compose.yml is present with DOCKER_MACHINE
 		touch docker-compose.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -126,13 +126,13 @@ test "Prints section when both Dockerfile and docker-compose.yml are present wit
 		touch docker-compose.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -144,13 +144,13 @@ test "Prints Docker section when COMPOSE_FILE is set with DOCKER_MACHINE_NAME se
 		touch /tmp/some-compose-file.yml
 		set -g DOCKER_MACHINE_NAME some-machine-name
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION via $DOCKER_MACHINE_NAME"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -162,13 +162,13 @@ test "Changing SPACEFISH_DOCKER_SYMBOL changes the displayed character"
 		set SPACEFISH_DOCKER_SYMBOL "· "
 		touch Dockerfile
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "is "
 		set_color normal
 		set_color --bold cyan
 		echo -n "· v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)
@@ -180,13 +180,13 @@ test "Changing SPACEFISH_DOCKER_PREFIX changes the character prefix"
 		set SPACEFISH_DOCKER_PREFIX ·
 		touch Dockerfile
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐳 v$LOCAL_DOCKER_VERSION"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_docker)

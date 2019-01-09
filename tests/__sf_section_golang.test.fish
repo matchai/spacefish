@@ -16,13 +16,13 @@ test "Prints section when Godeps is present"
 	(
 		mkdir /tmp/tmp-spacefish/Godeps
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -32,13 +32,13 @@ test "Prints section when glide.yaml is present"
 	(
 		touch /tmp/tmp-spacefish/glide.yaml
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -48,13 +48,13 @@ test "Prints section when Gopkg.yml is present"
 	(
 		touch /tmp/tmp-spacefish/Gopkg.yml
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -64,13 +64,13 @@ test "Prints section when Gopkg.lock is present"
 	(
 		touch /tmp/tmp-spacefish/Gopkg.lock
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -80,13 +80,13 @@ test "Prints section when go.mod is present"
 	(
 		touch /tmp/tmp-spacefish/go.mod
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -101,13 +101,13 @@ test "Changing SPACEFISH_GOLANG_SYMBOL changes the displayed character"
 		touch /tmp/tmp-spacefish/Gopkg.lock
 		set SPACEFISH_GOLANG_SYMBOL "· "
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "· v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -119,13 +119,13 @@ test "Changing SPACEFISH_GOLANG_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_GOLANG_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_golang)
@@ -137,13 +137,13 @@ test "Changing SPACEFISH_GOLANG_SUFFIX changes the character suffix"
 		set sf_exit_code 0
 		set SPACEFISH_GOLANG_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold cyan
 		echo -n "🐹 v1.10.3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_golang)

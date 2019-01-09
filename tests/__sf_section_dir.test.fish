@@ -23,13 +23,13 @@ test "Correctly truncates home directory"
 	(
 		cd ~
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "~"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -39,13 +39,13 @@ test "Correctly truncates a home subdirectory"
 	(
 		cd ~/.tmp-spacefish/dir1/
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "~/.tmp-spacefish/dir1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -55,13 +55,13 @@ test "Correctly truncates a deeply nested home subdirectory"
 	(
 		cd ~/.tmp-spacefish/dir1/dir2
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n ".tmp-spacefish/dir1/dir2"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -75,13 +75,13 @@ test "Correctly truncates root directory"
 	(
 		cd /
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "/"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -91,13 +91,13 @@ test "Correctly truncates a root subdirectory"
 	(
 		cd /usr
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "/usr"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -107,13 +107,13 @@ test "Correctly truncates a deeply nested root subdirectory"
 	(
 		cd /tmp/tmp-spacefish/dir1/dir2
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp-spacefish/dir1/dir2"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -128,13 +128,13 @@ test "Correctly truncates the root of a git directory"
 		cd /tmp/tmp-spacefish
 		command git init >/dev/null
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp-spacefish"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -146,13 +146,13 @@ test "Correctly truncates a git subdirectory"
 		command git init >/dev/null
 		cd /tmp/tmp-spacefish/dir1
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp-spacefish/dir1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -164,13 +164,13 @@ test "Correctly truncates a deeply nested git subdirectory"
 		command git init >/dev/null
 		cd /tmp/tmp-spacefish/dir1/dir2/dir3
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "dir1/dir2/dir3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -184,13 +184,13 @@ test "Correctly truncates the root of a git directory within another"
 		cd /tmp/tmp-spacefish/dir1
 		command git init >/dev/null
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "dir1"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -203,13 +203,13 @@ test "Doesn't throw an error when in a .git directory"
 
 		cd /tmp/tmp-spacefish/.git
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp/tmp-spacefish/.git"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -229,13 +229,13 @@ test "Changing SPACEFISH_DIR_PREFIX changes the dir prefix"
 		set SPACEFISH_DIR_PREFIX ·
 		cd ~
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
 		echo -n "~"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -246,13 +246,13 @@ test "Changing SPACEFISH_DIR_SUFFIX changes the dir prefix"
 		set SPACEFISH_DIR_SUFFIX ·
 		cd ~
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "~"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_dir)
@@ -265,13 +265,13 @@ test "Changing SPACEFISH_DIR_TRUNC changes the dir length"
 		set SPACEFISH_DIR_TRUNC 1
 		cd /tmp/tmp-spacefish/dir1/dir2/dir3
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "dir3"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -283,13 +283,13 @@ test "Disabling SPACEFISH_DIR_TRUNC_REPO stops repo dir truncation"
 		cd ~/.tmp-spacefish
 		command git init >/dev/null
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "~/.tmp-spacefish"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -300,13 +300,13 @@ test "Changing SPACEFISH_DIR_COLOR changes the dir color"
 		set SPACEFISH_DIR_COLOR red
 		cd ~
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold red
 		echo -n "~"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -321,13 +321,13 @@ test "Shows DIR_LOCK_SYMBOL if in a dir with no write permissions and SPACEFISH_
 	(
 		cd /tmp/tmp-spacefish/writeProtected
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp/tmp-spacefish/writeProtected"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -337,13 +337,13 @@ test "Doesn't show DIR_LOCK_SYMBOL if SPACEFISH_DIR_LOCK_SHOW is false"
 	(
 		cd /tmp/tmp-spacefish/writeProtected
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp/tmp-spacefish/writeProtected"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -353,13 +353,13 @@ test "Doesn't show DIR_LOCK_SYMBOL if current directory is not write protected f
 	(
 		cd ~
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "~"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
@@ -370,13 +370,13 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		set SPACEFISH_DIR_LOCK_SYMBOL "😀"
 		cd /tmp/tmp-spacefish/writeProtected
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "in "
 		set_color normal
 		set_color --bold cyan
 		echo -n "tmp/tmp-spacefish/writeProtected"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_dir)
