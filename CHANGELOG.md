@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/matchai/spacefish/compare/v2.0.0...v2.0.1) (2019-01-09)
+
+
+### Bug Fixes
+
+* have ACPI use only the first battery value ([#126](https://github.com/matchai/spacefish/issues/126)) ([8fa713b](https://github.com/matchai/spacefish/commit/8fa713b))
+
 # [2.0.0](https://github.com/matchai/spacefish/compare/v1.12.4...v2.0.0) (2019-01-09)
 
 
