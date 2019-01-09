@@ -70,7 +70,7 @@ function __sf_section_battery -d "Displays battery symbol and charge"
 
 	# Windows machines.
 	else if type -q acpi
-		set -l battery_data (acpi -b 2>/dev/null)
+		set -l battery_data (acpi -b 2>/dev/null | head -1)
 
 		# Return if no battery
 		[ -z $battery_data ]; and return
