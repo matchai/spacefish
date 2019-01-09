@@ -16,13 +16,13 @@ test "Prints section when requirements.txt is present"
 	(
 		touch /tmp/tmp-spacefish/requirements.txt
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold yellow
 		echo -n "🐍 3.7.0"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_pyenv)
@@ -32,13 +32,13 @@ test "Prints section when a *.py file is present"
 	(
 		touch /tmp/tmp-spacefish/testfile.py
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold yellow
 		echo -n "🐍 3.7.0"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_pyenv)
@@ -53,13 +53,13 @@ test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
 		touch /tmp/tmp-spacefish/requirements.txt
 		set SPACEFISH_PYENV_SYMBOL "· "
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold yellow
 		echo -n "· 3.7.0"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_pyenv)
@@ -71,13 +71,13 @@ test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold yellow
 		echo -n "🐍 3.7.0"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_pyenv)
@@ -89,13 +89,13 @@ test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold yellow
 		echo -n "🐍 3.7.0"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_pyenv)

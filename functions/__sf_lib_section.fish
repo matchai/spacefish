@@ -7,7 +7,7 @@ function __sf_lib_section -a color prefix content suffix
 
 	if test "$sf_prompt_opened" = "true" -a "$SPACEFISH_PROMPT_PREFIXES_SHOW" = "true"
 		# Echo prefixes in bold white
-		set_color --bold fff
+		set_color --bold
 		echo -e -n -s $prefix
 		set_color normal
 	end
@@ -21,7 +21,7 @@ function __sf_lib_section -a color prefix content suffix
 
 	if test "$SPACEFISH_PROMPT_SUFFIXES_SHOW" = "true"
 		# Echo suffixes in bold white
-		set_color --bold fff
+		set_color --bold
 		echo -e -n -s $suffix
 		set_color normal
 	end

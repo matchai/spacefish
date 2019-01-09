@@ -18,13 +18,13 @@ test "Prints section when composer.json is present"
 	(
 		touch /tmp/tmp-spacefish/composer.json
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "🐘 v7.1.16"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_php)
@@ -34,13 +34,13 @@ test "Prints section when a *.php file is present"
 	(
 		touch /tmp/tmp-spacefish/testfile.php
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "🐘 v7.1.16"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_php)
@@ -55,13 +55,13 @@ test "Changing SPACEFISH_PHP_SYMBOL changes the displayed character"
 		touch /tmp/tmp-spacefish/composer.json
 		set SPACEFISH_PHP_SYMBOL "· "
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "· v7.1.16"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_php)
@@ -73,13 +73,13 @@ test "Changing SPACEFISH_PHP_PREFIX changes the character prefix"
 		set sf_exit_code 0
 		set SPACEFISH_PHP_PREFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 		set_color --bold blue
 		echo -n "🐘 v7.1.16"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n " "
 		set_color normal
 	) = (__sf_section_php)
@@ -91,13 +91,13 @@ test "Changing SPACEFISH_PHP_SUFFIX changes the character suffix"
 		set sf_exit_code 0
 		set SPACEFISH_PHP_SUFFIX ·
 
-		set_color --bold fff
+		set_color --bold
 		echo -n "via "
 		set_color normal
 		set_color --bold blue
 		echo -n "🐘 v7.1.16"
 		set_color normal
-		set_color --bold fff
+		set_color --bold
 		echo -n "·"
 		set_color normal
 	) = (__sf_section_php)
