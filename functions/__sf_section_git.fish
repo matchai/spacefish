@@ -23,6 +23,7 @@ function __sf_section_git -d "Display the git branch and status"
 	[ $SPACEFISH_GIT_SHOW = false ]; and return
 
 	set -l git_branch (__sf_section_git_branch)
+	set -l git_commit (__sf_section_git_commit)
 	set -l git_status (__sf_section_git_status)
 
 	[ -z $git_branch ]; and return
@@ -30,6 +31,6 @@ function __sf_section_git -d "Display the git branch and status"
 	__sf_lib_section \
 		fff \
 		$SPACEFISH_GIT_PREFIX \
-		"$git_branch$git_status" \
+		"$git_branch$git_commit$git_status" \
 		$SPACEFISH_GIT_SUFFIX
 end
