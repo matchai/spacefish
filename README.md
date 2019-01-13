@@ -19,6 +19,9 @@
   <img src="https://badgen.net/badge/fish/v3.0.0"
     alt="Fish Version" />
   </a>
+  <a href="https://github.com/matchai/spacefish/blob/master/LICENSE">
+    <img src="https://badgen.net/github/license/matchai/spacefish" alt="GitHub License">
+  </a>
 </p>
 
 <div align="center">
