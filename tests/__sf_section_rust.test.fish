@@ -1,5 +1,4 @@
 source $DIRNAME/spacefish_test_setup.fish
-source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
@@ -124,4 +123,3 @@ test "doesn't display the section when SPACEFISH_RUST_SHOW is set to \"false\""
 		set SPACEFISH_RUST_SHOW false
 	) = (__sf_section_rust)
 end
-

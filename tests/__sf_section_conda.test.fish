@@ -1,5 +1,4 @@
 source $DIRNAME/spacefish_test_setup.fish
-source $DIRNAME/mock.fish
 set -l LOCAL_CONDA_VERSION 4.5.11
 
 function setup
