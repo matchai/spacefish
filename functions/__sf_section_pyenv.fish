@@ -23,7 +23,10 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
 	type -q pyenv; or return
 
 	# Show pyenv python version only for Python-specific folders
-	if not test -f requirements.txt \
+	if not test -n "$PYENV_VERSION" \
+		-o -f .python-version \
+		-o -f requirements.txt \
+		-o -f pyproject.toml \
 		-o (count *.py) -gt 0
 		return
 	end
