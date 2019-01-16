@@ -9,7 +9,11 @@ if test ! -f $tmpDir/.config/fish/functions/fisher.fish
 	curl https://git.io/fisher --create-dirs -sLo $tmpDir/.config/fish/functions/fisher.fish
 end
 
-# Install fishtape and local spacefish into temp env
+# Create fish environment
+env HOME=$tmpDir fish -c "mkdir -p $tmpDir/.config/fish"
+# Prepare fisher
+env HOME=$tmpDir fish -c "touch $tmpDir/.config/fish/fishfile"
+# Install fishtape and spacefish into temp env
 env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
 
