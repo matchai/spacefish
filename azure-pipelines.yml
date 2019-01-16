@@ -25,4 +25,8 @@ steps:
   condition: eq( variables['Agent.OS'], 'Linux' )
   displayName: Install Fish on Linux
 
+- bash: brew install fish
+  condition: eq( variables['Agent.OS'], 'Darwin' )
+  displayName: Install Fish on macOS
+
 - script: npm test
