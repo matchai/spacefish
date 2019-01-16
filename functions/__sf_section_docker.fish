@@ -24,12 +24,13 @@ function __sf_section_docker -d "Display docker version and machine name"
 	# Show Docker version only if docker is installed
 	type -q docker; or return
 
-	# Show docker version only when pwd has dockerfile or docker-compose.yml or COMPOSE_FILE
-if not test -f Dockerfile \
-	-o -f docker-compose.yml \
-	-o -f "$COMPOSE_FILE"
-	return
-end
+	# Show docker version only when pwd has Dockerfile, docker-compose.yml, .dockerenv in root or COMPOSE_FILE
+	if not test -f Dockerfile \
+		-o -f docker-compose.yml \
+		-o -f /.dockerenv \
+		-o -f "$COMPOSE_FILE"
+		return
+	end
 
 	set -l docker_version (docker version -f "{{.Server.Version}}" 2>/dev/null)
 	# if docker daemon isn't running you'll get an error like 'Bad response from Docker engine'
