@@ -92,6 +92,23 @@ test "Prints section when go.mod is present"
 	) = (__sf_section_golang)
 end
 
+test "Print section when using development version of golang"
+	(
+		mock go version 0 "echo go version devel +5efe9a8f11 Wed Jan 9 07:21:16 2019 +0000 darwin/amd64"
+		touch /tmp/tmp-spacefish/Gopkg.lock
+
+		set_color --bold
+		echo -n "via "
+		set_color normal
+		set_color --bold cyan
+		echo -n "🐹 devel:5efe9a8f11"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_golang)
+end
+
 test "Doesn't print the section when golang files aren't present"
 	() = (__sf_section_golang)
 end
@@ -155,4 +172,3 @@ test "doesn't display the section when SPACEFISH_GOLANG_SHOW is set to \"false\"
 		set SPACEFISH_GOLANG_SHOW false
 	) = (__sf_section_golang)
 end
-
