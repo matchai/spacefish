@@ -10,11 +10,62 @@ end
 
 function teardown
 	rm -rf /tmp/tmp-spacefish
+	if test "$PYENV_VERSION"
+		set -e PYENV_VERSION
+	end
+end
+
+test "Prints section when \$PYENV_VERSION is defined"
+	(
+		set PYENV_VERSION 3.7.0
+
+		set_color --bold
+		echo -n "via "
+		set_color normal
+		set_color --bold yellow
+		echo -n "🐍 3.7.0"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_pyenv)
+end
+
+test "Prints section when .python-version is present"
+	(
+		touch /tmp/tmp-spacefish/.python-version
+
+		set_color --bold
+		echo -n "via "
+		set_color normal
+		set_color --bold yellow
+		echo -n "🐍 3.7.0"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_pyenv)
 end
 
 test "Prints section when requirements.txt is present"
 	(
 		touch /tmp/tmp-spacefish/requirements.txt
+
+		set_color --bold
+		echo -n "via "
+		set_color normal
+		set_color --bold yellow
+		echo -n "🐍 3.7.0"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_pyenv)
+end
+
+test "Prints section when pyproject.toml is present"
+	(
+		touch /tmp/tmp-spacefish/pyproject.toml
 
 		set_color --bold
 		echo -n "via "
@@ -107,4 +158,3 @@ test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\""
 		set SPACEFISH_PYENV_SHOW false
 	) = (__sf_section_pyenv)
 end
-
