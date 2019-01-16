@@ -183,6 +183,7 @@ Julia section is shown only in directories that contain any file with `.jl` exte
 ### Docker (`docker`)
 
 Docker section is shown only in directories that contain `Dockerfile` or `docker-compose.yml` and also if the `$COMPOSE_FILE` is set.
+The section will also appear when `.dockerenv` is in the root directory, signifying that you're in a container.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
@@ -243,7 +244,8 @@ Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](htt
 
 ### Pyenv \(`pyenv`\)
 
-pyenv section is shown only in directories that contain `requirements.txt` or any other file with `.py` extension.
+Pyenv section is shown only in directories that contain `.python-version`, `requirements.txt`, `pyproject.toml`, or any other file with `.py` extension.
+The section will also be shown if the `$PYENV_VERSION` environment variable is set.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
