@@ -10,7 +10,7 @@ if test ! -f $tmpDir/.config/fish/functions/fisher.fish
 end
 
 # Install fishtape and local spacefish into temp env
-env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape $gitRoot"
+env HOME=$tmpDir fish -c "fisher add jorgebucaran/fishtape matchai/fish-mock $gitRoot"
 env HOME=$tmpDir fish -c "fish_prompt"
 
 if test (count $argv) -gt 0

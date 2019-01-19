@@ -1,5 +1,4 @@
 source $DIRNAME/spacefish_test_setup.fish
-source $DIRNAME/mock.fish
 set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup

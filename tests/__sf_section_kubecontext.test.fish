@@ -1,5 +1,4 @@
 source $DIRNAME/spacefish_test_setup.fish
-source $DIRNAME/mock.fish
 
 function setup
 	spacefish_test_setup
@@ -81,4 +80,3 @@ test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"fa
 		set SPACEFISH_KUBECONTEXT_SHOW false
 	) = (__sf_section_kubecontext)
 end
-
