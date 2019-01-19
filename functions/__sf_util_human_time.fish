@@ -3,7 +3,7 @@
 #
 
 function __sf_util_human_time -d "Humanize a time interval for display"
-	command awk '
+    command awk '
 		function hmTime(time,   stamp) {
 			split("h:m:s:ms", units, ":")
 			for (i = 2; i >= -1; i--) {
