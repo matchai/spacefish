@@ -1,5 +1,3 @@
-source $DIRNAME/mock.fish
-
 function spacefish_test_setup
 	# Delete all lingering spacefish variables
 	set --name | grep -E '^(SPACEFISH_|sf_)' | while read -l var
