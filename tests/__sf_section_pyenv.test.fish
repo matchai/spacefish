@@ -1,108 +1,108 @@
 source $DIRNAME/spacefish_test_setup.fish
 
 function setup
-	spacefish_test_setup
-	mock pyenv version-name 0 "echo \"3.7.0\""
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+    spacefish_test_setup
+    mock pyenv version-name 0 "echo \"3.7.0\""
+    mkdir -p /tmp/tmp-spacefish
+    cd /tmp/tmp-spacefish
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+    rm -rf /tmp/tmp-spacefish
 end
 
 test "Prints section when requirements.txt is present"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+    (
+        touch /tmp/tmp-spacefish/requirements.txt
 
-		set_color --bold
-		echo -n "via "
-		set_color normal
-		set_color --bold yellow
-		echo -n "🐍 3.7.0"
-		set_color normal
-		set_color --bold
-		echo -n " "
-		set_color normal
-	) = (__sf_section_pyenv)
+        set_color --bold
+        echo -n "via "
+        set_color normal
+        set_color --bold yellow
+        echo -n "🐍 3.7.0"
+        set_color normal
+        set_color --bold
+        echo -n " "
+        set_color normal
+    ) = (__sf_section_pyenv)
 end
 
 test "Prints section when a *.py file is present"
-	(
-		touch /tmp/tmp-spacefish/testfile.py
+    (
+        touch /tmp/tmp-spacefish/testfile.py
 
-		set_color --bold
-		echo -n "via "
-		set_color normal
-		set_color --bold yellow
-		echo -n "🐍 3.7.0"
-		set_color normal
-		set_color --bold
-		echo -n " "
-		set_color normal
-	) = (__sf_section_pyenv)
+        set_color --bold
+        echo -n "via "
+        set_color normal
+        set_color --bold yellow
+        echo -n "🐍 3.7.0"
+        set_color normal
+        set_color --bold
+        echo -n " "
+        set_color normal
+    ) = (__sf_section_pyenv)
 end
 
 test "Doesn't print the section when requirements.txt and *.py aren't present"
-	() = (__sf_section_pyenv)
+    () = (__sf_section_pyenv)
 end
 
 test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
-		set SPACEFISH_PYENV_SYMBOL "· "
+    (
+        touch /tmp/tmp-spacefish/requirements.txt
+        set SPACEFISH_PYENV_SYMBOL "· "
 
-		set_color --bold
-		echo -n "via "
-		set_color normal
-		set_color --bold yellow
-		echo -n "· 3.7.0"
-		set_color normal
-		set_color --bold
-		echo -n " "
-		set_color normal
-	) = (__sf_section_pyenv)
+        set_color --bold
+        echo -n "via "
+        set_color normal
+        set_color --bold yellow
+        echo -n "· 3.7.0"
+        set_color normal
+        set_color --bold
+        echo -n " "
+        set_color normal
+    ) = (__sf_section_pyenv)
 end
 
 test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
-		set sf_exit_code 0
-		set SPACEFISH_PYENV_PREFIX ·
+    (
+        touch /tmp/tmp-spacefish/requirements.txt
+        set sf_exit_code 0
+        set SPACEFISH_PYENV_PREFIX ·
 
-		set_color --bold
-		echo -n "·"
-		set_color normal
-		set_color --bold yellow
-		echo -n "🐍 3.7.0"
-		set_color normal
-		set_color --bold
-		echo -n " "
-		set_color normal
-	) = (__sf_section_pyenv)
+        set_color --bold
+        echo -n "·"
+        set_color normal
+        set_color --bold yellow
+        echo -n "🐍 3.7.0"
+        set_color normal
+        set_color --bold
+        echo -n " "
+        set_color normal
+    ) = (__sf_section_pyenv)
 end
 
 test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
-		set sf_exit_code 0
-		set SPACEFISH_PYENV_SUFFIX ·
+    (
+        touch /tmp/tmp-spacefish/requirements.txt
+        set sf_exit_code 0
+        set SPACEFISH_PYENV_SUFFIX ·
 
-		set_color --bold
-		echo -n "via "
-		set_color normal
-		set_color --bold yellow
-		echo -n "🐍 3.7.0"
-		set_color normal
-		set_color --bold
-		echo -n "·"
-		set_color normal
-	) = (__sf_section_pyenv)
+        set_color --bold
+        echo -n "via "
+        set_color normal
+        set_color --bold yellow
+        echo -n "🐍 3.7.0"
+        set_color normal
+        set_color --bold
+        echo -n "·"
+        set_color normal
+    ) = (__sf_section_pyenv)
 end
 
 test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\""
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
-		set SPACEFISH_PYENV_SHOW false
-	) = (__sf_section_pyenv)
+    (
+        touch /tmp/tmp-spacefish/requirements.txt
+        set SPACEFISH_PYENV_SHOW false
+    ) = (__sf_section_pyenv)
 end

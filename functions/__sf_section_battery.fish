@@ -31,9 +31,9 @@ function __sf_section_battery -d "Displays battery symbol and charge"
     # Show section only if any of the following is true
     # - SPACEFISH_BATTERY_SHOW = "always"
     # - SPACEFISH_BATTERY_SHOW = "true" and
-    #	- battery percentage is below the given limit (default: 10%)
+    #     - battery percentage is below the given limit (default: 10%)
     # - SPACEFISH_BATTERY_SHOW = "charged" and
-    #	- Battery is fully charged
+    #     - Battery is fully charged
 
     # Check that user wants to show battery levels
     [ $SPACEFISH_BATTERY_SHOW = false ]
