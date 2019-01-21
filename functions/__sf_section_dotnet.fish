@@ -29,7 +29,9 @@ function __sf_section_dotnet -d "Display the .NET SDK version"
 
 	if not test -f project.json \
 		-o -f global.json \
+		-o -f paket.dependencies \
 		-o (count *.csproj) -gt 0 \
+		-o (count *.fsproj) -gt 0 \
 		-o (count *.xproj) -gt 0 \
 		-o (count *.sln) -gt 0
 		return
