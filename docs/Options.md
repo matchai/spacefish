@@ -208,7 +208,7 @@ Ruby section is shown only in directories that contain `Gemfile`, or `Rakefile`,
 
 ### Haskell \(`haskell`\)
 
-Ruby section is shown only in directories that contain `stack.yaml`.
+Haskell section is shown only in directories that contain `stack.yaml`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
