@@ -4,7 +4,7 @@
 # Swift Swift makes it easy to write software that is incredibly fast and safe by design.
 # Link: https://swift.org
 
-function __sf_section_swift -d "Display the current swift version if you are inside a path that contains a Swift package"
+function __sf_section_swift -d "Display the current swift version if you are inside a path that contains a swift package"
 	# ------------------------------------------------------------------------------
 	# Configuration
 	# ------------------------------------------------------------------------------
@@ -25,15 +25,15 @@ function __sf_section_swift -d "Display the current swift version if you are ins
 	# Ensure the swift command is available
 	type -q swift; or return
 
-	if not test -f Package.swift \
+	if not test -f Package.swift
 		return
 	end
 
-	set -l swift_version (string sub -s 1 (swift --version | string split ' ')[4])
+	set swift_version (string sub -s 1 (swift --version | string split ' ')[4])
 
 	__sf_lib_section \
 		$SPACEFISH_SWIFT_COLOR \
 		$SPACEFISH_SWIFT_PREFIX \
-		"$SPACEFISH_SWIFT_SYMBOL""$go_version" \
+		"$SPACEFISH_SWIFT_SYMBOL""$swift_version" \
 		$SPACEFISH_SWIFT_SUFFIX
 end
