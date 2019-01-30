@@ -73,6 +73,7 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Current Docker version and connected machine (`🐳`).
 * Current Ruby version, through rvm/rbenv/chruby/asdf (`💎`).
 * Current Go version (`🐹`).
+* Current Swift verison (`🦜`).
 * Current PHP version (`🐘`).
 * Current Rust version (`𝗥`).
 * Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
