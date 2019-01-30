@@ -139,7 +139,9 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/2954549?v=4",
       "profile": "https://rycollins.com/",
       "contributions": [
-        "code"
+        "code",
+        "doc",
+        "test"
       ]
     }
   ]
