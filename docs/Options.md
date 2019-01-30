@@ -267,6 +267,18 @@ Go section is shown only in directories that contain `Godeps`, `glide.yaml`, `go
 | `SPACEFISH_GOLANG_SYMBOL` | `🐹·` | Character to be shown before Go version |
 | `SPACEFISH_GOLANG_COLOR` | `cyan` | Color of Go section |
 
+### Swift \(`swift`\)
+
+Swift section is shown only in directories that contain a `Package.swift`.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_SWIFT_SHOW` | `true` | Show current Swift version |
+| `SPACEFISH_SWIFT_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the Swift section |
+| `SPACEFISH_SWIFT_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the Swift section |
+| `SPACEFISH_SWIFT_SYMBOL` | `🦜·` | Character to be shown before Swift version |
+| `SPACEFISH_SWIFT_COLOR` | `cyan` | Color of Swift section |
+
 ### PHP (`php`)
 
 PHP section is shown only in directories that contain `composer.json` file, or any other file with `.php` extension.
