@@ -294,7 +294,7 @@ Rust section is shown only in directories that contain `Cargo.toml` or any other
 
 ### .NET (`dotnet`)
 
-.NET section is shown only in directories that contains a `project.json` or `global.json` file, or a file with one of these extensions: `.csproj`, `.xproj` or `.sln`.
+.NET section is shown only in directories that contains a `project.json`, `global.json` or `paket.dependencies` file, or a file with one of these extensions: `.csproj`, `.xproj`, `.fproj` or `.sln`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
