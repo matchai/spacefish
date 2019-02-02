@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/matchai/spacefish/compare/v2.1.0...v2.2.0) (2019-02-02)
+
+
+### Features
+
+* add support for F# project detection in the dotnet section ([c104b04](https://github.com/matchai/spacefish/commit/c104b04))
+
 # [2.1.0](https://github.com/matchai/spacefish/compare/v2.0.1...v2.1.0) (2019-01-23)
 
 
