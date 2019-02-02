@@ -1,3 +1,16 @@
+# [2.1.0](https://github.com/matchai/spacefish/compare/v2.0.1...v2.1.0) (2019-01-23)
+
+
+### Bug Fixes
+
+* correct go development version format ([e678ac2](https://github.com/matchai/spacefish/commit/e678ac2)), closes [#137](https://github.com/matchai/spacefish/issues/137)
+
+
+### Features
+
+* improve pyenv version detection ([22b9e20](https://github.com/matchai/spacefish/commit/22b9e20)), closes [#140](https://github.com/matchai/spacefish/issues/140)
+* provide docker version if in a docker container ([62891b4](https://github.com/matchai/spacefish/commit/62891b4)), closes [#138](https://github.com/matchai/spacefish/issues/138)
+
 ## [2.0.1](https://github.com/matchai/spacefish/compare/v2.0.0...v2.0.1) (2019-01-09)
 
 
