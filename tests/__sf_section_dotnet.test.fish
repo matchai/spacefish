@@ -15,8 +15,10 @@ test "Prints nothing when required files are missing"
 	(
 		rm -f /tmp/tmp-spacefish/project.json
 		rm -f /tmp/tmp-spacefish/global.json
+		rm -f /tmp/tmp-spacefish/paket.dependencies
 		rm -f '/tmp/tmp-spacefish/*.sln'
 		rm -f '/tmp/tmp-spacefish/*.csproj'
+		rm -f '/tmp/tmp-spacefish/*.fsproj'
 		rm -f '/tmp/tmp-spacefish/*.xproj'
 	) = (__sf_section_dotnet)
 end
@@ -53,9 +55,41 @@ test "Prints section if global.json is present"
 	) = (__sf_section_dotnet)
 end
 
+test "Prints section if paket.dependencies is present"
+	(
+		touch /tmp/tmp-spacefish/paket.dependencies
+		set_color --bold
+
+		echo -n "via "
+		set_color normal
+		set_color --bold af00d7
+		echo -n ".NET 2.1.403"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dotnet)
+end
+
 test "Prints section if a .csproj file is present"
 	(
 		touch /tmp/tmp-spacefish/tmp.csproj
+
+		set_color --bold
+		echo -n "via "
+		set_color normal
+		set_color --bold af00d7
+		echo -n ".NET 2.1.403"
+		set_color normal
+		set_color --bold
+		echo -n " "
+		set_color normal
+	) = (__sf_section_dotnet)
+end
+
+test "Prints section if a .fsproj file is present"
+	(
+		touch /tmp/tmp-spacefish/tmp.fsproj
 
 		set_color --bold
 		echo -n "via "
