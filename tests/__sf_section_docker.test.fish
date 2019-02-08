@@ -1,4 +1,5 @@
-source ./spacefish_test_setup.fish
+set root (dirname (status -f))
+source $root/tests/spacefish_test_setup.fish
 set -l LOCAL_DOCKER_VERSION 18.06.1
 
 function setup

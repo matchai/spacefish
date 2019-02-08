@@ -1,4 +1,5 @@
-source ./spacefish_test_setup.fish
+set root (dirname (status -f))
+source $root/tests/spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
