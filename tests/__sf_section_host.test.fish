@@ -73,7 +73,7 @@ end
 		set_color normal
 ) = (__sf_section_host)
 
-@test "Doesn't display hostname by default, without SSH" ) = (__sf_section_host)
+@test "Doesn't display hostname by default, without SSH" () = (__sf_section_host)
 
 # Color testing; magenta = pass, red = failure.
 @test "Test color, no SSH." (

@@ -67,4 +67,4 @@ end
 		set -g CONDA_DEFAULT_ENV some-env
 ) = (__sf_section_conda)
 
-@test "Doesn't display section when CONDA_DEFAULT_ENV is not set" ) = (__sf_section_conda)
+@test "Doesn't display section when CONDA_DEFAULT_ENV is not set" () = (__sf_section_conda)
