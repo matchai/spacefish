@@ -1,12 +1,11 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
 	mock kubectl config 0 "echo \"testkube\""
 end
 
-test "Prints section"
-	(
+@test "Prints section" (
 		set_color --bold
 		echo -n "at "
 		set_color normal
@@ -16,17 +15,13 @@ test "Prints section"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)
 
-test "Kubecontext symbol does not appear outside of a Kubernetes project"
-	(
+@test "Kubecontext symbol does not appear outside of a Kubernetes project" (
 		mock kubectl config 1
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)
 
-test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character"
-	(
+@test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character" (
 		set SPACEFISH_KUBECONTEXT_SYMBOL "· "
 
 		set_color --bold
@@ -38,11 +33,9 @@ test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)
 
-test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix"
-	(
+@test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix" (
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_PREFIX ·
 
@@ -55,11 +48,9 @@ test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)
 
-test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
-	(
+@test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix" (
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_SUFFIX ·
 
@@ -72,11 +63,8 @@ test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)
 
-test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"false\""
-	(
+@test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"false\"" (
 		set SPACEFISH_KUBECONTEXT_SHOW false
-	) = (__sf_section_kubecontext)
-end
+) = (__sf_section_kubecontext)

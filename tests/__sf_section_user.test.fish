@@ -1,4 +1,4 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
@@ -8,8 +8,7 @@ function teardown
 	set USER $LOGNAME
 end
 
-test "Displays user when different from logname"
-	(
+@test "Displays user when different from logname" (
 		set USER spacefishUser
 
 		set_color --bold
@@ -21,11 +20,9 @@ test "Displays user when different from logname"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)
 
-test "Displays user when UID = 0"
-	(
+@test "Displays user when UID = 0" (
 		set UID 0
 
 		set_color --bold
@@ -37,11 +34,9 @@ test "Displays user when UID = 0"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)
 
-test "Displays user when there's an SSH connection"
-	(
+@test "Displays user when there's an SSH connection" (
 		set SSH_CONNECTION "192.168.0.100 12345 192.168.0.101 22"
 
 		set_color --bold
@@ -53,11 +48,9 @@ test "Displays user when there's an SSH connection"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)
 
-test "Changes user color when logged in as root"
-	(
+@test "Changes user color when logged in as root" (
 		set USER root
 
 		set_color --bold
@@ -69,11 +62,9 @@ test "Changes user color when logged in as root"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)
 
-test "Displays user when SPACEFISH_USER_SHOW is set to \"always\""
-	(
+@test "Displays user when SPACEFISH_USER_SHOW is set to \"always\"" (
 		set SPACEFISH_USER_SHOW always
 
 		set_color --bold
@@ -85,11 +76,8 @@ test "Displays user when SPACEFISH_USER_SHOW is set to \"always\""
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)
 
-test "Doesn't display user when SPACEFISH_USER_SHOW is set to \"false\""
-	(
+@test "Doesn't display user when SPACEFISH_USER_SHOW is set to \"false\"" (
 		set SPACEFISH_USER_SHOW false
-	) = (__sf_section_user)
-end
+) = (__sf_section_user)

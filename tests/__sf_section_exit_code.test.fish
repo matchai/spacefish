@@ -1,17 +1,14 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
 end
 
-test "Exit code not enabled by default"
-	(
+@test "Exit code not enabled by default" (
 		set sf_exit_code 1
-	) = (__sf_section_exit_code)
-end
+) = (__sf_section_exit_code)
 
-test "Enable exit-code, shows exit code upon fail"
-	(
+@test "Enable exit-code, shows exit code upon fail" (
 		set SPACEFISH_EXIT_CODE_SHOW true
 		set sf_exit_code 1
 
@@ -23,18 +20,14 @@ test "Enable exit-code, shows exit code upon fail"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_exit_code)
-end
+) = (__sf_section_exit_code)
 
-test "Hides exit code upon success"
-	(
+@test "Hides exit code upon success" (
 		set SPACEFISH_EXIT_CODE_SHOW true
 		set sf_exit_code 0
-	) = (__sf_section_exit_code)
-end
+) = (__sf_section_exit_code)
 
-test "Color-changing exit code"
-	(
+@test "Color-changing exit code" (
 		set SPACEFISH_EXIT_CODE_SHOW true
 		set SPACEFISH_EXIT_CODE_COLOR "purple"
 		set sf_exit_code 1
@@ -47,5 +40,4 @@ test "Color-changing exit code"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_exit_code)
-end
+) = (__sf_section_exit_code)

@@ -1,21 +1,20 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
 	mock pyenv version-name 0 "echo \"3.7.0\""
-	mkdir -p /tmp/tmp-spacefish
-	cd /tmp/tmp-spacefish
+	mkdir -p /tmp/$filename
+	cd /tmp/$filename
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
+	rm -rf /tmp/$filename
 	if test "$PYENV_VERSION"
 		set -e PYENV_VERSION
 	end
 end
 
-test "Prints section when \$PYENV_VERSION is defined"
-	(
+@test "Prints section when \$PYENV_VERSION is defined" (
 		set PYENV_VERSION 3.7.0
 
 		set_color --bold
@@ -27,12 +26,10 @@ test "Prints section when \$PYENV_VERSION is defined"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Prints section when .python-version is present"
-	(
-		touch /tmp/tmp-spacefish/.python-version
+@test "Prints section when .python-version is present" (
+		touch /tmp/$filename/.python-version
 
 		set_color --bold
 		echo -n "via "
@@ -43,12 +40,10 @@ test "Prints section when .python-version is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Prints section when requirements.txt is present"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+@test "Prints section when requirements.txt is present" (
+		touch /tmp/$filename/requirements.txt
 
 		set_color --bold
 		echo -n "via "
@@ -59,12 +54,10 @@ test "Prints section when requirements.txt is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Prints section when pyproject.toml is present"
-	(
-		touch /tmp/tmp-spacefish/pyproject.toml
+@test "Prints section when pyproject.toml is present" (
+		touch /tmp/$filename/pyproject.toml
 
 		set_color --bold
 		echo -n "via "
@@ -75,12 +68,10 @@ test "Prints section when pyproject.toml is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Prints section when a *.py file is present"
-	(
-		touch /tmp/tmp-spacefish/testfile.py
+@test "Prints section when a *.py file is present" (
+		touch /tmp/$filename/testfile.py
 
 		set_color --bold
 		echo -n "via "
@@ -91,16 +82,12 @@ test "Prints section when a *.py file is present"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Doesn't print the section when requirements.txt and *.py aren't present"
-	() = (__sf_section_pyenv)
-end
+@test "Doesn't print the section when requirements.txt and *.py aren't present" () = (__sf_section_pyenv)
 
-test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+@test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character" (
+		touch /tmp/$filename/requirements.txt
 		set SPACEFISH_PYENV_SYMBOL "· "
 
 		set_color --bold
@@ -112,12 +99,10 @@ test "Changing SPACEFISH_PYENV_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+@test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix" (
+		touch /tmp/$filename/requirements.txt
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_PREFIX ·
 
@@ -130,12 +115,10 @@ test "Changing SPACEFISH_PYENV_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+@test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix" (
+		touch /tmp/$filename/requirements.txt
 		set sf_exit_code 0
 		set SPACEFISH_PYENV_SUFFIX ·
 
@@ -148,12 +131,9 @@ test "Changing SPACEFISH_PYENV_SUFFIX changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)
 
-test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\""
-	(
-		touch /tmp/tmp-spacefish/requirements.txt
+@test "doesn't display the section when SPACEFISH_PYENV_SHOW is set to \"false\"" (
+		touch /tmp/$filename/requirements.txt
 		set SPACEFISH_PYENV_SHOW false
-	) = (__sf_section_pyenv)
-end
+) = (__sf_section_pyenv)

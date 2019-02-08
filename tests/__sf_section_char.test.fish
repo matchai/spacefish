@@ -1,11 +1,10 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
 end
 
-test "Displays default char with status code 0"
-	(
+@test "Displays default char with status code 0" (
 		set sf_exit_code 0
 
 		set_color --bold
@@ -17,11 +16,9 @@ test "Displays default char with status code 0"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
-end
+) = (__sf_section_char)
 
-test "Displays default char with status code 1"
-	(
+@test "Displays default char with status code 1" (
 		set sf_exit_code 1
 
 		set_color --bold
@@ -33,11 +30,9 @@ test "Displays default char with status code 1"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
-end
+) = (__sf_section_char)
 
-test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
-	(
+@test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character" (
 		set sf_exit_code 0
 		set SPACEFISH_CHAR_SYMBOL ·
 
@@ -50,11 +45,9 @@ test "Changing SPACEFISH_CHAR_SYMBOL changes the displayed character"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
-end
+) = (__sf_section_char)
 
-test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
-	(
+@test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix" (
 		set sf_exit_code 0
 		set SPACEFISH_CHAR_PREFIX ·
 
@@ -67,11 +60,9 @@ test "Changing SPACEFISH_CHAR_PREFIX changes the character prefix"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_char)
-end
+) = (__sf_section_char)
 
-test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
-	(
+@test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix" (
 		set sf_exit_code 0
 		set SPACEFISH_CHAR_SUFFIX ·
 
@@ -84,5 +75,4 @@ test "Changing SPACEFISH_CHAR_SYMBOL changes the character suffix"
 		set_color --bold
 		echo -n "·"
 		set_color normal
-	) = (__sf_section_char)
-end
+) = (__sf_section_char)

@@ -1,4 +1,4 @@
-source $DIRNAME/spacefish_test_setup.fish
+source ./spacefish_test_setup.fish
 
 function setup
 	spacefish_test_setup
@@ -18,12 +18,9 @@ function teardown
 	functions --erase date
 end
 
-test "Time is disabled by default?"
-	() = (__sf_section_time)
-end
+@test "Time is disabled by default?" () = (__sf_section_time)
 
-test "Enabling time! 24-hour by default"
-	(
+@test "Enabling time! 24-hour by default" (
 		set SPACEFISH_TIME_SHOW true
 
 		set_color --bold
@@ -35,11 +32,9 @@ test "Enabling time! 24-hour by default"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
-end
+) = (__sf_section_time)
 
-test "Enabling time with 12-hour instead"
-	(
+@test "Enabling time with 12-hour instead" (
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_TIME_12HR true
 
@@ -52,11 +47,9 @@ test "Enabling time with 12-hour instead"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
-end
+) = (__sf_section_time)
 
-test "Show the date too"
-	(
+@test "Show the date too" (
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_DATE_SHOW true
 
@@ -71,11 +64,9 @@ test "Show the date too"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
-end
+) = (__sf_section_time)
 
-test "Custom date/time format"
-	(
+@test "Custom date/time format" (
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_TIME_FORMAT (date '+%H') # Unix timestamp
 		set SPACEFISH_TIME_PREFIX "" # Get rid of "at " prefix.
@@ -88,11 +79,9 @@ test "Custom date/time format"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
-end
+) = (__sf_section_time)
 
-test "What is the time? Purple?!"
-	(
+@test "What is the time? Purple?!" (
 		set SPACEFISH_TIME_SHOW true
 		set SPACEFISH_TIME_COLOR purple
 
@@ -105,5 +94,4 @@ test "What is the time? Purple?!"
 		set_color --bold
 		echo -n " "
 		set_color normal
-	) = (__sf_section_time)
-end
+) = (__sf_section_time)
