@@ -25,6 +25,7 @@ This group of options defines a behavior of prompt and standard parameters for s
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
+| `SPACEFISH_PROMPT_BOLD` | `true` | Toggle font weight of prompt components |
 | `SPACEFISH_PROMPT_ADD_NEWLINE` | `true` | Adds a newline character before each prompt line |
 | `SPACEFISH_PROMPT_SEPARATE_LINE` | `true` | Make the prompt span across two lines |
 | `SPACEFISH_PROMPT_FIRST_PREFIX_SHOW` | `false` | Shows a prefix of the first section in prompt |

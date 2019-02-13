@@ -43,7 +43,7 @@ function __sf_section_dir -d "Display the current truncated directory"
 	set dir (__sf_util_truncate_dir $tmp $SPACEFISH_DIR_TRUNC)
 
 	if [ $SPACEFISH_DIR_LOCK_SHOW = true -a ! -w . ]
-		set DIR_LOCK_SYMBOL (set_color $SPACEFISH_DIR_LOCK_COLOR)" $SPACEFISH_DIR_LOCK_SYMBOL"(set_color --bold)
+		set DIR_LOCK_SYMBOL (set_color $SPACEFISH_DIR_LOCK_COLOR)" $SPACEFISH_DIR_LOCK_SYMBOL"(test "$SPACEFISH_PROMPT_BOLD" = "true"; and set_color --bold; or set_color normal)
 	end
 
 	__sf_lib_section \

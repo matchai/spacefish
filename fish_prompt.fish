@@ -7,6 +7,7 @@ function fish_prompt
 	# Configuration
 	# ------------------------------------------------------------------------------
 
+	__sf_util_set_default SPACEFISH_PROMPT_BOLD true
 	__sf_util_set_default SPACEFISH_PROMPT_ADD_NEWLINE true
 	__sf_util_set_default SPACEFISH_PROMPT_FIRST_PREFIX_SHOW false
 	__sf_util_set_default SPACEFISH_PROMPT_PREFIXES_SHOW true

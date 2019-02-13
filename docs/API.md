@@ -87,7 +87,7 @@ echo $SPACEFISH_VERSION
 
 ## `__sf_lib_section <color> [prefix] <content> [suffix]`
 
-This function prints out the prompt section prefixed with `prefix`, suffixed with `suffix` and `content` formatted to display in `color`. The **Bold** style is applied by default.
+This function prints out the prompt section prefixed with `prefix`, suffixed with `suffix` and `content` formatted to display in `color`. The **Bold** style is applied unless `SPACEFISH_PROMPT_BOLD` is `false`.
 
 `prefix`, `suffix` and `content` can contain `set_color` to set an additional foreground color, background color or other formatting styles. Read more about `set_color` in the [set_color - set the terminal color](https://fishshell.com/docs/current/commands.html#set_color) section of the Fish Shell documentation.
 
