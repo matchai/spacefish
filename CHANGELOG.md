@@ -1,3 +1,10 @@
+## [2.2.2](https://github.com/matchai/spacefish/compare/v2.2.1...v2.2.2) (2019-02-14)
+
+
+### Bug Fixes
+
+* show git status based on SPACEFISH_GIT_STATUS_SHOW ([#155](https://github.com/matchai/spacefish/issues/155)) ([1d34eb9](https://github.com/matchai/spacefish/commit/1d34eb9))
+
 ## [2.2.1](https://github.com/matchai/spacefish/compare/v2.2.0...v2.2.1) (2019-02-14)
 
 
