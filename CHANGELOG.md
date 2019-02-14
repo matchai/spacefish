@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/matchai/spacefish/compare/v2.2.0...v2.2.1) (2019-02-14)
+
+
+### Bug Fixes
+
+* use SPACEFISH_TIME_FORMAT when formatting time section ([#156](https://github.com/matchai/spacefish/issues/156)) ([6ab4ecc](https://github.com/matchai/spacefish/commit/6ab4ecc))
+
 # [2.2.0](https://github.com/matchai/spacefish/compare/v2.1.0...v2.2.0) (2019-02-02)
 
 
