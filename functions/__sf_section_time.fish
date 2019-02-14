@@ -21,12 +21,14 @@ function __sf_section_time -d "Display the current time!"
 
 	[ $SPACEFISH_TIME_SHOW = false ]; and return
 
+	set -l time_str
+
 	if test $SPACEFISH_DATE_SHOW = true
 		set time_str (date '+%Y-%m-%d')" "
 	end
 
 	if not test $SPACEFISH_TIME_FORMAT = false
-		set time_str $SPACEFISH_TIME_FORMAT
+		set time_str "$time_str"(date '+'$SPACEFISH_TIME_FORMAT)
 	else if test $SPACEFISH_TIME_12HR = true
 		set time_str "$time_str"(date '+%I:%M:%S') # Fish doesn't seem to have date/time formatting.
 	else
