@@ -27,6 +27,8 @@ function __sf_section_git_status -d "Display the current git status"
 	# Section
 	# ------------------------------------------------------------------------------
 
+	[ $SPACEFISH_GIT_STATUS_SHOW = false ]; and return
+
 	set -l git_status
 	set -l is_ahead
 	set -l is_behind
