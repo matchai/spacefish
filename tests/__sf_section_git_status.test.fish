@@ -117,6 +117,12 @@ test "Displays the correct symbol for stashed file"
 	) = (__sf_section_git_status)
 end
 
+test "Test config option SPACEFISH_GIT_STATUS_SHOW"
+	(
+		set -g SPACEFISH_GIT_STATUS_SHOW false
+	) = (__sf_section_git_status)
+end
+
 # TODO: Get test dir into status *U*
 # TODO: Add test for ahead
 # TODO: Add test for behind
