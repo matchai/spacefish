@@ -32,7 +32,7 @@ function __sf_section_golang -d "Display the current go version if you're inside
 		-o (count *.go) -gt 0 \
 		-o -f Gopkg.yml \
 		-o -f Gopkg.lock \
-		-o ([ -n $GOPATH ]; and string match $GOPATH $PWD)
+		-o ([ (count $GOPATH) -gt 0 ]; and string match $GOPATH $PWD)
 		return
 	end
 
