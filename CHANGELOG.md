@@ -1,3 +1,10 @@
+## [2.2.4](https://github.com/matchai/spacefish/compare/v2.2.3...v2.2.4) (2019-02-17)
+
+
+### Bug Fixes
+
+* don't throw errors when there are multiple GOPATHs ([#158](https://github.com/matchai/spacefish/issues/158)) ([653f1c8](https://github.com/matchai/spacefish/commit/653f1c8))
+
 ## [2.2.3](https://github.com/matchai/spacefish/compare/v2.2.2...v2.2.3) (2019-02-17)
 
 
