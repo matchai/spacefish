@@ -1,3 +1,10 @@
+## [2.2.3](https://github.com/matchai/spacefish/compare/v2.2.2...v2.2.3) (2019-02-17)
+
+
+### Bug Fixes
+
+* git status section shows the correct symbol for unmerged ([#159](https://github.com/matchai/spacefish/issues/159)) ([7c2a1d5](https://github.com/matchai/spacefish/commit/7c2a1d5))
+
 ## [2.2.2](https://github.com/matchai/spacefish/compare/v2.2.1...v2.2.2) (2019-02-14)
 
 
