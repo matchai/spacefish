@@ -53,7 +53,7 @@ function __sf_section_git_status -d "Display the current git status"
 			set git_status deleted $git_status
 		end
 		if test (string match '*U*' $i)
-			set git_status deleted $git_status
+			set git_status unmerged $git_status
 		end
 	end
 
