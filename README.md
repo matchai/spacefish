@@ -16,7 +16,7 @@
       alt="Mac OSX & Linux CI Status" />
   </a>
   <a href="https://fishshell.com/">
-  <img src="https://badgen.net/badge/fish/v3.0.1"
+  <img src="https://badgen.net/badge/fish/v3.0.2"
     alt="Fish Version" />
   </a>
   <a href="https://github.com/matchai/spacefish/blob/master/LICENSE">
