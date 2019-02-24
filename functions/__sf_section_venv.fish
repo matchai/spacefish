@@ -21,7 +21,7 @@ function __sf_section_venv -d "Show current virtual Python environment"
 	 test $SPACEFISH_VENV_SHOW = false; and return
 
 	# Check if the current directory running via Virtualenv
-	test -n "$VIRTUAL_ENV" || return
+	test -n "$VIRTUAL_ENV"; or return
 
 	set -l venv (basename $VIRTUAL_ENV)
 	if contains $venv $SPACESHIP_VENV_GENERIC_NAMES
