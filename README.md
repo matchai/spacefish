@@ -77,8 +77,9 @@ Spacefish is a minimalistic, powerful and extremely customizable <a href="https:
 * Current Rust version (`𝗥`).
 * Current version of Haskell GHC Compiler, defined in stack.yaml file (`λ`).
 * Current Julia version (`ஃ`).
-* Current Conda version (`🅒`).
 * Current Amazon Web Services (AWS) profile (`☁️`) ([Using named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)).
+* Current Python virtualenv.
+* Current Conda version (`🅒`).
 * Current Python pyenv (`🐍`).
 * Current .NET SDK version, through dotnet-cli (`.NET`).
 * Current Kubectl context (`☸️`).
