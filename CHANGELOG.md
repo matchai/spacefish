@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/matchai/spacefish/compare/v2.2.4...v2.3.0) (2019-02-24)
+
+
+### Features
+
+* add Python venv section ([#164](https://github.com/matchai/spacefish/issues/164)) ([3d777fc](https://github.com/matchai/spacefish/commit/3d777fc)), closes [#146](https://github.com/matchai/spacefish/issues/146)
+
 ## [2.2.4](https://github.com/matchai/spacefish/compare/v2.2.3...v2.2.4) (2019-02-17)
 
 
