@@ -5,7 +5,6 @@ function setup
 end
 
 function teardown
-	rm -rf /tmp/tmp-spacefish
 	if test "$VIRTUAL_ENV"
 		set -e VIRTUAL_ENV
 	end
