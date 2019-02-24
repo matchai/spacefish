@@ -340,7 +340,7 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | :--- | :---: | --- |
 | `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section \(`true`, `false`, `always` or `charged`\) |
 | `SPACEFISH_BATTERY_PREFIX` | ` ` | Prefix before battery section |
-| `SPACEFISH_BATTERY_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
+| `SPACEFISH_BATTERY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
 | `SPACEFISH_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
 | `SPACEFISH_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
 | `SPACEFISH_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
@@ -363,7 +363,7 @@ This section shows mode indicator only when Vi-mode is enabled.
 | :--- | :---: | --- |
 | `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
 | `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
-| `SPACEFISH_VI_MODE_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `SPACEFISH_VI_MODE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
 | `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
 | `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
 | `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |
