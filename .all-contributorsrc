@@ -163,6 +163,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "dubnev",
+      "name": "Will Neville",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3227558?v=4",
+      "profile": "https://github.com/dubnev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7
