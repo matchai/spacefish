@@ -45,25 +45,17 @@ function __sf_section_package -d "Display the local package version"
 	end
 
 	# Check if Cargo.toml exists and cargo command exists
-	# THEN use cargo.pkgid and grep to figure out the package
+	# and use cargo pkgid to figure out the package
 	if test -f ./Cargo.toml; and type -q cargo
 		# Handle missing field `version` in Cargo.toml.
-		# `cargo pkgid` need Cargo.lock exists too. If it does't, do not show package version
-		# https://github.com/denysdovhan/spaceship-prompt/pull/617
+		# `cargo pkgid` needs Cargo.lock to exists too. If
+		# it doesn't, do not show package version
 		set -l pkgid (cargo pkgid 2>&1)
 		# Early return on error
 		echo $pkgid | grep -q "error:"; and return
 
 		set package_version (string match -r '#(.*)' $pkgid)[2]
 	end
-
-	# # Show package version only when repository is a package
-	# [ -f ./package.json ]; or return
-	# # Show package version only if npm is installed
-	# type -q npm; or return
-
-	# set -l version_line (grep -E '"version": "v?([0-9]+\.){1,}' package.json)
-	# set -l package_version (string split \" $version_line)[4]
 
 	if test -z "$package_version"
 		set package_version ⚠
