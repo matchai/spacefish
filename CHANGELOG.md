@@ -1,3 +1,17 @@
+## [2.3.1](https://github.com/matchai/spacefish/compare/v2.3.0...v2.3.1) (2019-03-02)
+
+
+### Bug Fixes
+
+* correct typo in venv configuration variables ([#167](https://github.com/matchai/spacefish/issues/167)) ([8a3585c](https://github.com/matchai/spacefish/commit/8a3585c))
+
+# [2.3.0](https://github.com/matchai/spacefish/compare/v2.2.4...v2.3.0) (2019-02-24)
+
+
+### Features
+
+* add Python venv section ([#164](https://github.com/matchai/spacefish/issues/164)) ([3d777fc](https://github.com/matchai/spacefish/commit/3d777fc)), closes [#146](https://github.com/matchai/spacefish/issues/146)
+
 ## [2.2.4](https://github.com/matchai/spacefish/compare/v2.2.3...v2.2.4) (2019-02-17)
 
 

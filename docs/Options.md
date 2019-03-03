@@ -218,18 +218,6 @@ Haskell section is shown only in directories that contain `stack.yaml`.
 | `SPACEFISH_HASKELL_SYMBOL` | `λ·` | Character to be shown before Haskell version |
 | `SPACEFISH_HASKELL_COLOR` | `red` | Color of Haskell section |
 
-### Conda \(`conda`\)
-
-Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is set.
-
-| Variable | Default | Meaning |
-| :------- | :-----: | ------- |
-| `SPACEFISH_CONDA_SHOW` | `true` | Show current Conda version |
-| `SPACEFISH_CONDA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
-| `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
-| `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
-| `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
-
 ### Amazon Web Services (AWS) (`aws`)
 
 Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](http://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html) variable.
@@ -241,6 +229,32 @@ Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](htt
 | `SPACESHIP_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
 | `SPACESHIP_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
 | `SPACESHIP_AWS_COLOR` | `ff8700` | Color of AWS section |
+
+### Virtualenv (`venv`)
+
+Python virtual environment when $VIRTUAL_ENV is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_VENV_SHOW` | `true` | Show current Python virtualenv or not |
+| `SPACEFISH_VENV_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the virtualenv section |
+| `SPACEFISH_VENV_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the virtualenv section |
+| `SPACEFISH_VENV_SYMBOL` | `·` | Character to be shown before virtualenv |
+| `SPACEFISH_VENV_GENERIC_NAMES` | `virtualenv venv .venv` | If the virtualenv folder is in this *array*, than use its parent directory as its name instead |
+| `SPACEFISH_VENV_COLOR` | `blue` | Color of virtualenv environment section |
+
+
+### Conda \(`conda`\)
+
+Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is set.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACEFISH_CONDA_SHOW` | `true` | Show current Conda version |
+| `SPACEFISH_CONDA_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the conda section |
+| `SPACEFISH_CONDA_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the conda section |
+| `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
+| `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
 
 ### Pyenv \(`pyenv`\)
 
@@ -340,7 +354,7 @@ By default, Battery section is shown only if battery level is below `SPACEFISH_B
 | :--- | :---: | --- |
 | `SPACEFISH_BATTERY_SHOW` | `true` | Show battery section \(`true`, `false`, `always` or `charged`\) |
 | `SPACEFISH_BATTERY_PREFIX` | ` ` | Prefix before battery section |
-| `SPACEFISH_BATTERY_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
+| `SPACEFISH_BATTERY_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after battery section |
 | `SPACEFISH_BATTERY_SYMBOL_CHARGING` | `⇡` | Character to be shown if battery is charging |
 | `SPACEFISH_BATTERY_SYMBOL_DISCHARGING` | `⇣` | Character to be shown if battery is discharging |
 | `SPACEFISH_BATTERY_SYMBOL_FULL` | `•` | Character to be shown if battery is full |
@@ -363,7 +377,7 @@ This section shows mode indicator only when Vi-mode is enabled.
 | :--- | :---: | --- |
 | `SPACEFISH_VI_MODE_SHOW` | `true` | Shown current Vi-mode or not |
 | `SPACEFISH_VI_MODE_PREFIX` | ` ` | Prefix before Vi-mode section |
-| `SPACEFISH_VI_MODE_SUFFIX` | `SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
+| `SPACEFISH_VI_MODE_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after Vi-mode section |
 | `SPACEFISH_VI_MODE_INSERT` | `[I]` | Text to be shown when in insert mode |
 | `SPACEFISH_VI_MODE_NORMAL` | `[N]` | Text to be shown when in normal mode |
 | `SPACEFISH_VI_MODE_VISUAL` | `[V]` | Text to be shown when in visual mode |

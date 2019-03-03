@@ -103,7 +103,7 @@ test "Prints nodenv version when nodenv is installed"
 
 test "Prints nothing when using the \"system\" version of node with nvm"
 	(
-		mkdir /tmp/tmp-spacefish/node_modules
+		mkdir -p /tmp/tmp-spacefish/node_modules
 		mock nvm current 0 "echo \"system\""
 	) = (__sf_section_node)
 end

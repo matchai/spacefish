@@ -142,6 +142,46 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "newmaniese",
+      "name": "Michael Newman",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/64894?v=4",
+      "profile": "http://newmaniese.com",
+      "contributions": [
+        "bug",
+        "code",
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "k-lyda",
+      "name": "Konrad",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6491400?v=4",
+      "profile": "https://github.com/k-lyda",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "dubnev",
+      "name": "Will Neville",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3227558?v=4",
+      "profile": "https://github.com/dubnev",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "danieltrautmann",
+      "name": "Daniel Trautmann",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/4022138?v=4",
+      "profile": "https://github.com/danieltrautmann",
+      "contributions": [
+        "code"
+      ]
     }
-  ]
+  ],
+  "contributorsPerLine": 7
 }
