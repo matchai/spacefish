@@ -23,6 +23,11 @@ function __sf_section_package -d "Display the local package version"
 
   [ $SPACEFISH_PACKAGE_SHOW = false ]; and return
 
+	# Exit if there is no package.json or Cargo.toml
+  if not test -e ./package.json; and not test -e ./Cargo.toml
+    return
+  end
+
   set -l package_version
 
   # Check if package.json exists AND npm exists locally while supressing output to just exit code (-q)
