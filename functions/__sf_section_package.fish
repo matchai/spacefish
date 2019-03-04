@@ -40,7 +40,7 @@ function __sf_section_package -d "Display the local package version"
 			set package_version (python -c "import json; print(json.load(open('package.json'))['version'])" 2>/dev/null)
 		# Check if node exists locally, use it to check version of package.json
 		else if type -q node
-			set package_version (node -p "require('./package.json').version" 2> /dev/null)
+			set package_version (node -p "require('./package.json').version" 2>/dev/null)
 		end
 	end
 
