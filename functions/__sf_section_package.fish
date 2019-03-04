@@ -31,7 +31,7 @@ function __sf_section_package -d "Display the local package version"
 	set -l package_version
 
 	# Check if package.json exists AND npm exists locally while supressing output to just exit code (-q)
-	if test -f ./package.json; and type -q npm
+	if type -q npm; and test -f ./package.json
 		# Check if jq (json handler) exists locally. If yes, check in package.json version
 		if type -q jq
 			set package_version (jq -r '.version' package.json 2>/dev/null)
