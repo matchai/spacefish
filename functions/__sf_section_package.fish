@@ -46,7 +46,7 @@ function __sf_section_package -d "Display the local package version"
 
 	# Check if Cargo.toml exists and cargo command exists
 	# and use cargo pkgid to figure out the package
-	if test -f ./Cargo.toml; and type -q cargo
+	if type -q cargo; and test -f ./Cargo.toml
 		# Handle missing field `version` in Cargo.toml.
 		# `cargo pkgid` needs Cargo.lock to exists too. If
 		# it doesn't, do not show package version
