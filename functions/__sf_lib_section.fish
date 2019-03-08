@@ -1,5 +1,5 @@
 function __sf_lib_section -a color prefix content suffix
-	# If there are only 2 args, they're content and prefix
+	# If there are only 2 args, they are $content and $prefix
 	if test (count $argv) -eq 2
 		set content $argv[2]
 		set prefix
