@@ -36,9 +36,9 @@ This is not an issue with spacefish. Spacefish uses Unicode symbols to represent
 * Verify your terminal emulator supports Unicode characters with this command:
 
   ```sh
-  curl http://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
+  curl https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
   # or
-  wget -O - http://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
+  wget -O - https://www.cl.cam.ac.uk/~mgk25/ucs/examples/UTF-8-demo.txt
   ```
 * Configure your terminal emulator to use UTF-8 character encoding.
 
