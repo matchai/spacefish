@@ -1,3 +1,10 @@
+# [2.4.0](https://github.com/matchai/spacefish/compare/v2.3.1...v2.4.0) (2019-03-08)
+
+
+### Features
+
+* add cargo package manager and refactor existing package section ([#171](https://github.com/matchai/spacefish/issues/171)) ([0064d2d](https://github.com/matchai/spacefish/commit/0064d2d))
+
 ## [2.3.1](https://github.com/matchai/spacefish/compare/v2.3.0...v2.3.1) (2019-03-02)
 
 
