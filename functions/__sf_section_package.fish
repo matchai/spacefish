@@ -54,6 +54,7 @@ function __sf_section_package -d "Display the local package version"
 		# Early return on error
 		echo $pkgid | grep -q "error:"; and return
 
+		# Example input: abc#1.0.0. Example output: 1.0.1
 		set package_version (string match -r '#(.*)' $pkgid)[2]
 	end
 
