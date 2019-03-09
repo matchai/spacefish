@@ -115,3 +115,17 @@ test "Only prints the prefix for the second consecutive section"
 		__sf_lib_section red "prefix 2" "test content 2" "suffix 2"
 	)
 end
+
+test "Prints section in regular font weight when SPACEFISH_PROMPT_BOLD is false"
+	(
+		set SPACEFISH_PROMPT_BOLD false
+
+		echo -n "prefix"
+		set_color normal
+		set_color red
+		echo -n "test content"
+		set_color normal
+		echo -n "suffix"
+		set_color normal
+	) = (__sf_lib_section red prefix "test content" suffix)
+end

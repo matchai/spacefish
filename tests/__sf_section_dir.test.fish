@@ -381,3 +381,22 @@ test "Changing SPACEFISH_DIR_LOCK_SYMBOL changes the symbol"
 		set_color normal
 	) = (__sf_section_dir)
 end
+
+test "Properly prints DIR_LOCK_SYMBOL when SPACEFISH_PROMPT_BOLD is false"
+  (
+		set SPACEFISH_PROMPT_BOLD false
+		set SPACEFISH_DIR_LOCK_SHOW true
+		cd /tmp/tmp-spacefish/writeProtected
+
+		echo -n "in "
+		set_color normal
+		set_color cyan
+		echo -n "tmp/tmp-spacefish/writeProtected"
+		set_color normal
+		set_color red
+		echo -n " "
+		set_color normal
+		echo -n " "
+		set_color normal
+  ) = (__sf_section_dir)
+end
