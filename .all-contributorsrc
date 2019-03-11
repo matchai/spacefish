@@ -191,6 +191,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "lynzt",
+      "name": "lindsay",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3099491?v=4",
+      "profile": "https://twitter.com/lynzt",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
