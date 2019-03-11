@@ -227,11 +227,11 @@ Shows selected Amazon Web Services profile configured using  [`AWS_PROFILE`](htt
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
-| `SPACESHIP_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
-| `SPACESHIP_AWS_PREFIX` | `using·` | Prefix before the AWS section |
-| `SPACESHIP_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
-| `SPACESHIP_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
-| `SPACESHIP_AWS_COLOR` | `ff8700` | Color of AWS section |
+| `SPACEFISH_AWS_SHOW` | `true` | Show current selected AWS-cli profile or not |
+| `SPACEFISH_AWS_PREFIX` | `using·` | Prefix before the AWS section |
+| `SPACEFISH_AWS_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the AWS section |
+| `SPACEFISH_AWS_SYMBOL` | `☁️·` | Character to be shown before AWS profile |
+| `SPACEFISH_AWS_COLOR` | `ff8700` | Color of AWS section |
 
 ### Virtualenv (`venv`)
 
