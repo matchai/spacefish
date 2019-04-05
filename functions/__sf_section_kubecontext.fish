@@ -30,10 +30,15 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 
 	set -l kube_context (kubectl config current-context 2>/dev/null)
 	[ -z $kube_context ]; and return
+	
+	set -l kube_context_ns (kubectl config view -o jsonpath='{.contexts[].context.namespace}' 2>/dev/null)
+	[ -z $kube_context_ns ]; and return
+
 
 	__sf_lib_section \
 		$SPACEFISH_KUBECONTEXT_COLOR \
 		$SPACEFISH_KUBECONTEXT_PREFIX \
 		"$SPACEFISH_KUBECONTEXT_SYMBOL""$kube_context" \
+	  " as "$kube_context_ns\
 		$SPACEFISH_KUBECONTEXT_SUFFIX
 end
