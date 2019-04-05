@@ -328,6 +328,7 @@ Kubernetes context is shown everywhere if `kubectl` binary is found.
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |
 | `SPACEFISH_KUBECONTEXT_SHOW` | `true` | Show current kubectl context |
+| `SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW` | `true` | Show current kubectl context namespace|
 | `SPACEFISH_KUBECONTEXT_PREFIX` | `at ` | Prefix before the kubectl section |
 | `SPACEFISH_KUBECONTEXT_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the kubectl section |
 | `SPACEFISH_KUBECONTEXT_SYMBOL` | `☸️ ` | Character to be shown before kubectl context |

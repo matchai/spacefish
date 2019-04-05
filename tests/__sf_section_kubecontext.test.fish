@@ -11,7 +11,7 @@ test "Prints section"
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
-		echo -n "☸️  testkube"
+		echo -n "☸️  testkube (testkube)"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -33,7 +33,7 @@ test "Changing SPACEFISH_KUBECONTEXT_SYMBOL changes the displayed character"
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
-		echo -n "· testkube"
+		echo -n "· testkube (testkube)"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -50,7 +50,7 @@ test "Changing SPACEFISH_KUBECONTEXT_PREFIX changes the character prefix"
 		echo -n "·"
 		set_color normal
 		set_color --bold cyan
-		echo -n "☸️  testkube"
+		echo -n "☸️  testkube (testkube)"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -67,7 +67,7 @@ test "Changing SPACEFISH_KUBECONTEXT_SUFFIX changes the character suffix"
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
-		echo -n "☸️  testkube"
+		echo -n "☸️  testkube (testkube)"
 		set_color normal
 		set_color --bold
 		echo -n "·"
