@@ -22,7 +22,12 @@ function __sf_section_node -d "Display the local node version"
 
 	# Show the current version of Node
 	[ $SPACEFISH_NODE_SHOW = false ]; and return
-
+	
+	# Change the current version of Node to defualt version.
+	if not test (nvm version 2>/dev/null) = (nvm version default 2>/dev/null)
+		nvm use default >/dev/null
+	end
+	
 	# Show versions only for Node-specific folders
 	if not test -f ./package.json \
 		-o -d ./node_modules \
@@ -31,6 +36,10 @@ function __sf_section_node -d "Display the local node version"
 	end
 
 	if type -q nvm
+		# Change nvm version automatically if .nvmrc exists.
+		if test -e .nvmrc
+			nvm use >/dev/null
+		end
 		# Only recheck the node version if the nvm bin has changed
 		if test "$NVM_BIN" != "$sf_last_nvm_bin" -o -z "$sf_node_version"
 			set -g sf_node_version (nvm current 2>/dev/null)
