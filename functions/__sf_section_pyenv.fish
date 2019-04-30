@@ -9,8 +9,14 @@ function __sf_section_pyenv -d "Show current version of pyenv Python, including 
 	__sf_util_set_default SPACEFISH_PYENV_SHOW true
 	__sf_util_set_default SPACEFISH_PYENV_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_PYENV_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_PYENV_SYMBOL "🐍 "
 	__sf_util_set_default SPACEFISH_PYENV_COLOR yellow
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_NODE_SYMBOL \ue235\u0020
+    else
+        __sf_util_set_default SPACEFISH_NODE_SYMBOL "🐍 "
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

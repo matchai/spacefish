@@ -12,8 +12,14 @@ function __sf_section_ruby -d "Show current version of Ruby"
 	__sf_util_set_default SPACEFISH_RUBY_SHOW true
 	__sf_util_set_default SPACEFISH_RUBY_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_RUBY_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_RUBY_SYMBOL "💎 "
 	__sf_util_set_default SPACEFISH_RUBY_COLOR red
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_RUBY_SYMBOL \ue739\u0020
+    else
+        __sf_util_set_default SPACEFISH_RUBY_SYMBOL "💎 "
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

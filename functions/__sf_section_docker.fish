@@ -11,9 +11,15 @@ function __sf_section_docker -d "Display docker version and machine name"
 	__sf_util_set_default SPACEFISH_DOCKER_SHOW true
 	__sf_util_set_default SPACEFISH_DOCKER_PREFIX "is "
 	__sf_util_set_default SPACEFISH_DOCKER_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_DOCKER_SYMBOL "🐳 "
 	__sf_util_set_default SPACEFISH_DOCKER_COLOR cyan
 	__sf_util_set_default SPACEFISH_DOCKER_VERBOSE_VERSION false
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_DOCKER_SYMBOL \uf308\u0020
+    else
+        __sf_util_set_default SPACEFISH_DOCKER_SYMBOL "🐳 "
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

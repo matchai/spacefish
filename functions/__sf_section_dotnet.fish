@@ -14,8 +14,14 @@ function __sf_section_dotnet -d "Display the .NET SDK version"
 	__sf_util_set_default SPACEFISH_DOTNET_SHOW true
 	__sf_util_set_default SPACEFISH_DOTNET_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_DOTNET_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_DOTNET_SYMBOL ".NET "
 	__sf_util_set_default SPACEFISH_DOTNET_COLOR "af00d7" # 128 in the original version, but renders as blue in iTerm2?
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_NODE_SYMBOL \ue77f\u0020
+    else
+        __sf_util_set_default SPACEFISH_NODE_SYMBOL ".NET"
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

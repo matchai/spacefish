@@ -11,9 +11,13 @@ function __sf_section_julia -d "Display julia version"
 	__sf_util_set_default SPACEFISH_JULIA_SHOW true
 	__sf_util_set_default SPACEFISH_JULIA_PREFIX "is "
 	__sf_util_set_default SPACEFISH_JULIA_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_JULIA_SYMBOL "ஃ "
 	__sf_util_set_default SPACEFISH_JULIA_COLOR green
-
+    
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_JULIA_SYMBOL \ue624\u0020
+    else
+        __sf_util_set_default SPACEFISH_JULIA_SYMBOL "ஃ " 
+    end
 	# ------------------------------------------------------------------------------
 	# Section
 	# ------------------------------------------------------------------------------

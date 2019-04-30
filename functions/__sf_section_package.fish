@@ -14,8 +14,14 @@ function __sf_section_package -d "Display the local package version"
 	__sf_util_set_default SPACEFISH_PACKAGE_SHOW true
 	__sf_util_set_default SPACEFISH_PACKAGE_PREFIX "is "
 	__sf_util_set_default SPACEFISH_PACKAGE_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_PACKAGE_SYMBOL "📦 "
 	__sf_util_set_default SPACEFISH_PACKAGE_COLOR red
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_PACKAGE_SYMBOL \uf487\u0020
+    else
+        __sf_util_set_default SPACEFISH_PACKAGE_SYMBOL "📦 "
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

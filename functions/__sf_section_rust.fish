@@ -12,9 +12,15 @@ function __sf_section_rust -d "Display the current Rust version"
 	__sf_util_set_default SPACEFISH_RUST_SHOW true
 	__sf_util_set_default SPACEFISH_RUST_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_RUST_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_RUST_SYMBOL "𝗥 "
 	__sf_util_set_default SPACEFISH_RUST_COLOR red
 	__sf_util_set_default SPACEFISH_RUST_VERBOSE_VERSION false
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_RUST_SYMBOL \ue7a8\u0020
+    else
+        __sf_util_set_default SPACEFISH_RUST_SYMBOL "𝗥 "
+    end
+
 
 	# ------------------------------------------------------------------------------
 	# Section

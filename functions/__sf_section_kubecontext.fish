@@ -15,8 +15,13 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 	__sf_util_set_default SPACEFISH_KUBECONTEXT_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	# Additional space is added because ☸️ is wider than other symbols
 	# See: https://github.com/denysdovhan/spaceship-prompt/pull/432
-	__sf_util_set_default SPACEFISH_KUBECONTEXT_SYMBOL "☸️  "
 	__sf_util_set_default SPACEFISH_KUBECONTEXT_COLOR cyan
+
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_KUBECONTEXT_SYMBOL \uf1d1\u0020
+    else
+         __sf_util_set_default SPACEFISH_KUBECONTEXT_SYMBOL "☸️  "
+    end
 
 	# ------------------------------------------------------------------------------
 	# Section

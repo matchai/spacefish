@@ -12,9 +12,13 @@ function __sf_section_haskell -d "Show current version of Haskell Tool Stack"
 	__sf_util_set_default SPACEFISH_HASKELL_SHOW true
 	__sf_util_set_default SPACEFISH_HASKELL_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_HASKELL_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_HASKELL_SYMBOL "λ "
 	__sf_util_set_default SPACEFISH_HASKELL_COLOR red
 
+    if test "$SPACEFISH_PROMPT_NERD_FONT" = "true"
+        __sf_util_set_default SPACEFISH_HASKELL_SYMBOL \ue61f\u0020
+    else
+        __sf_util_set_default SPACEFISH_HASKELL_SYMBOL "λ " 
+    end
 	# ------------------------------------------------------------------------------
 	# Section
 	# ------------------------------------------------------------------------------
