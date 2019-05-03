@@ -9,11 +9,11 @@ function __sf_section_elixir -d "Show current version of Elixir"
 	# Configuration
 	# ------------------------------------------------------------------------------
 
-	__sf_util_set_default SPACESHIP_ELIXIR_SHOW true
-	__sf_util_set_default SPACESHIP_ELIXIR_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
-	__sf_util_set_default SPACESHIP_ELIXIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACESHIP_ELIXIR_SYMBOL "💧 "
-	__sf_util_set_default SPACESHIP_ELIXIR_DEFAULT_VERSION $SPACEFISH_ELIXIR_DEFAULT_VERSION
+	__sf_util_set_default SPACEFISH_ELIXIR_SHOW true
+	__sf_util_set_default SPACEFISH_ELIXIR_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
+	__sf_util_set_default SPACEFISH_ELIXIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
+	__sf_util_set_default SPACEFISH_ELIXIR_SYMBOL "💧"
+	__sf_util_set_default SPACEFISH_ELIXIR_DEFAULT_VERSION $SPACEFISH_ELIXIR_DEFAULT_VERSION
 	__sf_util_set_default SPACEFISH_ELIXIR_COLOR magenta
 
 	# ------------------------------------------------------------------------------
@@ -25,7 +25,8 @@ function __sf_section_elixir -d "Show current version of Elixir"
 
 	# Show versions only for Elixir-specific folders
 	if not test -f mix.exs \
-		-o (count *.ex) -gt 0
+		-o (count *.ex) -gt 0 \
+		-o (count *.exs) -gt 0
 		return
 	end
 
@@ -36,7 +37,7 @@ function __sf_section_elixir -d "Show current version of Elixir"
 	else if type -q exenv
 		set elixir_version (exenv version-name)
 	else if type -q elixir
-		set elixir_version (elixir -v)
+		set elixir_version (elixir -v 2>/dev/null | grep "Elixir" --color=never | cut -d ' ' -f 2)
 	else
 		return
 	end
