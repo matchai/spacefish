@@ -259,6 +259,19 @@ Conda section is shown when ```conda``` is installed and $CONDA_DEFAULT_ENV is s
 | `SPACEFISH_CONDA_SYMBOL` | `🅒·` | Character to be shown before Conda version |
 | `SPACEFISH_CONDA_COLOR` | `blue` | Color of Conda section |
 
+
+### Elixir \(`elixir`\)
+
+Elixir section is shown when ```mix.exs``` is found or elixir files are found and either kiex, exenv, elixir is avaiable on your path.
+
+| Variable | Default | Meaning |
+| :------- | :-----: | ------- |
+| `SPACESHIP_ELIXIR_SHOW` | `true` | Show current Elixir version |
+| `SPACEFISH_ELIXIR_PREFIX` | `$SPACEFISH_PROMPT_DEFAULT_PREFIX` | Prefix before the elixir section |
+| `SPACEFISH_ELIXIR_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the elixir section |
+| `SPACEFISH_ELIXIR_SYMBOL` | `💧·` | Character to be shown before Elixir version |
+| `SPACEFISH_ELIXIR_COLOR` | `magenta` | Color of Elixir section |
+
 ### Pyenv \(`pyenv`\)
 
 Pyenv section is shown only in directories that contain `.python-version`, `requirements.txt`, `pyproject.toml`, or any other file with `.py` extension.

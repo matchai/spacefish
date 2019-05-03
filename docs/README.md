@@ -18,6 +18,7 @@
   * [Ruby (ruby)](./docs/Options.md#ruby-ruby)
   * [Haskell (haskell)](./docs/Options.md#haskell-haskell)
   * [Conda (conda)](./docs/Options.md#conda-conda)
+  * [Elixir (elixir)](./docs/Options.md#elixir-elixir)
   * [Amazon Web Services (aws)](./docs/Options.md#amazon-web-services-aws-aws)
   * [Pyenv (pyenv)](./docs/Options.md#pyenv-pyenv)
   * [Go (golang)](./docs/Options.md#go-golang)
