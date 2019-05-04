@@ -37,7 +37,7 @@ function __sf_section_elixir -d "Show current version of Elixir"
 	else if type -q exenv
 		set elixir_version (exenv version-name)
 	else if type -q elixir
-		set elixir_version (elixir -v 2>/dev/null | grep "Elixir" --color=never | cut -d ' ' -f 2)
+		set elixir_version (elixir -v 2>/dev/null | string match -r "Elixir.*" | string split " ")[2]
 	else
 		return
 	end
