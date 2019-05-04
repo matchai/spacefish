@@ -12,7 +12,7 @@ function __sf_section_elixir -d "Show current version of Elixir"
 	__sf_util_set_default SPACEFISH_ELIXIR_SHOW true
 	__sf_util_set_default SPACEFISH_ELIXIR_PREFIX $SPACEFISH_PROMPT_DEFAULT_PREFIX
 	__sf_util_set_default SPACEFISH_ELIXIR_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
-	__sf_util_set_default SPACEFISH_ELIXIR_SYMBOL "💧"
+	__sf_util_set_default SPACEFISH_ELIXIR_SYMBOL "💧 "
 	__sf_util_set_default SPACEFISH_ELIXIR_DEFAULT_VERSION $SPACEFISH_ELIXIR_DEFAULT_VERSION
 	__sf_util_set_default SPACEFISH_ELIXIR_COLOR magenta
 
