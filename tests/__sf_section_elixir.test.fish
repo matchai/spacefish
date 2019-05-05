@@ -20,7 +20,7 @@ test "Prints section when mix.exs is present"
 		echo -n "via "
 		set_color normal
 		set_color --bold magenta
-		echo -n "💧v1.8.1"
+		echo -n "💧 v1.8.1"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -36,7 +36,7 @@ test "Prints section when a *.ex file is present"
 		echo -n "via "
 		set_color normal
 		set_color --bold magenta
-		echo -n "💧v1.8.1"
+		echo -n "💧 v1.8.1"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -75,7 +75,7 @@ test "Changing SPACEFISH_ELIXIR_PREFIX changes the character prefix"
 		echo -n "·"
 		set_color normal
 		set_color --bold magenta
-		echo -n "💧v1.8.1"
+		echo -n "💧 v1.8.1"
 		set_color normal
 		set_color --bold
 		echo -n " "
@@ -93,7 +93,7 @@ test "Changing SPACEFISH_ELIXIR_SUFFIX changes the character suffix"
 		echo -n "via "
 		set_color normal
 		set_color --bold magenta
-		echo -n "💧v1.8.1"
+		echo -n "💧 v1.8.1"
 		set_color normal
 		set_color --bold
 		echo -n "·"
