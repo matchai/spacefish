@@ -32,7 +32,7 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 	set -l kube_context (kubectl config current-context 2>/dev/null)
 	[ -z $kube_context ]; and return
 	
-	if test "$SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW" = "true"
+	if test "$SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW" = "true" -a "$kube_context" != "default"
 		set kube_namespace (kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
 		if test $kube_context != "default"
 			set kube_context "$kube_context ($kube_namespace)"
