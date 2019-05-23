@@ -80,3 +80,38 @@ test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"fa
 		set SPACEFISH_KUBECONTEXT_SHOW false
 	) = (__sf_section_kubecontext)
 end
+
+test "Doesn't display the namespace section when SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW is set to \"false\""
+	(
+		set SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW false
+		set sf_exit_code 0
+		set SPACEFISH_KUBECONTEXT_SUFFIX ·
+
+		set_color --bold
+		echo -n "at "
+		set_color normal
+		set_color --bold cyan
+		echo -n "☸️  testkube"
+		set_color normal
+		set_color --bold
+		echo -n "·"
+		set_color normal
+	) = (__sf_section_kubecontext)
+end
+
+test "Doesn't display the namespace section when kube_context is set to \"false\""
+	(
+		set sf_exit_code 0
+		set SPACEFISH_KUBECONTEXT_SUFFIX ·
+		set kube_context "default"
+		set_color --bold
+		echo -n "at "
+		set_color normal
+		set_color --bold cyan
+		echo -n "☸️  testkube"
+		set_color normal
+		set_color --bold
+		echo -n "·"
+		set_color normal
+	) = (__sf_section_kubecontext)
+end

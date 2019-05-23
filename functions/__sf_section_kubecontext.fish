@@ -34,9 +34,7 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 	
 	if test "$SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW" = "true" -a "$kube_context" != "default"
 		set kube_namespace (kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
-		if test $kube_context != "default"
-			set kube_context "$kube_context ($kube_namespace)"
-		end
+		set kube_context "$kube_context ($kube_namespace)"
 	end
 
 	__sf_lib_section \
