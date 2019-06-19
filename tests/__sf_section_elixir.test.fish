@@ -4,6 +4,7 @@ function setup
 	spacefish_test_setup
 	mock elixir -v 0 "echo \"Erlang/OTP 21 [erts-10.3.4] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [hipe] [dtrace]
 Elixir 1.8.1 (compiled with Erlang/OTP 21)\""
+	set -x ELIXIR_VERSION 1.8.1
 	mkdir -p /tmp/tmp-spacefish
 	cd /tmp/tmp-spacefish
 end
