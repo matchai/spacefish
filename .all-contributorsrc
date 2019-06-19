@@ -218,6 +218,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "halostatue",
+      "name": "Austin Ziegler",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/11361?v=4",
+      "profile": "http://www.halostatue.ca/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7
