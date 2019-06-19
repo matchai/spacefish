@@ -25,15 +25,29 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      ["@semantic-release/exec", {
-        "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
-      }],
-      ["@semantic-release/git", {
-        "assets": ["CHANGELOG.md", "fish_prompt.fish"]
-      }],
-      ["@semantic-release/github", {
-        "releasedLabels": ["Status: Released"]
-      }]
+      [
+        "@semantic-release/exec",
+        {
+          "prepareCmd": "./scripts/version.sh ${nextRelease.version}"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "fish_prompt.fish"
+          ]
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "releasedLabels": [
+            "Status: Released"
+          ]
+        }
+      ]
     ]
   }
 }
