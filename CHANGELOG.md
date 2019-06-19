@@ -1,3 +1,10 @@
+# [2.6.0](https://github.com/matchai/spacefish/compare/v2.5.0...v2.6.0) (2019-06-19)
+
+
+### Features
+
+* Add elixir section ([#190](https://github.com/matchai/spacefish/issues/190)) ([9cb48ea](https://github.com/matchai/spacefish/commit/9cb48ea))
+
 # [2.5.0](https://github.com/matchai/spacefish/compare/v2.4.0...v2.5.0) (2019-05-23)
 
 
