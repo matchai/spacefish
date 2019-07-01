@@ -81,9 +81,9 @@ test "Doesn't display the section when SPACEFISH_KUBECONTEXT_SHOW is set to \"fa
 	) = (__sf_section_kubecontext)
 end
 
-test "Doesn't display the namespace section when SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW is set to \"false\""
+test "Doesn't display the namespace section when SPACEFISH_KUBECONTEXT_NAMESPACE_SHOW is set to \"false\""
 	(
-		set SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW false
+		set SPACEFISH_KUBECONTEXT_NAMESPACE_SHOW false
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_SUFFIX ·
 
@@ -99,16 +99,18 @@ test "Doesn't display the namespace section when SPACESHIP_KUBECONTEXT_NAMESPACE
 	) = (__sf_section_kubecontext)
 end
 
-test "Doesn't display the namespace section when kube_context is set to \"false\""
+test "Doesn't display the namespace section when kube_context is set to \"default\""
 	(
+		mock kubectl config 0 "echo \"default\""
+
 		set sf_exit_code 0
 		set SPACEFISH_KUBECONTEXT_SUFFIX ·
-		set kube_context "default"
+
 		set_color --bold
 		echo -n "at "
 		set_color normal
 		set_color --bold cyan
-		echo -n "☸️  testkube"
+		echo -n "☸️  default"
 		set_color normal
 		set_color --bold
 		echo -n "·"

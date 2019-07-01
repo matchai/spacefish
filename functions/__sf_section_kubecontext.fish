@@ -11,7 +11,7 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 	# ------------------------------------------------------------------------------
 
 	__sf_util_set_default SPACEFISH_KUBECONTEXT_SHOW true
-	__sf_util_set_default SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW true
+	__sf_util_set_default SPACEFISH_KUBECONTEXT_NAMESPACE_SHOW true
 	__sf_util_set_default SPACEFISH_KUBECONTEXT_PREFIX "at "
 	__sf_util_set_default SPACEFISH_KUBECONTEXT_SUFFIX $SPACEFISH_PROMPT_DEFAULT_SUFFIX
 	# Additional space is added because ☸️ is wider than other symbols
@@ -31,8 +31,8 @@ function __sf_section_kubecontext -d "Display the kubernetes context"
 
 	set -l kube_context (kubectl config current-context 2>/dev/null)
 	[ -z $kube_context ]; and return
-	
-	if test "$SPACESHIP_KUBECONTEXT_NAMESPACE_SHOW" = "true" -a "$kube_context" != "default"
+
+	if test "$SPACEFISH_KUBECONTEXT_NAMESPACE_SHOW" = "true" -a "$kube_context" != "default"
 		set kube_namespace (kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
 		set kube_context "$kube_context ($kube_namespace)"
 	end
