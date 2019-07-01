@@ -89,8 +89,8 @@ Hostname should only be shown while you are connected to another machine using S
 
 | Variable | Default | Meaning |
 | :--- | :---: | --- |
-| `SPACEFISH_HOST_SHOW` | `true` | Show host section (true/false) |
-| `SPACEFISH_HOST_SHOW_FULL` | `false` | Show full hostname section (true/false) |
+| `SPACEFISH_HOST_SHOW` | `true` | Show host section (`true`, `false`, `always`) |
+| `SPACEFISH_HOST_SHOW_FULL` | `false` | Show full hostname section (`true`, `false`) |
 | `SPACEFISH_HOST_PREFIX` | `at·` | Prefix before the hostname |
 | `SPACEFISH_HOST_SUFFIX` | `$SPACEFISH_PROMPT_DEFAULT_SUFFIX` | Suffix after the hostname |
 | `SPACEFISH_HOST_COLOR` | `blue` | Color of the hostname |
