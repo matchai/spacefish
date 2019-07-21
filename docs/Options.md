@@ -173,7 +173,7 @@ If you set `SPACEFISH_NODE_DEFAULT_VERSION` to the default Node.js version and y
 
 ### Julia \(`julia`\)
 
-Julia section is shown only in directories that contain any file with `.jl` extension.
+Julia section is shown only in directories that contain `Project.toml` or `JuliaProject.toml`.
 
 | Variable | Default | Meaning |
 | :------- | :-----: | ------- |

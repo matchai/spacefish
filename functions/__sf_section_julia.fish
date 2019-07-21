@@ -23,8 +23,11 @@ function __sf_section_julia -d "Display julia version"
 	# Show Julia version only if julia is installed
 	type -q julia; or return
 
-	# Show julia version only when pwd has *.jl file(s)
-	[ (count *.jl) -gt 0 ]; or return
+	# Show versions only for Julia-specific folders
+	if not test -f Project.toml \
+		-o -f JuliaProject.toml
+		return
+	end
 
 	set -l julia_version (julia --version | grep --color=never -oE '[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]')
 
