@@ -1,4 +1,7 @@
 <h1 align="center">
+  <a href="https://github.com/starship/starship">
+    <img alt="Focus has shifted to the development of Starship, the successor to Spacefish. If you are interested in contributing or using it, come take a look!" src="./images/starship-notice.svg" width="100%">
+  </a><br><br>
   <a href="https://github.com/matchai/spacefish">
     <img alt="spacefish fish shell theme" src="./images/banner.svg" width="100%">
   </a>
