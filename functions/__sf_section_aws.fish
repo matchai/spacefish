@@ -25,15 +25,24 @@ function __sf_section_aws -d "Display the selected aws profile"
 	# Ensure the aws command is available
 	type -q aws; or return
 
-	# Early return if there's no AWS_PROFILE, or it's set to default
-	if test -z "$AWS_PROFILE" \
-		-o "$AWS_PROFILE" = "default"
+  set -l PROFILE_NAME
+	
+  # if aws-vault is in use, override profile with that
+  if test -n "$AWS_VAULT"
+    set PROFILE_NAME "$AWS_VAULT"
+  else
+    set PROFILE_NAME "$AWS_PROFILE"
+  end
+
+	# Early return if there's no named profile, or it's set to default
+	if test -z "$PROFILE_NAME" \
+		-o "$PROFILE_NAME" = "default"
 		return
 	end
 
 	__sf_lib_section \
 		$SPACEFISH_AWS_COLOR \
 		$SPACEFISH_AWS_PREFIX \
-		"$SPACEFISH_AWS_SYMBOL""$AWS_PROFILE" \
+		"$SPACEFISH_AWS_SYMBOL""$PROFILE_NAME" \
 		$SPACEFISH_AWS_SUFFIX
 end

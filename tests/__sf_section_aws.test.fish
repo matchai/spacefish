@@ -87,3 +87,19 @@ test "doesn't display the section when SPACEFISH_AWS_SHOW is set to \"false\""
 		set SPACEFISH_AWS_SHOW false
 	) = (__sf_section_aws)
 end
+
+
+test "Prints section when AWS_VAULT is set"
+        (
+                set AWS_VAULT user2
+                set_color --bold
+                echo -n "using "
+                set_color normal
+                set_color --bold ff8700
+                echo -n "☁️ user2"
+                set_color normal
+                set_color --bold
+                echo -n " "
+                set_color normal
+        ) = (__sf_section_aws)
+end
