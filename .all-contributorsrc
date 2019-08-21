@@ -227,6 +227,16 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "kouk",
+      "name": "Konstantinos Koukopoulos",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/456007?v=4",
+      "profile": "http://kouk.surukle.me",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
