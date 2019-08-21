@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/matchai/spacefish/compare/v2.6.1...v2.7.0) (2019-08-21)
+
+
+### Features
+
+* **aws:** Support aws-vault as an option instead of named AWS p… ([#206](https://github.com/matchai/spacefish/issues/206)) ([5e02e3f](https://github.com/matchai/spacefish/commit/5e02e3f))
+
 ## [2.6.1](https://github.com/matchai/spacefish/compare/v2.6.0...v2.6.1) (2019-07-01)
 
 
