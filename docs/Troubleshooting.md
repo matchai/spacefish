@@ -58,13 +58,11 @@ To speed up your prompt, try to reduce the number of unused spacefish sections t
 This issue is due to how your terminal emulator renders Unicode 9 characters. To fix this issue:
 
 * Make sure terminal uses _Unicode Version 9 Widths_.
-* Let your terminal render ambiguous-width characters as double-width.
 
 In _iTerm_ follow these instructions:
 
 * Go _iTerm → Preferences… (⌘,) → Profiles → Text_
 * Check _Unicode Version 9 Widths_.
-* Check _Threat ambiguous-width characters as double-width_.
 * Reload your terminal's tab.
 
 ## Why doesn't my prompt look like it does in the preview?
