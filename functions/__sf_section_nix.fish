@@ -1,4 +1,4 @@
-# pyenv
+# nix
 #
 
 function __sf_section_nix -d "Show in nix-shell indicator"
@@ -16,10 +16,10 @@ function __sf_section_nix -d "Show in nix-shell indicator"
 	# Section
 	# ------------------------------------------------------------------------------
 
-	# Show nix-shell python version
+	# Show in-nix-shell indicator
 	[ $SPACEFISH_NIX_SHOW = false ]; and return
 
-	# Show nix-shell python version only for Python-specific folders
+	# Show nix-shell symbol only in a nix shell
 	if not test -n "$IN_NIX_SHELL"
 		return
 	end
