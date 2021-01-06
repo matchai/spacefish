@@ -111,7 +111,7 @@ To get spacefish working correctly, you will need:
 ### [Fisher](https://github.com/jorgebucaran/fisher)
 
 ```fish
-$ fisher add matchai/spacefish
+$ fisher install matchai/spacefish
 ```
 
 ### [Oh My Fish!](https://github.com/oh-my-fish/oh-my-fish)
