@@ -32,6 +32,18 @@ function __sf_section_docker -d "Display docker version and machine name"
 		return
 	end
 
+    # Check if docker is running
+	if ! docker info >/dev/null 2>&1
+        # docker daemon is not running, don't show the version
+		__sf_lib_section \
+		$SPACEFISH_DOCKER_COLOR \
+		$SPACEFISH_DOCKER_PREFIX \
+		"$SPACEFISH_DOCKER_SYMBOL" \
+		$SPACEFISH_DOCKER_SUFFIX
+        return
+	end
+
+
 	set -l docker_version (docker version -f "{{.Server.Version}}" 2>/dev/null)
 	# if docker daemon isn't running you'll get an error like 'Bad response from Docker engine'
 	[ -z $docker_version ]; and return

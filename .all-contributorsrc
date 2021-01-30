@@ -237,6 +237,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "simoarpe",
+      "name": "Simone Arpe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3308503?v=4",
+      "profile": "http://sarpex.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7
